@@ -10,15 +10,6 @@ ColorR, ColorG, ColorB = tonumber(ColorR),tonumber(ColorG),tonumber(ColorB)
 return ColorR/255,ColorG/255,ColorB/255
 end
 
-local screen = Instance.new("ScreenGui")
-screen.Parent = game.CoreGui
-
-local text = Instance.new("TextLabel")
-text.Parent = screen
-text.Size = UDim2.new(0, 94, 0, 25)
-local Color = 255, 0, 255
-text.BackgroundColor3 = Color3.new(StringToColor3(Table.GuiSettings.GuiBackgroundColor))
-
 -- Instances:
 
 local VexHubFolder = Instance.new("Folder")
@@ -185,7 +176,7 @@ BackFrame.Draggable = true
 BackFrame.Position = UDim2.new(0.178074419, 0, 0.177274972, 0)
 BackFrame.Size = UDim2.new(0, 495, 0, 245)
 
-UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 0, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(200, 200, 200))}
+UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 0, 0)), ColorSequenceKeypoint.new(1.00, Color3.new(StringToColor3(Table.GuiSettings.GuiBackgroundColor)))}
 UIGradient.Transparency = NumberSequence.new{NumberSequenceKeypoint.new(0.00, 0.30), NumberSequenceKeypoint.new(1.00, 0.30)}
 UIGradient.Parent = BackFrame
 
@@ -250,7 +241,7 @@ UICorner_3.Parent = TopFrame
 
 PlayerProfile.Name = "PlayerProfile"
 PlayerProfile.Parent = TopFrame
-PlayerProfile.BackgroundColor3 = Color3.fromRGB(StringToColor3(Table.GuiSettings.GuiBackgroundColor))
+PlayerProfile.BackgroundColor3 = Color3.new(StringToColor3(Table.GuiSettings.GuiBackgroundColor))
 PlayerProfile.BackgroundTransparency = 0.900
 PlayerProfile.BorderColor3 = Color3.fromRGB(0, 0, 0)
 PlayerProfile.BorderSizePixel = 0
