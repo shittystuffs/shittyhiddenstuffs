@@ -2,6 +2,7 @@
 
 local Table = getgenv().Table
 local Player = game:GetService("Players").LocalPlayer
+local TweenService = game:GetService("TweenService")
 
 function StringToColor3(ToConvert)
 local ColorString = tostring(ToConvert)
