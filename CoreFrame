@@ -176,7 +176,7 @@ BackFrame.Draggable = true
 BackFrame.Position = UDim2.new(0.178074419, 0, 0.177274972, 0)
 BackFrame.Size = UDim2.new(0, 495, 0, 245)
 
-UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 0, 0)), ColorSequenceKeypoint.new(1.00, Color3.new(StringToColor3(Table.GuiSettings.GuiBackgroundColor)))}
+UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(0, 0, 0)), ColorSequenceKeypoint.new(1.00, Color3.new(StringToColor3(Table.GuiSettings.BackgroundGradientColor)))}
 UIGradient.Transparency = NumberSequence.new{NumberSequenceKeypoint.new(0.00, 0.30), NumberSequenceKeypoint.new(1.00, 0.30)}
 UIGradient.Parent = BackFrame
 
@@ -260,7 +260,7 @@ UIStroke.Parent = PlayerProfile
 
 ProfilePicture.Name = "ProfilePicture"
 ProfilePicture.Parent = PlayerProfile
-ProfilePicture.BackgroundColor3 = Color3.fromRGB(StringToColor3(Table.GuiSettings.GuiBackgroundColor))
+ProfilePicture.BackgroundColor3 = Color3.new(StringToColor3(Table.GuiSettings.GuiBackgroundColor))
 ProfilePicture.BackgroundTransparency = 0.900
 ProfilePicture.BorderColor3 = Color3.fromRGB(0, 0, 0)
 ProfilePicture.BorderSizePixel = 0
@@ -302,7 +302,7 @@ DisplaynameAndUsername.TextXAlignment = Enum.TextXAlignment.Left
 
 VexHubTopBar.Name = "VexHubTopBar"
 VexHubTopBar.Parent = TopFrame
-VexHubTopBar.BackgroundColor3 = Color3.fromRGB(Table.GuiSettings.GuiBackgroundColor)
+VexHubTopBar.BackgroundColor3 = Color3.new(StringToColor3(Table.GuiSettings.GuiBackgroundColor))
 VexHubTopBar.BackgroundTransparency = 0.900
 VexHubTopBar.BorderColor3 = Color3.fromRGB(0, 0, 0)
 VexHubTopBar.BorderSizePixel = 0
@@ -458,7 +458,7 @@ WholeFrame.Size = UDim2.new(0, 480, 0, 190)
 
 Tabs.Name = "Tabs"
 Tabs.Parent = WholeFrame
-Tabs.BackgroundColor3 = Color3.fromRGB(Table.GuiSettings.GuiBackgroundColor)
+Tabs.BackgroundColor3 = Color3.new(StringToColor3(Table.GuiSettings.GuiBackgroundColor))
 Tabs.BackgroundTransparency = 0.900
 Tabs.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Tabs.BorderSizePixel = 0
