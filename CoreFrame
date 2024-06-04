@@ -10,6 +10,9 @@ ColorR, ColorG, ColorB = tonumber(ColorR),tonumber(ColorG),tonumber(ColorB)
 return ColorR/255,ColorG/255,ColorB/255
 end
 
+local screen = Instance.new("ScreenGui")
+screen.Parent = game.CoreGui
+
 local text = Instance.new("TextLabel")
 text.Parent = screen
 text.Size = UDim2.new(0, 94, 0, 25)
