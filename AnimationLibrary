@@ -1,7 +1,7 @@
 local Library = {}
 
 local Player = game:GetService("Players").LocalPlayer
-local Folder = Player.PlayerGui.VexHubFolder
+local Folder = game:GetService("CoreGui").VexHubFolder
 local Pages = Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Pages
 local TweenService = game:GetService("TweenService")
 local Table = getgenv().Table
