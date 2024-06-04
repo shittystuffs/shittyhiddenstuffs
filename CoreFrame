@@ -4,11 +4,17 @@ local Table = getgenv().Table
 local Player = game:GetService("Players").LocalPlayer
 
 function StringToColor3(ToConvert)
-local ColorString = ToConvert
+local ColorString = tostring(ToConvert)
 local ColorR, ColorG, ColorB = ColorString:match("(%d+), (%d+), (%d+)")
 ColorR, ColorG, ColorB = tonumber(ColorR),tonumber(ColorG),tonumber(ColorB)
 return ColorR/255,ColorG/255,ColorB/255
 end
+
+local text = Instance.new("TextLabel")
+text.Parent = screen
+text.Size = UDim2.new(0, 94, 0, 25)
+local Color = 255, 0, 255
+text.BackgroundColor3 = Color3.new(StringToColor3(Table.GuiSettings.GuiBackgroundColor))
 
 -- Instances:
 
