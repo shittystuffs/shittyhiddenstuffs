@@ -241,7 +241,7 @@ UICorner_3.Parent = TopFrame
 
 PlayerProfile.Name = "PlayerProfile"
 PlayerProfile.Parent = TopFrame
-PlayerProfile.BackgroundColor3 = Color3.fromRGB(StringToColor3(Table.GuiSettings.GuiBackgroundColor))
+PlayerProfile.BackgroundColor3 = StringToColor3(Table.GuiSettings.GuiBackgroundColor)
 PlayerProfile.BackgroundTransparency = 0.900
 PlayerProfile.BorderColor3 = Color3.fromRGB(0, 0, 0)
 PlayerProfile.BorderSizePixel = 0
