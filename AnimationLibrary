@@ -1,0 +1,568 @@
+local Library = {}
+
+local Player = game:GetService("Players").LocalPlayer
+local Folder = Player.PlayerGui.VexHubFolder
+local Pages = Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Pages
+local TweenService = game:GetService("TweenService")
+local Table = getgenv().Table
+local AnimationSpeed = Table.GuiSettings.AnimationSpeed
+local AnimationEasingStyle = Table.GuiSettings.EasingStyle
+local UIScaleScale = Table.GuiSettings.GuiScale
+
+Library.AppearBackground = function()
+	coroutine.wrap(function()
+		TweenService:Create(Folder.VexHubScreenGui.BackFrame.UIScale, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Scale = UIScaleScale}):Play()
+		TweenService:Create(Folder.VexHubScreenGui.BackFrame, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {BackgroundTransparency = 0.5}):Play()
+		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {BackgroundTransparency = 0}):Play()
+		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0.3}):Play()
+		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.Blur, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
+		wait(AnimationSpeed)
+		TweenService:Create(Pages, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {BackgroundTransparency = 0.9}):Play()
+		TweenService:Create(Pages.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+	end)()
+end
+
+Library.DisappearBackground = function()
+	coroutine.wrap(function()
+		wait(AnimationSpeed)
+		TweenService:Create(Pages, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {BackgroundTransparency = 1}):Play()
+		TweenService:Create(Pages.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+		wait(AnimationSpeed/4)
+		TweenService:Create(Folder.VexHubScreenGui.BackFrame.UIScale, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Scale = UIScaleScale-0.1}):Play()
+		TweenService:Create(Folder.VexHubScreenGui.BackFrame, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {BackgroundTransparency = 1}):Play()
+		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {BackgroundTransparency = 1}):Play()
+		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
+		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.Blur, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
+	end)()
+end
+
+Library.AppearCoreInteractions = function()
+	coroutine.wrap(function()
+		wait(AnimationSpeed/2)
+		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.TopFrame.PlayerProfile, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {BackgroundTransparency = 0.9}):Play()
+		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.TopFrame.PlayerProfile.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.TopFrame.PlayerProfile.ProfilePicture, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {BackgroundTransparency = 0.9}):Play()
+		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.TopFrame.PlayerProfile.ProfilePicture, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
+		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.TopFrame.PlayerProfile.ProfilePicture.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.TopFrame.PlayerProfile.DisplaynameAndUsername, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+		wait(AnimationSpeed/4)
+		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.TopFrame.VexHubTopBar, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {BackgroundTransparency = 0.9}):Play()
+		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.TopFrame.VexHubTopBar.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.TopFrame.VexHubTopBar.Discord, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
+		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.TopFrame.VexHubTopBar.Logo, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
+		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.TopFrame.VexHubTopBar.VexHubText, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.TopFrame.VexHubTopBar.TopRight.Border, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {BackgroundTransparency = 0.8}):Play()
+		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.TopFrame.VexHubTopBar.TopRight.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.TopFrame.VexHubTopBar.TopRight.Close, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
+		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.TopFrame.VexHubTopBar.TopRight.More, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
+		wait(AnimationSpeed/8)
+		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Tabs, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {BackgroundTransparency = 0.9}):Play()
+		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Tabs.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Tabs.ScrollingFrame, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ScrollBarImageTransparency = 0}):Play()
+		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Tabs.ScrollingFrame.Others, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Tabs.ScrollingFrame.PluginsText, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+		for _, Buttons in Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Tabs.ScrollingFrame:GetDescendants() do
+			if Buttons:IsA("TextButton") then
+				TweenService:Create(Buttons.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+				TweenService:Create(Buttons.TabImage, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
+				TweenService:Create(Buttons.TabName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+			end
+		end
+	end)()
+end
+
+Library.DisappearCoreInteractions = function()
+	coroutine.wrap(function()
+		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.TopFrame.PlayerProfile, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {BackgroundTransparency = 1}):Play()
+		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.TopFrame.PlayerProfile.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.TopFrame.PlayerProfile.ProfilePicture, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {BackgroundTransparency = 1}):Play()
+		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.TopFrame.PlayerProfile.ProfilePicture, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
+		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.TopFrame.PlayerProfile.ProfilePicture.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.TopFrame.PlayerProfile.DisplaynameAndUsername, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+		wait(AnimationSpeed/2)
+		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.TopFrame.VexHubTopBar, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {BackgroundTransparency = 1}):Play()
+		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.TopFrame.VexHubTopBar.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.TopFrame.VexHubTopBar.Discord, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
+		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.TopFrame.VexHubTopBar.Logo, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
+		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.TopFrame.VexHubTopBar.VexHubText, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.TopFrame.VexHubTopBar.TopRight.Border, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {BackgroundTransparency = 1}):Play()
+		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.TopFrame.VexHubTopBar.TopRight.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.TopFrame.VexHubTopBar.TopRight.Close, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
+		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.TopFrame.VexHubTopBar.TopRight.More, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
+		wait(AnimationSpeed/4)
+		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Tabs, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {BackgroundTransparency = 1}):Play()
+		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Tabs.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Tabs.ScrollingFrame, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ScrollBarImageTransparency = 1}):Play()
+		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Tabs.ScrollingFrame.Others, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Tabs.ScrollingFrame.PluginsText, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+		for _, Buttons in Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Tabs.ScrollingFrame:GetDescendants() do
+			if Buttons:IsA("TextButton") then
+				TweenService:Create(Buttons.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+				TweenService:Create(Buttons.TabImage, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
+				TweenService:Create(Buttons.TabName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+			end
+		end
+	end)()
+end
+
+Library.AppearTab = function(TabName)
+	coroutine.wrap(function()
+		local Tab = Pages[TabName]
+
+		if TabName == "Home" then
+			TweenService:Create(Tab.Profile.ProfilePic, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
+			TweenService:Create(Tab.Profile.ProfilePic, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {BackgroundTransparency = 0.9}):Play()
+			TweenService:Create(Tab.Profile.ProfilePic.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+			TweenService:Create(Tab.Profile.UsernameAndDisplayName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+			wait(AnimationSpeed/2)
+			TweenService:Create(Tab.Bottom.UpdatesFrame.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+			TweenService:Create(Tab.Bottom.UpdatesFrame.Label.ImageLabel, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
+			TweenService:Create(Tab.Bottom.UpdatesFrame.Label.TextLabel, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+			TweenService:Create(Tab.Bottom.UpdatesFrame.ScrollingFrame, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ScrollBarImageTransparency = 0}):Play()
+			for _, Updates in Tab.Bottom.UpdatesFrame.ScrollingFrame:GetChildren() do
+				if Updates.Name == "Update" then
+					TweenService:Create(Updates.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+					TweenService:Create(Updates.UpdateText, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+				end
+			end
+			wait(AnimationSpeed/4)
+			TweenService:Create(Tab.Bottom.RightFrame.AnnouncementsFrame.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+			TweenService:Create(Tab.Bottom.RightFrame.AnnouncementsFrame.Label.ImageLabel, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
+			TweenService:Create(Tab.Bottom.RightFrame.AnnouncementsFrame.Label.TextLabel, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+			TweenService:Create(Tab.Bottom.RightFrame.AnnouncementsFrame.ScrollingFrame, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ScrollBarImageTransparency = 0}):Play()
+			TweenService:Create(Tab.Bottom.RightFrame.AnnouncementsFrame.ScrollingFrame.TextLabel, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+			wait(AnimationSpeed/8)
+			TweenService:Create(Tab.Bottom.RightFrame.BadgesFrame.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+			for _, Badges in Tab.Bottom.RightFrame.BadgesFrame:GetChildren() do
+				if Badges:IsA("TextLabel") then
+					TweenService:Create(Badges, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+				end
+			end
+
+		elseif TabName == "Favorites" or TabName == "Scripts" or TabName == "Required Accessories" or TabName == "GUIS" or TabName == "Animations" or TabName == "Commands" or TabName == "Other Hubs" then
+			TweenService:Create(Tab.SectionInfo.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+			TweenService:Create(Tab.SectionInfo.ImageLabel, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
+			TweenService:Create(Tab.SectionInfo.SectionName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+			wait(AnimationSpeed/2)
+			TweenService:Create(Tab.BottomFrame.LeftFrame.SearchFrame.TextBoxParent.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+			TweenService:Create(Tab.BottomFrame.LeftFrame.SearchFrame.TextBoxParent.TextBox, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+			TweenService:Create(Tab.BottomFrame.LeftFrame.SearchFrame.SearchButton, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
+			TweenService:Create(Tab.BottomFrame.LeftFrame.SearchFrame.SearchButton.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+			wait(AnimationSpeed/4)
+			TweenService:Create(Tab.BottomFrame.LeftFrame.Scripts.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+			TweenService:Create(Tab.BottomFrame.LeftFrame.Scripts.ScrollingFrame, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ScrollBarImageTransparency = 0.8}):Play()
+			for _, Buttons in Tab.BottomFrame.LeftFrame.Scripts.ScrollingFrame:GetChildren() do
+				if Buttons:IsA("ImageButton") then
+					TweenService:Create(Buttons, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0.8}):Play()
+					TweenService:Create(Buttons.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+					TweenService:Create(Buttons.ScriptId, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+					TweenService:Create(Buttons.ScriptName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+				end
+			end
+			wait(AnimationSpeed/8)
+			TweenService:Create(Tab.BottomFrame.ScriptInfo.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+			TweenService:Create(Tab.BottomFrame.ScriptInfo.ScriptDetails, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+			TweenService:Create(Tab.BottomFrame.ScriptInfo.BottomFrame.Favorite, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {BackgroundTransparency = 0}):Play()
+			TweenService:Create(Tab.BottomFrame.ScriptInfo.BottomFrame.Favorite, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
+			TweenService:Create(Tab.BottomFrame.ScriptInfo.BottomFrame.Favorite.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+			TweenService:Create(Tab.BottomFrame.ScriptInfo.BottomFrame.Play, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {BackgroundTransparency = 0}):Play()
+			TweenService:Create(Tab.BottomFrame.ScriptInfo.BottomFrame.Play, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
+			TweenService:Create(Tab.BottomFrame.ScriptInfo.BottomFrame.Play.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+			TweenService:Create(Tab.BottomFrame.ScriptInfo.BottomFrame.Execute, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+			TweenService:Create(Tab.BottomFrame.ScriptInfo.BottomFrame.Execute.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+
+		elseif TabName == "Settings" then
+			TweenService:Create(Tab.SectionInfo.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+			TweenService:Create(Tab.SectionInfo.ImageLabel, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
+			TweenService:Create(Tab.SectionInfo.SectionName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+			wait(AnimationSpeed/2)
+			TweenService:Create(Tab.BottomFrame.Settings.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+			TweenService:Create(Tab.BottomFrame.Settings.ScrollingFrame, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ScrollBarImageTransparency = 0}):Play()
+			for _, ParentsSettings in Tab.BottomFrame.Settings.ScrollingFrame:GetChildren() do
+				if ParentsSettings:IsA("Frame") then
+					TweenService:Create(ParentsSettings.Label, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+					for _, Settings in ParentsSettings:GetChildren() do
+						if Settings:IsA("Frame") then
+							TweenService:Create(Settings.NameOfFunction, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+							if Settings.Type.Value == "TextBox" then
+								TweenService:Create(Settings.TextBoxParent.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+								TweenService:Create(Settings.TextBoxParent.TextBox, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+								TweenService:Create(Settings.ImageButton, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
+								TweenService:Create(Settings.ImageButton.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+							elseif Settings.Type.Value == "Bool" then
+								for _, Options in Settings:GetChildren() do
+									if Options:IsA("TextButton") then
+										TweenService:Create(Options, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0.8}):Play()
+										TweenService:Create(Options.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+									end
+								end
+							end
+						end
+					end
+				end
+			end
+			wait(AnimationSpeed/4)
+			TweenService:Create(Tab.BottomFrame.Informations.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+			TweenService:Create(Tab.BottomFrame.Informations.SectionInfo.ImageLabel, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
+			TweenService:Create(Tab.BottomFrame.Informations.SectionInfo.SectionName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+			TweenService:Create(Tab.BottomFrame.Informations.ScrollingFrame, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ScrollBarImageTransparency = 0}):Play()
+			TweenService:Create(Tab.BottomFrame.Informations.ScrollingFrame.Credits, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+
+		elseif TabName == "Plugins" then
+			TweenService:Create(Tab.SectionInfo.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+			TweenService:Create(Tab.SectionInfo.ImageLabel, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
+			TweenService:Create(Tab.SectionInfo.SectionName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+			wait(AnimationSpeed/2)
+			TweenService:Create(Tab.BottomFrame.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+			TweenService:Create(Tab.BottomFrame.PluginInstaller.InstallAPluginText, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+			TweenService:Create(Tab.BottomFrame.PluginInstaller.WarningText, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+			TweenService:Create(Tab.BottomFrame.PluginInstaller.InstallButton.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+			TweenService:Create(Tab.BottomFrame.PluginInstaller.InstallButton.ImageLabel, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
+			TweenService:Create(Tab.BottomFrame.PluginInstaller.InstallButton.InstallText, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+			TweenService:Create(Tab.BottomFrame.PluginInstaller.TextBoxParent.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+			TweenService:Create(Tab.BottomFrame.PluginInstaller.TextBoxParent.TextBox, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+			wait(AnimationSpeed/4)
+			TweenService:Create(Tab.BottomFrame.InstalledPlugins.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+			TweenService:Create(Tab.BottomFrame.InstalledPlugins.Label.ImageLabel, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
+			TweenService:Create(Tab.BottomFrame.InstalledPlugins.Label.SectionName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+			TweenService:Create(Tab.BottomFrame.InstalledPlugins.Plugins, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ScrollBarImageTransparency = 0}):Play()
+			for _, InstalledPlugins in Tab.BottomFrame.InstalledPlugins.Plugins:GetChildren() do
+				if InstalledPlugins:IsA("Frame") and InstalledPlugins.Name ~= "Border" then
+					TweenService:Create(InstalledPlugins.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+					TweenService:Create(InstalledPlugins.DeleteButton, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
+					TweenService:Create(InstalledPlugins.PluginName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+				end
+			end
+
+		elseif TabName == "LoadString" then
+			TweenService:Create(Tab.SectionInfo.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+			TweenService:Create(Tab.SectionInfo.ImageLabel, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
+			TweenService:Create(Tab.SectionInfo.SectionName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+			wait(AnimationSpeed/2)
+			TweenService:Create(Tab.BottomFrame.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+			TweenService:Create(Tab.BottomFrame.LeftFrame.ScriptName.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+			TweenService:Create(Tab.BottomFrame.LeftFrame.ScriptName.TextBox, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+			TweenService:Create(Tab.BottomFrame.LeftFrame.Strings.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+			TweenService:Create(Tab.BottomFrame.LeftFrame.Strings.ScrollingFrame, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ScrollBarImageTransparency = 0}):Play()
+			TweenService:Create(Tab.BottomFrame.LeftFrame.Strings.ScrollingFrame.TextBox, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+			TweenService:Create(Tab.BottomFrame.LeftFrame.BottomFrame.Save, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
+			TweenService:Create(Tab.BottomFrame.LeftFrame.BottomFrame.Save, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {BackgroundTransparency = 0}):Play()
+			TweenService:Create(Tab.BottomFrame.LeftFrame.BottomFrame.Clear, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+			TweenService:Create(Tab.BottomFrame.LeftFrame.BottomFrame.Clear.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+			TweenService:Create(Tab.BottomFrame.LeftFrame.BottomFrame.Execute, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+			TweenService:Create(Tab.BottomFrame.LeftFrame.BottomFrame.Execute.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+			wait(AnimationSpeed/4)
+			TweenService:Create(Tab.BottomFrame.SavedScripts.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+			TweenService:Create(Tab.BottomFrame.SavedScripts.Label.ImageLabel, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
+			TweenService:Create(Tab.BottomFrame.SavedScripts.Label.SectionName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+			TweenService:Create(Tab.BottomFrame.SavedScripts.Scripts, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ScrollBarImageTransparency = 0}):Play()
+			for _, Scripts in Tab.BottomFrame.SavedScripts.Scripts:GetChildren() do
+				if Scripts:IsA("TextButton") then
+					TweenService:Create(Scripts.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+					TweenService:Create(Scripts.DeleteButton, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
+					TweenService:Create(Scripts.ScriptName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+				end
+			end
+
+		elseif TabName == "LocalPlayer" then
+			TweenService:Create(Tab.SectionInfo.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+			TweenService:Create(Tab.SectionInfo.ImageLabel, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
+			TweenService:Create(Tab.SectionInfo.SectionName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+			wait(AnimationSpeed/2)
+			TweenService:Create(Tab.Functions.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+			TweenService:Create(Tab.Functions.ScrollingFrame, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ScrollBarImageTransparency = 0}):Play()
+			for _, Functions in Tab.Functions.ScrollingFrame:GetChildren() do
+				if Functions:IsA("Frame") and Functions.Name ~= "000Border" then
+					TweenService:Create(Functions.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+					TweenService:Create(Functions.NameOfFunction, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+					if Functions.Type.Value == "Bool" then
+						TweenService:Create(Functions.Button.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+						TweenService:Create(Functions.Button.Circle, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {BackgroundTransparency = 0}):Play()
+					elseif Functions.Type.Value == "BoolWithTextBox" then
+						TweenService:Create(Functions.Button.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+						TweenService:Create(Functions.Button.Circle, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {BackgroundTransparency = 0}):Play()
+						TweenService:Create(Functions.TextBoxParent.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+						TweenService:Create(Functions.TextBoxParent.TextBox, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+					elseif Functions.Type.Value == "Button" then
+						TweenService:Create(Functions.Button, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
+						TweenService:Create(Functions.Button.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+					elseif Functions.Type.Value == "TextBox" then
+						TweenService:Create(Functions.Button, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
+						TweenService:Create(Functions.Button.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+						TweenService:Create(Functions.TextBoxParent.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+						TweenService:Create(Functions.TextBoxParent.TextBox, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+					end
+				end
+			end
+			
+		elseif TabName == "Report" then
+			TweenService:Create(Tab.Robot, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
+			wait(AnimationSpeed/2)
+			TweenService:Create(Tab.ReportText, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+			wait(AnimationSpeed/4)
+			TweenService:Create(Tab.Info, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+
+		elseif string.find(TabName, "Plugin") then
+			TweenService:Create(Tab.SectionInfo.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+			TweenService:Create(Tab.SectionInfo.ImageLabel, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
+			TweenService:Create(Tab.SectionInfo.SectionName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+			wait(AnimationSpeed/2)
+			TweenService:Create(Tab.BottomFrame.LeftFrame.SearchFrame.TextBoxParent.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+			TweenService:Create(Tab.BottomFrame.LeftFrame.SearchFrame.TextBoxParent.TextBox, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+			TweenService:Create(Tab.BottomFrame.LeftFrame.SearchFrame.SearchButton, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
+			TweenService:Create(Tab.BottomFrame.LeftFrame.SearchFrame.SearchButton.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+			wait(AnimationSpeed/4)
+			TweenService:Create(Tab.BottomFrame.LeftFrame.Scripts.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+			TweenService:Create(Tab.BottomFrame.LeftFrame.Scripts.ScrollingFrame, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ScrollBarImageTransparency = 0.8}):Play()
+			for _, Buttons in Tab.BottomFrame.LeftFrame.Scripts.ScrollingFrame:GetChildren() do
+				if Buttons:IsA("ImageButton") then
+					TweenService:Create(Buttons, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0.8}):Play()
+					TweenService:Create(Buttons.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+					TweenService:Create(Buttons.ScriptName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+				end
+			end
+			wait(AnimationSpeed/8)
+			TweenService:Create(Tab.BottomFrame.ScriptInfo.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+			TweenService:Create(Tab.BottomFrame.ScriptInfo.ScriptDetails, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+			TweenService:Create(Tab.BottomFrame.ScriptInfo.BottomFrame.Play, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {BackgroundTransparency = 0}):Play()
+			TweenService:Create(Tab.BottomFrame.ScriptInfo.BottomFrame.Play, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
+			TweenService:Create(Tab.BottomFrame.ScriptInfo.BottomFrame.Play.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+			TweenService:Create(Tab.BottomFrame.ScriptInfo.BottomFrame.Execute, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+			TweenService:Create(Tab.BottomFrame.ScriptInfo.BottomFrame.Execute.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+		else
+			print("Name does not exist in the Library")
+		end
+	end)()
+end
+
+Library.DisappearTab = function(TabName)
+	coroutine.wrap(function()
+		local Tab = Pages[TabName]
+
+		if TabName == "Home" then
+			TweenService:Create(Tab.Profile.ProfilePic, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
+			TweenService:Create(Tab.Profile.ProfilePic, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {BackgroundTransparency = 1}):Play()
+			TweenService:Create(Tab.Profile.ProfilePic.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+			TweenService:Create(Tab.Profile.UsernameAndDisplayName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+			wait(AnimationSpeed/2)
+			TweenService:Create(Tab.Bottom.UpdatesFrame.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+			TweenService:Create(Tab.Bottom.UpdatesFrame.Label.ImageLabel, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
+			TweenService:Create(Tab.Bottom.UpdatesFrame.Label.TextLabel, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+			TweenService:Create(Tab.Bottom.UpdatesFrame.ScrollingFrame, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ScrollBarImageTransparency = 1}):Play()
+			for _, Updates in Tab.Bottom.UpdatesFrame.ScrollingFrame:GetChildren() do
+				if Updates.Name == "Update" then
+					TweenService:Create(Updates.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+					TweenService:Create(Updates.UpdateText, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+				end
+			end
+			wait(AnimationSpeed/4)
+			TweenService:Create(Tab.Bottom.RightFrame.AnnouncementsFrame.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+			TweenService:Create(Tab.Bottom.RightFrame.AnnouncementsFrame.Label.ImageLabel, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
+			TweenService:Create(Tab.Bottom.RightFrame.AnnouncementsFrame.Label.TextLabel, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+			TweenService:Create(Tab.Bottom.RightFrame.AnnouncementsFrame.ScrollingFrame, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ScrollBarImageTransparency = 1}):Play()
+			TweenService:Create(Tab.Bottom.RightFrame.AnnouncementsFrame.ScrollingFrame.TextLabel, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+			wait(AnimationSpeed/8)
+			TweenService:Create(Tab.Bottom.RightFrame.BadgesFrame.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+			for _, Badges in Tab.Bottom.RightFrame.BadgesFrame:GetChildren() do
+				if Badges:IsA("TextLabel") then
+					TweenService:Create(Badges, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+				end
+			end
+
+		elseif TabName == "Favorites" or TabName == "Scripts" or TabName == "Required Accessories" or TabName == "GUIS" or TabName == "Animations" or TabName == "Commands" or TabName == "Other Hubs" then
+			TweenService:Create(Tab.SectionInfo.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+			TweenService:Create(Tab.SectionInfo.ImageLabel, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
+			TweenService:Create(Tab.SectionInfo.SectionName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+			wait(AnimationSpeed/2)
+			TweenService:Create(Tab.BottomFrame.LeftFrame.SearchFrame.TextBoxParent.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.LeftFrame.SearchFrame.TextBoxParent.TextBox, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.LeftFrame.SearchFrame.SearchButton, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.LeftFrame.SearchFrame.SearchButton.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+			wait(AnimationSpeed/4)
+			TweenService:Create(Tab.BottomFrame.LeftFrame.Scripts.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.LeftFrame.Scripts.ScrollingFrame, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ScrollBarImageTransparency = 1}):Play()
+			for _, Buttons in Tab.BottomFrame.LeftFrame.Scripts.ScrollingFrame:GetChildren() do
+				if Buttons:IsA("ImageButton") then
+					TweenService:Create(Buttons, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
+					TweenService:Create(Buttons.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+					TweenService:Create(Buttons.ScriptId, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+					TweenService:Create(Buttons.ScriptName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+				end
+			end
+			wait(AnimationSpeed/8)
+			TweenService:Create(Tab.BottomFrame.ScriptInfo.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.ScriptInfo.ScriptDetails, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.ScriptInfo.BottomFrame.Favorite, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {BackgroundTransparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.ScriptInfo.BottomFrame.Favorite, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.ScriptInfo.BottomFrame.Favorite.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.ScriptInfo.BottomFrame.Play, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {BackgroundTransparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.ScriptInfo.BottomFrame.Play, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.ScriptInfo.BottomFrame.Play.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.ScriptInfo.BottomFrame.Execute, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.ScriptInfo.BottomFrame.Execute.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+
+		elseif TabName == "Settings" then
+			TweenService:Create(Tab.SectionInfo.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+			TweenService:Create(Tab.SectionInfo.ImageLabel, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
+			TweenService:Create(Tab.SectionInfo.SectionName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+			wait(AnimationSpeed/2)
+			TweenService:Create(Tab.BottomFrame.Settings.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.Settings.ScrollingFrame, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ScrollBarImageTransparency = 1}):Play()
+			for _, ParentsSettings in Tab.BottomFrame.Settings.ScrollingFrame:GetChildren() do
+				if ParentsSettings:IsA("Frame") then
+					TweenService:Create(ParentsSettings.Label, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+					for _, Settings in ParentsSettings:GetChildren() do
+						if Settings:IsA("Frame") then
+							TweenService:Create(Settings.NameOfFunction, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+							if Settings.Type.Value == "TextBox" then
+								TweenService:Create(Settings.TextBoxParent.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+								TweenService:Create(Settings.TextBoxParent.TextBox, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+								TweenService:Create(Settings.ImageButton, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
+								TweenService:Create(Settings.ImageButton.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+							elseif Settings.Type.Value == "Bool" then
+								for _, Options in Settings:GetChildren() do
+									if Options:IsA("TextButton") then
+										TweenService:Create(Options, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+										TweenService:Create(Options.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+									end
+								end
+							end
+						end
+					end
+				end
+			end
+			wait(AnimationSpeed/4)
+			TweenService:Create(Tab.BottomFrame.Informations.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.Informations.SectionInfo.ImageLabel, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.Informations.SectionInfo.SectionName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.Informations.ScrollingFrame, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ScrollBarImageTransparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.Informations.ScrollingFrame.Credits, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+
+		elseif TabName == "Plugins" then
+			TweenService:Create(Tab.SectionInfo.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+			TweenService:Create(Tab.SectionInfo.ImageLabel, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
+			TweenService:Create(Tab.SectionInfo.SectionName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+			wait(AnimationSpeed/2)
+			TweenService:Create(Tab.BottomFrame.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.PluginInstaller.InstallAPluginText, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.PluginInstaller.WarningText, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.PluginInstaller.InstallButton.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.PluginInstaller.InstallButton.ImageLabel, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.PluginInstaller.InstallButton.InstallText, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.PluginInstaller.TextBoxParent.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.PluginInstaller.TextBoxParent.TextBox, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+			wait(AnimationSpeed/4)
+			TweenService:Create(Tab.BottomFrame.InstalledPlugins.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.InstalledPlugins.Label.ImageLabel, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.InstalledPlugins.Label.SectionName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.InstalledPlugins.Plugins, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ScrollBarImageTransparency = 1}):Play()
+			for _, InstalledPlugin in Tab.BottomFrame.InstalledPlugins.Plugins:GetChildren() do
+				if InstalledPlugin:IsA("Frame") and InstalledPlugin.Name ~= "Border" then
+					TweenService:Create(InstalledPlugin.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+					TweenService:Create(InstalledPlugin.DeleteButton, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
+					TweenService:Create(InstalledPlugin.PluginName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+				end
+			end
+		elseif TabName == "LoadString" then
+			TweenService:Create(Tab.SectionInfo.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+			TweenService:Create(Tab.SectionInfo.ImageLabel, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
+			TweenService:Create(Tab.SectionInfo.SectionName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+			wait(AnimationSpeed/2)
+			TweenService:Create(Tab.BottomFrame.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.LeftFrame.ScriptName.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.LeftFrame.ScriptName.TextBox, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.LeftFrame.Strings.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.LeftFrame.Strings.ScrollingFrame, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ScrollBarImageTransparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.LeftFrame.Strings.ScrollingFrame.TextBox, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.LeftFrame.BottomFrame.Save, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.LeftFrame.BottomFrame.Save, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {BackgroundTransparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.LeftFrame.BottomFrame.Clear, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.LeftFrame.BottomFrame.Clear.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.LeftFrame.BottomFrame.Execute, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.LeftFrame.BottomFrame.Execute.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+			wait(AnimationSpeed/4)
+			TweenService:Create(Tab.BottomFrame.SavedScripts.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.SavedScripts.Label.ImageLabel, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.SavedScripts.Label.SectionName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.SavedScripts.Scripts, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ScrollBarImageTransparency = 1}):Play()
+			for _, Scripts in Tab.BottomFrame.SavedScripts.Scripts:GetChildren() do
+				if Scripts:IsA("TextButton") then
+					TweenService:Create(Scripts.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+					TweenService:Create(Scripts.DeleteButton, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
+					TweenService:Create(Scripts.ScriptName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+				end
+			end
+
+		elseif TabName == "LocalPlayer" then
+			TweenService:Create(Tab.SectionInfo.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+			TweenService:Create(Tab.SectionInfo.ImageLabel, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
+			TweenService:Create(Tab.SectionInfo.SectionName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+			wait(AnimationSpeed / 2)
+			TweenService:Create(Tab.Functions.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+			TweenService:Create(Tab.Functions.ScrollingFrame, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ScrollBarImageTransparency = 1}):Play()
+			for _, Functions in Tab.Functions.ScrollingFrame:GetChildren() do
+				if Functions:IsA("Frame") and Functions.Name ~= "000Border" then
+					TweenService:Create(Functions.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+					TweenService:Create(Functions.NameOfFunction, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+					if Functions.Type.Value == "Bool" then
+						TweenService:Create(Functions.Button.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+						TweenService:Create(Functions.Button.Circle, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {BackgroundTransparency = 1}):Play()
+					elseif Functions.Type.Value == "BoolWithTextBox" then
+						TweenService:Create(Functions.Button.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+						TweenService:Create(Functions.Button.Circle, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {BackgroundTransparency = 1}):Play()
+						TweenService:Create(Functions.TextBoxParent.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+						TweenService:Create(Functions.TextBoxParent.TextBox, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+					elseif Functions.Type.Value == "Button" then
+						TweenService:Create(Functions.Button, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
+						TweenService:Create(Functions.Button.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+					elseif Functions.Type.Value == "TextBox" then
+						TweenService:Create(Functions.Button, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
+						TweenService:Create(Functions.Button.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+						TweenService:Create(Functions.TextBoxParent.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+						TweenService:Create(Functions.TextBoxParent.TextBox, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+					end
+				end
+			end
+
+		elseif TabName == "Report" then
+			TweenService:Create(Tab.Robot, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
+			wait(AnimationSpeed/2)
+			TweenService:Create(Tab.ReportText, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+			wait(AnimationSpeed/4)
+			TweenService:Create(Tab.Info, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+			
+		elseif string.find(TabName, "Plugin") then
+			TweenService:Create(Tab.SectionInfo.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+			TweenService:Create(Tab.SectionInfo.ImageLabel, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
+			TweenService:Create(Tab.SectionInfo.SectionName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+			wait(AnimationSpeed/2)
+			TweenService:Create(Tab.BottomFrame.LeftFrame.SearchFrame.TextBoxParent.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.LeftFrame.SearchFrame.TextBoxParent.TextBox, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.LeftFrame.SearchFrame.SearchButton, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.LeftFrame.SearchFrame.SearchButton.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+			wait(AnimationSpeed/4)
+			TweenService:Create(Tab.BottomFrame.LeftFrame.Scripts.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.LeftFrame.Scripts.ScrollingFrame, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ScrollBarImageTransparency = 1}):Play()
+			for _, Buttons in Tab.BottomFrame.LeftFrame.Scripts.ScrollingFrame:GetChildren() do
+				if Buttons:IsA("ImageButton") then
+					TweenService:Create(Buttons, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
+					TweenService:Create(Buttons.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+					TweenService:Create(Buttons.ScriptName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+				end
+			end
+			wait(AnimationSpeed/8)
+			TweenService:Create(Tab.BottomFrame.ScriptInfo.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.ScriptInfo.ScriptDetails, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.ScriptInfo.BottomFrame.Play, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {BackgroundTransparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.ScriptInfo.BottomFrame.Play, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.ScriptInfo.BottomFrame.Play.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.ScriptInfo.BottomFrame.Execute, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+			TweenService:Create(Tab.BottomFrame.ScriptInfo.BottomFrame.Execute.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+		else
+			print("Name does not exist in the Library")
+		end
+
+	end)()
+end
+
+return Library
