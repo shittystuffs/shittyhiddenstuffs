@@ -5,9 +5,9 @@ local Player = game:GetService("Players").LocalPlayer
 
 function StringToColor3(ToConvert)
 	local ColorString = ToConvert
-	local ColorR, ColorG, ColorB = ColorString:match("(%d+),(%d+),(%d+)")
+	local ColorR, ColorG, ColorB = ColorString:match("(%d+), (%d+), (%d+)")
 	ColorR, ColorG, ColorB = tonumber(ColorR), tonumber(ColorG), tonumber(ColorB)
-	return Color3.new(ColorR/255, ColorG/255, ColorB/255)
+	return ColorR/255, ColorG/255, ColorB/255
 end
 
 -- Instances:
@@ -241,7 +241,7 @@ UICorner_3.Parent = TopFrame
 
 PlayerProfile.Name = "PlayerProfile"
 PlayerProfile.Parent = TopFrame
-PlayerProfile.BackgroundColor3 = StringToColor3(Table.GuiSettings.GuiBackgroundColor)
+PlayerProfile.BackgroundColor3 = Color3.fromRGB()
 PlayerProfile.BackgroundTransparency = 0.900
 PlayerProfile.BorderColor3 = Color3.fromRGB(0, 0, 0)
 PlayerProfile.BorderSizePixel = 0
