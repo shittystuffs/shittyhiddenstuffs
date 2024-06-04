@@ -1333,7 +1333,7 @@ UICorner_27.CornerRadius = UDim.new(0.0900000036, 0)
 UICorner_27.Parent = BackFrame
 
 UIScale.Parent = BackFrame
-
+UIScale.Scale = Table.GuiSettings.GuiScale
 -- Scripts:
 
 coroutine.wrap(function()
