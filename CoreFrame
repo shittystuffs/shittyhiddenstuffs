@@ -253,7 +253,7 @@ UICorner_4.CornerRadius = UDim.new(0.300000012, 0)
 UICorner_4.Parent = PlayerProfile
 
 UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke.Color = Color3.fromRGB(Table.GuiSettings.UIStrokeColor)
+UIStroke.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
 UIStroke.Thickness = 0.700
 UIStroke.Transparency = 0.800
 UIStroke.Parent = PlayerProfile
@@ -271,7 +271,7 @@ UICorner_5.CornerRadius = UDim.new(1, 0)
 UICorner_5.Parent = ProfilePicture
 
 UIStroke_2.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_2.Color = Color3.fromRGB(StringToColor3(Table.GuiSettings.UIStrokeColor))
+UIStroke_2.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
 UIStroke_2.Thickness = 0.700
 UIStroke_2.Transparency = 0.800
 UIStroke_2.Parent = ProfilePicture
@@ -314,7 +314,7 @@ UICorner_6.CornerRadius = UDim.new(0.300000012, 0)
 UICorner_6.Parent = VexHubTopBar
 
 UIStroke_3.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_3.Color = Color3.fromRGB(Table.GuiSettings.UIStrokeColor)
+UIStroke_3.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
 UIStroke_3.Thickness = 0.700
 UIStroke_3.Transparency = 0.800
 UIStroke_3.Parent = VexHubTopBar
@@ -381,7 +381,7 @@ UICorner_8.CornerRadius = UDim.new(0.300000012, 0)
 UICorner_8.Parent = TopRight
 
 UIStroke_4.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_4.Color = Color3.fromRGB(Table.GuiSettings.UIStrokeColor)
+UIStroke_4.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
 UIStroke_4.Thickness = 0.700
 UIStroke_4.Transparency = 0.800
 UIStroke_4.Parent = TopRight
@@ -503,7 +503,7 @@ UIListLayout_8.VerticalAlignment = Enum.VerticalAlignment.Center
 UIListLayout_8.Padding = UDim.new(0, 5)
 
 UIStroke_5.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_5.Color = Color3.fromRGB(Table.GuiSettings.UIStrokeColor)
+UIStroke_5.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
 UIStroke_5.Thickness = 0.700
 UIStroke_5.Transparency = 0.800
 UIStroke_5.Parent = Home
@@ -558,7 +558,7 @@ UIListLayout_9.VerticalAlignment = Enum.VerticalAlignment.Center
 UIListLayout_9.Padding = UDim.new(0, 5)
 
 UIStroke_6.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_6.Color = Color3.fromRGB(Table.GuiSettings.UIStrokeColor)
+UIStroke_6.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
 UIStroke_6.Thickness = 0.700
 UIStroke_6.Transparency = 0.800
 UIStroke_6.Parent = Scripts
@@ -613,7 +613,7 @@ UIListLayout_10.VerticalAlignment = Enum.VerticalAlignment.Center
 UIListLayout_10.Padding = UDim.new(0, 5)
 
 UIStroke_7.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_7.Color = Color3.fromRGB(Table.GuiSettings.UIStrokeColor)
+UIStroke_7.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
 UIStroke_7.Thickness = 0.700
 UIStroke_7.Transparency = 0.800
 UIStroke_7.Parent = RequiredAccessories
@@ -668,7 +668,7 @@ UIListLayout_11.VerticalAlignment = Enum.VerticalAlignment.Center
 UIListLayout_11.Padding = UDim.new(0, 5)
 
 UIStroke_8.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_8.Color = Color3.fromRGB(Table.GuiSettings.UIStrokeColor)
+UIStroke_8.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
 UIStroke_8.Thickness = 0.700
 UIStroke_8.Transparency = 0.800
 UIStroke_8.Parent = GUIS
@@ -723,7 +723,7 @@ UIListLayout_12.VerticalAlignment = Enum.VerticalAlignment.Center
 UIListLayout_12.Padding = UDim.new(0, 5)
 
 UIStroke_9.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_9.Color = Color3.fromRGB(Table.GuiSettings.UIStrokeColor)
+UIStroke_9.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
 UIStroke_9.Thickness = 0.700
 UIStroke_9.Transparency = 0.800
 UIStroke_9.Parent = Animations
@@ -778,7 +778,7 @@ UIListLayout_13.VerticalAlignment = Enum.VerticalAlignment.Center
 UIListLayout_13.Padding = UDim.new(0, 5)
 
 UIStroke_10.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_10.Color = Color3.fromRGB(Table.GuiSettings.UIStrokeColor)
+UIStroke_10.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
 UIStroke_10.Thickness = 0.700
 UIStroke_10.Transparency = 0.800
 UIStroke_10.Parent = Commands
@@ -833,7 +833,7 @@ UIListLayout_14.VerticalAlignment = Enum.VerticalAlignment.Center
 UIListLayout_14.Padding = UDim.new(0, 5)
 
 UIStroke_11.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_11.Color = Color3.fromRGB(Table.GuiSettings.UIStrokeColor)
+UIStroke_11.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
 UIStroke_11.Thickness = 0.700
 UIStroke_11.Transparency = 0.800
 UIStroke_11.Parent = OtherHubs
@@ -888,7 +888,7 @@ UIListLayout_15.VerticalAlignment = Enum.VerticalAlignment.Center
 UIListLayout_15.Padding = UDim.new(0, 5)
 
 UIStroke_12.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_12.Color = Color3.fromRGB(Table.GuiSettings.UIStrokeColor)
+UIStroke_12.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
 UIStroke_12.Thickness = 0.700
 UIStroke_12.Transparency = 0.800
 UIStroke_12.Parent = LimitedScripts
@@ -969,7 +969,7 @@ UIListLayout_16.VerticalAlignment = Enum.VerticalAlignment.Center
 UIListLayout_16.Padding = UDim.new(0, 5)
 
 UIStroke_13.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_13.Color = Color3.fromRGB(Table.GuiSettings.UIStrokeColor)
+UIStroke_13.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
 UIStroke_13.Thickness = 0.700
 UIStroke_13.Transparency = 0.800
 UIStroke_13.Parent = Plugins
@@ -1037,7 +1037,7 @@ UIListLayout_17.VerticalAlignment = Enum.VerticalAlignment.Center
 UIListLayout_17.Padding = UDim.new(0, 5)
 
 UIStroke_14.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_14.Color = Color3.fromRGB(Table.GuiSettings.UIStrokeColor)
+UIStroke_14.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
 UIStroke_14.Thickness = 0.700
 UIStroke_14.Transparency = 0.800
 UIStroke_14.Parent = Settings
@@ -1092,7 +1092,7 @@ UIListLayout_18.VerticalAlignment = Enum.VerticalAlignment.Center
 UIListLayout_18.Padding = UDim.new(0, 5)
 
 UIStroke_15.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_15.Color = Color3.fromRGB(Table.GuiSettings.UIStrokeColor)
+UIStroke_15.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
 UIStroke_15.Thickness = 0.700
 UIStroke_15.Transparency = 0.800
 UIStroke_15.Parent = Report
@@ -1147,7 +1147,7 @@ UIListLayout_19.VerticalAlignment = Enum.VerticalAlignment.Center
 UIListLayout_19.Padding = UDim.new(0, 5)
 
 UIStroke_16.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_16.Color = Color3.fromRGB(Table.GuiSettings.UIStrokeColor)
+UIStroke_16.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
 UIStroke_16.Thickness = 0.700
 UIStroke_16.Transparency = 0.800
 UIStroke_16.Parent = LocalPlayer
@@ -1205,7 +1205,7 @@ UIListLayout_20.VerticalAlignment = Enum.VerticalAlignment.Center
 UIListLayout_20.Padding = UDim.new(0, 5)
 
 UIStroke_17.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_17.Color = Color3.fromRGB(Table.GuiSettings.UIStrokeColor)
+UIStroke_17.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
 UIStroke_17.Thickness = 0.700
 UIStroke_17.Transparency = 0.800
 UIStroke_17.Parent = Favorites
@@ -1260,7 +1260,7 @@ UIListLayout_21.VerticalAlignment = Enum.VerticalAlignment.Center
 UIListLayout_21.Padding = UDim.new(0, 5)
 
 UIStroke_18.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_18.Color = Color3.fromRGB(Table.GuiSettings.UIStrokeColor)
+UIStroke_18.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
 UIStroke_18.Thickness = 0.700
 UIStroke_18.Transparency = 0.800
 UIStroke_18.Parent = LoadString
@@ -1305,7 +1305,7 @@ UICorner_25.CornerRadius = UDim.new(0.100000001, 0)
 UICorner_25.Parent = Tabs
 
 UIStroke_19.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_19.Color = Color3.fromRGB(Table.GuiSettings.UIStrokeColor)
+UIStroke_19.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
 UIStroke_19.Thickness = 0.700
 UIStroke_19.Transparency = 0.800
 UIStroke_19.Parent = Tabs
@@ -1324,7 +1324,7 @@ UICorner_26.CornerRadius = UDim.new(0.0500000007, 0)
 UICorner_26.Parent = Pages
 
 UIStroke_20.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_20.Color = Color3.fromRGB(Table.GuiSettings.UIStrokeColor)
+UIStroke_20.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
 UIStroke_20.Thickness = 0.700
 UIStroke_20.Transparency = 0.800
 UIStroke_20.Parent = Pages
