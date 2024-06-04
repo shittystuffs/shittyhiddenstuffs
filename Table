@@ -27,9 +27,9 @@ getgenv().Table = {
 		AnimationSpeed = 0.6,
 		EasingStyle = "Quart",
 		GuiFont = {
-			Regular = "Montserrat",
-			Medium = "MontserratMedium",
-			Bold = "MontserratBold",
+			Regular = "Cartoon",
+			Medium = "Cartoon",
+			Bold = "Cartoon",
 		},
 		BackgroundGradientColor = "200, 200, 200",
 		UIStrokeColor = "255, 255, 255",
