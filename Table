@@ -32,7 +32,7 @@ getgenv().Table = {
 			Bold = "MontserratBold",
 		},
 		BackgroundGradientColor = "255, 255, 255",
-		UIStrokeColor = "255, 255, 255",
+		UIStrokeColor = "200, 200, 200",
 		NotificationSound = 6324790483,
 		NotificationVolume = 0.5,
 		PlayerBadges = {
