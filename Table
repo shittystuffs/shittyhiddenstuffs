@@ -1,0 +1,109 @@
+local Table = {
+	GuiStatus = {
+		IsVisible = false,
+		OnGoingAnimation = false,
+		ActivePage = nil,
+		TargetPlugin = nil,
+		GuiVersion = 6.143,
+		KeyChangeDate = "8/8/8",
+		Owner = "V31nc",
+		Credits = "<b>Credits:</b>\nV31nc - Creator of VexHub\nitspls - Created the logo\nVanilla 3 (Elttob) - Icons\n\nKey Change: 8/8/8",
+		Logo = 14803348752,
+		Name = "VexHub",
+		DiscordLink = "dsc.gg/vhub",
+		AreModeratorsAllowedToAnnounce = true,
+		ImportantAnnouncement = "hello",
+		Updates = {
+			"New Gui",
+			"alot has changed"
+		}
+	},
+
+	GuiSettings = {
+		Wallpaper = 11926598891,
+		Notifications = true,
+		GuiBackground = "White",
+		GuiScale = 1,
+		AnimationSpeed = 0.6,
+		EasingStyle = "Quart",
+		GuiFont = {
+			Regular = "Montserrat",
+			Medium = "MontserratMedium",
+			Bold = "MontserratBold",
+		},
+		BackgroundGradientColor = "255, 255, 255",
+		UIStrokeColor = "255, 255, 255",
+		NotificationSound = 6324790483,
+		NotificationVolume = 0.5,
+		PlayerBadges = {
+			Heart = true,
+			Piece = true,
+			ShootingStar = true,
+			Star = true,
+			Trophy = true,
+			Tube = true,
+			Wrench = true
+		}
+	},
+
+	GuiScripts = {
+		Scripts = {
+			["NameScriptName"] = {
+				Owner = "V31nc",
+				Description = "Hello World",
+				GameId = 0,
+				RigType = "Any", -- R6, R15, Any
+				Notes = "idk",
+				ScriptId = 0000,
+				Favorited = false,
+				Script = function()
+					print("hello")
+				end,
+			}
+		}
+	},
+
+	Plugins = nil,
+
+	LocalPlayerFeatures = {
+		["TextBox"] = {
+			TypeOfFunction = "TextBox",
+			Value = nil,
+			PlaceHolderText = "Value",
+			ScriptIfActivated = function()
+			end,
+		},
+
+		["BoolWithTextBox"] = {
+			TypeOfFunction = "BoolWithTextBox",
+			Active = false,
+			Running = false,
+			Value = nil,
+			PlaceHolderText = "Value",
+			ScriptIfActivated = function()
+			end,
+
+			ScriptIfDeactivated = function()
+			end,
+		},
+		
+		["Bool"] = {
+			TypeOfFunction = "Bool",
+			Active = false,
+			Running = false,
+			ScriptIfActivated = function()
+			end,
+			
+			ScriptIfDeactivated = function()
+			end,
+		},
+		
+		["Button"] = {
+			TypeOfFunction = "Button",
+			ScriptIfActivated = function()
+			end,
+		}
+	}
+}
+
+return Table
