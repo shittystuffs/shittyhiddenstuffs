@@ -199,6 +199,7 @@ ScrollingFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 ScrollingFrame.BorderSizePixel = 0
 ScrollingFrame.Position = UDim2.new(0, 0, 0.200000003, 0)
 ScrollingFrame.Size = UDim2.new(0, 140, 0, 80)
+ScrollingFrame.AutomaticCanvasSize = Enum.AutomaticSize.Y
 ScrollingFrame.CanvasSize = UDim2.new(0, 0, 0, 0)
 ScrollingFrame.ScrollBarThickness = 2
 
