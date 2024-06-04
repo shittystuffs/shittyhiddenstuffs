@@ -1,0 +1,515 @@
+-- V31nc : GUI to LUA V1
+
+local Table = getgenv().Table
+local Player = game:GetService("Players").LocalPlayer
+local TweenService = game:GetService("TweenService")
+
+function StringToColor3(ToConvert)
+local ColorString = tostring(ToConvert)
+local ColorR, ColorG, ColorB = ColorString:match("(%d+), (%d+), (%d+)")
+ColorR, ColorG, ColorB = tonumber(ColorR),tonumber(ColorG),tonumber(ColorB)
+return ColorR/255,ColorG/255,ColorB/255
+end
+
+-- Instances:
+
+local Home = Instance.new("Frame")
+local Profile = Instance.new("Frame")
+local ProfilePic = Instance.new("ImageLabel")
+local UICorner = Instance.new("UICorner")
+local UIStroke = Instance.new("UIStroke")
+local UIListLayout = Instance.new("UIListLayout")
+local UsernameAndDisplayName = Instance.new("TextLabel")
+local Bottom = Instance.new("Frame")
+local UpdatesFrame = Instance.new("Frame")
+local UIStroke_2 = Instance.new("UIStroke")
+local UICorner_2 = Instance.new("UICorner")
+local Label = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local UIListLayout_2 = Instance.new("UIListLayout")
+local ImageLabel = Instance.new("ImageLabel")
+local ScrollingFrame = Instance.new("ScrollingFrame")
+local UpdateTemplate = Instance.new("Frame")
+local UICorner_3 = Instance.new("UICorner")
+local UIStroke_3 = Instance.new("UIStroke")
+local UpdateText = Instance.new("TextLabel")
+local UIListLayout_3 = Instance.new("UIListLayout")
+local Barrier = Instance.new("Frame")
+local Barrier_2 = Instance.new("Frame")
+local UIListLayout_4 = Instance.new("UIListLayout")
+local RightFrame = Instance.new("Frame")
+local AnnouncementsFrame = Instance.new("Frame")
+local UIStroke_4 = Instance.new("UIStroke")
+local UICorner_4 = Instance.new("UICorner")
+local Label_2 = Instance.new("Frame")
+local TextLabel_2 = Instance.new("TextLabel")
+local UIListLayout_5 = Instance.new("UIListLayout")
+local ImageLabel_2 = Instance.new("ImageLabel")
+local UIListLayout_6 = Instance.new("UIListLayout")
+local ScrollingFrame_2 = Instance.new("ScrollingFrame")
+local TextLabel_3 = Instance.new("TextLabel")
+local UIListLayout_7 = Instance.new("UIListLayout")
+local BadgesFrame = Instance.new("Frame")
+local UIStroke_5 = Instance.new("UIStroke")
+local UICorner_5 = Instance.new("UICorner")
+local UIListLayout_8 = Instance.new("UIListLayout")
+local ShootingStar = Instance.new("TextLabel")
+local Wrench = Instance.new("TextLabel")
+local Star = Instance.new("TextLabel")
+local Trophy = Instance.new("TextLabel")
+local Piece = Instance.new("TextLabel")
+local Tube = Instance.new("TextLabel")
+local Heart = Instance.new("TextLabel")
+local UIListLayout_9 = Instance.new("UIListLayout")
+local UIListLayout_10 = Instance.new("UIListLayout")
+
+--Properties:
+
+Home.Name = "Home"
+Home.Parent = game:GetService("CoreGui"):WaitForChild("VexHubFolder").VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Pages
+Home.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Home.BackgroundTransparency = 1.000
+Home.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Home.BorderSizePixel = 0
+Home.Size = UDim2.new(1, 0, 1, 0)
+
+Profile.Name = "Profile"
+Profile.Parent = Home
+Profile.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Profile.BackgroundTransparency = 1.000
+Profile.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Profile.BorderSizePixel = 0
+Profile.LayoutOrder = 1
+Profile.Size = UDim2.new(1, 0, 0, 80)
+
+ProfilePic.Name = "ProfilePic"
+ProfilePic.Parent = Profile
+ProfilePic.BackgroundColor3 = Color3.new(StringToColor3(Table.GuiSettings.GuiBackgroundColor))
+ProfilePic.BackgroundTransparency = 0.900
+ProfilePic.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ProfilePic.BorderSizePixel = 0
+ProfilePic.Position = UDim2.new(0.0119402986, 0, 0.0526315682, 0)
+ProfilePic.Size = UDim2.new(0, 70, 0, 70)
+ProfilePic.Image = "https://www.roblox.com/headshot-thumbnail/image?userId="..Player.UserId.."&width=420&height=420&format=png"
+
+UICorner.CornerRadius = UDim.new(1, 0)
+UICorner.Parent = ProfilePic
+
+UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
+UIStroke.Thickness = 0.700
+UIStroke.Transparency = 0.800
+UIStroke.Parent = ProfilePic
+
+UIListLayout.Parent = Profile
+UIListLayout.FillDirection = Enum.FillDirection.Horizontal
+UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Center
+UIListLayout.Padding = UDim.new(0, 7)
+
+UsernameAndDisplayName.Name = "UsernameAndDisplayName"
+UsernameAndDisplayName.Parent = Profile
+UsernameAndDisplayName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+UsernameAndDisplayName.BackgroundTransparency = 1.000
+UsernameAndDisplayName.BorderColor3 = Color3.fromRGB(0, 0, 0)
+UsernameAndDisplayName.BorderSizePixel = 0
+UsernameAndDisplayName.Position = UDim2.new(0.313432842, 0, 0.125, 0)
+UsernameAndDisplayName.RichText = true
+UsernameAndDisplayName.Size = UDim2.new(0, 242, 0, 60)
+UsernameAndDisplayName.Font = Enum.Font[Table.GuiSettings.GuiFont.Regular]
+UsernameAndDisplayName.Text = '<b>Hello, '..Player.DisplayName..'!</b>\n<font size="10">@'..Player.Name..'</font>'
+UsernameAndDisplayName.TextColor3 = Color3.fromRGB(255, 255, 255)
+UsernameAndDisplayName.TextSize = 25.000
+UsernameAndDisplayName.TextWrapped = true
+UsernameAndDisplayName.TextXAlignment = Enum.TextXAlignment.Left
+
+Bottom.Name = "Bottom"
+Bottom.Parent = Home
+Bottom.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Bottom.BackgroundTransparency = 1.000
+Bottom.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Bottom.BorderSizePixel = 0
+Bottom.LayoutOrder = 2
+Bottom.Position = UDim2.new(0, 0, 0.513157904, 0)
+Bottom.Size = UDim2.new(1, 0, 0.144736841, 80)
+
+UpdatesFrame.Name = "UpdatesFrame"
+UpdatesFrame.Parent = Bottom
+UpdatesFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+UpdatesFrame.BackgroundTransparency = 1.000
+UpdatesFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+UpdatesFrame.BorderSizePixel = 0
+UpdatesFrame.Position = UDim2.new(0.0238805972, 0, 0.0279069766, 0)
+UpdatesFrame.Size = UDim2.new(0, 140, 0, 100)
+
+UIStroke_2.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke_2.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
+UIStroke_2.Thickness = 0.700
+UIStroke_2.Transparency = 0.800
+UIStroke_2.Parent = UpdatesFrame
+
+UICorner_2.CornerRadius = UDim.new(0.100000001, 0)
+UICorner_2.Parent = UpdatesFrame
+
+Label.Name = "Label"
+Label.Parent = UpdatesFrame
+Label.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Label.BackgroundTransparency = 1.000
+Label.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Label.BorderSizePixel = 0
+Label.Size = UDim2.new(0, 140, 0, 20)
+
+TextLabel.Parent = Label
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.BorderSizePixel = 0
+TextLabel.LayoutOrder = 2
+TextLabel.Position = UDim2.new(0.400000006, 0, 0, 0)
+TextLabel.Size = UDim2.new(0, 51, 0, 13)
+TextLabel.Font = Enum.Font[Table.GuiSettings.GuiFont.Medium]
+TextLabel.Text = "Updates"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 12.000
+TextLabel.TextXAlignment = Enum.TextXAlignment.Left
+TextLabel.TextYAlignment = Enum.TextYAlignment.Bottom
+
+UIListLayout_2.Parent = Label
+UIListLayout_2.FillDirection = Enum.FillDirection.Horizontal
+UIListLayout_2.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout_2.VerticalAlignment = Enum.VerticalAlignment.Center
+UIListLayout_2.Padding = UDim.new(0, 3)
+
+ImageLabel.Parent = Label
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.BackgroundTransparency = 1.000
+ImageLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ImageLabel.BorderSizePixel = 0
+ImageLabel.LayoutOrder = 1
+ImageLabel.Size = UDim2.new(0, 20, 0, 20)
+ImageLabel.Image = "http://www.roblox.com/asset/?id=11606523464"
+
+ScrollingFrame.Parent = UpdatesFrame
+ScrollingFrame.Active = true
+ScrollingFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScrollingFrame.BackgroundTransparency = 1.000
+ScrollingFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScrollingFrame.BorderSizePixel = 0
+ScrollingFrame.Position = UDim2.new(0, 0, 0.200000003, 0)
+ScrollingFrame.Size = UDim2.new(0, 140, 0, 80)
+ScrollingFrame.CanvasSize = UDim2.new(0, 0, 0, 0)
+ScrollingFrame.ScrollBarThickness = 2
+
+UpdateTemplate.Name = "UpdateTemplate"
+UpdateTemplate.Parent = ScrollingFrame
+UpdateTemplate.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+UpdateTemplate.BackgroundTransparency = 1.000
+UpdateTemplate.BorderColor3 = Color3.fromRGB(0, 0, 0)
+UpdateTemplate.BorderSizePixel = 0
+UpdateTemplate.LayoutOrder = 2
+UpdateTemplate.Size = UDim2.new(0, 135, 0, 16)
+UpdateTemplate.Visible = false
+
+UICorner_3.CornerRadius = UDim.new(0.300000012, 0)
+UICorner_3.Parent = UpdateTemplate
+
+UIStroke_3.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke_3.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
+UIStroke_3.Thickness = 0.700
+UIStroke_3.Transparency = 0.800
+UIStroke_3.Parent = UpdateTemplate
+
+UpdateText.Name = "UpdateText"
+UpdateText.Parent = UpdateTemplate
+UpdateText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+UpdateText.BackgroundTransparency = 1.000
+UpdateText.BorderColor3 = Color3.fromRGB(0, 0, 0)
+UpdateText.BorderSizePixel = 0
+UpdateText.Size = UDim2.new(0, 135, 0, 16)
+UpdateText.Font = Enum.Font[Table.GuiSettings.GuiFont.Medium]
+UpdateText.TextColor3 = Color3.fromRGB(255, 255, 255)
+UpdateText.TextSize = 9.000
+
+UIListLayout_3.Parent = ScrollingFrame
+UIListLayout_3.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout_3.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout_3.Padding = UDim.new(0, 3)
+
+Barrier.Name = "Barrier"
+Barrier.Parent = ScrollingFrame
+Barrier.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Barrier.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Barrier.BorderSizePixel = 0
+Barrier.LayoutOrder = 1
+
+Barrier_2.Name = "Barrier"
+Barrier_2.Parent = ScrollingFrame
+Barrier_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Barrier_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Barrier_2.BorderSizePixel = 0
+Barrier_2.LayoutOrder = 100
+
+UIListLayout_4.Parent = Bottom
+UIListLayout_4.FillDirection = Enum.FillDirection.Horizontal
+UIListLayout_4.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout_4.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout_4.Padding = UDim.new(0, 7)
+
+RightFrame.Name = "RightFrame"
+RightFrame.Parent = Bottom
+RightFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+RightFrame.BackgroundTransparency = 1.000
+RightFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+RightFrame.BorderSizePixel = 0
+RightFrame.Position = UDim2.new(0.471641868, 0, 0, 0)
+RightFrame.Size = UDim2.new(0, 169, 0, 100)
+
+AnnouncementsFrame.Name = "AnnouncementsFrame"
+AnnouncementsFrame.Parent = RightFrame
+AnnouncementsFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+AnnouncementsFrame.BackgroundTransparency = 1.000
+AnnouncementsFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+AnnouncementsFrame.BorderSizePixel = 0
+AnnouncementsFrame.Position = UDim2.new(-0.00295857992, 0, 0, 0)
+AnnouncementsFrame.Size = UDim2.new(0, 170, 0, 68)
+
+UIStroke_4.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke_4.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
+UIStroke_4.Thickness = 0.700
+UIStroke_4.Transparency = 0.800
+UIStroke_4.Parent = AnnouncementsFrame
+
+UICorner_4.CornerRadius = UDim.new(0.100000001, 0)
+UICorner_4.Parent = AnnouncementsFrame
+
+Label_2.Name = "Label"
+Label_2.Parent = AnnouncementsFrame
+Label_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Label_2.BackgroundTransparency = 1.000
+Label_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Label_2.BorderSizePixel = 0
+Label_2.Size = UDim2.new(0, 170, 0, 20)
+
+TextLabel_2.Parent = Label_2
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_2.BorderSizePixel = 0
+TextLabel_2.LayoutOrder = 2
+TextLabel_2.Position = UDim2.new(0.417647064, 0, 0.174999997, 0)
+TextLabel_2.Size = UDim2.new(0, 87, 0, 13)
+TextLabel_2.Font = Enum.Font[Table.GuiSettings.GuiFont.Medium]
+TextLabel_2.Text = "Announcement"
+TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.TextSize = 12.000
+TextLabel_2.TextXAlignment = Enum.TextXAlignment.Left
+TextLabel_2.TextYAlignment = Enum.TextYAlignment.Bottom
+
+UIListLayout_5.Parent = Label_2
+UIListLayout_5.FillDirection = Enum.FillDirection.Horizontal
+UIListLayout_5.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout_5.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout_5.VerticalAlignment = Enum.VerticalAlignment.Center
+UIListLayout_5.Padding = UDim.new(0, 3)
+
+ImageLabel_2.Parent = Label_2
+ImageLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel_2.BackgroundTransparency = 1.000
+ImageLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ImageLabel_2.BorderSizePixel = 0
+ImageLabel_2.LayoutOrder = 1
+ImageLabel_2.Size = UDim2.new(0, 20, 0, 20)
+ImageLabel_2.Image = "http://www.roblox.com/asset/?id=11738116961"
+
+UIListLayout_6.Parent = AnnouncementsFrame
+UIListLayout_6.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout_6.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout_6.VerticalAlignment = Enum.VerticalAlignment.Center
+
+ScrollingFrame_2.Parent = AnnouncementsFrame
+ScrollingFrame_2.Active = true
+ScrollingFrame_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScrollingFrame_2.BackgroundTransparency = 1.000
+ScrollingFrame_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScrollingFrame_2.BorderSizePixel = 0
+ScrollingFrame_2.Position = UDim2.new(0, 0, -0.0661764741, 0)
+ScrollingFrame_2.Size = UDim2.new(0, 170, 0, 48)
+ScrollingFrame_2.ScrollBarThickness = 2
+
+TextLabel_3.Parent = ScrollingFrame_2
+TextLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_3.BackgroundTransparency = 1.000
+TextLabel_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel_3.BorderSizePixel = 0
+TextLabel_3.RichText = true
+TextLabel_3.Size = UDim2.new(0.949999988, 0, 1, 0)
+TextLabel_3.Font = Enum.Font[Table.GuiSettings.GuiFont.Regular]
+TextLabel_3.Text = "yo new gui"
+TextLabel_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_3.TextSize = 10.000
+TextLabel_3.TextWrapped = true
+TextLabel_3.TextXAlignment = Enum.TextXAlignment.Left
+TextLabel_3.TextYAlignment = Enum.TextYAlignment.Top
+
+UIListLayout_7.Parent = ScrollingFrame_2
+UIListLayout_7.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout_7.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout_7.VerticalAlignment = Enum.VerticalAlignment.Center
+
+BadgesFrame.Name = "BadgesFrame"
+BadgesFrame.Parent = RightFrame
+BadgesFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+BadgesFrame.BackgroundTransparency = 1.000
+BadgesFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+BadgesFrame.BorderSizePixel = 0
+BadgesFrame.Position = UDim2.new(-0.00295857992, 0, 0.524999976, 0)
+BadgesFrame.Size = UDim2.new(0, 170, 0, 25)
+
+UIStroke_5.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke_5.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
+UIStroke_5.Thickness = 0.700
+UIStroke_5.Transparency = 0.800
+UIStroke_5.Parent = BadgesFrame
+
+UICorner_5.CornerRadius = UDim.new(0.300000012, 0)
+UICorner_5.Parent = BadgesFrame
+
+UIListLayout_8.Parent = BadgesFrame
+UIListLayout_8.FillDirection = Enum.FillDirection.Horizontal
+UIListLayout_8.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout_8.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout_8.VerticalAlignment = Enum.VerticalAlignment.Center
+UIListLayout_8.Padding = UDim.new(0, 3)
+
+ShootingStar.Name = "ShootingStar"
+ShootingStar.Parent = BadgesFrame
+ShootingStar.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ShootingStar.BackgroundTransparency = 1.000
+ShootingStar.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ShootingStar.BorderSizePixel = 0
+ShootingStar.LayoutOrder = 1
+ShootingStar.Size = UDim2.new(0, 18, 0, 18)
+ShootingStar.Visible = false
+ShootingStar.Font = Enum.Font.SourceSans
+ShootingStar.Text = "🌠"
+ShootingStar.TextColor3 = Color3.fromRGB(0, 0, 0)
+ShootingStar.TextSize = 14.000
+
+Wrench.Name = "Wrench"
+Wrench.Parent = BadgesFrame
+Wrench.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Wrench.BackgroundTransparency = 1.000
+Wrench.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Wrench.BorderSizePixel = 0
+Wrench.LayoutOrder = 2
+Wrench.Size = UDim2.new(0, 18, 0, 18)
+Wrench.Visible = false
+Wrench.Font = Enum.Font.SourceSans
+Wrench.Text = "🔧"
+Wrench.TextColor3 = Color3.fromRGB(0, 0, 0)
+Wrench.TextSize = 14.000
+
+Star.Name = "Star"
+Star.Parent = BadgesFrame
+Star.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Star.BackgroundTransparency = 1.000
+Star.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Star.BorderSizePixel = 0
+Star.LayoutOrder = 3
+Star.Size = UDim2.new(0, 18, 0, 18)
+Star.Visible = false
+Star.Font = Enum.Font.SourceSans
+Star.Text = "⭐"
+Star.TextColor3 = Color3.fromRGB(0, 0, 0)
+Star.TextSize = 14.000
+
+Trophy.Name = "Trophy"
+Trophy.Parent = BadgesFrame
+Trophy.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Trophy.BackgroundTransparency = 1.000
+Trophy.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Trophy.BorderSizePixel = 0
+Trophy.LayoutOrder = 4
+Trophy.Size = UDim2.new(0, 18, 0, 18)
+Trophy.Visible = false
+Trophy.Font = Enum.Font.SourceSans
+Trophy.Text = "🏆"
+Trophy.TextColor3 = Color3.fromRGB(0, 0, 0)
+Trophy.TextSize = 14.000
+
+Piece.Name = "Piece"
+Piece.Parent = BadgesFrame
+Piece.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Piece.BackgroundTransparency = 1.000
+Piece.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Piece.BorderSizePixel = 0
+Piece.LayoutOrder = 5
+Piece.Size = UDim2.new(0, 18, 0, 18)
+Piece.Visible = false
+Piece.Font = Enum.Font.SourceSans
+Piece.Text = "🧩"
+Piece.TextColor3 = Color3.fromRGB(0, 0, 0)
+Piece.TextSize = 14.000
+
+Tube.Name = "Tube"
+Tube.Parent = BadgesFrame
+Tube.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Tube.BackgroundTransparency = 1.000
+Tube.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Tube.BorderSizePixel = 0
+Tube.LayoutOrder = 6
+Tube.Size = UDim2.new(0, 18, 0, 18)
+Tube.Visible = false
+Tube.Font = Enum.Font.SourceSans
+Tube.Text = "🧪"
+Tube.TextColor3 = Color3.fromRGB(0, 0, 0)
+Tube.TextSize = 14.000
+
+Heart.Name = "Heart"
+Heart.Parent = BadgesFrame
+Heart.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Heart.BackgroundTransparency = 1.000
+Heart.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Heart.BorderSizePixel = 0
+Heart.LayoutOrder = 7
+Heart.Size = UDim2.new(0, 18, 0, 18)
+Heart.Visible = false
+Heart.Font = Enum.Font.SourceSans
+Heart.Text = "💝"
+Heart.TextColor3 = Color3.fromRGB(0, 0, 0)
+Heart.TextSize = 14.000
+
+UIListLayout_9.Parent = RightFrame
+UIListLayout_9.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout_9.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout_9.VerticalAlignment = Enum.VerticalAlignment.Center
+UIListLayout_9.Padding = UDim.new(0, 7)
+
+UIListLayout_10.Parent = Home
+UIListLayout_10.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout_10.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout_10.VerticalAlignment = Enum.VerticalAlignment.Center
+UIListLayout_10.Padding = UDim.new(0, 5)
+
+-- Scripts:
+
+	for _, Update in Table.GuiStatus.Updates do
+		UpdateTemplate = UpdateTemplate:Clone()
+		
+		UpdateTemplate.Name = "Update"
+		UpdateTemplate.Parent = ScrollingFrame
+		UpdateTemplate.UpdateText.Text = Update
+		UpdateTemplate.Visible = true
+	end
+
+	for _, Badges in BadgesFrame:GetChildren() do
+		if Badges:IsA("TextLabel") then
+			if Table.GuiSettings.PlayerBadges[Badges.Name] == true then
+				Badges.Visible = true
+			else
+				Badges.Visible = false
+			end
+		end
+	end
