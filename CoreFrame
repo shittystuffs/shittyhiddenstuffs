@@ -5,7 +5,7 @@ local Player = game:GetService("Players").LocalPlayer
 
 function StringToColor3(ToConvert)
 local ColorString = tostring(ToConvert)
-local ColorR, ColorG, ColorB = ColorString:match("(%d+), (%d+), (%d+)")
+local ColorR, ColorG, ColorB = ColorString:match("(%d+), (%d+), (%d+)") or ColorString:match("(%d+),(%d+),(%d+)")
 ColorR, ColorG, ColorB = tonumber(ColorR),tonumber(ColorG),tonumber(ColorB)
 return ColorR/255,ColorG/255,ColorB/255
 end
@@ -1312,7 +1312,7 @@ UIStroke_19.Parent = Tabs
 
 Pages.Name = "Pages"
 Pages.Parent = WholeFrame
-Pages.BackgroundColor3 = Color3.fromRGB(Table.GuiSettings.GuiBackgroundColor)
+Pages.BackgroundColor3 = Color3.new(StringToColor3(Table.GuiSettings.GuiBackgroundColor))
 Pages.BackgroundTransparency = 0.900
 Pages.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Pages.BorderSizePixel = 0
