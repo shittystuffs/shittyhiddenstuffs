@@ -1,4 +1,4 @@
-local Table = {
+getgenv().Table = {
 	GuiStatus = {
 		IsVisible = false,
 		OnGoingAnimation = false,
@@ -105,5 +105,3 @@ local Table = {
 		}
 	}
 }
-
-return Table
