@@ -1305,7 +1305,7 @@ UIStroke_19.Parent = Tabs
 
 Pages.Name = "Pages"
 Pages.Parent = WholeFrame
-Pages.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Pages.BackgroundColor3 = Color3.fromRGB(Table.GuiSettings.GuiBackgroundColor)
 Pages.BackgroundTransparency = 0.900
 Pages.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Pages.BorderSizePixel = 0
