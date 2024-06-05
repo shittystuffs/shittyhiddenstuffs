@@ -6,6 +6,7 @@ getgenv().Table = {
 		TargetPlugin = nil,
 		GuiVersion = 6.143,
 		KeyChangeDate = "8/8/8",
+		SwitchScriptCooldown = 0.5,
 		Owner = "V31nc",
 		Credits = "<b>Credits:</b>\nV31nc - Creator of VexHub\nitspls - Created the logo\nVanilla 3 (Elttob) - Icons\n\nKey Change: 8/8/8",
 		Logo = 14803348752,
@@ -105,3 +106,13 @@ getgenv().Table = {
 		}
 	}
 }
+
+coroutine.wrap(function()
+	while task.wait(0.1) do
+		if getgenv().Table.GuiStatus.SwitchScriptCooldown >= 0.1 then
+			getgenv().Table.GuiStatus.SwitchScriptCooldown += 0.1
+		elseif getgenv().Table.GuiStatus.SwitchScriptCooldown <= 0 then
+			getgenv().Table.GuiStatus.SwitchScriptCooldown = 0
+		end
+	end
+end)()
