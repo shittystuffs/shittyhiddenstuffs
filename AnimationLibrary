@@ -139,7 +139,7 @@ Library.AppearTab = function(TabName)
 				end
 			end
 
-		elseif TabName == "TabsTemplate" TabName == "Favorites" or TabName == "Scripts" or TabName == "Required Accessories" or TabName == "GUIS" or TabName == "Animations" or TabName == "Commands" or TabName == "Other Hubs" then
+		elseif TabName == "TabsTemplate" or TabName == "Favorites" or TabName == "Scripts" or TabName == "Required Accessories" or TabName == "GUIS" or TabName == "Animations" or TabName == "Commands" or TabName == "Other Hubs" then
 			TweenService:Create(Tab.SectionInfo.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
 			TweenService:Create(Tab.SectionInfo.ImageLabel, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
 			TweenService:Create(Tab.SectionInfo.SectionName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
