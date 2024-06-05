@@ -1344,7 +1344,7 @@ UICorner_27.CornerRadius = UDim.new(0.0900000036, 0)
 UICorner_27.Parent = BackFrame
 
 UIScale.Parent = BackFrame
-UIScale.Scale = Table.GuiSettings.GuiScale
+UIScale.Scale = Table.GuiSettings.GuiScale-0.1
 
 -- Scripts:
 local AnimationLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/shittystuffs/shittyhiddenstuffs/main/AnimationLibrary"))()
