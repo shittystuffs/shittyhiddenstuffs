@@ -534,7 +534,7 @@ end
 
 function CreateScript(TabName, ScriptName, ScriptId, ScriptCreator, ScriptDescription, ScriptRigType, IsFavorited, ScriptSupportedIn, IsNew, IsOp)
 local TabPath = game:GetService("CoreGui"):WaitForChild("VexHubFolder").VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Pages[TabName]
-local Template = TabPathBottomFrame.LeftFrame.Scripts.ScrollingFrame.ScriptButtonTemplate:Clone()
+local Template = TabPath.BottomFrame.LeftFrame.Scripts.ScrollingFrame.ScriptButtonTemplate:Clone()
 
 Template.Name = ScriptName
 Template.Parent = TabPath.BottomFrame.LeftFrame.Scripts.ScrollingFrame
