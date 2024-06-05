@@ -468,6 +468,11 @@ for i, v in TabsTemplate:GetDescendants() do
 	elseif v:IsA("TextBox") or v:IsA("TextLabel") or v:IsA("TextButton") then
 		v.TextTransparency = 1
 		v.BackgroundTransparency = 1
+	elseif v:IsA("Frame") then
+		v.BackgroundTransparency = 1
+	elseif v:IsA("ScrollingFrame") then
+		v.BackgroundTransparency = 1
+		v.ScrollBarImageTransparency = 1		
 	end
 end
 
