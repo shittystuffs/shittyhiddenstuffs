@@ -202,6 +202,7 @@ ScrollingFrame.Size = UDim2.new(0, 140, 0, 80)
 ScrollingFrame.AutomaticCanvasSize = Enum.AutomaticSize.Y
 ScrollingFrame.CanvasSize = UDim2.new(0, 0, 0, 0)
 ScrollingFrame.ScrollBarThickness = 2
+ScrollingFrame.ScrollingDirection = Enum.ScrollingDirection.Y
 
 UpdateTemplate.Name = "UpdateTemplate"
 UpdateTemplate.Parent = ScrollingFrame
@@ -338,6 +339,7 @@ ScrollingFrame_2.BorderSizePixel = 0
 ScrollingFrame_2.Position = UDim2.new(0, 0, -0.0661764741, 0)
 ScrollingFrame_2.Size = UDim2.new(0, 170, 0, 48)
 ScrollingFrame_2.ScrollBarThickness = 2
+ScrollingFrame_2.ScrollingDirection = Enum.ScrollingDirection.Y
 
 TextLabel_3.Parent = ScrollingFrame_2
 TextLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
