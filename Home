@@ -3,6 +3,7 @@
 local Table = getgenv().Table
 local Player = game:GetService("Players").LocalPlayer
 local TweenService = game:GetService("TweenService")
+local AnimationLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/shittystuffs/shittyhiddenstuffs/main/AnimationLibrary"))()
 
 function StringToColor3(ToConvert)
 local ColorString = tostring(ToConvert)
@@ -72,6 +73,7 @@ Home.BackgroundTransparency = 1.000
 Home.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Home.BorderSizePixel = 0
 Home.Size = UDim2.new(1, 0, 1, 0)
+Home.Visible = false
 
 Profile.Name = "Profile"
 Profile.Parent = Home
@@ -497,6 +499,8 @@ UIListLayout_10.VerticalAlignment = Enum.VerticalAlignment.Center
 UIListLayout_10.Padding = UDim.new(0, 5)
 
 -- Scripts:
+
+AnimationLibrary.DisappearTab("Home")
 
 	for _, Update in Table.GuiStatus.Updates do
 		UpdateTemplate = UpdateTemplate:Clone()
