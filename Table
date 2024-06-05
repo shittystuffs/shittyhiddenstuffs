@@ -5,6 +5,8 @@ getgenv().Table = {
 		ActivePage = nil,
 		TargetPlugin = nil,
 		GuiVersion = 6.143,
+		ActiveScript = function()
+		end,
 		KeyChangeDate = "8/8/8",
 		SwitchScriptCooldown = 0.5,
 		Owner = "V31nc",
@@ -55,6 +57,8 @@ getgenv().Table = {
 				GameId = 0,
 				RigType = "Any", -- R6, R15, Any
 				Notes = "idk",
+				IsOP = true,
+				IsNew = true,
 				ScriptId = 0000,
 				Favorited = false,
 				Script = function()
@@ -64,7 +68,7 @@ getgenv().Table = {
 		}
 	},
 
-	Plugins = nil,
+	Plugins = {},
 
 	LocalPlayerFeatures = {
 		["TextBox"] = {
