@@ -5,6 +5,7 @@ getgenv().Table = {
 		ActivePage = nil,
 		TargetPlugin = nil,
 		GuiVersion = 6.143,
+		ActiveScriptName = nil,
 		ActiveScript = function()
 		end,
 		KeyChangeDate = "8/8/8",
