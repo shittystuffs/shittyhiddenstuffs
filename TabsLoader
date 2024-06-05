@@ -458,6 +458,19 @@ UIListLayout_10.VerticalAlignment = Enum.VerticalAlignment.Center
 UIListLayout_10.Padding = UDim.new(0, 5)
 
 -- Scripts:
+
+for i, v in TabsTemplate:GetDescendants() do
+	if v:IsA("ImageLabel") or v:IsA("ImageButton") then
+		v.BackgroundTransparency = 1
+		v.ImageTransparency = 1
+	elseif v:IsA("UIStroke") then
+		v.Transparency = 1
+	elseif v:IsA("TextBox") or v:IsA("TextLabel") or v:IsA("TextButton") then
+		v.TextTransparency = 1
+		v.BackgroundTransparency = 1
+	end
+end
+
 	SearchButton.MouseButton1Down:Connect(function()
 		for _, Button in ScrollingFrame:GetChildren() do
 			if Button:IsA("ImageButton") then
