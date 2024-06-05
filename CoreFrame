@@ -3,7 +3,6 @@
 local Table = getgenv().Table
 local Player = game:GetService("Players").LocalPlayer
 local TweenService = game:GetService("TweenService")
-local AnimationLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/shittystuffs/shittyhiddenstuffs/main/AnimationLibrary"))()
 
 function StringToColor3(ToConvert)
 local ColorString = tostring(ToConvert)
@@ -1346,7 +1345,9 @@ UICorner_27.Parent = BackFrame
 
 UIScale.Parent = BackFrame
 UIScale.Scale = Table.GuiSettings.GuiScale
+
 -- Scripts:
+local AnimationLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/shittystuffs/shittyhiddenstuffs/main/AnimationLibrary"))()
 
 AnimationLibrary.DisappearBackground()
 AnimationLibrary.DisappearCoreInteractions()
