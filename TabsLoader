@@ -481,6 +481,7 @@ UIListLayout_10.Padding = UDim.new(0, 5)
 	end)
 
 AnimationLibrary.DisappearTab("TabsTemplate")
+wait(Table.GuiSettings.AnimationSpeed)
 
 function CreateNewTab(TabName)
 local Template = TabsTemplate:Clone()
