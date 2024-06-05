@@ -486,7 +486,7 @@ function CreateNewTab(TabName)
 local Template = TabsTemplate:Clone()
 
 Template.Name = TabName
-
+Template.Parent = game:GetService("CoreGui"):WaitForChild("VexHubFolder").VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Pages
 if TabName == "Scripts" then
 Template.SectionInfo.ImageLabel.Image = "rbxassetid://11592851654"
 Template.SectionInfo.SectionName.Text = "Scripts"
@@ -514,14 +514,20 @@ Template.BottomFrame.LeftFrame.Scripts.ScrollingFrame.ScriptButtonTemplate.Image
 end
 end
 
-function CreateScript(ScriptName)
+function CreateScript(TabName, ScriptName, ScriptId)
+local Template = game:GetService("CoreGui"):WaitForChild("VexHubFolder").VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Pages[TabName].BottomFrame.LeftFrame.Scripts.ScrollingFrame.ScriptButtonTemplate:Clone()
+
+Template.Visible = true
+Template.ScriptName.Text = ScriptName
+Template.ScriptId.Text = ScriptId
 end
 
 -- Loader:
 for Tab, _ in Table.GuiScripts do
 CreateNewTab(Tab)
 
+wait()
 for ScriptName, ScriptInfo in Table.GuiScripts[Tab] do
-
+CreateScript(Tab, ScriptName, ScriptInfo.ScriptId)
 end
 end
