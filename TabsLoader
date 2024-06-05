@@ -109,6 +109,7 @@ UIListLayout_2.Padding = UDim.new(0, 5)
 
 SectionName.Name = "SectionName"
 SectionName.Parent = SectionInfo
+SectionName.AutomaticSize = Enum.AutomaticSize.X
 SectionName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 SectionName.BackgroundTransparency = 1.000
 SectionName.BorderColor3 = Color3.fromRGB(0, 0, 0)
