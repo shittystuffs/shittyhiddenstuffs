@@ -3,6 +3,7 @@
 local Table = getgenv().Table
 local Player = game:GetService("Players").LocalPlayer
 local TweenService = game:GetService("TweenService")
+local AnimationLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/shittystuffs/shittyhiddenstuffs/main/AnimationLibrary"))()
 
 function StringToColor3(ToConvert)
 local ColorString = tostring(ToConvert)
@@ -457,8 +458,6 @@ UIListLayout_10.VerticalAlignment = Enum.VerticalAlignment.Center
 UIListLayout_10.Padding = UDim.new(0, 5)
 
 -- Scripts:
-
-
 	SearchButton.MouseButton1Down:Connect(function()
 		for _, Button in ScrollingFrame:GetChildren() do
 			if Button:IsA("ImageButton") then
@@ -480,3 +479,49 @@ UIListLayout_10.Padding = UDim.new(0, 5)
 			end
 		end
 	end)
+
+AnimationLibrary.DisappearTab("TabsTemplate")
+
+function CreateNewTab(TabName)
+local Template = TabsTemplate:Clone()
+
+Template.Name = TabName
+
+if TabName == "Scripts" then
+Template.SectionInfo.ImageLabel.Image = "rbxassetid://11592851654"
+Template.SectionInfo.SectionName.Text = "Scripts"
+Template.BottomFrame.LeftFrame.Scripts.ScrollingFrame.ScriptButtonTemplate.Image = "rbxassetid://11592851654"
+elseif TabName == "Required Accessories" then
+Template.SectionInfo.ImageLabel.Image = "rbxassetid://11592824883"
+Template.SectionInfo.SectionName.Text = "Required Accessories"
+Template.BottomFrame.LeftFrame.Scripts.ScrollingFrame.ScriptButtonTemplate.Image = "rbxassetid://11592824883"
+elseif TabName == "Guis" then
+Template.SectionInfo.ImageLabel.Image = "rbxassetid://11592848654"
+Template.SectionInfo.SectionName.Text = "Guis"
+Template.BottomFrame.LeftFrame.Scripts.ScrollingFrame.ScriptButtonTemplate.Image = "rbxassetid://11592848654"
+elseif TabName == "Animations" then
+Template.SectionInfo.ImageLabel.Image = "rbxassetid://11592835705"
+Template.SectionInfo.SectionName.Text = "Animations"
+Template.BottomFrame.LeftFrame.Scripts.ScrollingFrame.ScriptButtonTemplate.Image = "rbxassetid://11592835705"
+elseif TabName == "Commands" then
+Template.SectionInfo.ImageLabel.Image = "rbxassetid://11592837927"
+Template.SectionInfo.SectionName.Text = "Commands"
+Template.BottomFrame.LeftFrame.Scripts.ScrollingFrame.ScriptButtonTemplate.Image = "rbxassetid://11592837927"
+elseif TabName == "Other Hubs" then
+Template.SectionInfo.ImageLabel.Image = "rbxassetid://11592850267"
+Template.SectionInfo.SectionName.Text = "Other Hubs"
+Template.BottomFrame.LeftFrame.Scripts.ScrollingFrame.ScriptButtonTemplate.Image = "rbxassetid://11592850267"
+end
+end
+
+function CreateScript(ScriptName)
+end
+
+-- Loader:
+for Tab, _ in Table.GuiScripts do
+CreateNewTab(Tab)
+
+for ScriptName, ScriptInfo in Table.GuiScripts[Tab] do
+
+end
+end
