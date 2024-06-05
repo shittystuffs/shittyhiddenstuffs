@@ -56,7 +56,6 @@ getgenv().Table = {
 				Description = "Hello World",
 				GameId = 0,
 				RigType = "Any", -- R6, R15, Any
-				Notes = "idk",
 				IsOP = true,
 				IsNew = true,
 				ScriptId = 0000,
