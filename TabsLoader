@@ -532,13 +532,19 @@ Template.BottomFrame.LeftFrame.Scripts.ScrollingFrame.ScriptButtonTemplate.Image
 end
 end
 
-function CreateScript(TabName, ScriptName, ScriptId)
-local Template = game:GetService("CoreGui"):WaitForChild("VexHubFolder").VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Pages[TabName].BottomFrame.LeftFrame.Scripts.ScrollingFrame.ScriptButtonTemplate:Clone()
+function CreateScript(TabName, ScriptName, ScriptId, ScriptCreator, ScriptDescription, ScriptRigType, IsFavorited, ScriptSupportedIn, IsNew, IsOp)
+local TabPath = game:GetService("CoreGui"):WaitForChild("VexHubFolder").VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Pages[TabName]
+local Template = TabPathBottomFrame.LeftFrame.Scripts.ScrollingFrame.ScriptButtonTemplate:Clone()
 
-Template.Parent = game:GetService("CoreGui"):WaitForChild("VexHubFolder").VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Pages[TabName].BottomFrame.LeftFrame.Scripts.ScrollingFrame
+Template.Name = ScriptName
+Template.Parent = TabPath.BottomFrame.LeftFrame.Scripts.ScrollingFrame
 Template.Visible = true
 Template.ScriptName.Text = ScriptName
 Template.ScriptId.Text = "Id: "..ScriptId
+
+Template.MouseButton1Down:Connect(function()
+TabPath.BottomFrame.ScriptInfo.ScriptDetails.Text = '<b><font size="14">'..ScriptName..'</font></b>\n<font size="8">By: '..ScriptCreator..'</font>\n\n<b><font size="10">Description:</font></b>\n<font size="8">'..ScriptDescription..'</font>\n\n<font size="8">RigType: <b>'..ScriptRigType..'</b>\nGame: <b>Universal</b></font><font size="8">\nScript Id: <b>'..ScriptId..'</b></font>'
+end)
 end
 
 -- Loader:
@@ -547,6 +553,6 @@ CreateNewTab(Tab)
 
 wait()
 for ScriptName, ScriptInfo in Table.GuiScripts[Tab] do
-CreateScript(Tab, ScriptName, ScriptInfo.ScriptId)
+CreateScript(Tab, ScriptName, ScriptInfo.ScriptId, ScriptInfo.Owner, ScriptInfo.Description, ScriptInfo.RigType, ScriptInfo.Favorited, ScriptInfo.GameId, ScriptInfo.IsNew, ScriptInfo.IsOP)
 end
 end
