@@ -486,16 +486,16 @@ Template.Parent = game:GetService("CoreGui"):WaitForChild("VexHubFolder").VexHub
 Template.BottomFrame.LeftFrame.SearchFrame.SearchButton.MouseButton1Down:Connect(function()
 	for _, Button in Template.BottomFrame.LeftFrame.Scripts.ScrollingFrame:GetChildren() do
 		if Button:IsA("ImageButton") then
-			local SearchingFor = string.lower(Template.BottomFrame.LeftFrame.SearchFrame.TextBox.Text)
+			local SearchingFor = string.lower(Template.BottomFrame.LeftFrame.SearchFrame.TextBoxParent.TextBox.Text)
 			local ButtonName = string.lower(Button.ScriptName.Text)
 			local ButtonId = Button.ScriptId.Text
 	
 			if Template.BottomFrame.LeftFrame.SearchFrame.TextBox.Text == "" then
 				Button.Visible = true
 			else
-				if string.find(ButtonName, SearchingFor) and Template.BottomFrame.LeftFrame.SearchFrame.TextBox.Text ~= "" then
+				if string.find(ButtonName, SearchingFor) and SearchingFor ~= "" then
 					Button.Visible = true
-				elseif string.find(tostring(ButtonId), tostring(SearchingFor)) and Template.BottomFrame.LeftFrame.SearchFrame.TextBox.Text ~= "" then
+				elseif string.find(tostring(ButtonId), tostring(SearchingFor)) and SearchingFor ~= "" then
 					Button.Visible = true
 				else
 					Button.Visible = false
