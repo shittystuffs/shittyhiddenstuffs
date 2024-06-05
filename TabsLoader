@@ -498,9 +498,6 @@ end
 		end
 	end)
 
-AnimationLibrary.DisappearTab("TabsTemplate")
-wait(Table.GuiSettings.AnimationSpeed/2)
-
 function CreateNewTab(TabName)
 local Template = TabsTemplate:Clone()
 
