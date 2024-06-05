@@ -330,7 +330,7 @@ Library.AppearTab = function(TabName)
 			TweenService:Create(Tab.BottomFrame.ScriptInfo.BottomFrame.Execute, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
 			TweenService:Create(Tab.BottomFrame.ScriptInfo.BottomFrame.Execute.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
 		else
-			print("Name does not exist in the Library")
+			warn("VexHub Animation Library: Name ("..TabName..") does not exist in the Library")
 		end
 	end)()
 end
@@ -369,7 +369,7 @@ Library.DisappearTab = function(TabName)
 				end
 			end
 
-		elseif TabName == "Favorites" or TabName == "Scripts" or TabName == "Required Accessories" or TabName == "GUIS" or TabName == "Animations" or TabName == "Commands" or TabName == "Other Hubs" then
+		elseif TabName == "TabsTemplate" or TabName == "Favorites" or TabName == "Scripts" or TabName == "Required Accessories" or TabName == "GUIS" or TabName == "Animations" or TabName == "Commands" or TabName == "Other Hubs" then
 			TweenService:Create(Tab.SectionInfo.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
 			TweenService:Create(Tab.SectionInfo.ImageLabel, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
 			TweenService:Create(Tab.SectionInfo.SectionName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
@@ -559,7 +559,7 @@ Library.DisappearTab = function(TabName)
 			TweenService:Create(Tab.BottomFrame.ScriptInfo.BottomFrame.Execute, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
 			TweenService:Create(Tab.BottomFrame.ScriptInfo.BottomFrame.Execute.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
 		else
-			print("Name does not exist in the Library")
+			warn("VexHub Animation Library: Name ("..TabName..") does not exist in the Library")
 		end
 
 	end)()
