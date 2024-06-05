@@ -255,7 +255,7 @@ ScriptDetails.Position = UDim2.new(0.0384615399, 0, 0.138888896, 0)
 ScriptDetails.RichText = true
 ScriptDetails.Size = UDim2.new(0, 120, 0, 123)
 ScriptDetails.Font = Enum.Font[Table.GuiSettings.GuiFont.Regular]
-ScriptDetails.Text = "<b><font size=\"14\">ScriptName</font></b>\\n<font size=\"8\">By: CreatorName</font>\\n\\n<b><font size=\"10\">Description:</font></b>\\n<font size=\"8\">ScriptDescription</font>\\n\\n<font size=\"8\">RigType: <b>Any</b>\\nGame: <b>Universal</b></font><font size=\"8\">\\nScript Id: <b>1000</b></font>"
+ScriptDetails.Text = '<b><font size="14">ScriptName</font></b>\n<font size="8">By: CreatorName</font>\n\n<b><font size="10">Description:</font></b>\n<font size="8">ScriptDescription</font>\n\n<font size="8">RigType: <b>Any</b>\nGame: <b>Universal</b></font><font size="8">\nScript Id: <b>1000</b></font>'
 ScriptDetails.TextColor3 = Color3.fromRGB(255, 255, 255)
 ScriptDetails.TextSize = 12.000
 ScriptDetails.TextWrapped = true
@@ -537,7 +537,7 @@ local Template = game:GetService("CoreGui"):WaitForChild("VexHubFolder").VexHubS
 Template.Parent = game:GetService("CoreGui"):WaitForChild("VexHubFolder").VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Pages[TabName].BottomFrame.LeftFrame.Scripts.ScrollingFrame
 Template.Visible = true
 Template.ScriptName.Text = ScriptName
-Template.ScriptId.Text = ScriptId
+Template.ScriptId.Text = "Id: "..ScriptId
 end
 
 -- Loader:
