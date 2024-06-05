@@ -164,6 +164,7 @@ VexHubFolder.Parent = game:GetService("CoreGui")
 VexHubScreenGui.Name = "VexHubScreenGui"
 VexHubScreenGui.Parent = VexHubFolder
 VexHubScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+VexHubScreenGui.ClipToDeviceSafeArea = false
 VexHubScreenGui.ResetOnSpawn = false
 
 BackFrame.Name = "BackFrame"
