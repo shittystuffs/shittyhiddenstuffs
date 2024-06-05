@@ -490,12 +490,12 @@ Template.BottomFrame.LeftFrame.SearchFrame.SearchButton.MouseButton1Down:Connect
 			local ButtonName = string.lower(Button.ScriptName.Text)
 			local ButtonId = Button.ScriptId.Text
 	
-			if SearchingFor == "" then
+			if SearchingFor == "" and Button.Name ~= "ScriptButtonTemplate" then
 				Button.Visible = true
 			else
-				if string.find(ButtonName, SearchingFor) and SearchingFor ~= "" then
+				if string.find(ButtonName, SearchingFor) and SearchingFor ~= "" and Button.Name ~= "ScriptButtonTemplate" then
 					Button.Visible = true
-				elseif string.find(tostring(ButtonId), tostring(SearchingFor)) and SearchingFor ~= "" then
+				elseif string.find(tostring(ButtonId), tostring(SearchingFor)) and SearchingFor ~= "" and Button.Name ~= "ScriptButtonTemplate" then
 					Button.Visible = true
 				else
 					Button.Visible = false
