@@ -176,6 +176,7 @@ BackFrame.BorderSizePixel = 0
 BackFrame.Draggable = true
 BackFrame.Position = UDim2.new(0.178074419, 0, 0.177274972, 0)
 BackFrame.Size = UDim2.new(0, 495, 0, 245)
+BackFrame.Visible = false
 
 UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.new(0, 0, 0)), ColorSequenceKeypoint.new(1.00, Color3.new(StringToColor3(Table.GuiSettings.BackgroundGradientColor)))}
 UIGradient.Transparency = NumberSequence.new{NumberSequenceKeypoint.new(0.00, 0.30), NumberSequenceKeypoint.new(1.00, 0.30)}
