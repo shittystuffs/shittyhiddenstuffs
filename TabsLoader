@@ -1,0 +1,482 @@
+-- V31nc : GUI to LUA V1
+
+local Table = getgenv().Table
+local Player = game:GetService("Players").LocalPlayer
+local TweenService = game:GetService("TweenService")
+
+function StringToColor3(ToConvert)
+local ColorString = tostring(ToConvert)
+local ColorR, ColorG, ColorB = ColorString:match("(%d+), (%d+), (%d+)")
+ColorR, ColorG, ColorB = tonumber(ColorR),tonumber(ColorG),tonumber(ColorB)
+return ColorR/255,ColorG/255,ColorB/255
+end
+
+-- Instances:
+
+local TabsTemplate = Instance.new("Frame")
+local UIListLayout = Instance.new("UIListLayout")
+local SectionInfo = Instance.new("Frame")
+local UIStroke = Instance.new("UIStroke")
+local UICorner = Instance.new("UICorner")
+local UIListLayout_2 = Instance.new("UIListLayout")
+local SectionName = Instance.new("TextLabel")
+local ImageLabel = Instance.new("ImageLabel")
+local BottomFrame = Instance.new("Frame")
+local ScriptInfo = Instance.new("Frame")
+local UIStroke_2 = Instance.new("UIStroke")
+local UICorner_2 = Instance.new("UICorner")
+local UIListLayout_3 = Instance.new("UIListLayout")
+local BottomFrame_2 = Instance.new("Frame")
+local Play = Instance.new("ImageButton")
+local UICorner_3 = Instance.new("UICorner")
+local UIStroke_3 = Instance.new("UIStroke")
+local UIListLayout_4 = Instance.new("UIListLayout")
+local Execute = Instance.new("TextButton")
+local UIStroke_4 = Instance.new("UIStroke")
+local UICorner_4 = Instance.new("UICorner")
+local Favorite = Instance.new("ImageButton")
+local UICorner_5 = Instance.new("UICorner")
+local UIStroke_5 = Instance.new("UIStroke")
+local ScriptDetails = Instance.new("TextLabel")
+local UIListLayout_5 = Instance.new("UIListLayout")
+local LeftFrame = Instance.new("Frame")
+local SearchFrame = Instance.new("Frame")
+local UIListLayout_6 = Instance.new("UIListLayout")
+local TextBoxParent = Instance.new("Frame")
+local TextBox = Instance.new("TextBox")
+local UIListLayout_7 = Instance.new("UIListLayout")
+local UIStroke_6 = Instance.new("UIStroke")
+local UICorner_6 = Instance.new("UICorner")
+local SearchButton = Instance.new("ImageButton")
+local UIStroke_7 = Instance.new("UIStroke")
+local UICorner_7 = Instance.new("UICorner")
+local Scripts = Instance.new("Frame")
+local UIStroke_8 = Instance.new("UIStroke")
+local UICorner_8 = Instance.new("UICorner")
+local ScrollingFrame = Instance.new("ScrollingFrame")
+local UIGridLayout = Instance.new("UIGridLayout")
+local ScriptButtonTemplate = Instance.new("ImageButton")
+local UIStroke_9 = Instance.new("UIStroke")
+local ScriptName = Instance.new("TextLabel")
+local UICorner_9 = Instance.new("UICorner")
+local UIListLayout_8 = Instance.new("UIListLayout")
+local ScriptId = Instance.new("TextLabel")
+local UIListLayout_9 = Instance.new("UIListLayout")
+local UIListLayout_10 = Instance.new("UIListLayout")
+
+--Properties:
+
+TabsTemplate.Name = "TabsTemplate"
+TabsTemplate.Parent = game:GetService("CoreGui"):WaitForChild("VexHubFolder").VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Pages
+TabsTemplate.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TabsTemplate.BackgroundTransparency = 1.000
+TabsTemplate.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TabsTemplate.BorderSizePixel = 0
+TabsTemplate.Size = UDim2.new(1, 0, 1, 0)
+
+UIListLayout.Parent = TabsTemplate
+UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Center
+UIListLayout.Padding = UDim.new(0, 5)
+
+SectionInfo.Name = "SectionInfo"
+SectionInfo.Parent = TabsTemplate
+SectionInfo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SectionInfo.BackgroundTransparency = 1.000
+SectionInfo.BorderColor3 = Color3.fromRGB(0, 0, 0)
+SectionInfo.BorderSizePixel = 0
+SectionInfo.LayoutOrder = 1
+SectionInfo.Position = UDim2.new(0.222222224, 0, 0.125, 0)
+SectionInfo.Size = UDim2.new(0.949999988, 0, 0, 20)
+
+UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
+UIStroke.Thickness = 0.700
+UIStroke.Transparency = 0.800
+UIStroke.Parent = SectionInfo
+
+UICorner.CornerRadius = UDim.new(0.200000003, 0)
+UICorner.Parent = SectionInfo
+
+UIListLayout_2.Parent = SectionInfo
+UIListLayout_2.FillDirection = Enum.FillDirection.Horizontal
+UIListLayout_2.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout_2.VerticalAlignment = Enum.VerticalAlignment.Center
+UIListLayout_2.Padding = UDim.new(0, 5)
+
+SectionName.Name = "SectionName"
+SectionName.Parent = SectionInfo
+SectionName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SectionName.BackgroundTransparency = 1.000
+SectionName.BorderColor3 = Color3.fromRGB(0, 0, 0)
+SectionName.BorderSizePixel = 0
+SectionName.LayoutOrder = 2
+SectionName.Size = UDim2.new(0, 0, 0, 20)
+SectionName.Font = Enum.Font[Table.GuiSettings.GuiFont.Medium]
+SectionName.Text = "Required Accessories"
+SectionName.TextColor3 = Color3.fromRGB(255, 255, 255)
+SectionName.TextSize = 13.000
+SectionName.TextWrapped = true
+
+ImageLabel.Parent = SectionInfo
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.BackgroundTransparency = 1.000
+ImageLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ImageLabel.BorderSizePixel = 0
+ImageLabel.LayoutOrder = 1
+ImageLabel.Size = UDim2.new(0, 20, 0, 20)
+ImageLabel.Image = "rbxassetid://11592824883"
+
+BottomFrame.Name = "BottomFrame"
+BottomFrame.Parent = TabsTemplate
+BottomFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+BottomFrame.BackgroundTransparency = 1.000
+BottomFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+BottomFrame.BorderSizePixel = 0
+BottomFrame.LayoutOrder = 2
+BottomFrame.Size = UDim2.new(0.949999988, 0, 0, 155)
+
+ScriptInfo.Name = "ScriptInfo"
+ScriptInfo.Parent = BottomFrame
+ScriptInfo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScriptInfo.BackgroundTransparency = 1.000
+ScriptInfo.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScriptInfo.BorderSizePixel = 0
+ScriptInfo.LayoutOrder = 2
+ScriptInfo.Position = UDim2.new(0.579334199, 0, 0.0263157897, 0)
+ScriptInfo.Size = UDim2.new(0, 130, 0, 155)
+
+UIStroke_2.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke_2.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
+UIStroke_2.Thickness = 0.700
+UIStroke_2.Transparency = 0.800
+UIStroke_2.Parent = ScriptInfo
+
+UICorner_2.CornerRadius = UDim.new(0.0500000007, 0)
+UICorner_2.Parent = ScriptInfo
+
+UIListLayout_3.Parent = ScriptInfo
+UIListLayout_3.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout_3.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout_3.VerticalAlignment = Enum.VerticalAlignment.Center
+UIListLayout_3.Padding = UDim.new(0, 5)
+
+BottomFrame_2.Name = "BottomFrame"
+BottomFrame_2.Parent = ScriptInfo
+BottomFrame_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+BottomFrame_2.BackgroundTransparency = 1.000
+BottomFrame_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+BottomFrame_2.BorderSizePixel = 0
+BottomFrame_2.LayoutOrder = 2
+BottomFrame_2.Size = UDim2.new(0, 120, 0, 18)
+
+Play.Name = "Play"
+Play.Parent = BottomFrame_2
+Play.BackgroundColor3 = Color3.fromRGB(0, 186, 85)
+Play.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Play.BorderSizePixel = 0
+Play.LayoutOrder = 2
+Play.Position = UDim2.new(0.115384616, 0, 0.972222209, 0)
+Play.Size = UDim2.new(0, 18, 0, 18)
+Play.Image = "rbxassetid://14320976370"
+Play.ScaleType = Enum.ScaleType.Fit
+
+UICorner_3.CornerRadius = UDim.new(0.400000006, 0)
+UICorner_3.Parent = Play
+
+UIStroke_3.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke_3.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
+UIStroke_3.Thickness = 0.700
+UIStroke_3.Transparency = 0.800
+UIStroke_3.Parent = Play
+
+UIListLayout_4.Parent = BottomFrame_2
+UIListLayout_4.FillDirection = Enum.FillDirection.Horizontal
+UIListLayout_4.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout_4.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout_4.VerticalAlignment = Enum.VerticalAlignment.Center
+UIListLayout_4.Padding = UDim.new(0, 5)
+
+Execute.Name = "Execute"
+Execute.Parent = BottomFrame_2
+Execute.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Execute.BackgroundTransparency = 1.000
+Execute.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Execute.BorderSizePixel = 0
+Execute.LayoutOrder = 1
+Execute.Position = UDim2.new(0.329166681, 0, 0, 0)
+Execute.Size = UDim2.new(0, 75, 0, 18)
+Execute.Font = Enum.Font[Table.GuiSettings.GuiFont.Medium]
+Execute.Text = "Execute"
+Execute.TextColor3 = Color3.fromRGB(255, 255, 255)
+Execute.TextSize = 12.000
+
+UIStroke_4.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke_4.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
+UIStroke_4.Thickness = 0.700
+UIStroke_4.Transparency = 0.800
+UIStroke_4.Parent = Execute
+
+UICorner_4.CornerRadius = UDim.new(0.400000006, 0)
+UICorner_4.Parent = Execute
+
+Favorite.Name = "Favorite"
+Favorite.Parent = BottomFrame_2
+Favorite.BackgroundColor3 = Color3.fromRGB(255, 170, 0)
+Favorite.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Favorite.BorderSizePixel = 0
+Favorite.LayoutOrder = 3
+Favorite.Position = UDim2.new(0.115384616, 0, 0.972222209, 0)
+Favorite.Size = UDim2.new(0, 18, 0, 18)
+Favorite.Image = "http://www.roblox.com/asset/?id=17648422801"
+Favorite.ScaleType = Enum.ScaleType.Fit
+
+UICorner_5.CornerRadius = UDim.new(0.400000006, 0)
+UICorner_5.Parent = Favorite
+
+UIStroke_5.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke_5.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
+UIStroke_5.Thickness = 0.700
+UIStroke_5.Transparency = 0.800
+UIStroke_5.Parent = Favorite
+
+ScriptDetails.Name = "ScriptDetails"
+ScriptDetails.Parent = ScriptInfo
+ScriptDetails.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScriptDetails.BackgroundTransparency = 1.000
+ScriptDetails.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScriptDetails.BorderSizePixel = 0
+ScriptDetails.LayoutOrder = 1
+ScriptDetails.Position = UDim2.new(0.0384615399, 0, 0.138888896, 0)
+ScriptDetails.RichText = true
+ScriptDetails.Size = UDim2.new(0, 120, 0, 123)
+ScriptDetails.Font = Enum.Font[Table.GuiSettings.GuiFont.Regular]
+ScriptDetails.Text = "<b><font size=\"14\">ScriptName</font></b>\\n<font size=\"8\">By: CreatorName</font>\\n\\n<b><font size=\"10\">Description:</font></b>\\n<font size=\"8\">ScriptDescription</font>\\n\\n<font size=\"8\">RigType: <b>Any</b>\\nGame: <b>Universal</b></font><font size=\"8\">\\nScript Id: <b>1000</b></font>"
+ScriptDetails.TextColor3 = Color3.fromRGB(255, 255, 255)
+ScriptDetails.TextSize = 12.000
+ScriptDetails.TextWrapped = true
+ScriptDetails.TextXAlignment = Enum.TextXAlignment.Left
+ScriptDetails.TextYAlignment = Enum.TextYAlignment.Top
+
+UIListLayout_5.Parent = BottomFrame
+UIListLayout_5.FillDirection = Enum.FillDirection.Horizontal
+UIListLayout_5.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout_5.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout_5.VerticalAlignment = Enum.VerticalAlignment.Center
+UIListLayout_5.Padding = UDim.new(0, 5)
+
+LeftFrame.Name = "LeftFrame"
+LeftFrame.Parent = BottomFrame
+LeftFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+LeftFrame.BackgroundTransparency = 1.000
+LeftFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+LeftFrame.BorderSizePixel = 0
+LeftFrame.LayoutOrder = 1
+LeftFrame.Position = UDim2.new(0.0925372243, 0, 0.0263157897, 0)
+LeftFrame.Size = UDim2.new(0, 180, 0, 155)
+
+SearchFrame.Name = "SearchFrame"
+SearchFrame.Parent = LeftFrame
+SearchFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SearchFrame.BackgroundTransparency = 1.000
+SearchFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+SearchFrame.BorderSizePixel = 0
+SearchFrame.LayoutOrder = 2
+SearchFrame.Position = UDim2.new(0.222222224, 0, 0.125, 0)
+SearchFrame.Size = UDim2.new(0, 180, 0, 20)
+
+UIListLayout_6.Parent = SearchFrame
+UIListLayout_6.FillDirection = Enum.FillDirection.Horizontal
+UIListLayout_6.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout_6.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout_6.VerticalAlignment = Enum.VerticalAlignment.Center
+UIListLayout_6.Padding = UDim.new(0, 5)
+
+TextBoxParent.Name = "TextBoxParent"
+TextBoxParent.Parent = SearchFrame
+TextBoxParent.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextBoxParent.BackgroundTransparency = 1.000
+TextBoxParent.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextBoxParent.BorderSizePixel = 0
+TextBoxParent.Position = UDim2.new(-0.119444445, 0, 0, 0)
+TextBoxParent.Size = UDim2.new(0, 155, 0, 20)
+
+TextBox.Parent = TextBoxParent
+TextBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextBox.BackgroundTransparency = 1.000
+TextBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextBox.BorderSizePixel = 0
+TextBox.Position = UDim2.new(0.0333333351, 0, 0, 0)
+TextBox.Size = UDim2.new(0.949999988, 0, 1, 0)
+TextBox.ClearTextOnFocus = false
+TextBox.Font = Enum.Font[Table.GuiSettings.GuiFont.Regular]
+TextBox.PlaceholderText = "Search Scripts"
+TextBox.Text = ""
+TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextBox.TextSize = 10.000
+TextBox.TextWrapped = true
+TextBox.TextXAlignment = Enum.TextXAlignment.Left
+
+UIListLayout_7.Parent = TextBoxParent
+UIListLayout_7.FillDirection = Enum.FillDirection.Horizontal
+UIListLayout_7.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout_7.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout_7.VerticalAlignment = Enum.VerticalAlignment.Center
+UIListLayout_7.Padding = UDim.new(0, 5)
+
+UIStroke_6.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke_6.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
+UIStroke_6.Thickness = 0.700
+UIStroke_6.Transparency = 0.800
+UIStroke_6.Parent = TextBoxParent
+
+UICorner_6.CornerRadius = UDim.new(0.200000003, 0)
+UICorner_6.Parent = TextBoxParent
+
+SearchButton.Name = "SearchButton"
+SearchButton.Parent = SearchFrame
+SearchButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SearchButton.BackgroundTransparency = 1.000
+SearchButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+SearchButton.BorderSizePixel = 0
+SearchButton.Size = UDim2.new(0, 20, 0, 20)
+SearchButton.Image = "http://www.roblox.com/asset/?id=17633536608"
+
+UIStroke_7.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke_7.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
+UIStroke_7.Thickness = 0.700
+UIStroke_7.Transparency = 0.800
+UIStroke_7.Parent = SearchButton
+
+UICorner_7.CornerRadius = UDim.new(0.200000003, 0)
+UICorner_7.Parent = SearchButton
+
+Scripts.Name = "Scripts"
+Scripts.Parent = LeftFrame
+Scripts.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Scripts.BackgroundTransparency = 1.000
+Scripts.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Scripts.BorderSizePixel = 0
+Scripts.LayoutOrder = 3
+Scripts.Position = UDim2.new(0, 0, 0.316666663, 0)
+Scripts.Size = UDim2.new(0, 180, 0, 128)
+
+UIStroke_8.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke_8.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
+UIStroke_8.Thickness = 0.700
+UIStroke_8.Transparency = 0.800
+UIStroke_8.Parent = Scripts
+
+UICorner_8.CornerRadius = UDim.new(0.0500000007, 0)
+UICorner_8.Parent = Scripts
+
+ScrollingFrame.Parent = Scripts
+ScrollingFrame.Active = true
+ScrollingFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScrollingFrame.BackgroundTransparency = 1.000
+ScrollingFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScrollingFrame.BorderSizePixel = 0
+ScrollingFrame.Size = UDim2.new(1, 0, 0.949999988, 0)
+ScrollingFrame.CanvasSize = UDim2.new(0, 0, 0, 0)
+ScrollingFrame.ScrollBarThickness = 2
+ScrollingFrame.ScrollingDirection = Enum.ScrollingDirection.Y
+
+UIGridLayout.Parent = ScrollingFrame
+UIGridLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIGridLayout.CellSize = UDim2.new(0, 53, 0, 70)
+UIGridLayout.FillDirectionMaxCells = 3
+
+ScriptButtonTemplate.Name = "ScriptButtonTemplate"
+ScriptButtonTemplate.Parent = ScrollingFrame
+ScriptButtonTemplate.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScriptButtonTemplate.BackgroundTransparency = 1.000
+ScriptButtonTemplate.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScriptButtonTemplate.BorderSizePixel = 0
+ScriptButtonTemplate.Size = UDim2.new(0, 100, 0, 100)
+ScriptButtonTemplate.Visible = false
+ScriptButtonTemplate.Image = "rbxassetid://11592824883"
+ScriptButtonTemplate.ImageTransparency = 0.800
+ScriptButtonTemplate.ScaleType = Enum.ScaleType.Fit
+
+UIStroke_9.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke_9.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
+UIStroke_9.Thickness = 0.700
+UIStroke_9.Transparency = 0.800
+UIStroke_9.Parent = ScriptButtonTemplate
+
+ScriptName.Name = "ScriptName"
+ScriptName.Parent = ScriptButtonTemplate
+ScriptName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScriptName.BackgroundTransparency = 1.000
+ScriptName.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScriptName.BorderSizePixel = 0
+ScriptName.Position = UDim2.new(5.75803369e-07, 0, 0, 0)
+ScriptName.RichText = true
+ScriptName.Size = UDim2.new(0.899999976, 0, 0.829999983, 0)
+ScriptName.Font = Enum.Font[Table.GuiSettings.GuiFont.Medium]
+ScriptName.Text = "Fly Gui"
+ScriptName.TextColor3 = Color3.fromRGB(255, 255, 255)
+ScriptName.TextSize = 10.000
+ScriptName.TextWrapped = true
+ScriptName.TextYAlignment = Enum.TextYAlignment.Top
+
+UICorner_9.CornerRadius = UDim.new(0.150000006, 0)
+UICorner_9.Parent = ScriptButtonTemplate
+
+UIListLayout_8.Parent = ScriptButtonTemplate
+UIListLayout_8.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout_8.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout_8.VerticalAlignment = Enum.VerticalAlignment.Center
+
+ScriptId.Name = "ScriptId"
+ScriptId.Parent = ScriptButtonTemplate
+ScriptId.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScriptId.BackgroundTransparency = 1.000
+ScriptId.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScriptId.BorderSizePixel = 0
+ScriptId.Position = UDim2.new(5.75803369e-07, 0, 0, 0)
+ScriptId.RichText = true
+ScriptId.Size = UDim2.new(0.899999976, 0, 0.119999997, 0)
+ScriptId.Font = Enum.Font[Table.GuiSettings.GuiFont.Medium]
+ScriptId.Text = "Id: 1000"
+ScriptId.TextColor3 = Color3.fromRGB(200, 200, 200)
+ScriptId.TextSize = 7.000
+ScriptId.TextWrapped = true
+
+UIListLayout_9.Parent = Scripts
+UIListLayout_9.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout_9.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout_9.VerticalAlignment = Enum.VerticalAlignment.Center
+
+UIListLayout_10.Parent = LeftFrame
+UIListLayout_10.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout_10.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout_10.VerticalAlignment = Enum.VerticalAlignment.Center
+UIListLayout_10.Padding = UDim.new(0, 5)
+
+-- Scripts:
+
+
+	SearchButton.MouseButton1Down:Connect(function()
+		for _, Button in ScrollingFrame:GetChildren() do
+			if Button:IsA("ImageButton") then
+				local SearchingFor = string.lower(TextBox.Text)
+				local ButtonName = string.lower(Button.ScriptName.Text)
+				local ButtonId = Button.ScriptId.Text
+	
+				if TextBox.Text == "" then
+					Button.Visible = true
+				else
+					if string.find(ButtonName, SearchingFor) and TextBox.Text ~= "" then
+						Button.Visible = true
+					elseif string.find(tostring(ButtonId), tostring(SearchingFor)) and TextBox.Text ~= "" then
+						Button.Visible = true
+					else
+						Button.Visible = false
+					end
+				end
+			end
+		end
+	end)
