@@ -478,6 +478,7 @@ ScrollingFrame.AutomaticCanvasSize = Enum.AutomaticSize.Y
 ScrollingFrame.CanvasPosition = Vector2.new(0, 0)
 ScrollingFrame.CanvasSize = UDim2.new(0, 0, 0, 0)
 ScrollingFrame.ScrollBarThickness = 2
+ScrollingFrame.ScrollingDirection = Enum.ScrollingDirection.Y
 
 UIListLayout_7.Parent = ScrollingFrame
 UIListLayout_7.HorizontalAlignment = Enum.HorizontalAlignment.Center
