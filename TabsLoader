@@ -505,6 +505,10 @@ function CreateNewTab(TabName)
         end
     end)
 
+    Template.BottomFrame.ScriptInfo.BottomFrame.Execute.MouseButton1Down:Connect(function()
+	pcall(Table.GuiStatus.ActiveScript)
+    end)
+
     if TabName == "Scripts" then
         Template.SectionInfo.ImageLabel.Image = "rbxassetid://11592851654"
         Template.SectionInfo.SectionName.Text = "Scripts"
@@ -575,7 +579,7 @@ function CreateScript(TabName, ScriptName, ScriptId, ScriptCreator, Script, Scri
             if ReturnRigType(ScriptRigType) == true then
                 pcall(Script)
             else
-                print("Player is not " .. ScriptRigType)
+                print("Player is not "..ScriptRigType)
             end
         else
             print("Game Not Supported")
