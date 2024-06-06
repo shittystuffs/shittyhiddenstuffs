@@ -572,19 +572,19 @@ function CreateScript(TabName, ScriptName, ScriptId, ScriptCreator, Script, Scri
 
 	Template.MouseButton1Down:Connect(function()
 		TabPath.BottomFrame.ScriptInfo.ScriptDetails.Text = '<b><font size="14">' .. ScriptName .. '</font></b>\n<font size="8">By: ' .. ScriptCreator .. '</font>\n\n<b><font size="10">Description:</font></b>\n<font size="8">' .. ScriptDescription .. '</font>\n\n<font size="8">RigType: <b>' .. ScriptRigType .. '</b>\nGame: <b>' .. GetGameName(ScriptSupportedIn) .. '</b></font><font size="8">\nScript Id: <b>' .. ScriptId .. '</b></font>'
-	end)
 
-	Table.GuiStatus.ActiveScript = function()
-		if ReturnIfGameSupported(ScriptSupportedIn) == true then
-			if ReturnRigType(ScriptRigType) == true then
-				pcall(Script)
+		Table.GuiStatus.ActiveScript = function()
+			if ReturnIfGameSupported(ScriptSupportedIn) == true then
+				if ReturnRigType(ScriptRigType) == true then
+					pcall(Script)
+				else
+					print("Player is not "..ScriptRigType)
+				end
 			else
-				print("Player is not "..ScriptRigType)
+				print("Game Not Supported")
 			end
-		else
-			print("Game Not Supported")
 		end
-	end
+	end)
 end
 
 -- Loader:
