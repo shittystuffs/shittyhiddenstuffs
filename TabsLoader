@@ -478,122 +478,122 @@ for i, v in TabsTemplate:GetDescendants() do
 end
 
 function CreateNewTab(TabName)
-    local Template = TabsTemplate:Clone()
+	local Template = TabsTemplate:Clone()
 
-    Template.Name = TabName
-    Template.Parent = game:GetService("CoreGui"):WaitForChild("VexHubFolder").VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Pages
+	Template.Name = TabName
+	Template.Parent = game:GetService("CoreGui"):WaitForChild("VexHubFolder").VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Pages
 
-    Template.BottomFrame.LeftFrame.SearchFrame.SearchButton.MouseButton1Down:Connect(function()
-        for _, Button in Template.BottomFrame.LeftFrame.Scripts.ScrollingFrame:GetChildren() do
-            if Button:IsA("ImageButton") then
-                local SearchingFor = string.lower(Template.BottomFrame.LeftFrame.SearchFrame.TextBoxParent.TextBox.Text)
-                local ButtonName = string.lower(Button.ScriptName.Text)
-                local ButtonId = Button.ScriptId.Text
+	Template.BottomFrame.LeftFrame.SearchFrame.SearchButton.MouseButton1Down:Connect(function()
+		for _, Button in Template.BottomFrame.LeftFrame.Scripts.ScrollingFrame:GetChildren() do
+			if Button:IsA("ImageButton") then
+				local SearchingFor = string.lower(Template.BottomFrame.LeftFrame.SearchFrame.TextBoxParent.TextBox.Text)
+				local ButtonName = string.lower(Button.ScriptName.Text)
+				local ButtonId = Button.ScriptId.Text
 
-                if SearchingFor == "" and Button.Name ~= "ScriptButtonTemplate" then
-                    Button.Visible = true
-                else
-                    if string.find(ButtonName, SearchingFor) and SearchingFor ~= "" and Button.Name ~= "ScriptButtonTemplate" then
-                        Button.Visible = true
-                    elseif string.find(tostring(ButtonId), tostring(SearchingFor)) and SearchingFor ~= "" and Button.Name ~= "ScriptButtonTemplate" then
-                        Button.Visible = true
-                    else
-                        Button.Visible = false
-                    end
-                end
-            end
-        end
-    end)
+				if SearchingFor == "" and Button.Name ~= "ScriptButtonTemplate" then
+					Button.Visible = true
+				else
+					if string.find(ButtonName, SearchingFor) and SearchingFor ~= "" and Button.Name ~= "ScriptButtonTemplate" then
+						Button.Visible = true
+					elseif string.find(tostring(ButtonId), tostring(SearchingFor)) and SearchingFor ~= "" and Button.Name ~= "ScriptButtonTemplate" then
+						Button.Visible = true
+					else
+						Button.Visible = false
+					end
+				end
+			end
+		end
+	end)
 
-    Template.BottomFrame.ScriptInfo.BottomFrame.Execute.MouseButton1Down:Connect(function()
-	pcall(Table.GuiStatus.ActiveScript)
-    end)
+	Template.BottomFrame.ScriptInfo.BottomFrame.Execute.MouseButton1Down:Connect(function()
+		pcall(Table.GuiStatus.ActiveScript)
+	end)
 
-    if TabName == "Scripts" then
-        Template.SectionInfo.ImageLabel.Image = "rbxassetid://11592851654"
-        Template.SectionInfo.SectionName.Text = "Scripts"
-        Template.BottomFrame.LeftFrame.Scripts.ScrollingFrame.ScriptButtonTemplate.Image = "rbxassetid://11592851654"
-    elseif TabName == "Required Accessories" then
-        Template.SectionInfo.ImageLabel.Image = "rbxassetid://11592824883"
-        Template.SectionInfo.SectionName.Text = "Required Accessories"
-        Template.BottomFrame.LeftFrame.Scripts.ScrollingFrame.ScriptButtonTemplate.Image = "rbxassetid://11592824883"
-    elseif TabName == "Guis" then
-        Template.SectionInfo.ImageLabel.Image = "rbxassetid://11592848654"
-        Template.SectionInfo.SectionName.Text = "Guis"
-        Template.BottomFrame.LeftFrame.Scripts.ScrollingFrame.ScriptButtonTemplate.Image = "rbxassetid://11592848654"
-    elseif TabName == "Animations" then
-        Template.SectionInfo.ImageLabel.Image = "rbxassetid://11592835705"
-        Template.SectionInfo.SectionName.Text = "Animations"
-        Template.BottomFrame.LeftFrame.Scripts.ScrollingFrame.ScriptButtonTemplate.Image = "rbxassetid://11592835705"
-    elseif TabName == "Commands" then
-        Template.SectionInfo.ImageLabel.Image = "rbxassetid://11592837927"
-        Template.SectionInfo.SectionName.Text = "Commands"
-        Template.BottomFrame.LeftFrame.Scripts.ScrollingFrame.ScriptButtonTemplate.Image = "rbxassetid://11592837927"
-    elseif TabName == "Other Hubs" then
-        Template.SectionInfo.ImageLabel.Image = "rbxassetid://11592850267"
-        Template.SectionInfo.SectionName.Text = "Other Hubs"
-        Template.BottomFrame.LeftFrame.Scripts.ScrollingFrame.ScriptButtonTemplate.Image = "rbxassetid://11592850267"
-    end
+	if TabName == "Scripts" then
+		Template.SectionInfo.ImageLabel.Image = "rbxassetid://11592851654"
+		Template.SectionInfo.SectionName.Text = "Scripts"
+		Template.BottomFrame.LeftFrame.Scripts.ScrollingFrame.ScriptButtonTemplate.Image = "rbxassetid://11592851654"
+	elseif TabName == "Required Accessories" then
+		Template.SectionInfo.ImageLabel.Image = "rbxassetid://11592824883"
+		Template.SectionInfo.SectionName.Text = "Required Accessories"
+		Template.BottomFrame.LeftFrame.Scripts.ScrollingFrame.ScriptButtonTemplate.Image = "rbxassetid://11592824883"
+	elseif TabName == "Guis" then
+		Template.SectionInfo.ImageLabel.Image = "rbxassetid://11592848654"
+		Template.SectionInfo.SectionName.Text = "Guis"
+		Template.BottomFrame.LeftFrame.Scripts.ScrollingFrame.ScriptButtonTemplate.Image = "rbxassetid://11592848654"
+	elseif TabName == "Animations" then
+		Template.SectionInfo.ImageLabel.Image = "rbxassetid://11592835705"
+		Template.SectionInfo.SectionName.Text = "Animations"
+		Template.BottomFrame.LeftFrame.Scripts.ScrollingFrame.ScriptButtonTemplate.Image = "rbxassetid://11592835705"
+	elseif TabName == "Commands" then
+		Template.SectionInfo.ImageLabel.Image = "rbxassetid://11592837927"
+		Template.SectionInfo.SectionName.Text = "Commands"
+		Template.BottomFrame.LeftFrame.Scripts.ScrollingFrame.ScriptButtonTemplate.Image = "rbxassetid://11592837927"
+	elseif TabName == "Other Hubs" then
+		Template.SectionInfo.ImageLabel.Image = "rbxassetid://11592850267"
+		Template.SectionInfo.SectionName.Text = "Other Hubs"
+		Template.BottomFrame.LeftFrame.Scripts.ScrollingFrame.ScriptButtonTemplate.Image = "rbxassetid://11592850267"
+	end
 end
 
 function CreateScript(TabName, ScriptName, ScriptId, ScriptCreator, Script, ScriptDescription, ScriptRigType, IsFavorited, ScriptSupportedIn, IsNew, IsOp)
-    local TabPath = game:GetService("CoreGui"):WaitForChild("VexHubFolder").VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Pages[TabName]
-    local Template = TabPath.BottomFrame.LeftFrame.Scripts.ScrollingFrame.ScriptButtonTemplate:Clone()
+	local TabPath = game:GetService("CoreGui"):WaitForChild("VexHubFolder").VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Pages[TabName]
+	local Template = TabPath.BottomFrame.LeftFrame.Scripts.ScrollingFrame.ScriptButtonTemplate:Clone()
 
-    Template.Name = ScriptName
-    Template.Parent = TabPath.BottomFrame.LeftFrame.Scripts.ScrollingFrame
-    Template.Visible = true
-    Template.ScriptName.Text = ScriptName
-    Template.ScriptId.Text = "Id: "..ScriptId
+	Template.Name = ScriptName
+	Template.Parent = TabPath.BottomFrame.LeftFrame.Scripts.ScrollingFrame
+	Template.Visible = true
+	Template.ScriptName.Text = ScriptName
+	Template.ScriptId.Text = "Id: "..ScriptId
 
-    function GetGameName(GameId)
-        if GameId == 0 then
-            return "Universal"
-        else
-            return game:GetService("MarketplaceService"):GetProductInfo(GameId).Name
-        end
-    end
+	function GetGameName(GameId)
+		if GameId == 0 then
+			return "Universal"
+		else
+			return game:GetService("MarketplaceService"):GetProductInfo(GameId).Name
+		end
+	end
 
-    function ReturnRigType(RigType)
-        if Player.Character:FindFirstChildOfClass("Humanoid").RigType == Enum.HumanoidRigType[RigType] or RigType == "Any" then
-            return true
-        else
-            return false
-        end
-    end
+	function ReturnRigType(RigType)
+		if Player.Character:FindFirstChildOfClass("Humanoid").RigType == Enum.HumanoidRigType[RigType] or RigType == "Any" then
+			return true
+		else
+			return false
+		end
+	end
 
-    function ReturnIfGameSupported(GameId)
-        if game.PlaceId == GameId or GameId == "Universal" then
-            return true
-        else
-            return false
-        end
-    end
+	function ReturnIfGameSupported(GameId)
+		if game.PlaceId == GameId or GameId == "Universal" then
+			return true
+		else
+			return false
+		end
+	end
 
-    Template.MouseButton1Down:Connect(function()
-        TabPath.BottomFrame.ScriptInfo.ScriptDetails.Text = '<b><font size="14">' .. ScriptName .. '</font></b>\n<font size="8">By: ' .. ScriptCreator .. '</font>\n\n<b><font size="10">Description:</font></b>\n<font size="8">' .. ScriptDescription .. '</font>\n\n<font size="8">RigType: <b>' .. ScriptRigType .. '</b>\nGame: <b>' .. GetGameName(ScriptSupportedIn) .. '</b></font><font size="8">\nScript Id: <b>' .. ScriptId .. '</b></font>'
-    end)
+	Template.MouseButton1Down:Connect(function()
+		TabPath.BottomFrame.ScriptInfo.ScriptDetails.Text = '<b><font size="14">' .. ScriptName .. '</font></b>\n<font size="8">By: ' .. ScriptCreator .. '</font>\n\n<b><font size="10">Description:</font></b>\n<font size="8">' .. ScriptDescription .. '</font>\n\n<font size="8">RigType: <b>' .. ScriptRigType .. '</b>\nGame: <b>' .. GetGameName(ScriptSupportedIn) .. '</b></font><font size="8">\nScript Id: <b>' .. ScriptId .. '</b></font>'
+	end)
 
-    Table.GuiStatus.ActiveScript = function()
-        if ReturnIfGameSupported(ScriptSupportedIn) == true then
-            if ReturnRigType(ScriptRigType) == true then
-                pcall(Script)
-            else
-                print("Player is not "..ScriptRigType)
-            end
-        else
-            print("Game Not Supported")
-        end
-    end
+	Table.GuiStatus.ActiveScript = function()
+		if ReturnIfGameSupported(ScriptSupportedIn) == true then
+			if ReturnRigType(ScriptRigType) == true then
+				pcall(Script)
+			else
+				print("Player is not "..ScriptRigType)
+			end
+		else
+			print("Game Not Supported")
+		end
+	end
 end
 
 -- Loader:
 for Tab, _ in Table.GuiScripts do
-    CreateNewTab(Tab)
-
-    wait()
-    for ScriptName, ScriptInfo in Table.GuiScripts[Tab] do
-        CreateScript(Tab, ScriptName, ScriptInfo.ScriptId, ScriptInfo.Owner, ScriptInfo.Script, ScriptInfo.Description, ScriptInfo.RigType, ScriptInfo.Favorited, ScriptInfo.GameId, ScriptInfo.IsNew, ScriptInfo.IsOP)
-    end
+	CreateNewTab(Tab)
+	
+	wait()
+	for ScriptName, ScriptInfo in Table.GuiScripts[Tab] do
+		CreateScript(Tab, ScriptName, ScriptInfo.ScriptId, ScriptInfo.Owner, ScriptInfo.Script, ScriptInfo.Description, ScriptInfo.RigType, ScriptInfo.Favorited, ScriptInfo.GameId, ScriptInfo.IsNew, ScriptInfo.IsOP)
+	end
 end
 
