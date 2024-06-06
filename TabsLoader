@@ -594,7 +594,7 @@ function CreateScript(TabName, ScriptName, ScriptId, ScriptCreator, Script, Scri
 		end
 
 		Table.GuiStatus.FavoriteScriptFunction = function()
-			if IsFavorited == true then
+			if Table.GuiScripts[TabName][ScriptName].Favorited == true then
 				Table.GuiScripts[TabName][ScriptName].Favorited = false
 			else
 				Table.GuiScripts[TabName][ScriptName].Favorited = true
