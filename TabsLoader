@@ -543,10 +543,10 @@ function CreateScript(TabName, ScriptName, ScriptId, ScriptCreator, Script, Scri
 	Template.ScriptId.Text = "Id: "..ScriptId
 	
 	function GetGameName(GameId)
-		if GameId ~= 0 then
-			return game:GetService("MarketplaceService"):GetProductInfo(GameId).Name
-		else
+		if GameId == 0 then
 			return "Universal"
+		else
+			return game:GetService("MarketplaceService"):GetProductInfo(GameId).Name
 		end
 	end
 
