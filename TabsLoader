@@ -563,7 +563,7 @@ function CreateScript(TabName, ScriptName, ScriptId, ScriptCreator, Script, Scri
 	end
 
 	function ReturnIfGameSupported(GameId)
-		if game.PlaceId == GameId or GameId == "Universal" then
+		if GameId == "Universal" or game.PlaceId == GameId then
 			return true
 		else
 			return false
