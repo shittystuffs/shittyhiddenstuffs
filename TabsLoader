@@ -555,7 +555,7 @@ function CreateScript(TabName, ScriptName, ScriptId, ScriptCreator, Script, Scri
 	end
 
 	function ReturnRigType(RigType)
-		if Player.Character:FindFirstChildOfClass("Humanoid").RigType == Enum.HumanoidRigType[RigType] or RigType == "Any" then
+		if RigType == "Any" or Player.Character:FindFirstChildOfClass("Humanoid").RigType == Enum.HumanoidRigType[RigType] then
 			return true
 		else
 			return false
