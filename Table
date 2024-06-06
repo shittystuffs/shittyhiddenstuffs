@@ -8,6 +8,10 @@ getgenv().Table = {
 		ActiveScriptName = nil,
 		ActiveScript = function()
 		end,
+		FavoriteScriptFunction = function()
+		end,
+		JoinGameFunction = function()
+		end,
 		KeyChangeDate = "8/8/8",
 		SwitchScriptCooldown = 0.5,
 		Owner = "V31nc",
