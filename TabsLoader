@@ -532,19 +532,55 @@ Template.BottomFrame.LeftFrame.Scripts.ScrollingFrame.ScriptButtonTemplate.Image
 end
 end
 
-function CreateScript(TabName, ScriptName, ScriptId, ScriptCreator, ScriptDescription, ScriptRigType, IsFavorited, ScriptSupportedIn, IsNew, IsOp)
-local TabPath = game:GetService("CoreGui"):WaitForChild("VexHubFolder").VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Pages[TabName]
-local Template = TabPath.BottomFrame.LeftFrame.Scripts.ScrollingFrame.ScriptButtonTemplate:Clone()
+function CreateScript(TabName, ScriptName, ScriptId, ScriptCreator, Script, ScriptDescription, ScriptRigType, IsFavorited, ScriptSupportedIn, IsNew, IsOp)
+	local TabPath = game:GetService("CoreGui"):WaitForChild("VexHubFolder").VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Pages[TabName]
+	local Template = TabPath.BottomFrame.LeftFrame.Scripts.ScrollingFrame.ScriptButtonTemplate:Clone()
+	
+	Template.Name = ScriptName
+	Template.Parent = TabPath.BottomFrame.LeftFrame.Scripts.ScrollingFrame
+	Template.Visible = true
+	Template.ScriptName.Text = ScriptName
+	Template.ScriptId.Text = "Id: "..ScriptId
+	
+	function GetGameName(GameId)
+		if GameId ~= "0" then
+			return game:GetService("MarketplaceService"):GetProductInfo(GameId).Name
+		else
+			return "Universal"
+		end
+	end
 
-Template.Name = ScriptName
-Template.Parent = TabPath.BottomFrame.LeftFrame.Scripts.ScrollingFrame
-Template.Visible = true
-Template.ScriptName.Text = ScriptName
-Template.ScriptId.Text = "Id: "..ScriptId
+	function ReturnRigType(RigType)	
+		if Player.Character:FindFirstChildOfClass("Humanoid").RigType == Enum.HumanoidRigType[RigType] or RigType == "Any" then
+			return true
+		else
+			return false
+		end
+	end
 
-Template.MouseButton1Down:Connect(function()
-TabPath.BottomFrame.ScriptInfo.ScriptDetails.Text = '<b><font size="14">'..ScriptName..'</font></b>\n<font size="8">By: '..ScriptCreator..'</font>\n\n<b><font size="10">Description:</font></b>\n<font size="8">'..ScriptDescription..'</font>\n\n<font size="8">RigType: <b>'..ScriptRigType..'</b>\nGame: <b>Universal</b></font><font size="8">\nScript Id: <b>'..ScriptId..'</b></font>'
-end)
+	function ReturnIfGameSupported(GameId)
+		if game.PlaceId == GameId or GameId == "Universal" then
+			return true
+		else
+			return false
+		end
+	end
+
+	Template.MouseButton1Down:Connect(function()
+		TabPath.BottomFrame.ScriptInfo.ScriptDetails.Text = '<b><font size="14">'..ScriptName..'</font></b>\n<font size="8">By: '..ScriptCreator..'</font>\n\n<b><font size="10">Description:</font></b>\n<font size="8">'..ScriptDescription..'</font>\n\n<font size="8">RigType: <b>'..ScriptRigType..'</b>\nGame: <b>'..GetGameName(ScriptSupportedIn)..'</b></font><font size="8">\nScript Id: <b>'..ScriptId..'</b></font>'
+	end)
+
+	Table.GuiStatus.ActiveScript = function()
+		if ReturnIfGameSupported(ScriptSupportedIn) == true then
+			if ReturnRigType(ScriptRigType) == true then
+				pcall(Script)
+			else
+				print("Player is not "..ScriptRigType)
+			end
+		else
+			print("Game Not Supported")
+		end
+	end
 end
 
 -- Loader:
@@ -553,6 +589,6 @@ CreateNewTab(Tab)
 
 wait()
 for ScriptName, ScriptInfo in Table.GuiScripts[Tab] do
-CreateScript(Tab, ScriptName, ScriptInfo.ScriptId, ScriptInfo.Owner, ScriptInfo.Description, ScriptInfo.RigType, ScriptInfo.Favorited, ScriptInfo.GameId, ScriptInfo.IsNew, ScriptInfo.IsOP)
+CreateScript(Tab, ScriptName, ScriptInfo.ScriptId, ScriptInfo.Owner, ScriptInfo.Script, ScriptInfo.Description, ScriptInfo.RigType, ScriptInfo.Favorited, ScriptInfo.GameId, ScriptInfo.IsNew, ScriptInfo.IsOP)
 end
 end
