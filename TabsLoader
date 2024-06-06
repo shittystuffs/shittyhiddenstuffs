@@ -509,6 +509,14 @@ function CreateNewTab(TabName)
 		pcall(Table.GuiStatus.ActiveScript)
 	end)
 
+	Template.BottomFrame.ScriptInfo.BottomFrame.Play.MouseButton1Down:Connect(function()
+		pcall(Table.GuiStatus.JoinGameFunction)
+	end)
+
+	Template.BottomFrame.ScriptInfo.BottomFrame.Favorite.MouseButton1Down:Connect(function()
+		pcall(Table.GuiStatus.FavoriteScriptFunction)
+	end)
+
 	if TabName == "Scripts" then
 		Template.SectionInfo.ImageLabel.Image = "rbxassetid://11592851654"
 		Template.SectionInfo.SectionName.Text = "Scripts"
@@ -582,6 +590,24 @@ function CreateScript(TabName, ScriptName, ScriptId, ScriptCreator, Script, Scri
 				end
 			else
 				print("Game Not Supported")
+			end
+		end
+
+		Table.GuiStatus.FavoriteScriptFunction = function()
+			if IsFavorited == true then
+				Table.GuiScripts[TabName][ScriptName].Favorited = false
+			else
+				Table.GuiScripts[TabName][ScriptName].Favorited = true
+			end
+		end
+
+		Table.GuiStatus.JoinGameFunction = function()
+			if GetGameName(ScriptSupportedIn) == "Universal" then
+				print("Script is universal")
+			elseif game.PlaceId == ScriptSupportedIn then
+				print("Youre Already in the game")
+			elseif game.PlaceId ~= ScriptSupportedIn then
+				game:GetService("TeleportService"):Teleport(ScriptSupportedIn)
 			end
 		end
 	end)
