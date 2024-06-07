@@ -2,27 +2,28 @@ local Library = {}
 local TweenService = game:GetService("TweenService")
 local AnimationSpeed = 0.6
 local AnimationEasingStyle = "Quart"
+local TopFrame = game:GetService("CoreGui").VexHubFolder.VexHubScreenGui.TopFrame
 
 function Library:Create(Title, Message, Duration)
 
 local function UpdateNotification(Title, Message, Duration)
-  if (script.Parent:FindFirstChild("Notification")) and (script.Parent:FindFirstChild("Notification").Duration.Value) > 0 then
-    TweenService:Create(script.Parent:FindFirstChild("Notification").Insides.Message, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
-    script.Parent:FindFirstChild("Notification").Duration.Value += AnimationSpeed+1
+  if (TopFrame:FindFirstChild("Notification")) and (script.Parent:FindFirstChild("Notification").Duration.Value) > 0 then
+    TweenService:Create(TopFrame:FindFirstChild("Notification").Insides.Message, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+    TopFrame:FindFirstChild("Notification").Duration.Value += AnimationSpeed+1
     wait(AnimationSpeed)
-    script.Parent:FindFirstChild("Notification").Sound.TimePosition = 0
-    script.Parent:FindFirstChild("Notification").Sound.Playing = true
-    TweenService:Create(script.Parent:FindFirstChild("Notification").Insides.Message, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
-    script.Parent:FindFirstChild("Notification").Duration.Value += Duration
-    script.Parent:FindFirstChild("Notification").Insides.Message.Text = '<b>'..Title..'</b>\n<font size="10">'..Message..'</font>'
+    TopFrame:FindFirstChild("Notification").Sound.TimePosition = 0
+    TopFrame:FindFirstChild("Notification").Sound.Playing = true
+    TweenService:Create(TopFrame:FindFirstChild("Notification").Insides.Message, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+    TopFrame:FindFirstChild("Notification").Duration.Value += Duration
+    TopFrame:FindFirstChild("Notification").Insides.Message.Text = '<b>'..Title..'</b>\n<font size="10">'..Message..'</font>'
   end
 end
 	
 local function CreateNotification(Title, Message, Duration)
-  if (script.Parent:FindFirstChild("Notification")) and (script.Parent:FindFirstChild("Notification").Duration.Value) > 0 then
+  if (TopFrame:FindFirstChild("Notification")) and (TopFrame:FindFirstChild("Notification").Duration.Value) > 0 then
     UpdateNotification(Title, Message, Duration)
   else
-    local NotificationTemplate = script.Parent.NotificationTemplate:Clone()
+    local NotificationTemplate = TopFrame.NotificationTemplate:Clone()
     
     NotificationTemplate.Name = "Notification"
     NotificationTemplate.Parent = script.Parent
