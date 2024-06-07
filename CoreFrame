@@ -167,6 +167,8 @@ VexHubScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 VexHubScreenGui.ClipToDeviceSafeArea = false
 VexHubScreenGui.ResetOnSpawn = false
 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shittystuffs/shittyhiddenstuffs/main/NotificationTemplate"))()
+
 BackFrame.Name = "BackFrame"
 BackFrame.Parent = VexHubScreenGui
 BackFrame.Active = true
