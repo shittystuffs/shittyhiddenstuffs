@@ -41,7 +41,7 @@ getgenv().Table = {
 		},
 		BackgroundGradientColor = "200, 200, 200",
 		UIStrokeColor = "255, 255, 255",
-		NotificationSound = 6324790483,
+		NotificationSound = 3398620867,
 		NotificationVolume = 0.5,
 		PlayerBadges = {
 			Heart = true,
