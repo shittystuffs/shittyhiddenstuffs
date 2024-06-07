@@ -7,7 +7,7 @@ local TopFrame = game:GetService("CoreGui").VexHubFolder.VexHubScreenGui.TopFram
 function Library:Create(Title, Message, Duration)
 
 local function UpdateNotification(Title, Message, Duration)
-  if (TopFrame:FindFirstChild("Notification")) and (script.Parent:FindFirstChild("Notification").Duration.Value) > 0 then
+  if (TopFrame:FindFirstChild("Notification")) and (TopFrame:FindFirstChild("Notification").Duration.Value) > 0 then
     TweenService:Create(TopFrame:FindFirstChild("Notification").Insides.Message, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
     TopFrame:FindFirstChild("Notification").Duration.Value += AnimationSpeed+1
     wait(AnimationSpeed)
@@ -26,7 +26,7 @@ local function CreateNotification(Title, Message, Duration)
     local NotificationTemplate = TopFrame.NotificationTemplate:Clone()
     
     NotificationTemplate.Name = "Notification"
-    NotificationTemplate.Parent = script.Parent
+    NotificationTemplate.Parent = TopFrame
     NotificationTemplate.Visible = true
     NotificationTemplate.Duration.Value = tonumber(Duration)
     NotificationTemplate.Insides.Message.Text = '<b>'..Title..'</b>\n<font size="10">'..Message..'</font>'
