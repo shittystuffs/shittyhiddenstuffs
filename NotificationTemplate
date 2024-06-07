@@ -1,0 +1,267 @@
+-- V31nc : GUI to LUA V1
+
+-- Instances:
+
+local TopFrame = Instance.new("Frame")
+local NotificationTemplate = Instance.new("ImageLabel")
+local Blur = Instance.new("ImageLabel")
+local UICorner = Instance.new("UICorner")
+local UICorner_2 = Instance.new("UICorner")
+local Insides = Instance.new("Frame")
+local UIListLayout = Instance.new("UIListLayout")
+local Message = Instance.new("TextLabel")
+local Close = Instance.new("ImageButton")
+local BellParent = Instance.new("Frame")
+local Bell = Instance.new("ImageLabel")
+local UIScale = Instance.new("UIScale")
+local UIListLayout_2 = Instance.new("UIListLayout")
+local OpenButton = Instance.new("ImageButton")
+local UICorner_3 = Instance.new("UICorner")
+local UIStroke = Instance.new("UIStroke")
+local Logo = Instance.new("ImageLabel")
+
+--Properties:
+
+TopFrame.Name = "TopFrame"
+TopFrame.Parent = game:GetService("CoreGui").VexHubFolder.VexHubScreenGui
+TopFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TopFrame.BackgroundTransparency = 1.000
+TopFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TopFrame.BorderSizePixel = 0
+TopFrame.Position = UDim2.new(0, 0, 0, 1)
+TopFrame.Size = UDim2.new(1, 0, 0, 50)
+
+NotificationTemplate.Name = "NotificationTemplate"
+NotificationTemplate.Parent = TopFrame
+NotificationTemplate.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+NotificationTemplate.BackgroundTransparency = 1.000
+NotificationTemplate.BorderColor3 = Color3.fromRGB(0, 0, 0)
+NotificationTemplate.BorderSizePixel = 0
+NotificationTemplate.LayoutOrder = 2
+NotificationTemplate.Size = UDim2.new(0, 40, 0, 40)
+NotificationTemplate.Visible = false
+NotificationTemplate.Image = "rbxassetid://11926598891"
+NotificationTemplate.ImageTransparency = 1.000
+NotificationTemplate.ScaleType = Enum.ScaleType.Crop
+
+Blur.Name = "Blur"
+Blur.Parent = NotificationTemplate
+Blur.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Blur.BackgroundTransparency = 1.000
+Blur.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Blur.BorderSizePixel = 0
+Blur.Size = UDim2.new(1, 0, 1, 0)
+Blur.Image = "http://www.roblox.com/asset/?id=143854825"
+Blur.ImageColor3 = Color3.fromRGB(100, 100, 100)
+Blur.ImageTransparency = 1.000
+Blur.ScaleType = Enum.ScaleType.Crop
+
+UICorner.CornerRadius = UDim.new(0, 20)
+UICorner.Parent = Blur
+
+UICorner_2.CornerRadius = UDim.new(0, 20)
+UICorner_2.Parent = NotificationTemplate
+
+Insides.Name = "Insides"
+Insides.Parent = NotificationTemplate
+Insides.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Insides.BackgroundTransparency = 1.000
+Insides.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Insides.BorderSizePixel = 0
+Insides.Size = UDim2.new(1, 0, 1, 0)
+
+UIListLayout.Parent = Insides
+UIListLayout.FillDirection = Enum.FillDirection.Horizontal
+UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Center
+UIListLayout.Padding = UDim.new(0, 5)
+
+Message.Name = "Message"
+Message.Parent = Insides
+Message.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Message.BackgroundTransparency = 1.000
+Message.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Message.BorderSizePixel = 0
+Message.LayoutOrder = 2
+Message.Position = UDim2.new(0.506250024, 0, 0, 0)
+Message.RichText = true
+Message.Size = UDim2.new(0, 0, 0, 40)
+Message.Visible = false
+Message.Font = Enum.Font.Gotham
+Message.TextColor3 = Color3.fromRGB(255, 255, 255)
+Message.TextSize = 16.000
+Message.TextTransparency = 1.000
+Message.TextWrapped = true
+Message.TextXAlignment = Enum.TextXAlignment.Left
+
+Close.Name = "Close"
+Close.Parent = Insides
+Close.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Close.BackgroundTransparency = 1.000
+Close.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Close.BorderSizePixel = 0
+Close.LayoutOrder = 3
+Close.Size = UDim2.new(0, 0, 0, 30)
+Close.Visible = false
+Close.Image = "rbxassetid://17584397052"
+
+BellParent.Name = "BellParent"
+BellParent.Parent = Insides
+BellParent.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+BellParent.BackgroundTransparency = 1.000
+BellParent.BorderColor3 = Color3.fromRGB(0, 0, 0)
+BellParent.BorderSizePixel = 0
+BellParent.LayoutOrder = 1
+BellParent.Size = UDim2.new(0, 40, 0, 40)
+
+Bell.Name = "Bell"
+Bell.Parent = BellParent
+Bell.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Bell.BackgroundTransparency = 1.000
+Bell.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Bell.BorderSizePixel = 0
+Bell.Size = UDim2.new(1, 0, 1, 0)
+Bell.Image = "rbxassetid://14586188666"
+Bell.ImageTransparency = 1.000
+
+UIScale.Parent = NotificationTemplate
+UIScale.Scale = 0.000
+
+UIListLayout_2.Parent = TopFrame
+UIListLayout_2.FillDirection = Enum.FillDirection.Horizontal
+UIListLayout_2.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout_2.VerticalAlignment = Enum.VerticalAlignment.Center
+UIListLayout_2.Padding = UDim.new(0, 5)
+
+OpenButton.Name = "OpenButton"
+OpenButton.Parent = TopFrame
+OpenButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+OpenButton.BackgroundTransparency = 0.500
+OpenButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+OpenButton.BorderSizePixel = 0
+OpenButton.LayoutOrder = 1
+OpenButton.Size = UDim2.new(0, 35, 0, 35)
+OpenButton.Image = "rbxassetid://11926598891"
+OpenButton.ImageTransparency = 1.000
+OpenButton.ScaleType = Enum.ScaleType.Crop
+
+UICorner_3.CornerRadius = UDim.new(1, 0)
+UICorner_3.Parent = OpenButton
+
+UIStroke.Thickness = 3.000
+UIStroke.Transparency = 0.700
+UIStroke.Parent = OpenButton
+
+Logo.Name = "Logo"
+Logo.Parent = OpenButton
+Logo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Logo.BackgroundTransparency = 1.000
+Logo.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Logo.BorderSizePixel = 0
+Logo.Size = UDim2.new(1, 0, 1, 0)
+Logo.Image = "rbxassetid://14803348752"
+
+-- Scripts:
+
+local function WBEUCGL_fake_script() -- TopFrame.LocalScript 
+	local script = Instance.new('LocalScript', TopFrame)
+
+	local TweenService = game:GetService("TweenService")
+	local AnimationSpeed = 0.6
+	local AnimationEasingStyle = "Quart"
+	
+	function UpdateNotification(Title, Message, Duration)
+		if (script.Parent:FindFirstChild("Notification")) and (script.Parent:FindFirstChild("Notification").Duration.Value) > 0 then
+			TweenService:Create(script.Parent:FindFirstChild("Notification").Insides.Message, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+			script.Parent:FindFirstChild("Notification").Duration.Value += AnimationSpeed+1
+			wait(AnimationSpeed)
+			script.Parent:FindFirstChild("Notification").Sound.TimePosition = 0
+			script.Parent:FindFirstChild("Notification").Sound.Playing = true
+			TweenService:Create(script.Parent:FindFirstChild("Notification").Insides.Message, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+			script.Parent:FindFirstChild("Notification").Duration.Value += Duration
+			script.Parent:FindFirstChild("Notification").Insides.Message.Text = '<b>'..Title..'</b>\n<font size="10">'..Message..'</font>'
+		end
+	end
+	
+	function CreateNotification(Title, Message, Duration)
+		if (script.Parent:FindFirstChild("Notification")) and (script.Parent:FindFirstChild("Notification").Duration.Value) > 0 then
+			UpdateNotification(Title, Message, Duration)
+		else
+			local NotificationTemplate = script.Parent.NotificationTemplate:Clone()
+	
+			NotificationTemplate.Name = "Notification"
+			NotificationTemplate.Parent = script.Parent
+			NotificationTemplate.Visible = true
+			NotificationTemplate.Duration.Value = tonumber(Duration)
+			NotificationTemplate.Insides.Message.Text = '<b>'..Title..'</b>\n<font size="10">'..Message..'</font>'
+			
+			local function DisappearNotification()
+				TweenService:Create(NotificationTemplate, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Size = UDim2.new(0, 40, 0, 40)}):Play()
+				TweenService:Create(NotificationTemplate.Insides.Close, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
+				TweenService:Create(NotificationTemplate.Insides.Close, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Size = UDim2.new(0, 0, 0, 30)}):Play()
+				TweenService:Create(NotificationTemplate.Insides.Message, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+				TweenService:Create(NotificationTemplate.Insides.Message, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Size = UDim2.new(0, 0, 0, 40)}):Play()
+				wait(AnimationSpeed/2)
+				NotificationTemplate.Insides.Close.Visible = false
+				NotificationTemplate.Insides.Message.Visible = false
+				TweenService:Create(NotificationTemplate, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {BackgroundTransparency = 1}):Play()
+				TweenService:Create(NotificationTemplate, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
+				TweenService:Create(NotificationTemplate.UIScale, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Scale = 0.8}):Play()
+				TweenService:Create(NotificationTemplate.Insides.BellParent.Bell, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
+				TweenService:Create(NotificationTemplate.Blur, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
+				wait(AnimationSpeed)
+				TweenService:Create(NotificationTemplate.UIScale, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Scale = 0}):Play()
+				wait(AnimationSpeed/2)
+				NotificationTemplate:Destroy()
+			end
+			
+			NotificationTemplate.Insides.Close.MouseButton1Down:Connect(function()
+				NotificationTemplate.Duration.Value = 0
+			end)
+			
+			coroutine.wrap(function()
+				TweenService:Create(NotificationTemplate.UIScale, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Scale = 0.8}):Play()
+				wait(AnimationSpeed/4)
+				TweenService:Create(NotificationTemplate, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {BackgroundTransparency = 0}):Play()
+				TweenService:Create(NotificationTemplate, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0.3}):Play()
+				TweenService:Create(NotificationTemplate.Insides.BellParent.Bell, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
+				TweenService:Create(NotificationTemplate.Blur, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
+				TweenService:Create(NotificationTemplate.UIScale, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Scale = 1}):Play()
+				wait(AnimationSpeed)
+				TweenService:Create(NotificationTemplate.Insides.BellParent.Bell, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Rotation = 10}):Play()
+				wait(AnimationSpeed)
+				TweenService:Create(NotificationTemplate.Insides.BellParent.Bell, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Rotation = -10}):Play()
+				wait(AnimationSpeed)
+				TweenService:Create(NotificationTemplate.Insides.BellParent.Bell, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Rotation = 10}):Play()
+				wait(AnimationSpeed*1.5)
+				NotificationTemplate.Insides.Close.Visible = true
+				NotificationTemplate.Insides.Message.Visible = true
+				NotificationTemplate.Sound.Playing = true
+				
+				TweenService:Create(NotificationTemplate.Insides.BellParent.Bell, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Rotation = 0}):Play()
+				TweenService:Create(NotificationTemplate, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Size = UDim2.new(0, 400, 0, 40)}):Play()
+				TweenService:Create(NotificationTemplate.Insides.Close, TweenInfo.new(AnimationSpeed*1.5, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
+				TweenService:Create(NotificationTemplate.Insides.Close, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Size = UDim2.new(0, 30, 0, 30)}):Play()
+				TweenService:Create(NotificationTemplate.Insides.Message, TweenInfo.new(AnimationSpeed*1.5, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+				TweenService:Create(NotificationTemplate.Insides.Message, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Size = UDim2.new(0, 310, 0, 40)}):Play()
+	
+				while wait(1) do
+					if NotificationTemplate.Duration.Value > 0 then
+						NotificationTemplate.Duration.Value -= 1
+					elseif NotificationTemplate.Duration.Value <= 0 or not (NotificationTemplate) then
+						DisappearNotification()
+						break
+					end
+				end
+			end)()
+		end
+	end
+	
+	wait(5)
+	CreateNotification("yolo", "kys", 5)
+	wait(5)
+	CreateNotification("kys", "yo", 5)
+end
+coroutine.wrap(WBEUCGL_fake_script)()
