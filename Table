@@ -6,6 +6,14 @@ getgenv().Table = {
 		TargetPlugin = nil,
 		GuiVersion = 6.143,
 		ActiveScriptName = nil,
+		ClickSoundScript = function()
+		local ClickSound = Instance.new("Sound")
+
+		ClickSound.Name = "ClickSound"
+		ClickSound.Parent = game:GetService("SoundService")
+		ClickSound.SoundId = "rbxassetid://6324790483"
+		ClickSound.Playing = true
+		end,
 		ActiveScript = function()
 		end,
 		FavoriteScriptFunction = function()
