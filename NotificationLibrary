@@ -10,7 +10,7 @@ function Library:Create(Title, Message, Duration)
 	local function UpdateNotification(Title, Message, Duration)
 	  if (TopFrame:FindFirstChild("Notification")) and (TopFrame:FindFirstChild("Notification").Duration.Value) > 0 then
 	    TweenService:Create(TopFrame:FindFirstChild("Notification").Insides.Message, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
-	    TopFrame:FindFirstChild("Notification").Duration.Value += AnimationSpeed+1
+	    TopFrame:FindFirstChild("Notification").Duration.Value += 1
 	    wait(AnimationSpeed)
 	    TopFrame:FindFirstChild("Notification").Sound.TimePosition = 0
 	    TopFrame:FindFirstChild("Notification").Sound.Playing = true
@@ -65,12 +65,6 @@ function Library:Create(Title, Message, Duration)
 	      TweenService:Create(NotificationTemplate.Blur, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
 	      TweenService:Create(NotificationTemplate.UIScale, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Scale = 1}):Play()
 	      wait(AnimationSpeed)
-	      TweenService:Create(NotificationTemplate.Insides.BellParent.Bell, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Rotation = 10}):Play()
-	      wait(AnimationSpeed)
-	      TweenService:Create(NotificationTemplate.Insides.BellParent.Bell, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Rotation = -10}):Play()
-	      wait(AnimationSpeed)
-	      TweenService:Create(NotificationTemplate.Insides.BellParent.Bell, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Rotation = 10}):Play()
-	      wait(AnimationSpeed*1.5)
 	      NotificationTemplate.Insides.Close.Visible = true
 	      NotificationTemplate.Insides.Message.Visible = true
 	      NotificationTemplate.Sound.Playing = true
