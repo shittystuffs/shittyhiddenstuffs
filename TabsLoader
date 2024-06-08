@@ -587,10 +587,10 @@ function CreateScript(TabName, ScriptName, ScriptId, ScriptCreator, Script, Scri
 				if ReturnRigType(ScriptRigType) == true then
 					pcall(Script)
 				else
-					print("Player is not "..ScriptRigType)
+					Notification:Create("Whoops", "Youre not "..ScriptRigType.."!", 5)
 				end
 			else
-				print("Game Not Supported")
+				Notification:Create("Whoops", "Youre not in "..GetGameName(ScriptSupportedIn)..". Join the green play button to join the game!", 5)
 			end
 		end
 
@@ -606,9 +606,23 @@ function CreateScript(TabName, ScriptName, ScriptId, ScriptCreator, Script, Scri
 			if GetGameName(ScriptSupportedIn) == "Universal" then
 				Notification:Create("Whoops", "This script is universal! This script works on any games!", 5)
 			elseif game.PlaceId == ScriptSupportedIn then
-				print("Youre Already in the game")
+				Notification:Create("Whoops", "Youre already in the game!", 5)
 			elseif game.PlaceId ~= ScriptSupportedIn then
-				game:GetService("TeleportService"):Teleport(ScriptSupportedIn)
+				Notification:Create("Teleporting...", "Teleporting you to "..GetGameName(ScriptSupportedIn).." in just a second...", 5)
+				local Teleported = false
+
+				local Success, Error = pcall(function()
+					game:GetService("TeleportService"):Teleport(ScriptSupportedIn)
+					wait()
+					Teleported = true
+				end
+
+				wait(7)
+				if not Success then
+					Notification:Create("Failed to teleport!", Error, 5)
+				elseif Teleported == false then
+					Notification:Create("TeleportService is slow!", "This might take a while.", 5)
+				end
 			end
 		end
 	end)
