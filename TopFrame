@@ -15,6 +15,7 @@ end
 
 local TopFrame = Instance.new("Frame")
 local NotificationTemplate = Instance.new("ImageLabel")
+local Duration = Instance.new("NumberValue")
 local Blur = Instance.new("ImageLabel")
 local UICorner = Instance.new("UICorner")
 local UICorner_2 = Instance.new("UICorner")
@@ -54,6 +55,10 @@ NotificationTemplate.Visible = false
 NotificationTemplate.Image = "rbxassetid://"..Table.GuiSettings.Wallpaper
 NotificationTemplate.ImageTransparency = 1.000
 NotificationTemplate.ScaleType = Enum.ScaleType.Crop
+
+Duration.Name = "Duration"
+Duration.Parent = NotificationTemplate
+Duration.Value = 0
 
 Blur.Name = "Blur"
 Blur.Parent = NotificationTemplate
