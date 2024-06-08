@@ -4,6 +4,7 @@ local Table = getgenv().Table
 local Player = game:GetService("Players").LocalPlayer
 local TweenService = game:GetService("TweenService")
 local AnimationLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/shittystuffs/shittyhiddenstuffs/main/AnimationLibrary"))()
+local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/shittystuffs/shittyhiddenstuffs/main/NotificationLibrary"))()
 
 function StringToColor3(ToConvert)
 	local ColorString = tostring(ToConvert)
@@ -603,7 +604,7 @@ function CreateScript(TabName, ScriptName, ScriptId, ScriptCreator, Script, Scri
 
 		Table.GuiStatus.JoinGameFunction = function()
 			if GetGameName(ScriptSupportedIn) == "Universal" then
-				print("Script is universal")
+				Notification:Create("Whoops", "This script is universal! This script works on any games!", 5)
 			elseif game.PlaceId == ScriptSupportedIn then
 				print("Youre Already in the game")
 			elseif game.PlaceId ~= ScriptSupportedIn then
