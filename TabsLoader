@@ -615,7 +615,7 @@ function CreateScript(TabName, ScriptName, ScriptId, ScriptCreator, Script, Scri
 					game:GetService("TeleportService"):Teleport(ScriptSupportedIn)
 					wait()
 					Teleported = true
-				end
+				end)
 
 				wait(7)
 				if not Success then
