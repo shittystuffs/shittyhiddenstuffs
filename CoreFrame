@@ -1352,7 +1352,6 @@ UIScale.Scale = Table.GuiSettings.GuiScale-0.1
 
 -- Scripts:
 local AnimationLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/shittystuffs/shittyhiddenstuffs/main/AnimationLibrary"))()
-local ActivePage = Table.GuiStatus.ActivePage
 
 AnimationLibrary.DisappearBackground()
 AnimationLibrary.DisappearCoreInteractions()
@@ -1365,6 +1364,7 @@ end)()
 
 Home.MouseButton1Down:Connect(function()
 	if ActivePage ~= "Home" and Table.GuiStatus.OnGoingAnimation == false then
+		local ActivePage = Table.GuiStatus.ActivePage
 		Table.GuiStatus.OnGoingAnimation = true
 		AnimationLibrary.DisappearTab(ActivePage)
 		wait(Table.GuiSettings.AnimationSpeed)
@@ -1373,11 +1373,13 @@ Home.MouseButton1Down:Connect(function()
 		AnimationLibrary.AppearTab("Home")
 		wait(Table.GuiSettings.AnimationSpeed+(Table.GuiSettings.AnimationSpeed/2)+(Table.GuiSettings.AnimationSpeed/4)+(Table.GuiSettings.AnimationSpeed/8))
 		Table.GuiStatus.OnGoingAnimation = false
+		ActivePage = "Home"
 	end
 end)
 
 Scripts.MouseButton1Down:Connect(function()
 	if ActivePage ~= "Scripts" and Table.GuiStatus.OnGoingAnimation == false then
+		local ActivePage = Table.GuiStatus.ActivePage
 		Table.GuiStatus.OnGoingAnimation = true
 		AnimationLibrary.DisappearTab(ActivePage)
 		wait(Table.GuiSettings.AnimationSpeed)
@@ -1386,6 +1388,7 @@ Scripts.MouseButton1Down:Connect(function()
 		AnimationLibrary.AppearTab("Scripts")
 		wait(Table.GuiSettings.AnimationSpeed+(Table.GuiSettings.AnimationSpeed/2)+(Table.GuiSettings.AnimationSpeed/4)+(Table.GuiSettings.AnimationSpeed/8))
 		Table.GuiStatus.OnGoingAnimation = false
+		ActivePage = "Scripts"
 	end
 end)
 
