@@ -5,6 +5,7 @@ local Player = game:GetService("Players").LocalPlayer
 local TweenService = game:GetService("TweenService")
 local AnimationLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/shittystuffs/shittyhiddenstuffs/main/AnimationLibrary"))()
 local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/shittystuffs/shittyhiddenstuffs/main/NotificationLibrary"))()
+local ClickSound = Table.GuiStatus.ClickSound
 
 function StringToColor3(ToConvert)
 	local ColorString = tostring(ToConvert)
@@ -485,6 +486,7 @@ function CreateNewTab(TabName)
 	Template.Parent = game:GetService("CoreGui"):WaitForChild("VexHubFolder").VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Pages
 
 	Template.BottomFrame.LeftFrame.SearchFrame.SearchButton.MouseButton1Down:Connect(function()
+		pcall(ClickSound)
 		for _, Button in Template.BottomFrame.LeftFrame.Scripts.ScrollingFrame:GetChildren() do
 			if Button:IsA("ImageButton") then
 				local SearchingFor = string.lower(Template.BottomFrame.LeftFrame.SearchFrame.TextBoxParent.TextBox.Text)
@@ -507,14 +509,17 @@ function CreateNewTab(TabName)
 	end)
 
 	Template.BottomFrame.ScriptInfo.BottomFrame.Execute.MouseButton1Down:Connect(function()
+		pcall(ClickSound)
 		pcall(Table.GuiStatus.ActiveScript)
 	end)
 
 	Template.BottomFrame.ScriptInfo.BottomFrame.Play.MouseButton1Down:Connect(function()
+		pcall(ClickSound)
 		pcall(Table.GuiStatus.JoinGameFunction)
 	end)
 
 	Template.BottomFrame.ScriptInfo.BottomFrame.Favorite.MouseButton1Down:Connect(function()
+		pcall(ClickSound)
 		pcall(Table.GuiStatus.FavoriteScriptFunction)
 	end)
 
@@ -580,6 +585,7 @@ function CreateScript(TabName, ScriptName, ScriptId, ScriptCreator, Script, Scri
 	end
 
 	Template.MouseButton1Down:Connect(function()
+		pcall(ClickSound)
 		TabPath.BottomFrame.ScriptInfo.ScriptDetails.Text = '<b><font size="14">' .. ScriptName .. '</font></b>\n<font size="8">By: ' .. ScriptCreator .. '</font>\n\n<b><font size="10">Description:</font></b>\n<font size="8">' .. ScriptDescription .. '</font>\n\n<font size="8">RigType: <b>' .. ScriptRigType .. '</b>\nGame: <b>' .. GetGameName(ScriptSupportedIn) .. '</b></font><font size="8">\nScript Id: <b>' .. ScriptId .. '</b></font>'
 
 		Table.GuiStatus.ActiveScript = function()
