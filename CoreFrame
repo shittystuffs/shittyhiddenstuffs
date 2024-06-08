@@ -1352,6 +1352,7 @@ UIScale.Scale = Table.GuiSettings.GuiScale-0.1
 
 -- Scripts:
 local AnimationLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/shittystuffs/shittyhiddenstuffs/main/AnimationLibrary"))()
+local ActivePage = Table.GuiStatus.ActivePage
 
 AnimationLibrary.DisappearBackground()
 AnimationLibrary.DisappearCoreInteractions()
@@ -1361,6 +1362,28 @@ coroutine.wrap(function()
 		UIGradient.Rotation += 1
 	end
 end)()
+
+Home.MouseButton1Down:Connect(function()
+	if ActivePage ~= "Home" and Table.GuiStatus.OnGoingAnimation == false then
+		Table.GuiStatus.OnGoingAnimation = true
+		AnimationLibrary.DisappearTab(ActivePage)
+		wait(Table.GuiSettings.AnimationSpeed)
+		AnimationLibrary.AppearTab("Home")
+		wait(Table.GuiSettings.AnimationSpeed+(Table.GuiSettings.AnimationSpeed/2)+(Table.GuiSettings.AnimationSpeed/4)+(Table.GuiSettings.AnimationSpeed/8))
+		Table.GuiStatus.OnGoingAnimation = false
+	end
+end)
+
+Scripts.MouseButton1Down:Connect(function()
+	if ActivePage ~= "Scripts" and Table.GuiStatus.OnGoingAnimation == false then
+		Table.GuiStatus.OnGoingAnimation = true
+		AnimationLibrary.DisappearTab(ActivePage)
+		wait(Table.GuiSettings.AnimationSpeed)
+		AnimationLibrary.AppearTab("Scripts")
+		wait(Table.GuiSettings.AnimationSpeed+(Table.GuiSettings.AnimationSpeed/2)+(Table.GuiSettings.AnimationSpeed/4)+(Table.GuiSettings.AnimationSpeed/8))
+		Table.GuiStatus.OnGoingAnimation = false
+	end
+end)
 
 for _, Buttons in TopRight:GetChildren() do
 	if Buttons:IsA("ImageButton") then
