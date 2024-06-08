@@ -21,7 +21,7 @@ function Library:Create(Title, Message, Duration)
 	end
 		
 	local function CreateNotification(Title, Message, Duration)
-	  if (TopFrame:FindFirstChild("Notification")) and (TopFrame:FindFirstChild("Notification").Duration.Value) > 0 then
+	  if (TopFrame:FindFirstChild("Notification")) and (TopFrame:FindFirstChild("Notification"):FindFirstChild("Duration").Value) > 0 then
 	    UpdateNotification(Title, Message, Duration)
 	  else
 	    local NotificationTemplate = TopFrame.NotificationTemplate:Clone()
