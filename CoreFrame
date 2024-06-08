@@ -1363,8 +1363,8 @@ coroutine.wrap(function()
 end)()
 
 Home.MouseButton1Down:Connect(function()
+	local ActivePage = Table.GuiStatus.ActivePage
 	if ActivePage ~= "Home" and Table.GuiStatus.OnGoingAnimation == false then
-		local ActivePage = Table.GuiStatus.ActivePage
 		Table.GuiStatus.OnGoingAnimation = true
 		AnimationLibrary.DisappearTab(ActivePage)
 		wait(Table.GuiSettings.AnimationSpeed)
@@ -1378,8 +1378,8 @@ Home.MouseButton1Down:Connect(function()
 end)
 
 Scripts.MouseButton1Down:Connect(function()
+	local ActivePage = Table.GuiStatus.ActivePage
 	if ActivePage ~= "Scripts" and Table.GuiStatus.OnGoingAnimation == false then
-		local ActivePage = Table.GuiStatus.ActivePage
 		Table.GuiStatus.OnGoingAnimation = true
 		AnimationLibrary.DisappearTab(ActivePage)
 		wait(Table.GuiSettings.AnimationSpeed)
