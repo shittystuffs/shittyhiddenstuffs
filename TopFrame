@@ -1,5 +1,16 @@
 -- V31nc : GUI to LUA V1
 
+local Table = getgenv().Table
+local Player = game:GetService("Players").LocalPlayer
+local TweenService = game:GetService("TweenService")
+
+function StringToColor3(ToConvert)
+  local ColorString = tostring(ToConvert)
+  local ColorR, ColorG, ColorB = ColorString:match("(%d+), (%d+), (%d+)")
+  ColorR, ColorG, ColorB = tonumber(ColorR),tonumber(ColorG),tonumber(ColorB)
+  return ColorR/255,ColorG/255,ColorB/255
+end
+
 -- Instances:
 
 local TopFrame = Instance.new("Frame")
@@ -40,7 +51,7 @@ NotificationTemplate.BorderSizePixel = 0
 NotificationTemplate.LayoutOrder = 2
 NotificationTemplate.Size = UDim2.new(0, 40, 0, 40)
 NotificationTemplate.Visible = false
-NotificationTemplate.Image = "rbxassetid://11926598891"
+NotificationTemplate.Image = "rbxassetid://"..Table.GuiSettings.Wallpaper
 NotificationTemplate.ImageTransparency = 1.000
 NotificationTemplate.ScaleType = Enum.ScaleType.Crop
 
@@ -88,7 +99,7 @@ Message.Position = UDim2.new(0.506250024, 0, 0, 0)
 Message.RichText = true
 Message.Size = UDim2.new(0, 0, 0, 40)
 Message.Visible = false
-Message.Font = Enum.Font.Gotham
+Message.Font = Enum.Font[Table.GuiSettings.GuiFont.Regular]
 Message.TextColor3 = Color3.fromRGB(255, 255, 255)
 Message.TextSize = 16.000
 Message.TextTransparency = 1.000
@@ -143,7 +154,7 @@ OpenButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
 OpenButton.BorderSizePixel = 0
 OpenButton.LayoutOrder = 1
 OpenButton.Size = UDim2.new(0, 35, 0, 35)
-OpenButton.Image = "rbxassetid://11926598891"
+OpenButton.Image = "rbxassetid://"..Table.GuiStatus.Logo
 OpenButton.ImageTransparency = 1.000
 OpenButton.ScaleType = Enum.ScaleType.Crop
 
@@ -161,4 +172,4 @@ Logo.BackgroundTransparency = 1.000
 Logo.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Logo.BorderSizePixel = 0
 Logo.Size = UDim2.new(1, 0, 1, 0)
-Logo.Image = "rbxassetid://14803348752"
+Logo.Image = "rbxassetid://"..Table.GuiStatus.Logo
