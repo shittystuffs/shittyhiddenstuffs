@@ -5,10 +5,10 @@ local Player = game:GetService("Players").LocalPlayer
 local TweenService = game:GetService("TweenService")
 
 function StringToColor3(ToConvert)
-local ColorString = tostring(ToConvert)
-local ColorR, ColorG, ColorB = ColorString:match("(%d+), (%d+), (%d+)")
-ColorR, ColorG, ColorB = tonumber(ColorR),tonumber(ColorG),tonumber(ColorB)
-return ColorR/255,ColorG/255,ColorB/255
+	local ColorString = tostring(ToConvert)
+	local ColorR, ColorG, ColorB = ColorString:match("(%d+), (%d+), (%d+)")
+	ColorR, ColorG, ColorB = tonumber(ColorR),tonumber(ColorG),tonumber(ColorB)
+	return ColorR/255,ColorG/255,ColorB/255
 end
 
 -- Instances:
@@ -1361,27 +1361,27 @@ coroutine.wrap(function()
 	end
 end)()
 
-	for _, Buttons in TopRight:GetChildren() do
-		if Buttons:IsA("ImageButton") then
-			Buttons.MouseEnter:Connect(function()
-				TweenService:Create(Buttons, TweenInfo.new(Table.GuiSettings.AnimationSpeed, Enum.EasingStyle.Quart), {BackgroundTransparency = 0.7}):Play()
-			end)
+for _, Buttons in TopRight:GetChildren() do
+	if Buttons:IsA("ImageButton") then
+		Buttons.MouseEnter:Connect(function()
+		TweenService:Create(Buttons, TweenInfo.new(Table.GuiSettings.AnimationSpeed, Enum.EasingStyle.Quart), {BackgroundTransparency = 0.7}):Play()
+		end)
 	
-			Buttons.MouseLeave:Connect(function()
-				TweenService:Create(Buttons, TweenInfo.new(Table.GuiSettings.AnimationSpeed, Enum.EasingStyle.Quart), {BackgroundTransparency = 1}):Play()
-			end)
-		end
+		Buttons.MouseLeave:Connect(function()
+		TweenService:Create(Buttons, TweenInfo.new(Table.GuiSettings.AnimationSpeed, Enum.EasingStyle.Quart), {BackgroundTransparency = 1}):Play()
+		end)
+	end
 end
 
 
-	for _, Buttons in ScrollingFrame:GetDescendants() do
-		if Buttons:IsA("GuiButton") then
-			Buttons.MouseEnter:Connect(function()
-				TweenService:Create(Buttons, TweenInfo.new(Table.GuiSettings.AnimationSpeed, Enum.EasingStyle.Quart), {BackgroundTransparency = 0.9}):Play()
-			end)
-			
-			Buttons.MouseLeave:Connect(function()
-				TweenService:Create(Buttons, TweenInfo.new(Table.GuiSettings.AnimationSpeed, Enum.EasingStyle.Quart), {BackgroundTransparency = 1}):Play()
-			end)
-		end
+for _, Buttons in ScrollingFrame:GetDescendants() do
+	if Buttons:IsA("GuiButton") then
+		Buttons.MouseEnter:Connect(function()
+			TweenService:Create(Buttons, TweenInfo.new(Table.GuiSettings.AnimationSpeed, Enum.EasingStyle.Quart), {BackgroundTransparency = 0.9}):Play()
+		end)
+					
+		Buttons.MouseLeave:Connect(function()
+			TweenService:Create(Buttons, TweenInfo.new(Table.GuiSettings.AnimationSpeed, Enum.EasingStyle.Quart), {BackgroundTransparency = 1}):Play()
+		end)
 	end
+end
