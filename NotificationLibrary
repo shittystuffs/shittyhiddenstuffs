@@ -15,7 +15,7 @@ function Library:Create(Title, Message, Duration)
 	    TopFrame:FindFirstChild("Notification").Sound.TimePosition = 0
 	    TopFrame:FindFirstChild("Notification").Sound.Playing = true
 	    TweenService:Create(TopFrame:FindFirstChild("Notification").Insides.Message, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
-	    TopFrame:FindFirstChild("Notification").Duration.Value == Duration
+	    TopFrame:FindFirstChild("Notification").Duration.Value = Duration
 	    TopFrame:FindFirstChild("Notification").Insides.Message.Text = '<b>'..Title..'</b>\n<font size="10">'..Message..'</font>'
 	  end
 	end
