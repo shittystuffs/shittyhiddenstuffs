@@ -16,6 +16,7 @@ end
 local TopFrame = Instance.new("Frame")
 local NotificationTemplate = Instance.new("ImageLabel")
 local Duration = Instance.new("NumberValue")
+local Sound = Instance.new("Sound")
 local Blur = Instance.new("ImageLabel")
 local UICorner = Instance.new("UICorner")
 local UICorner_2 = Instance.new("UICorner")
@@ -59,6 +60,11 @@ NotificationTemplate.ScaleType = Enum.ScaleType.Crop
 Duration.Name = "Duration"
 Duration.Parent = NotificationTemplate
 Duration.Value = 0
+
+Sound.Name = "Sound"
+Sound.Parent = NotificationTemplate
+Sound.SoundId = "rbxassetid://"..Table.GuiSettings.NotificationSound
+Sound.Volume = Table.GuiSettings.NotificationVolume
 
 Blur.Name = "Blur"
 Blur.Parent = NotificationTemplate
