@@ -1383,7 +1383,7 @@ Home.MouseButton1Down:Connect(function()
 		ResetStatus(Table.GuiStatus.ActivePage)
 		Pages.Home.Visible = true
 		AnimationLibrary.AppearTab("Home")
-		wait(Table.GuiSettings.AnimationSpeed+(Table.GuiSettings.AnimationSpeed/2)+(Table.GuiSettings.AnimationSpeed/4)+(Table.GuiSettings.AnimationSpeed/8))
+		wait(Table.GuiSettings.AnimationSpeed+Table.GuiSettings.AnimationSpeed+(Table.GuiSettings.AnimationSpeed/2)+(Table.GuiSettings.AnimationSpeed/4)+(Table.GuiSettings.AnimationSpeed/8))
 		Table.GuiStatus.OnGoingAnimation = false
 		Table.GuiStatus.ActivePage = "Home"
 	end
@@ -1398,7 +1398,7 @@ Scripts.MouseButton1Down:Connect(function()
 		ResetStatus(Table.GuiStatus.ActivePage)
 		Pages.Scripts.Visible = true
 		AnimationLibrary.AppearTab("Scripts")
-		wait(Table.GuiSettings.AnimationSpeed+(Table.GuiSettings.AnimationSpeed/2)+(Table.GuiSettings.AnimationSpeed/4)+(Table.GuiSettings.AnimationSpeed/8))
+		wait(Table.GuiSettings.AnimationSpeed+Table.GuiSettings.AnimationSpeed+(Table.GuiSettings.AnimationSpeed/2)+(Table.GuiSettings.AnimationSpeed/4)+(Table.GuiSettings.AnimationSpeed/8))
 		Table.GuiStatus.OnGoingAnimation = false
 		Table.GuiStatus.ActivePage = "Scripts"
 	end
