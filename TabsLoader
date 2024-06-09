@@ -593,11 +593,7 @@ function CreateScript(TabName, ScriptName, ScriptId, ScriptCreator, Script, Scri
 				if ReturnRigType(ScriptRigType) == true then
 					Notification:Create("Executed!", "The script was executed. Waiting for respond.", 5)
 					local Responded = false
-					local Success, Error = pcall(function()
-						loadstring(Script)()
-						wait()
-						Responded = true			
-					end)
+					local Success, Error = pcall(Script)
 
 					if Success then
 						Notification:Create("No errors!", "This script runned with no errors!", 5)
