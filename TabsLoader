@@ -591,7 +591,26 @@ function CreateScript(TabName, ScriptName, ScriptId, ScriptCreator, Script, Scri
 		Table.GuiStatus.ActiveScript = function()
 			if ReturnIfGameSupported(ScriptSupportedIn) == true then
 				if ReturnRigType(ScriptRigType) == true then
-					pcall(Script)
+					Notification:Create("Executed!", "The script was executed. Waiting for respond.", 5)
+					local Responded = false
+					local Success, Error = pcall(function()
+						loadstring(Script)()
+						wait()
+						Responded = true			
+					end
+
+					if Success then
+						Notification:Create("No errors!", "This script runned with no errors!", 5)
+						Responded = true
+					else
+						Notification:Create("Error!", Error, 5)
+						Responded = true
+					end
+
+					wait(7)
+					if Responded == false then
+						Notification:Create("No respond!", "The script did not return anything!", 5)
+					end
 				else
 					Notification:Create("Whoops", "Youre not "..ScriptRigType.."!", 5)
 				end
@@ -603,8 +622,10 @@ function CreateScript(TabName, ScriptName, ScriptId, ScriptCreator, Script, Scri
 		Table.GuiStatus.FavoriteScriptFunction = function()
 			if Table.GuiScripts[TabName][ScriptName].Favorited == true then
 				Table.GuiScripts[TabName][ScriptName].Favorited = false
+				Notification:Create("Script added to favorites", "Script was favorited and now in the favorites tab!", 5)
 			else
 				Table.GuiScripts[TabName][ScriptName].Favorited = true
+				Notification:Create("Script removed from favorites!", "Script was removed from favorites and no longer in the favorites tab.", 5)
 			end
 		end
 
