@@ -597,7 +597,7 @@ function CreateScript(TabName, ScriptName, ScriptId, ScriptCreator, Script, Scri
 						loadstring(Script)()
 						wait()
 						Responded = true			
-					end
+					end)
 
 					if Success then
 						Notification:Create("No errors!", "This script runned with no errors!", 5)
