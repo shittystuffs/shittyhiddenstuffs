@@ -3,6 +3,7 @@
 local Table = getgenv().Table
 local Player = game:GetService("Players").LocalPlayer
 local TweenService = game:GetService("TweenService")
+local AnimationLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/shittystuffs/shittyhiddenstuffs/main/AnimationLibrary"))()
 
 function StringToColor3(ToConvert)
   local ColorString = tostring(ToConvert)
@@ -193,7 +194,6 @@ OpenButton.MouseButton1Down:Connect(function()
 			Table.GuiStatus.OnGoingAnimation = true
 			AnimationLibrary.DisappearCoreInteractions()
 			wait(Table.GuiStatus.AnimationSpeed)
-			print(Table.GuiStatus.ActivePage)
 			AnimationLibrary.DisappearTab(Table.GuiStatus.ActivePage)
 			wait(Table.GuiStatus.AnimationSpeed)
 			AnimationLibrary.AppearBackground()
