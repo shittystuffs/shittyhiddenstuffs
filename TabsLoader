@@ -549,6 +549,10 @@ function CreateNewTab(TabName)
 		Template.SectionInfo.ImageLabel.Image = "rbxassetid://11592850267"
 		Template.SectionInfo.SectionName.Text = "Other Hubs"
 		Template.BottomFrame.LeftFrame.Scripts.ScrollingFrame.ScriptButtonTemplate.Image = "rbxassetid://11592850267"
+	elseif TabName == "Limited Scripts" then
+		Template.SectionInfo.ImageLabel.Image = "rbxassetid://17619425419"
+		Template.SectionInfo.SectionName.Text = "Limited Scripts"
+		Template.BottomFrame.LeftFrame.Scripts.ScrollingFrame.ScriptButtonTemplate.Image = "rbxassetid://17619425419"
 	end
 end
 
