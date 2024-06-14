@@ -199,6 +199,7 @@ OpenButton.MouseButton1Down:Connect(function()
 			AnimationLibrary.DisappearBackground()
 			wait(Table.GuiSettings.AnimationSpeed)
 			Table.GuiStatus.OnGoingAnimation = false
+			Table.GuiStatus.IsVisible = false
 		else
 			Table.GuiStatus.OnGoingAnimation = true
 			AnimationLibrary.AppearBackground()
@@ -207,6 +208,7 @@ OpenButton.MouseButton1Down:Connect(function()
 			AnimationLibrary.AppearTab(Table.GuiStatus.ActivePage)
 			wait(Table.GuiSettings.AnimationSpeed)
 			Table.GuiStatus.OnGoingAnimation = false
+			Table.GuiStatus.IsVisible = true
 		end
 	end
 end)
