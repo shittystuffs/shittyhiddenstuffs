@@ -168,8 +168,6 @@ VexHubScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 VexHubScreenGui.ClipToDeviceSafeArea = false
 VexHubScreenGui.ResetOnSpawn = false
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shittystuffs/shittyhiddenstuffs/main/TopFrame"))()
-
 BackFrame.Name = "BackFrame"
 BackFrame.Parent = VexHubScreenGui
 BackFrame.Active = true
@@ -182,6 +180,8 @@ BackFrame.LayoutOrder = 1
 BackFrame.Position = UDim2.new(0.178074419, 0, 0.177274972, 0)
 BackFrame.Size = UDim2.new(0, 495, 0, 245)
 BackFrame.Visible = false
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shittystuffs/shittyhiddenstuffs/main/TopFrame"))()
 
 UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.new(0, 0, 0)), ColorSequenceKeypoint.new(1.00, Color3.new(StringToColor3(Table.GuiSettings.BackgroundGradientColor)))}
 UIGradient.Transparency = NumberSequence.new{NumberSequenceKeypoint.new(0.00, 0.30), NumberSequenceKeypoint.new(1.00, 0.30)}
