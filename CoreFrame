@@ -1378,7 +1378,7 @@ Home.MouseButton1Down:Connect(function()
 	if Table.GuiStatus.ActivePage ~= "Home" and Table.GuiStatus.OnGoingAnimation == false then
 		Table.GuiStatus.OnGoingAnimation = true
 		AnimationLibrary.DisappearTab(Table.GuiStatus.ActivePage)
-		wait((Table.GuiSettings.AnimationSpeed/2)+(Table.GuiSettings.AnimationSpeed/4)+Table.GuiSettings.AnimationSpeed)
+		wait(Table.GuiSettings.AnimationSpeed)
 		ResetStatus(Table.GuiStatus.ActivePage)
 		AnimationLibrary.AppearTab("Home")
 		wait(Table.GuiSettings.AnimationSpeed)
@@ -1391,7 +1391,7 @@ Scripts.MouseButton1Down:Connect(function()
 	if Table.GuiStatus.ActivePage ~= "Scripts" and Table.GuiStatus.OnGoingAnimation == false then
 		Table.GuiStatus.OnGoingAnimation = true
 		AnimationLibrary.DisappearTab(Table.GuiStatus.ActivePage)
-		wait((Table.GuiSettings.AnimationSpeed/2)+(Table.GuiSettings.AnimationSpeed/4)+Table.GuiSettings.AnimationSpeed)
+		wait(Table.GuiSettings.AnimationSpeed)
 		ResetStatus(Table.GuiStatus.ActivePage)
 		AnimationLibrary.AppearTab("Scripts")
 		wait(Table.GuiSettings.AnimationSpeed)
