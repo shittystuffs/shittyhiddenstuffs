@@ -1465,6 +1465,19 @@ OtherHubs.MouseButton1Down:Connect(function()
 	end
 end)
 
+LimitedScripts.MouseButton1Down:Connect(function()
+	if Table.GuiStatus.ActivePage ~= "Limited Scripts" and Table.GuiStatus.OnGoingAnimation == false then
+		Table.GuiStatus.OnGoingAnimation = true
+		AnimationLibrary.DisappearTab(Table.GuiStatus.ActivePage)
+		wait(Table.GuiSettings.AnimationSpeed)
+		ResetStatus(Table.GuiStatus.ActivePage)
+		AnimationLibrary.AppearTab("Limited Scripts")
+		wait(Table.GuiSettings.AnimationSpeed)
+		Table.GuiStatus.OnGoingAnimation = false
+		Table.GuiStatus.ActivePage = "Limited Scripts"
+	end
+end)
+
 for _, Buttons in TopRight:GetChildren() do
 	if Buttons:IsA("ImageButton") then
 		Buttons.MouseEnter:Connect(function()
