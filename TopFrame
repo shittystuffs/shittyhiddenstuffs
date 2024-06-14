@@ -41,6 +41,7 @@ TopFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TopFrame.BackgroundTransparency = 1.000
 TopFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TopFrame.BorderSizePixel = 0
+TopFrame.LayoutOrder = 2
 TopFrame.Position = UDim2.new(0, 0, 0, 1)
 TopFrame.Size = UDim2.new(1, 0, 0, 50)
 
@@ -168,6 +169,7 @@ OpenButton.Size = UDim2.new(0, 35, 0, 35)
 OpenButton.Image = "rbxassetid://"..Table.GuiStatus.Logo
 OpenButton.ImageTransparency = 1.000
 OpenButton.ScaleType = Enum.ScaleType.Crop
+OpenButton.Visible = false
 
 UICorner_3.CornerRadius = UDim.new(1, 0)
 UICorner_3.Parent = OpenButton
