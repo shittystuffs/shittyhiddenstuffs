@@ -191,7 +191,6 @@ OpenButton.MouseButton1Down:Connect(function()
 	if Table.GuiStatus.OnGoingAnimation == false then
 		Table.GuiStatus.OnGoingAnimation = true
 		AnimationLibrary.AppearBackground()
-    		wait(Table.GuiSettings.AnimationSpeed)
 		AnimationLibrary.AppearCoreInteractions()
 		wait(Table.GuiSettings.AnimationSpeed)
 		AnimationLibrary.AppearTab(Table.GuiStatus.ActivePage)
