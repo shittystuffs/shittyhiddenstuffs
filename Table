@@ -63,7 +63,7 @@ getgenv().Table = {
 	},
 
 	GuiScripts = {
-		Scripts = {
+		["Scripts"] = {
 			["NameScriptName"] = {
 				Owner = "V31nc",
 				Description = "Hello World",
@@ -77,7 +77,87 @@ getgenv().Table = {
 					print("hello")
 				end,
 			}
-		}
+		},
+
+		["Required Accessories"] = {
+			["NameScriptName"] = {
+				Owner = "V31nc",
+				Description = "Hello World",
+				GameId = 0,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = true,
+				ScriptId = 0000,
+				Favorited = false,
+				Script = function()
+					print("hello")
+				end,
+			}
+		},
+
+		["GUIS"] = {
+			["NameScriptName"] = {
+				Owner = "V31nc",
+				Description = "Hello World",
+				GameId = 0,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = true,
+				ScriptId = 0000,
+				Favorited = false,
+				Script = function()
+					print("hello")
+				end,
+			}
+		},
+
+		["Animations"] = {
+			["NameScriptName"] = {
+				Owner = "V31nc",
+				Description = "Hello World",
+				GameId = 0,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = true,
+				ScriptId = 0000,
+				Favorited = false,
+				Script = function()
+					print("hello")
+				end,
+			}
+		},
+
+		["Commands"] = {
+			["NameScriptName"] = {
+				Owner = "V31nc",
+				Description = "Hello World",
+				GameId = 0,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = true,
+				ScriptId = 0000,
+				Favorited = false,
+				Script = function()
+					print("hello")
+				end,
+			}
+		},
+
+		["Other Hubs"] = {
+			["NameScriptName"] = {
+				Owner = "V31nc",
+				Description = "Hello World",
+				GameId = 0,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = true,
+				ScriptId = 0000,
+				Favorited = false,
+				Script = function()
+					print("hello")
+				end,
+			}
+		},
 	},
 
 	Plugins = {},
