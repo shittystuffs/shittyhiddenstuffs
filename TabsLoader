@@ -76,6 +76,7 @@ TabsTemplate.BackgroundTransparency = 1.000
 TabsTemplate.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TabsTemplate.BorderSizePixel = 0
 TabsTemplate.Size = UDim2.new(1, 0, 1, 0)
+TabsTemplate.Visible = false
 
 UIListLayout.Parent = TabsTemplate
 UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
@@ -484,6 +485,7 @@ function CreateNewTab(TabName)
 
 	Template.Name = TabName
 	Template.Parent = game:GetService("CoreGui"):WaitForChild("VexHubFolder").VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Pages
+	Template.Visible = true
 
 	Template.BottomFrame.LeftFrame.SearchFrame.SearchButton.MouseButton1Down:Connect(function()
 		pcall(ClickSound)
