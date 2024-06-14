@@ -181,8 +181,6 @@ BackFrame.Position = UDim2.new(0.178074419, 0, 0.177274972, 0)
 BackFrame.Size = UDim2.new(0, 495, 0, 245)
 BackFrame.Visible = false
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/shittystuffs/shittyhiddenstuffs/main/TopFrame"))()
-
 UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.new(0, 0, 0)), ColorSequenceKeypoint.new(1.00, Color3.new(StringToColor3(Table.GuiSettings.BackgroundGradientColor)))}
 UIGradient.Transparency = NumberSequence.new{NumberSequenceKeypoint.new(0.00, 0.30), NumberSequenceKeypoint.new(1.00, 0.30)}
 UIGradient.Parent = BackFrame
@@ -1350,6 +1348,8 @@ UICorner_27.Parent = BackFrame
 
 UIScale.Parent = BackFrame
 UIScale.Scale = Table.GuiSettings.GuiScale-0.1
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/shittystuffs/shittyhiddenstuffs/main/TopFrame"))()
 
 -- Scripts:
 local AnimationLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/shittystuffs/shittyhiddenstuffs/main/AnimationLibrary"))()
