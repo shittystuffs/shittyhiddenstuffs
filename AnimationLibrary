@@ -143,7 +143,7 @@ Library.AppearTab = function(TabName)
 				end
 			end
 
-		elseif TabName == "TabsTemplate" or TabName == "Favorites" or TabName == "Scripts" or TabName == "Required Accessories" or TabName == "GUIS" or TabName == "Animations" or TabName == "Commands" or TabName == "Other Hubs" then
+		elseif TabName == "TabsTemplate" or TabName == "Favorites" or TabName == "Scripts" or TabName == "Required Accessories" or TabName == "GUIS" or TabName == "Animations" or TabName == "Commands" or TabName == "Other Hubs" or TabName == "Limited Scripts" then
 			Tab.Visible = true
 			TweenService:Create(Tab.SectionInfo.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
 			TweenService:Create(Tab.SectionInfo.ImageLabel, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
@@ -382,7 +382,7 @@ Library.DisappearTab = function(TabName)
 			wait(AnimationSpeed)
 			Tab.Visible = false
 
-		elseif TabName == "TabsTemplate" or TabName == "Favorites" or TabName == "Scripts" or TabName == "Required Accessories" or TabName == "GUIS" or TabName == "Animations" or TabName == "Commands" or TabName == "Other Hubs" then
+		elseif TabName == "TabsTemplate" or TabName == "Favorites" or TabName == "Scripts" or TabName == "Required Accessories" or TabName == "GUIS" or TabName == "Animations" or TabName == "Commands" or TabName == "Other Hubs" or TabName == "Limited Scripts" then
 			TweenService:Create(Tab.SectionInfo.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
 			TweenService:Create(Tab.SectionInfo.ImageLabel, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
 			TweenService:Create(Tab.SectionInfo.SectionName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
