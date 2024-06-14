@@ -191,6 +191,7 @@ OpenButton.MouseButton1Down:Connect(function()
 	if Table.GuiStatus.OnGoingAnimation == false then
 		if Table.GuiStatus.IsVisible == true then
 			Table.GuiStatus.OnGoingAnimation = true
+			print(Table.GuiStatus.ActivePage)
 			AnimationLibrary.DisappearTab(Table.GuiStatus.ActivePage)
 			wait(Table.GuiStatus.AnimationSpeed)
 			AnimationLibrary.DisappearCoreInteractions()
