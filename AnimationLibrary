@@ -11,6 +11,7 @@ local UIScaleScale = Table.GuiSettings.GuiScale
 
 Library.AppearBackground = function()
 	coroutine.wrap(function()
+		Folder.VexHubScreenGui.BackFrame.Visible = true
 		TweenService:Create(Folder.VexHubScreenGui.BackFrame.UIScale, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Scale = UIScaleScale}):Play()
 		TweenService:Create(Folder.VexHubScreenGui.BackFrame, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {BackgroundTransparency = 0.5}):Play()
 		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {BackgroundTransparency = 0}):Play()
@@ -33,6 +34,8 @@ Library.DisappearBackground = function()
 		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {BackgroundTransparency = 1}):Play()
 		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
 		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.Blur, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
+		wait(AnimationSpeed)
+		Folder.VexHubScreenGui.BackFrame.Visible = false
 	end)()
 end
 
@@ -110,6 +113,7 @@ Library.AppearTab = function(TabName)
 		local Tab = Pages[TabName]
 
 		if TabName == "Home" then
+			Tab.Visible = true
 			TweenService:Create(Tab.Profile.ProfilePic, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
 			TweenService:Create(Tab.Profile.ProfilePic, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {BackgroundTransparency = 0.9}):Play()
 			TweenService:Create(Tab.Profile.ProfilePic.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
@@ -140,6 +144,7 @@ Library.AppearTab = function(TabName)
 			end
 
 		elseif TabName == "TabsTemplate" or TabName == "Favorites" or TabName == "Scripts" or TabName == "Required Accessories" or TabName == "GUIS" or TabName == "Animations" or TabName == "Commands" or TabName == "Other Hubs" then
+			Tab.Visible = true
 			TweenService:Create(Tab.SectionInfo.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
 			TweenService:Create(Tab.SectionInfo.ImageLabel, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
 			TweenService:Create(Tab.SectionInfo.SectionName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
@@ -172,6 +177,7 @@ Library.AppearTab = function(TabName)
 			TweenService:Create(Tab.BottomFrame.ScriptInfo.BottomFrame.Execute.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
 
 		elseif TabName == "Settings" then
+			Tab.Visible = true
 			TweenService:Create(Tab.SectionInfo.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
 			TweenService:Create(Tab.SectionInfo.ImageLabel, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
 			TweenService:Create(Tab.SectionInfo.SectionName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
@@ -209,6 +215,7 @@ Library.AppearTab = function(TabName)
 			TweenService:Create(Tab.BottomFrame.Informations.ScrollingFrame.Credits, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
 
 		elseif TabName == "Plugins" then
+			Tab.Visible = true
 			TweenService:Create(Tab.SectionInfo.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
 			TweenService:Create(Tab.SectionInfo.ImageLabel, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
 			TweenService:Create(Tab.SectionInfo.SectionName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
@@ -235,6 +242,7 @@ Library.AppearTab = function(TabName)
 			end
 
 		elseif TabName == "LoadString" then
+			Tab.Visible = true
 			TweenService:Create(Tab.SectionInfo.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
 			TweenService:Create(Tab.SectionInfo.ImageLabel, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
 			TweenService:Create(Tab.SectionInfo.SectionName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
@@ -265,6 +273,7 @@ Library.AppearTab = function(TabName)
 			end
 
 		elseif TabName == "LocalPlayer" then
+			Tab.Visible = true
 			TweenService:Create(Tab.SectionInfo.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
 			TweenService:Create(Tab.SectionInfo.ImageLabel, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
 			TweenService:Create(Tab.SectionInfo.SectionName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
@@ -296,6 +305,7 @@ Library.AppearTab = function(TabName)
 			end
 			
 		elseif TabName == "Report" then
+			Tab.Visible = true
 			TweenService:Create(Tab.Robot, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
 			wait(AnimationSpeed/2)
 			TweenService:Create(Tab.ReportText, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
@@ -303,6 +313,7 @@ Library.AppearTab = function(TabName)
 			TweenService:Create(Tab.Info, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
 
 		elseif string.find(TabName, "Plugin") then
+			Tab.Visible = true
 			TweenService:Create(Tab.SectionInfo.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
 			TweenService:Create(Tab.SectionInfo.ImageLabel, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
 			TweenService:Create(Tab.SectionInfo.SectionName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
@@ -368,6 +379,8 @@ Library.DisappearTab = function(TabName)
 					TweenService:Create(Badges, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
 				end
 			end
+			wait(AnimationSpeed)
+			Tab.Visible = false
 
 		elseif TabName == "TabsTemplate" or TabName == "Favorites" or TabName == "Scripts" or TabName == "Required Accessories" or TabName == "GUIS" or TabName == "Animations" or TabName == "Commands" or TabName == "Other Hubs" then
 			TweenService:Create(Tab.SectionInfo.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
@@ -400,6 +413,8 @@ Library.DisappearTab = function(TabName)
 			TweenService:Create(Tab.BottomFrame.ScriptInfo.BottomFrame.Play.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
 			TweenService:Create(Tab.BottomFrame.ScriptInfo.BottomFrame.Execute, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
 			TweenService:Create(Tab.BottomFrame.ScriptInfo.BottomFrame.Execute.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+			wait(AnimationSpeed)
+			Tab.Visible = false
 
 		elseif TabName == "Settings" then
 			TweenService:Create(Tab.SectionInfo.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
@@ -437,6 +452,8 @@ Library.DisappearTab = function(TabName)
 			TweenService:Create(Tab.BottomFrame.Informations.SectionInfo.SectionName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
 			TweenService:Create(Tab.BottomFrame.Informations.ScrollingFrame, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ScrollBarImageTransparency = 1}):Play()
 			TweenService:Create(Tab.BottomFrame.Informations.ScrollingFrame.Credits, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+			wait(AnimationSpeed)
+			Tab.Visible = false
 
 		elseif TabName == "Plugins" then
 			TweenService:Create(Tab.SectionInfo.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
@@ -463,6 +480,9 @@ Library.DisappearTab = function(TabName)
 					TweenService:Create(InstalledPlugin.PluginName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
 				end
 			end
+			wait(AnimationSpeed)
+			Tab.Visible = false
+
 		elseif TabName == "LoadString" then
 			TweenService:Create(Tab.SectionInfo.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
 			TweenService:Create(Tab.SectionInfo.ImageLabel, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
@@ -492,6 +512,8 @@ Library.DisappearTab = function(TabName)
 					TweenService:Create(Scripts.ScriptName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
 				end
 			end
+			wait(AnimationSpeed)
+			Tab.Visible = false
 
 		elseif TabName == "LocalPlayer" then
 			TweenService:Create(Tab.SectionInfo.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
@@ -523,6 +545,8 @@ Library.DisappearTab = function(TabName)
 					end
 				end
 			end
+			wait(AnimationSpeed)
+			Tab.Visible = false
 
 		elseif TabName == "Report" then
 			TweenService:Create(Tab.Robot, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
@@ -530,7 +554,9 @@ Library.DisappearTab = function(TabName)
 			TweenService:Create(Tab.ReportText, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
 			wait(AnimationSpeed/4)
 			TweenService:Create(Tab.Info, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
-			
+			wait(AnimationSpeed)
+			Tab.Visible = false
+
 		elseif string.find(TabName, "Plugin") then
 			TweenService:Create(Tab.SectionInfo.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
 			TweenService:Create(Tab.SectionInfo.ImageLabel, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
@@ -558,6 +584,9 @@ Library.DisappearTab = function(TabName)
 			TweenService:Create(Tab.BottomFrame.ScriptInfo.BottomFrame.Play.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
 			TweenService:Create(Tab.BottomFrame.ScriptInfo.BottomFrame.Execute, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
 			TweenService:Create(Tab.BottomFrame.ScriptInfo.BottomFrame.Execute.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+			wait(AnimationSpeed)
+			Tab.Visible = false
+
 		else
 			warn("VexHub Animation Library: Name ("..TabName..") does not exist in the Library")
 		end
