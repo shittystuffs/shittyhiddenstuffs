@@ -1400,6 +1400,71 @@ Scripts.MouseButton1Down:Connect(function()
 	end
 end)
 
+RequiredAccessories.MouseButton1Down:Connect(function()
+	if Table.GuiStatus.ActivePage ~= "Required Accessories" and Table.GuiStatus.OnGoingAnimation == false then
+		Table.GuiStatus.OnGoingAnimation = true
+		AnimationLibrary.DisappearTab(Table.GuiStatus.ActivePage)
+		wait(Table.GuiSettings.AnimationSpeed)
+		ResetStatus(Table.GuiStatus.ActivePage)
+		AnimationLibrary.AppearTab("Required Accessories")
+		wait(Table.GuiSettings.AnimationSpeed)
+		Table.GuiStatus.OnGoingAnimation = false
+		Table.GuiStatus.ActivePage = "Required Accessories"
+	end
+end)
+
+GUIS.MouseButton1Down:Connect(function()
+	if Table.GuiStatus.ActivePage ~= "GUIS" and Table.GuiStatus.OnGoingAnimation == false then
+		Table.GuiStatus.OnGoingAnimation = true
+		AnimationLibrary.DisappearTab(Table.GuiStatus.ActivePage)
+		wait(Table.GuiSettings.AnimationSpeed)
+		ResetStatus(Table.GuiStatus.ActivePage)
+		AnimationLibrary.AppearTab("GUIS")
+		wait(Table.GuiSettings.AnimationSpeed)
+		Table.GuiStatus.OnGoingAnimation = false
+		Table.GuiStatus.ActivePage = "GUIS"
+	end
+end)
+
+Animations.MouseButton1Down:Connect(function()
+	if Table.GuiStatus.ActivePage ~= "Animations" and Table.GuiStatus.OnGoingAnimation == false then
+		Table.GuiStatus.OnGoingAnimation = true
+		AnimationLibrary.DisappearTab(Table.GuiStatus.ActivePage)
+		wait(Table.GuiSettings.AnimationSpeed)
+		ResetStatus(Table.GuiStatus.ActivePage)
+		AnimationLibrary.AppearTab("Animations")
+		wait(Table.GuiSettings.AnimationSpeed)
+		Table.GuiStatus.OnGoingAnimation = false
+		Table.GuiStatus.ActivePage = "Animations"
+	end
+end)
+
+Commands.MouseButton1Down:Connect(function()
+	if Table.GuiStatus.ActivePage ~= "Commands" and Table.GuiStatus.OnGoingAnimation == false then
+		Table.GuiStatus.OnGoingAnimation = true
+		AnimationLibrary.DisappearTab(Table.GuiStatus.ActivePage)
+		wait(Table.GuiSettings.AnimationSpeed)
+		ResetStatus(Table.GuiStatus.ActivePage)
+		AnimationLibrary.AppearTab("Commands")
+		wait(Table.GuiSettings.AnimationSpeed)
+		Table.GuiStatus.OnGoingAnimation = false
+		Table.GuiStatus.ActivePage = "Commands"
+	end
+end)
+
+OtherHubs.MouseButton1Down:Connect(function()
+	if Table.GuiStatus.ActivePage ~= "Other Hubs" and Table.GuiStatus.OnGoingAnimation == false then
+		Table.GuiStatus.OnGoingAnimation = true
+		AnimationLibrary.DisappearTab(Table.GuiStatus.ActivePage)
+		wait(Table.GuiSettings.AnimationSpeed)
+		ResetStatus(Table.GuiStatus.ActivePage)
+		AnimationLibrary.AppearTab("Other Hubs")
+		wait(Table.GuiSettings.AnimationSpeed)
+		Table.GuiStatus.OnGoingAnimation = false
+		Table.GuiStatus.ActivePage = "Other Hubs"
+	end
+end)
+
 for _, Buttons in TopRight:GetChildren() do
 	if Buttons:IsA("ImageButton") then
 		Buttons.MouseEnter:Connect(function()
