@@ -533,7 +533,7 @@ function CreateNewTab(TabName)
 		Template.SectionInfo.ImageLabel.Image = "rbxassetid://11592824883"
 		Template.SectionInfo.SectionName.Text = "Required Accessories"
 		Template.BottomFrame.LeftFrame.Scripts.ScrollingFrame.ScriptButtonTemplate.Image = "rbxassetid://11592824883"
-	elseif TabName == "Guis" then
+	elseif TabName == "GUIS" then
 		Template.SectionInfo.ImageLabel.Image = "rbxassetid://11592848654"
 		Template.SectionInfo.SectionName.Text = "Guis"
 		Template.BottomFrame.LeftFrame.Scripts.ScrollingFrame.ScriptButtonTemplate.Image = "rbxassetid://11592848654"
