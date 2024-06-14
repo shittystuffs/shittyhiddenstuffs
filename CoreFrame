@@ -1382,7 +1382,7 @@ Close.MouseButton1Down:Connect(function()
 		wait(Table.GuiSettings.AnimationSpeed)
 		AnimationLibrary.DisappearTab(Table.GuiStatus.ActivePage)
 		AnimationLibrary.DisappearBackground()
-		wait(Table.GuiSettings.AnimationSpeed)
+		wait(Table.GuiSettings.AnimationSpeed+(Table.GuiSettings.AnimationSpeed/2)+(Table.GuiSettings.AnimationSpeed/4)+(Table.GuiSettings.AnimationSpeed/8)+Table.GuiSettings.AnimationSpeed)
 		Table.GuiStatus.OnGoingAnimation = false
 		Table.GuiStatus.IsVisible = false
 	end
