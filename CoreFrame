@@ -1381,7 +1381,6 @@ Close.MouseButton1Down:Connect(function()
 		AnimationLibrary.DisappearCoreInteractions()
 		wait(Table.GuiSettings.AnimationSpeed)
 		AnimationLibrary.DisappearTab(Table.GuiStatus.ActivePage)
-		wait(Table.GuiSettings.AnimationSpeed)
 		AnimationLibrary.DisappearBackground()
 		wait(Table.GuiSettings.AnimationSpeed)
 		Table.GuiStatus.OnGoingAnimation = false
