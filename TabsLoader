@@ -485,7 +485,6 @@ function CreateNewTab(TabName)
 
 	Template.Name = TabName
 	Template.Parent = game:GetService("CoreGui"):WaitForChild("VexHubFolder").VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Pages
-	Template.Visible = true
 
 	Template.BottomFrame.LeftFrame.SearchFrame.SearchButton.MouseButton1Down:Connect(function()
 		pcall(ClickSound)
