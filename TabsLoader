@@ -607,7 +607,7 @@ function CreateScript(TabName, ScriptName, ScriptId, ScriptCreator, Script, Scri
 
 					wait(7)
 					if Responded == false then
-						Notification:Create("No respond!", "The script did not return anything!", 5)
+						Notification:Create("No respond!", "The script did not responded for a long time.", 5)
 					end
 				else
 					Notification:Create("Whoops", "Youre not "..ScriptRigType.."!", 5)
