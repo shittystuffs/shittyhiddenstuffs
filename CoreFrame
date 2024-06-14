@@ -178,6 +178,7 @@ BackFrame.BackgroundTransparency = 0.500
 BackFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 BackFrame.BorderSizePixel = 0
 BackFrame.Draggable = true
+BackFrame.LayoutOrder = 1
 BackFrame.Position = UDim2.new(0.178074419, 0, 0.177274972, 0)
 BackFrame.Size = UDim2.new(0, 495, 0, 245)
 BackFrame.Visible = false
@@ -271,7 +272,7 @@ ProfilePicture.BackgroundTransparency = 0.900
 ProfilePicture.BorderColor3 = Color3.fromRGB(0, 0, 0)
 ProfilePicture.BorderSizePixel = 0
 ProfilePicture.Size = UDim2.new(0, 20, 0, 20)
-ProfilePicture.Image ="https://www.roblox.com/headshot-thumbnail/image?userId="..Player.UserId.."&width=420&height=420&format=png"
+ProfilePicture.Image = "https://www.roblox.com/headshot-thumbnail/image?userId="..Player.UserId.."&width=420&height=420&format=png"
 
 UICorner_5.CornerRadius = UDim.new(1, 0)
 UICorner_5.Parent = ProfilePicture
@@ -1373,6 +1374,18 @@ function ResetStatus(TabName)
 		Pages[TabName].BottomFrame.ScriptInfo.ScriptDetails.Text = '<b><font size="14">ScriptName</font></b>\n<font size="8">By: CreatorName</font>\n\n<b><font size="10">Description:</font></b>\n<font size="8">ScriptDescription</font>\n\n<font size="8">RigType: <b>Any</b>\nGame: <b>Universal</b></font><font size="8">\nScript Id: <b>1000</b></font>'
 	end
 end
+
+Close.MouseButton1Down:Connect(function()
+	if Table.GuiStatus.OnGoingAnimation == false then
+		Table.GuiStatus.OnGoingAnimation = true
+		AnimationLibrary.DisappearCoreInteractions()
+		AnimationLibrary.DisappearTab(Table.GuiStatus.ActivePage)
+		wait(Table.GuiSettings.AnimationSpeed)
+		AnimationLibrary.DisappearBackground()
+		wait(Table.GuiSettings.AnimationSpeed)
+		Table.GuiStatus.OnGoingAnimation = false
+	end
+end)
 
 Home.MouseButton1Down:Connect(function()
 	if Table.GuiStatus.ActivePage ~= "Home" and Table.GuiStatus.OnGoingAnimation == false then
