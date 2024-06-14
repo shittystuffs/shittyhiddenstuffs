@@ -189,12 +189,23 @@ Logo.Image = "rbxassetid://"..Table.GuiStatus.Logo
 
 OpenButton.MouseButton1Down:Connect(function()
 	if Table.GuiStatus.OnGoingAnimation == false then
-		Table.GuiStatus.OnGoingAnimation = true
-		AnimationLibrary.AppearBackground()
-		AnimationLibrary.AppearCoreInteractions()
-		wait(Table.GuiSettings.AnimationSpeed)
-		AnimationLibrary.AppearTab(Table.GuiStatus.ActivePage)
-		wait(Table.GuiSettings.AnimationSpeed)
-		Table.GuiStatus.OnGoingAnimation = false
+		if Table.GuiStatus.IsVisible == true then
+			Table.GuiStatus.OnGoingAnimation = true
+			AnimationLibrary.DisappearTab(Table.GuiStatus.ActivePage)
+			wait(Table.GuiStatus.AnimationSpeed)
+			AnimationLibrary.DisappearCoreInteractions()
+			wait(Table.GuiStatus.AnimationSpeed)
+			AnimationLibrary.AppearBackground()
+			wait(Table.GuiSettings.AnimationSpeed)
+			Table.GuiStatus.OnGoingAnimation = false
+		else
+			Table.GuiStatus.OnGoingAnimation = true
+			AnimationLibrary.AppearBackground()
+			AnimationLibrary.AppearCoreInteractions()
+			wait(Table.GuiSettings.AnimationSpeed)
+			AnimationLibrary.AppearTab(Table.GuiStatus.ActivePage)
+			wait(Table.GuiSettings.AnimationSpeed)
+			Table.GuiStatus.OnGoingAnimation = false
+		end
 	end
 end)
