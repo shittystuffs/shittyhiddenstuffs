@@ -74,7 +74,7 @@ getgenv().Table = {
 				ScriptId = 0000,
 				Favorited = false,
 				Script = function()
-					print("hello")
+					print("hello from script section")
 				end,
 			}
 		},
@@ -90,7 +90,7 @@ getgenv().Table = {
 				ScriptId = 0000,
 				Favorited = false,
 				Script = function()
-					print("hello")
+					print("hello from required accessories sections")
 				end,
 			}
 		},
@@ -106,7 +106,7 @@ getgenv().Table = {
 				ScriptId = 0000,
 				Favorited = false,
 				Script = function()
-					print("hello")
+					print("hello from guis section")
 				end,
 			}
 		},
@@ -122,7 +122,7 @@ getgenv().Table = {
 				ScriptId = 0000,
 				Favorited = false,
 				Script = function()
-					print("hello")
+					print("hello from animations section")
 				end,
 			}
 		},
@@ -138,7 +138,7 @@ getgenv().Table = {
 				ScriptId = 0000,
 				Favorited = false,
 				Script = function()
-					print("hello")
+					print("hello from commands section")
 				end,
 			}
 		},
@@ -154,7 +154,7 @@ getgenv().Table = {
 				ScriptId = 0000,
 				Favorited = false,
 				Script = function()
-					print("hello")
+					print("hello from other hubs section")
 				end,
 			}
 		},
