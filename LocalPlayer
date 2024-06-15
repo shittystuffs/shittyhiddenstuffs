@@ -515,110 +515,100 @@ UIStroke_12.Parent = Button_4
 
 -- Scripts:
 
-local function TNYOWD_fake_script() -- ScrollingFrame.LocalScript 
-	local script = Instance.new('LocalScript', ScrollingFrame)
-
-	local Table = require(game:GetService("StarterGui").Table)
-	local TextBox = script.Parent.TextBoxTemplate
-	local Button = script.Parent.ButtonTemplate
-	local Bool = script.Parent.BoolTemplate
-	local BoolWithTextBox = script.Parent.BoolWithTextBoxTemplate
-	local TweenService = game:GetService("TweenService")
+local TweenService = game:GetService("TweenService")
 	
-	function NewTextBox(Name, PlaceholderText, Activated)
-		local NewTextBox = TextBox:Clone()
-		NewTextBox.Name = Name
-		NewTextBox.NameOfFunction.Text = Name
-		NewTextBox.Parent = script.Parent
-		NewTextBox.Visible = true
-		NewTextBox.TextBoxParent.TextBox.PlaceholderText = PlaceholderText
-		NewTextBox.Button.MouseButton1Down:Connect(function()
-			pcall(Activated)
-		end)
-	end
+function NewTextBox(Name, PlaceholderText, Activated)
+	local NewTextBox = TextBoxTemplate:Clone()
+	NewTextBox.Name = Name
+	NewTextBox.NameOfFunction.Text = Name
+	NewTextBox.Parent = script.Parent
+	NewTextBox.Visible = true
+	NewTextBox.TextBoxParent.TextBox.PlaceholderText = PlaceholderText
+	NewTextBox.Button.MouseButton1Down:Connect(function()
+		pcall(Activated)
+	end)
+end
 	
-	function NewButton(Name, Activated)
-		local NewButton = Button:Clone()
-		NewButton.Name = Name
-		NewButton.NameOfFunction.Text = Name
-		NewButton.Parent = script.Parent
-		NewButton.Visible = true
-		NewButton.Button.MouseButton1Down:Connect(function()
-			pcall(Activated)
-		end)
-	end
+function NewButton(Name, Activated)
+	local NewButton = ButtonTemplate:Clone()
+	NewButton.Name = Name
+	NewButton.NameOfFunction.Text = Name
+	NewButton.Parent = script.Parent
+	NewButton.Visible = true
+	NewButton.Button.MouseButton1Down:Connect(function()
+		pcall(Activated)
+	end)
+end
 	
-	function NewBool(Name, Activated, Deactivated)
-		local NewBool = Bool:Clone()
-		NewBool.Name = Name
-		NewBool.NameOfFunction.Text = Name
-		NewBool.Parent = script.Parent
-		NewBool.Visible = true
-	
-		coroutine.wrap(function()
-			while task.wait() do
-				if Table.LocalPlayerFeatures[Name].Active == false then
-					TweenService:Create(NewBool.Button.Circle, TweenInfo.new(Table.GuiSettings.AnimationSpeed, Enum.EasingStyle.Quart), {BackgroundColor3 = Color3.fromRGB(150, 150, 150)}):Play()
-					TweenService:Create(NewBool.Button.Circle, TweenInfo.new(Table.GuiSettings.AnimationSpeed, Enum.EasingStyle.Quart), {Position = UDim2.new(0, 0, 0, 0)}):Play()
-				else
-					TweenService:Create(NewBool.Button.Circle, TweenInfo.new(Table.GuiSettings.AnimationSpeed, Enum.EasingStyle.Quart), {BackgroundColor3 = Color3.fromRGB(255, 255, 255)}):Play()
-					TweenService:Create(NewBool.Button.Circle, TweenInfo.new(Table.GuiSettings.AnimationSpeed, Enum.EasingStyle.Quart), {Position = UDim2.new(0.625, 0, 0, 0)}):Play()
-				end
-			end
-		end)()
+function NewBool(Name, Activated, Deactivated)
+	local NewBool = BoolTemplate:Clone()
+	NewBool.Name = Name
+	NewBool.NameOfFunction.Text = Name
+	NewBool.Parent = script.Parent
+	NewBool.Visible = true
 		
-		NewBool.Button.MouseButton1Down:Connect(function()
+	coroutine.wrap(function()
+		while task.wait() do
 			if Table.LocalPlayerFeatures[Name].Active == false then
-				Table.LocalPlayerFeatures[Name].Active = true
-				pcall(Activated) 
+				TweenService:Create(NewBool.Button.Circle, TweenInfo.new(Table.GuiSettings.AnimationSpeed, Enum.EasingStyle.Quart), {BackgroundColor3 = Color3.fromRGB(150, 150, 150)}):Play()
+				TweenService:Create(NewBool.Button.Circle, TweenInfo.new(Table.GuiSettings.AnimationSpeed, Enum.EasingStyle.Quart), {Position = UDim2.new(0, 0, 0, 0)}):Play()
 			else
-				Table.LocalPlayerFeatures[Name].Active = false
-				pcall(Deactivated)
+				TweenService:Create(NewBool.Button.Circle, TweenInfo.new(Table.GuiSettings.AnimationSpeed, Enum.EasingStyle.Quart), {BackgroundColor3 = Color3.fromRGB(255, 255, 255)}):Play()
+				TweenService:Create(NewBool.Button.Circle, TweenInfo.new(Table.GuiSettings.AnimationSpeed, Enum.EasingStyle.Quart), {Position = UDim2.new(0.625, 0, 0, 0)}):Play()
 			end
-		end)
-	end
-	
-	function NewBoolWithTextBox(Name, Active, PlaceholderText, Activated, Deactivated)
-		local NewBoolWithTextBox = BoolWithTextBox:Clone()
-		NewBoolWithTextBox.Name = Name
-		NewBoolWithTextBox.NameOfFunction.Text = Name
-		NewBoolWithTextBox.Parent = script.Parent
-		NewBoolWithTextBox.Visible = true
-		NewBoolWithTextBox.TextBoxParent.TextBox.PlaceholderText = PlaceholderText
-	
-		coroutine.wrap(function()
-			while task.wait() do
-				if Table.LocalPlayerFeatures[Name].Active == false then
-					TweenService:Create(NewBoolWithTextBox.Button.Circle, TweenInfo.new(Table.GuiSettings.AnimationSpeed, Enum.EasingStyle.Quart), {BackgroundColor3 = Color3.fromRGB(150, 150, 150)}):Play()
-					TweenService:Create(NewBoolWithTextBox.Button.Circle, TweenInfo.new(Table.GuiSettings.AnimationSpeed, Enum.EasingStyle.Quart), {Position = UDim2.new(0, 0, 0, 0)}):Play()
-				else
-					TweenService:Create(NewBoolWithTextBox.Button.Circle, TweenInfo.new(Table.GuiSettings.AnimationSpeed, Enum.EasingStyle.Quart), {BackgroundColor3 = Color3.fromRGB(255, 255, 255)}):Play()
-					TweenService:Create(NewBoolWithTextBox.Button.Circle, TweenInfo.new(Table.GuiSettings.AnimationSpeed, Enum.EasingStyle.Quart), {Position = UDim2.new(0.625, 0, 0, 0)}):Play()
-				end
-			end
-		end)()
-		
-		NewBoolWithTextBox.Button.MouseButton1Down:Connect(function()
-			if Table.LocalPlayerFeatures[Name].Active == false then
-				Table.LocalPlayerFeatures[Name].Active = true
-				pcall(Activated) 
-			else
-				Table.LocalPlayerFeatures[Name].Active = false
-				pcall(Deactivated)
-			end
-		end)
-	end
-	
-	for i, v in Table.LocalPlayerFeatures do
-		if v.TypeOfFunction == "TextBox" then
-			NewTextBox(i, v.PlaceHolderText, v.ScriptIfActivated)
-		elseif v.TypeOfFunction == "BoolWithTextBox" then
-			NewBoolWithTextBox(i, v.Active, v.PlaceHolderText, v.ScriptIfActivated, v.ScriptIfDeactivated)
-		elseif v.TypeOfFunction == "Bool" then
-			NewBool(i, v.ScriptIfActivated, v.ScriptIfDeactivated)
-		elseif v.TypeOfFunction == "Button" then
-			NewButton(i, v.ScriptIfActivated)
 		end
+	end)()
+			
+	NewBool.Button.MouseButton1Down:Connect(function()
+		if Table.LocalPlayerFeatures[Name].Active == false then
+			Table.LocalPlayerFeatures[Name].Active = true
+			pcall(Activated) 
+		else
+			Table.LocalPlayerFeatures[Name].Active = false
+			pcall(Deactivated)
+		end
+	end)
+end
+
+function NewBoolWithTextBox(Name, Active, PlaceholderText, Activated, Deactivated)
+	local NewBoolWithTextBox = BoolWithTextBoxTemplate:Clone()
+	NewBoolWithTextBox.Name = Name
+	NewBoolWithTextBox.NameOfFunction.Text = Name
+	NewBoolWithTextBox.Parent = script.Parent
+	NewBoolWithTextBox.Visible = true
+	NewBoolWithTextBox.TextBoxParent.TextBox.PlaceholderText = PlaceholderText
+
+	coroutine.wrap(function()
+		while task.wait() do
+			if Table.LocalPlayerFeatures[Name].Active == false then
+				TweenService:Create(NewBoolWithTextBox.Button.Circle, TweenInfo.new(Table.GuiSettings.AnimationSpeed, Enum.EasingStyle.Quart), {BackgroundColor3 = Color3.fromRGB(150, 150, 150)}):Play()
+				TweenService:Create(NewBoolWithTextBox.Button.Circle, TweenInfo.new(Table.GuiSettings.AnimationSpeed, Enum.EasingStyle.Quart), {Position = UDim2.new(0, 0, 0, 0)}):Play()
+			else
+				TweenService:Create(NewBoolWithTextBox.Button.Circle, TweenInfo.new(Table.GuiSettings.AnimationSpeed, Enum.EasingStyle.Quart), {BackgroundColor3 = Color3.fromRGB(255, 255, 255)}):Play()
+				TweenService:Create(NewBoolWithTextBox.Button.Circle, TweenInfo.new(Table.GuiSettings.AnimationSpeed, Enum.EasingStyle.Quart), {Position = UDim2.new(0.625, 0, 0, 0)}):Play()
+			end
+		end
+	end)()
+		
+	NewBoolWithTextBox.Button.MouseButton1Down:Connect(function()
+		if Table.LocalPlayerFeatures[Name].Active == false then
+			Table.LocalPlayerFeatures[Name].Active = true
+			pcall(Activated) 
+		else
+			Table.LocalPlayerFeatures[Name].Active = false
+			pcall(Deactivated)
+		end
+	end)
+end
+	
+for i, v in Table.LocalPlayerFeatures do
+	if v.TypeOfFunction == "TextBox" then
+		NewTextBox(i, v.PlaceHolderText, v.ScriptIfActivated)
+	elseif v.TypeOfFunction == "BoolWithTextBox" then
+		NewBoolWithTextBox(i, v.Active, v.PlaceHolderText, v.ScriptIfActivated, v.ScriptIfDeactivated)
+	elseif v.TypeOfFunction == "Bool" then
+		NewBool(i, v.ScriptIfActivated, v.ScriptIfDeactivated)
+	elseif v.TypeOfFunction == "Button" then
+		NewButton(i, v.ScriptIfActivated)
 	end
 end
-coroutine.wrap(TNYOWD_fake_script)()
