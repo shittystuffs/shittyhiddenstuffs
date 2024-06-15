@@ -6,7 +6,7 @@ getgenv().Table = {
 		TargetPlugin = nil,
 		GuiVersion = 6.143,
 		ActiveScriptName = nil,
-		DeviceCenterPoint = nil,
+		GuiCenterPoint = nil,
 		ClickSoundScript = function()
 		local ClickSound = Instance.new("Sound")
 
@@ -259,7 +259,8 @@ coroutine.wrap(function()
 	Center.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	Center.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Center.BorderSizePixel = 0
+	Center.Size = UDim2.new(0, 490, 0, 240)
 
-	getgenv().Table.GuiStatus.DeviceCenterPoint = Center.AbsolutePosition
+	getgenv().Table.GuiStatus.GuiCenterPoint = Center.AbsolutePosition
 	TestCenterGui:Destroy()
 end)()
