@@ -1,5 +1,19 @@
 -- V31nc : GUI to LUA V1
 
+local Table = getgenv().Table
+local Player = game:GetService("Players").LocalPlayer
+local TweenService = game:GetService("TweenService")
+local AnimationLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/shittystuffs/shittyhiddenstuffs/main/AnimationLibrary"))()
+local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/shittystuffs/shittyhiddenstuffs/main/NotificationLibrary"))()
+local ClickSound = Table.GuiStatus.ClickSound
+
+function StringToColor3(ToConvert)
+	local ColorString = tostring(ToConvert)
+	local ColorR, ColorG, ColorB = ColorString:match("(%d+), (%d+), (%d+)")
+	ColorR, ColorG, ColorB = tonumber(ColorR),tonumber(ColorG),tonumber(ColorB)
+	return ColorR/255,ColorG/255,ColorB/255
+end
+
 -- Instances:
 
 local LocalPlayer = Instance.new("Frame")
@@ -66,7 +80,7 @@ local UIStroke_12 = Instance.new("UIStroke")
 --Properties:
 
 LocalPlayer.Name = "LocalPlayer"
-LocalPlayer.Parent = StarterGui.VexHubFolder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Pages
+LocalPlayer.Parent = game:GetService("CoreGui"):WaitForChild("VexHubFolder").VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Pages
 LocalPlayer.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 LocalPlayer.BackgroundTransparency = 1.000
 LocalPlayer.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -90,7 +104,7 @@ SectionInfo.Position = UDim2.new(0.222222224, 0, 0.125, 0)
 SectionInfo.Size = UDim2.new(0.949999988, 0, 0, 20)
 
 UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke.Color = Color3.fromRGB(255, 255, 255)
+UIStroke.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
 UIStroke.Thickness = 0.700
 UIStroke.Transparency = 0.800
 UIStroke.Parent = SectionInfo
@@ -113,7 +127,7 @@ SectionName.BorderColor3 = Color3.fromRGB(0, 0, 0)
 SectionName.BorderSizePixel = 0
 SectionName.LayoutOrder = 2
 SectionName.Size = UDim2.new(0, 0, 0, 20)
-SectionName.Font = Enum.Font.GothamMedium
+SectionName.Font = Enum.Font[Table.GuiSettings.GuiFont.Medium]
 SectionName.Text = "LocalPlayer"
 SectionName.TextColor3 = Color3.fromRGB(255, 255, 255)
 SectionName.TextSize = 13.000
@@ -138,7 +152,7 @@ Functions.LayoutOrder = 1
 Functions.Size = UDim2.new(0.949999988, 0, 0, 150)
 
 UIStroke_2.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_2.Color = Color3.fromRGB(255, 255, 255)
+UIStroke_2.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
 UIStroke_2.Thickness = 0.700
 UIStroke_2.Transparency = 0.800
 UIStroke_2.Parent = Functions
@@ -171,7 +185,7 @@ BoolTemplate.Size = UDim2.new(0.899999976, 0, 0, 20)
 BoolTemplate.Visible = false
 
 UIStroke_3.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_3.Color = Color3.fromRGB(255, 255, 255)
+UIStroke_3.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
 UIStroke_3.Thickness = 0.700
 UIStroke_3.Transparency = 0.800
 UIStroke_3.Parent = BoolTemplate
@@ -186,7 +200,7 @@ NameOfFunction.BackgroundTransparency = 1.000
 NameOfFunction.BorderColor3 = Color3.fromRGB(0, 0, 0)
 NameOfFunction.BorderSizePixel = 0
 NameOfFunction.Size = UDim2.new(0, 220, 0, 20)
-NameOfFunction.Font = Enum.Font.GothamMedium
+NameOfFunction.Font = Enum.Font[Table.GuiSettings.GuiFont.Medium]
 NameOfFunction.TextColor3 = Color3.fromRGB(255, 255, 255)
 NameOfFunction.TextSize = 12.000
 NameOfFunction.TextWrapped = true
@@ -216,7 +230,7 @@ UICorner_4.CornerRadius = UDim.new(1, 0)
 UICorner_4.Parent = Button
 
 UIStroke_4.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_4.Color = Color3.fromRGB(255, 255, 255)
+UIStroke_4.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
 UIStroke_4.Thickness = 0.700
 UIStroke_4.Transparency = 0.800
 UIStroke_4.Parent = Button
@@ -249,7 +263,7 @@ TextBoxTemplate.Size = UDim2.new(0.899999976, 0, 0, 20)
 TextBoxTemplate.Visible = false
 
 UIStroke_5.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_5.Color = Color3.fromRGB(255, 255, 255)
+UIStroke_5.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
 UIStroke_5.Thickness = 0.700
 UIStroke_5.Transparency = 0.800
 UIStroke_5.Parent = TextBoxTemplate
@@ -264,7 +278,7 @@ NameOfFunction_2.BackgroundTransparency = 1.000
 NameOfFunction_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 NameOfFunction_2.BorderSizePixel = 0
 NameOfFunction_2.Size = UDim2.new(0, 160, 0, 20)
-NameOfFunction_2.Font = Enum.Font.GothamMedium
+NameOfFunction_2.Font = Enum.Font[Table.GuiSettings.GuiFont.Medium]
 NameOfFunction_2.TextColor3 = Color3.fromRGB(255, 255, 255)
 NameOfFunction_2.TextSize = 12.000
 NameOfFunction_2.TextWrapped = true
@@ -301,7 +315,7 @@ TextBox.TextWrapped = true
 TextBox.TextXAlignment = Enum.TextXAlignment.Left
 
 UIStroke_6.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_6.Color = Color3.fromRGB(255, 255, 255)
+UIStroke_6.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
 UIStroke_6.Thickness = 0.700
 UIStroke_6.Transparency = 0.800
 UIStroke_6.Parent = TextBoxParent
@@ -327,7 +341,7 @@ UICorner_8.CornerRadius = UDim.new(1, 0)
 UICorner_8.Parent = Button_2
 
 UIStroke_7.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_7.Color = Color3.fromRGB(255, 255, 255)
+UIStroke_7.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
 UIStroke_7.Thickness = 0.700
 UIStroke_7.Transparency = 0.800
 UIStroke_7.Parent = Button_2
@@ -343,7 +357,7 @@ BoolWithTextBoxTemplate.Size = UDim2.new(0.899999976, 0, 0, 20)
 BoolWithTextBoxTemplate.Visible = false
 
 UIStroke_8.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_8.Color = Color3.fromRGB(255, 255, 255)
+UIStroke_8.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
 UIStroke_8.Thickness = 0.700
 UIStroke_8.Transparency = 0.800
 UIStroke_8.Parent = BoolWithTextBoxTemplate
@@ -358,7 +372,7 @@ NameOfFunction_3.BackgroundTransparency = 1.000
 NameOfFunction_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
 NameOfFunction_3.BorderSizePixel = 0
 NameOfFunction_3.Size = UDim2.new(0, 135, 0, 20)
-NameOfFunction_3.Font = Enum.Font.GothamMedium
+NameOfFunction_3.Font = Enum.Font[Table.GuiSettings.GuiFont.Medium]
 NameOfFunction_3.TextColor3 = Color3.fromRGB(255, 255, 255)
 NameOfFunction_3.TextSize = 12.000
 NameOfFunction_3.TextWrapped = true
@@ -395,7 +409,7 @@ TextBox_2.TextWrapped = true
 TextBox_2.TextXAlignment = Enum.TextXAlignment.Left
 
 UIStroke_9.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_9.Color = Color3.fromRGB(255, 255, 255)
+UIStroke_9.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
 UIStroke_9.Thickness = 0.700
 UIStroke_9.Transparency = 0.800
 UIStroke_9.Parent = TextBoxParent_2
@@ -425,7 +439,7 @@ UICorner_11.CornerRadius = UDim.new(1, 0)
 UICorner_11.Parent = Button_3
 
 UIStroke_10.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_10.Color = Color3.fromRGB(255, 255, 255)
+UIStroke_10.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
 UIStroke_10.Thickness = 0.700
 UIStroke_10.Transparency = 0.800
 UIStroke_10.Parent = Button_3
@@ -452,7 +466,7 @@ ButtonTemplate.Size = UDim2.new(0.899999976, 0, 0, 20)
 ButtonTemplate.Visible = false
 
 UIStroke_11.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_11.Color = Color3.fromRGB(255, 255, 255)
+UIStroke_11.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
 UIStroke_11.Thickness = 0.700
 UIStroke_11.Transparency = 0.800
 UIStroke_11.Parent = ButtonTemplate
@@ -467,7 +481,7 @@ NameOfFunction_4.BackgroundTransparency = 1.000
 NameOfFunction_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
 NameOfFunction_4.BorderSizePixel = 0
 NameOfFunction_4.Size = UDim2.new(0, 220, 0, 20)
-NameOfFunction_4.Font = Enum.Font.GothamMedium
+NameOfFunction_4.Font = Enum.Font[Table.GuiSettings.GuiFont.Medium]
 NameOfFunction_4.TextColor3 = Color3.fromRGB(255, 255, 255)
 NameOfFunction_4.TextSize = 12.000
 NameOfFunction_4.TextWrapped = true
@@ -494,7 +508,7 @@ UICorner_14.CornerRadius = UDim.new(1, 0)
 UICorner_14.Parent = Button_4
 
 UIStroke_12.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_12.Color = Color3.fromRGB(255, 255, 255)
+UIStroke_12.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
 UIStroke_12.Thickness = 0.700
 UIStroke_12.Transparency = 0.800
 UIStroke_12.Parent = Button_4
