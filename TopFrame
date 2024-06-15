@@ -30,6 +30,7 @@ local Bell = Instance.new("ImageLabel")
 local UIScale = Instance.new("UIScale")
 local UIListLayout_2 = Instance.new("UIListLayout")
 local OpenButton = Instance.new("ImageButton")
+local UIScale_2 = Instance.new("UIScale")
 local UICorner_3 = Instance.new("UICorner")
 local UIStroke = Instance.new("UIStroke")
 local Logo = Instance.new("ImageLabel")
@@ -162,21 +163,24 @@ UIListLayout_2.Padding = UDim.new(0, 5)
 OpenButton.Name = "OpenButton"
 OpenButton.Parent = TopFrame
 OpenButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-OpenButton.BackgroundTransparency = 0.500
+OpenButton.BackgroundTransparency = 1
 OpenButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
 OpenButton.BorderSizePixel = 0
 OpenButton.LayoutOrder = 1
 OpenButton.Size = UDim2.new(0, 35, 0, 35)
-OpenButton.Image = "rbxassetid://"..Table.GuiStatus.Logo
+OpenButton.Image = ""
 OpenButton.ImageTransparency = 1.000
 OpenButton.ScaleType = Enum.ScaleType.Crop
 OpenButton.Visible = false
+
+UIScale_2.Parent = OpenButton
+UIScale_2.Scale = 0.000
 
 UICorner_3.CornerRadius = UDim.new(1, 0)
 UICorner_3.Parent = OpenButton
 
 UIStroke.Thickness = 3.000
-UIStroke.Transparency = 0.700
+UIStroke.Transparency = 1
 UIStroke.Parent = OpenButton
 
 Logo.Name = "Logo"
@@ -187,6 +191,7 @@ Logo.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Logo.BorderSizePixel = 0
 Logo.Size = UDim2.new(1, 0, 1, 0)
 Logo.Image = "rbxassetid://"..Table.GuiStatus.Logo
+Logo.ImageTransparency = 1
 
 OpenButton.MouseButton1Down:Connect(function()
 	if Table.GuiStatus.OnGoingAnimation == false then
