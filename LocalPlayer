@@ -30,6 +30,7 @@ local UICorner_2 = Instance.new("UICorner")
 local ScrollingFrame = Instance.new("ScrollingFrame")
 local UIListLayout_3 = Instance.new("UIListLayout")
 local BoolTemplate = Instance.new("Frame")
+local Type = Instance.new("StringValue")
 local UIStroke_3 = Instance.new("UIStroke")
 local UICorner_3 = Instance.new("UICorner")
 local NameOfFunction = Instance.new("TextLabel")
@@ -41,6 +42,7 @@ local Circle = Instance.new("Frame")
 local UICorner_5 = Instance.new("UICorner")
 local _000Border = Instance.new("Frame")
 local TextBoxTemplate = Instance.new("Frame")
+local Type_2 = Instance.new("StringValue")
 local UIStroke_5 = Instance.new("UIStroke")
 local UICorner_6 = Instance.new("UICorner")
 local NameOfFunction_2 = Instance.new("TextLabel")
@@ -54,6 +56,7 @@ local Button_2 = Instance.new("ImageButton")
 local UICorner_8 = Instance.new("UICorner")
 local UIStroke_7 = Instance.new("UIStroke")
 local BoolWithTextBoxTemplate = Instance.new("Frame")
+local Type_3 = Instance.new("StringValue")
 local UIStroke_8 = Instance.new("UIStroke")
 local UICorner_9 = Instance.new("UICorner")
 local NameOfFunction_3 = Instance.new("TextLabel")
@@ -69,6 +72,7 @@ local UIStroke_10 = Instance.new("UIStroke")
 local Circle_2 = Instance.new("Frame")
 local UICorner_12 = Instance.new("UICorner")
 local ButtonTemplate = Instance.new("Frame")
+local Type_4 = Instance.new("StringValue")
 local UIStroke_11 = Instance.new("UIStroke")
 local UICorner_13 = Instance.new("UICorner")
 local NameOfFunction_4 = Instance.new("TextLabel")
@@ -188,6 +192,10 @@ BoolTemplate.LayoutOrder = 1
 BoolTemplate.Size = UDim2.new(0.899999976, 0, 0, 20)
 BoolTemplate.Visible = false
 
+Type.Name = "Type"
+Type.Parent = BoolTemplate
+Type.Value = "Bool"
+
 UIStroke_3.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 UIStroke_3.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
 UIStroke_3.Thickness = 0.700
@@ -265,6 +273,10 @@ TextBoxTemplate.BorderSizePixel = 0
 TextBoxTemplate.LayoutOrder = 1
 TextBoxTemplate.Size = UDim2.new(0.899999976, 0, 0, 20)
 TextBoxTemplate.Visible = false
+
+Type_2.Name = "Type"
+Type_2.Parent = TextBoxTemplate
+Type_2.Value = "TextBox"
 
 UIStroke_5.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 UIStroke_5.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
@@ -359,6 +371,10 @@ BoolWithTextBoxTemplate.BorderSizePixel = 0
 BoolWithTextBoxTemplate.LayoutOrder = 1
 BoolWithTextBoxTemplate.Size = UDim2.new(0.899999976, 0, 0, 20)
 BoolWithTextBoxTemplate.Visible = false
+
+Type_3.Name = "Type"
+Type_3.Parent = BoolWithTextBoxTemplate
+Type_3.Value = "BoolWithTextBox"
 
 UIStroke_8.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 UIStroke_8.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
@@ -468,6 +484,10 @@ ButtonTemplate.BorderSizePixel = 0
 ButtonTemplate.LayoutOrder = 1
 ButtonTemplate.Size = UDim2.new(0.899999976, 0, 0, 20)
 ButtonTemplate.Visible = false
+
+Type_4.Name = "Type"
+Type_4.Parent = ButtonTemplate
+Type_4.Value = "Button"
 
 UIStroke_11.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 UIStroke_11.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
