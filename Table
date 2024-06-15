@@ -8,13 +8,17 @@ getgenv().Table = {
 		ActiveScriptName = nil,
 		GuiCenterPoint = nil,
 		ClickSoundScript = function()
-		local ClickSound = Instance.new("Sound")
+			local ClickSound = Instance.new("Sound")
+	
+			ClickSound.Name = "ClickSound"
+			ClickSound.Parent = game:GetService("SoundService")
+			ClickSound.SoundId = "rbxassetid://6324790483"
+			ClickSound.Volume = 0.5
+			ClickSound.Playing = true
 
-		ClickSound.Name = "ClickSound"
-		ClickSound.Parent = game:GetService("SoundService")
-		ClickSound.SoundId = "rbxassetid://6324790483"
-		ClickSound.Volume = 0.5
-		ClickSound.Playing = true
+			if ClickSound.TimePosition == ClickSound.TimeLength then
+				ClickSound:Destroy()
+			end
 		end,
 		ActiveScript = function()
 		end,
