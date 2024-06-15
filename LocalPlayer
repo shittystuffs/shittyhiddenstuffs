@@ -1,0 +1,610 @@
+-- V31nc : GUI to LUA V1
+
+-- Instances:
+
+local LocalPlayer = Instance.new("Frame")
+local UIListLayout = Instance.new("UIListLayout")
+local SectionInfo = Instance.new("Frame")
+local UIStroke = Instance.new("UIStroke")
+local UICorner = Instance.new("UICorner")
+local UIListLayout_2 = Instance.new("UIListLayout")
+local SectionName = Instance.new("TextLabel")
+local ImageLabel = Instance.new("ImageLabel")
+local Functions = Instance.new("Frame")
+local UIStroke_2 = Instance.new("UIStroke")
+local UICorner_2 = Instance.new("UICorner")
+local ScrollingFrame = Instance.new("ScrollingFrame")
+local UIListLayout_3 = Instance.new("UIListLayout")
+local BoolTemplate = Instance.new("Frame")
+local UIStroke_3 = Instance.new("UIStroke")
+local UICorner_3 = Instance.new("UICorner")
+local NameOfFunction = Instance.new("TextLabel")
+local UIListLayout_4 = Instance.new("UIListLayout")
+local Button = Instance.new("TextButton")
+local UICorner_4 = Instance.new("UICorner")
+local UIStroke_4 = Instance.new("UIStroke")
+local Circle = Instance.new("Frame")
+local UICorner_5 = Instance.new("UICorner")
+local _000Border = Instance.new("Frame")
+local TextBoxTemplate = Instance.new("Frame")
+local UIStroke_5 = Instance.new("UIStroke")
+local UICorner_6 = Instance.new("UICorner")
+local NameOfFunction_2 = Instance.new("TextLabel")
+local UIListLayout_5 = Instance.new("UIListLayout")
+local TextBoxParent = Instance.new("Frame")
+local TextBox = Instance.new("TextBox")
+local UIStroke_6 = Instance.new("UIStroke")
+local UICorner_7 = Instance.new("UICorner")
+local UIListLayout_6 = Instance.new("UIListLayout")
+local Button_2 = Instance.new("ImageButton")
+local UICorner_8 = Instance.new("UICorner")
+local UIStroke_7 = Instance.new("UIStroke")
+local BoolWithTextBoxTemplate = Instance.new("Frame")
+local UIStroke_8 = Instance.new("UIStroke")
+local UICorner_9 = Instance.new("UICorner")
+local NameOfFunction_3 = Instance.new("TextLabel")
+local UIListLayout_7 = Instance.new("UIListLayout")
+local TextBoxParent_2 = Instance.new("Frame")
+local TextBox_2 = Instance.new("TextBox")
+local UIStroke_9 = Instance.new("UIStroke")
+local UICorner_10 = Instance.new("UICorner")
+local UIListLayout_8 = Instance.new("UIListLayout")
+local Button_3 = Instance.new("TextButton")
+local UICorner_11 = Instance.new("UICorner")
+local UIStroke_10 = Instance.new("UIStroke")
+local Circle_2 = Instance.new("Frame")
+local UICorner_12 = Instance.new("UICorner")
+local ButtonTemplate = Instance.new("Frame")
+local UIStroke_11 = Instance.new("UIStroke")
+local UICorner_13 = Instance.new("UICorner")
+local NameOfFunction_4 = Instance.new("TextLabel")
+local UIListLayout_9 = Instance.new("UIListLayout")
+local Button_4 = Instance.new("ImageButton")
+local UICorner_14 = Instance.new("UICorner")
+local UIStroke_12 = Instance.new("UIStroke")
+
+--Properties:
+
+LocalPlayer.Name = "LocalPlayer"
+LocalPlayer.Parent = StarterGui.VexHubFolder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Pages
+LocalPlayer.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+LocalPlayer.BackgroundTransparency = 1.000
+LocalPlayer.BorderColor3 = Color3.fromRGB(0, 0, 0)
+LocalPlayer.BorderSizePixel = 0
+LocalPlayer.Size = UDim2.new(1, 0, 1, 0)
+
+UIListLayout.Parent = LocalPlayer
+UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Center
+UIListLayout.Padding = UDim.new(0, 5)
+
+SectionInfo.Name = "SectionInfo"
+SectionInfo.Parent = LocalPlayer
+SectionInfo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SectionInfo.BackgroundTransparency = 1.000
+SectionInfo.BorderColor3 = Color3.fromRGB(0, 0, 0)
+SectionInfo.BorderSizePixel = 0
+SectionInfo.LayoutOrder = 1
+SectionInfo.Position = UDim2.new(0.222222224, 0, 0.125, 0)
+SectionInfo.Size = UDim2.new(0.949999988, 0, 0, 20)
+
+UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke.Color = Color3.fromRGB(255, 255, 255)
+UIStroke.Thickness = 0.700
+UIStroke.Transparency = 0.800
+UIStroke.Parent = SectionInfo
+
+UICorner.CornerRadius = UDim.new(0.200000003, 0)
+UICorner.Parent = SectionInfo
+
+UIListLayout_2.Parent = SectionInfo
+UIListLayout_2.FillDirection = Enum.FillDirection.Horizontal
+UIListLayout_2.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout_2.VerticalAlignment = Enum.VerticalAlignment.Center
+UIListLayout_2.Padding = UDim.new(0, 5)
+
+SectionName.Name = "SectionName"
+SectionName.Parent = SectionInfo
+SectionName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SectionName.BackgroundTransparency = 1.000
+SectionName.BorderColor3 = Color3.fromRGB(0, 0, 0)
+SectionName.BorderSizePixel = 0
+SectionName.LayoutOrder = 2
+SectionName.Size = UDim2.new(0, 0, 0, 20)
+SectionName.Font = Enum.Font.GothamMedium
+SectionName.Text = "LocalPlayer"
+SectionName.TextColor3 = Color3.fromRGB(255, 255, 255)
+SectionName.TextSize = 13.000
+SectionName.TextWrapped = true
+
+ImageLabel.Parent = SectionInfo
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.BackgroundTransparency = 1.000
+ImageLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ImageLabel.BorderSizePixel = 0
+ImageLabel.LayoutOrder = 1
+ImageLabel.Size = UDim2.new(0, 20, 0, 20)
+ImageLabel.Image = "http://www.roblox.com/asset/?id=12774311691"
+
+Functions.Name = "Functions"
+Functions.Parent = LocalPlayer
+Functions.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Functions.BackgroundTransparency = 1.000
+Functions.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Functions.BorderSizePixel = 0
+Functions.LayoutOrder = 1
+Functions.Size = UDim2.new(0.949999988, 0, 0, 150)
+
+UIStroke_2.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke_2.Color = Color3.fromRGB(255, 255, 255)
+UIStroke_2.Thickness = 0.700
+UIStroke_2.Transparency = 0.800
+UIStroke_2.Parent = Functions
+
+UICorner_2.CornerRadius = UDim.new(0.0500000007, 0)
+UICorner_2.Parent = Functions
+
+ScrollingFrame.Parent = Functions
+ScrollingFrame.Active = true
+ScrollingFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScrollingFrame.BackgroundTransparency = 1.000
+ScrollingFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScrollingFrame.BorderSizePixel = 0
+ScrollingFrame.Size = UDim2.new(1, 0, 1, 0)
+ScrollingFrame.CanvasSize = UDim2.new(0, 0, 0, 0)
+ScrollingFrame.ScrollBarThickness = 2
+
+UIListLayout_3.Parent = ScrollingFrame
+UIListLayout_3.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout_3.Padding = UDim.new(0, 5)
+
+BoolTemplate.Name = "BoolTemplate"
+BoolTemplate.Parent = ScrollingFrame
+BoolTemplate.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+BoolTemplate.BackgroundTransparency = 1.000
+BoolTemplate.BorderColor3 = Color3.fromRGB(0, 0, 0)
+BoolTemplate.BorderSizePixel = 0
+BoolTemplate.LayoutOrder = 1
+BoolTemplate.Size = UDim2.new(0.899999976, 0, 0, 20)
+BoolTemplate.Visible = false
+
+UIStroke_3.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke_3.Color = Color3.fromRGB(255, 255, 255)
+UIStroke_3.Thickness = 0.700
+UIStroke_3.Transparency = 0.800
+UIStroke_3.Parent = BoolTemplate
+
+UICorner_3.CornerRadius = UDim.new(0.300000012, 0)
+UICorner_3.Parent = BoolTemplate
+
+NameOfFunction.Name = "NameOfFunction"
+NameOfFunction.Parent = BoolTemplate
+NameOfFunction.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+NameOfFunction.BackgroundTransparency = 1.000
+NameOfFunction.BorderColor3 = Color3.fromRGB(0, 0, 0)
+NameOfFunction.BorderSizePixel = 0
+NameOfFunction.Size = UDim2.new(0, 220, 0, 20)
+NameOfFunction.Font = Enum.Font.GothamMedium
+NameOfFunction.TextColor3 = Color3.fromRGB(255, 255, 255)
+NameOfFunction.TextSize = 12.000
+NameOfFunction.TextWrapped = true
+NameOfFunction.TextXAlignment = Enum.TextXAlignment.Left
+
+UIListLayout_4.Parent = BoolTemplate
+UIListLayout_4.FillDirection = Enum.FillDirection.Horizontal
+UIListLayout_4.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout_4.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout_4.VerticalAlignment = Enum.VerticalAlignment.Center
+UIListLayout_4.Padding = UDim.new(0, 5)
+
+Button.Name = "Button"
+Button.Parent = BoolTemplate
+Button.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Button.BackgroundTransparency = 1.000
+Button.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Button.BorderSizePixel = 0
+Button.Position = UDim2.new(0.241743729, 0, 0.368913859, 0)
+Button.Size = UDim2.new(0, 40, 0, 15)
+Button.Font = Enum.Font.SourceSans
+Button.Text = ""
+Button.TextColor3 = Color3.fromRGB(0, 0, 0)
+Button.TextSize = 14.000
+
+UICorner_4.CornerRadius = UDim.new(1, 0)
+UICorner_4.Parent = Button
+
+UIStroke_4.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke_4.Color = Color3.fromRGB(255, 255, 255)
+UIStroke_4.Thickness = 0.700
+UIStroke_4.Transparency = 0.800
+UIStroke_4.Parent = Button
+
+Circle.Name = "Circle"
+Circle.Parent = Button
+Circle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Circle.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Circle.BorderSizePixel = 0
+Circle.Position = UDim2.new(0.300000012, 0, 0, 0)
+Circle.Size = UDim2.new(0, 15, 0, 15)
+
+UICorner_5.CornerRadius = UDim.new(1, 0)
+UICorner_5.Parent = Circle
+
+_000Border.Name = "000Border"
+_000Border.Parent = ScrollingFrame
+_000Border.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_000Border.BorderColor3 = Color3.fromRGB(0, 0, 0)
+_000Border.BorderSizePixel = 0
+
+TextBoxTemplate.Name = "TextBoxTemplate"
+TextBoxTemplate.Parent = ScrollingFrame
+TextBoxTemplate.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextBoxTemplate.BackgroundTransparency = 1.000
+TextBoxTemplate.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextBoxTemplate.BorderSizePixel = 0
+TextBoxTemplate.LayoutOrder = 1
+TextBoxTemplate.Size = UDim2.new(0.899999976, 0, 0, 20)
+TextBoxTemplate.Visible = false
+
+UIStroke_5.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke_5.Color = Color3.fromRGB(255, 255, 255)
+UIStroke_5.Thickness = 0.700
+UIStroke_5.Transparency = 0.800
+UIStroke_5.Parent = TextBoxTemplate
+
+UICorner_6.CornerRadius = UDim.new(0.300000012, 0)
+UICorner_6.Parent = TextBoxTemplate
+
+NameOfFunction_2.Name = "NameOfFunction"
+NameOfFunction_2.Parent = TextBoxTemplate
+NameOfFunction_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+NameOfFunction_2.BackgroundTransparency = 1.000
+NameOfFunction_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+NameOfFunction_2.BorderSizePixel = 0
+NameOfFunction_2.Size = UDim2.new(0, 160, 0, 20)
+NameOfFunction_2.Font = Enum.Font.GothamMedium
+NameOfFunction_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+NameOfFunction_2.TextSize = 12.000
+NameOfFunction_2.TextWrapped = true
+NameOfFunction_2.TextXAlignment = Enum.TextXAlignment.Left
+
+UIListLayout_5.Parent = TextBoxTemplate
+UIListLayout_5.FillDirection = Enum.FillDirection.Horizontal
+UIListLayout_5.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout_5.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout_5.VerticalAlignment = Enum.VerticalAlignment.Center
+UIListLayout_5.Padding = UDim.new(0, 5)
+
+TextBoxParent.Name = "TextBoxParent"
+TextBoxParent.Parent = TextBoxTemplate
+TextBoxParent.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextBoxParent.BackgroundTransparency = 1.000
+TextBoxParent.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextBoxParent.BorderSizePixel = 0
+TextBoxParent.Size = UDim2.new(0, 80, 0, 15)
+
+TextBox.Parent = TextBoxParent
+TextBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextBox.BackgroundTransparency = 1.000
+TextBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextBox.BorderSizePixel = 0
+TextBox.Size = UDim2.new(0.899999976, 0, 0, 15)
+TextBox.ClearTextOnFocus = false
+TextBox.Font = Enum.Font.Gotham
+TextBox.PlaceholderText = "Holder"
+TextBox.Text = ""
+TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextBox.TextSize = 10.000
+TextBox.TextWrapped = true
+TextBox.TextXAlignment = Enum.TextXAlignment.Left
+
+UIStroke_6.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke_6.Color = Color3.fromRGB(255, 255, 255)
+UIStroke_6.Thickness = 0.700
+UIStroke_6.Transparency = 0.800
+UIStroke_6.Parent = TextBoxParent
+
+UICorner_7.CornerRadius = UDim.new(1, 0)
+UICorner_7.Parent = TextBoxParent
+
+UIListLayout_6.Parent = TextBoxParent
+UIListLayout_6.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout_6.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout_6.VerticalAlignment = Enum.VerticalAlignment.Center
+
+Button_2.Name = "Button"
+Button_2.Parent = TextBoxTemplate
+Button_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Button_2.BackgroundTransparency = 1.000
+Button_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Button_2.BorderSizePixel = 0
+Button_2.Size = UDim2.new(0, 15, 0, 15)
+Button_2.Image = "http://www.roblox.com/asset/?id=17648224301"
+
+UICorner_8.CornerRadius = UDim.new(1, 0)
+UICorner_8.Parent = Button_2
+
+UIStroke_7.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke_7.Color = Color3.fromRGB(255, 255, 255)
+UIStroke_7.Thickness = 0.700
+UIStroke_7.Transparency = 0.800
+UIStroke_7.Parent = Button_2
+
+BoolWithTextBoxTemplate.Name = "BoolWithTextBoxTemplate"
+BoolWithTextBoxTemplate.Parent = ScrollingFrame
+BoolWithTextBoxTemplate.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+BoolWithTextBoxTemplate.BackgroundTransparency = 1.000
+BoolWithTextBoxTemplate.BorderColor3 = Color3.fromRGB(0, 0, 0)
+BoolWithTextBoxTemplate.BorderSizePixel = 0
+BoolWithTextBoxTemplate.LayoutOrder = 1
+BoolWithTextBoxTemplate.Size = UDim2.new(0.899999976, 0, 0, 20)
+BoolWithTextBoxTemplate.Visible = false
+
+UIStroke_8.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke_8.Color = Color3.fromRGB(255, 255, 255)
+UIStroke_8.Thickness = 0.700
+UIStroke_8.Transparency = 0.800
+UIStroke_8.Parent = BoolWithTextBoxTemplate
+
+UICorner_9.CornerRadius = UDim.new(0.300000012, 0)
+UICorner_9.Parent = BoolWithTextBoxTemplate
+
+NameOfFunction_3.Name = "NameOfFunction"
+NameOfFunction_3.Parent = BoolWithTextBoxTemplate
+NameOfFunction_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+NameOfFunction_3.BackgroundTransparency = 1.000
+NameOfFunction_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+NameOfFunction_3.BorderSizePixel = 0
+NameOfFunction_3.Size = UDim2.new(0, 135, 0, 20)
+NameOfFunction_3.Font = Enum.Font.GothamMedium
+NameOfFunction_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+NameOfFunction_3.TextSize = 12.000
+NameOfFunction_3.TextWrapped = true
+NameOfFunction_3.TextXAlignment = Enum.TextXAlignment.Left
+
+UIListLayout_7.Parent = BoolWithTextBoxTemplate
+UIListLayout_7.FillDirection = Enum.FillDirection.Horizontal
+UIListLayout_7.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout_7.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout_7.VerticalAlignment = Enum.VerticalAlignment.Center
+UIListLayout_7.Padding = UDim.new(0, 5)
+
+TextBoxParent_2.Name = "TextBoxParent"
+TextBoxParent_2.Parent = BoolWithTextBoxTemplate
+TextBoxParent_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextBoxParent_2.BackgroundTransparency = 1.000
+TextBoxParent_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextBoxParent_2.BorderSizePixel = 0
+TextBoxParent_2.Size = UDim2.new(0, 80, 0, 15)
+
+TextBox_2.Parent = TextBoxParent_2
+TextBox_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextBox_2.BackgroundTransparency = 1.000
+TextBox_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextBox_2.BorderSizePixel = 0
+TextBox_2.Size = UDim2.new(0.899999976, 0, 0, 15)
+TextBox_2.ClearTextOnFocus = false
+TextBox_2.Font = Enum.Font.Gotham
+TextBox_2.PlaceholderText = "Holder"
+TextBox_2.Text = ""
+TextBox_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextBox_2.TextSize = 10.000
+TextBox_2.TextWrapped = true
+TextBox_2.TextXAlignment = Enum.TextXAlignment.Left
+
+UIStroke_9.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke_9.Color = Color3.fromRGB(255, 255, 255)
+UIStroke_9.Thickness = 0.700
+UIStroke_9.Transparency = 0.800
+UIStroke_9.Parent = TextBoxParent_2
+
+UICorner_10.CornerRadius = UDim.new(1, 0)
+UICorner_10.Parent = TextBoxParent_2
+
+UIListLayout_8.Parent = TextBoxParent_2
+UIListLayout_8.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout_8.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout_8.VerticalAlignment = Enum.VerticalAlignment.Center
+
+Button_3.Name = "Button"
+Button_3.Parent = BoolWithTextBoxTemplate
+Button_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Button_3.BackgroundTransparency = 1.000
+Button_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Button_3.BorderSizePixel = 0
+Button_3.Position = UDim2.new(0.241743729, 0, 0.368913859, 0)
+Button_3.Size = UDim2.new(0, 40, 0, 15)
+Button_3.Font = Enum.Font.SourceSans
+Button_3.Text = ""
+Button_3.TextColor3 = Color3.fromRGB(0, 0, 0)
+Button_3.TextSize = 14.000
+
+UICorner_11.CornerRadius = UDim.new(1, 0)
+UICorner_11.Parent = Button_3
+
+UIStroke_10.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke_10.Color = Color3.fromRGB(255, 255, 255)
+UIStroke_10.Thickness = 0.700
+UIStroke_10.Transparency = 0.800
+UIStroke_10.Parent = Button_3
+
+Circle_2.Name = "Circle"
+Circle_2.Parent = Button_3
+Circle_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Circle_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Circle_2.BorderSizePixel = 0
+Circle_2.Position = UDim2.new(0.300000012, 0, 0, 0)
+Circle_2.Size = UDim2.new(0, 15, 0, 15)
+
+UICorner_12.CornerRadius = UDim.new(1, 0)
+UICorner_12.Parent = Circle_2
+
+ButtonTemplate.Name = "ButtonTemplate"
+ButtonTemplate.Parent = ScrollingFrame
+ButtonTemplate.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ButtonTemplate.BackgroundTransparency = 1.000
+ButtonTemplate.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ButtonTemplate.BorderSizePixel = 0
+ButtonTemplate.LayoutOrder = 1
+ButtonTemplate.Size = UDim2.new(0.899999976, 0, 0, 20)
+ButtonTemplate.Visible = false
+
+UIStroke_11.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke_11.Color = Color3.fromRGB(255, 255, 255)
+UIStroke_11.Thickness = 0.700
+UIStroke_11.Transparency = 0.800
+UIStroke_11.Parent = ButtonTemplate
+
+UICorner_13.CornerRadius = UDim.new(0.300000012, 0)
+UICorner_13.Parent = ButtonTemplate
+
+NameOfFunction_4.Name = "NameOfFunction"
+NameOfFunction_4.Parent = ButtonTemplate
+NameOfFunction_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+NameOfFunction_4.BackgroundTransparency = 1.000
+NameOfFunction_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+NameOfFunction_4.BorderSizePixel = 0
+NameOfFunction_4.Size = UDim2.new(0, 220, 0, 20)
+NameOfFunction_4.Font = Enum.Font.GothamMedium
+NameOfFunction_4.TextColor3 = Color3.fromRGB(255, 255, 255)
+NameOfFunction_4.TextSize = 12.000
+NameOfFunction_4.TextWrapped = true
+NameOfFunction_4.TextXAlignment = Enum.TextXAlignment.Left
+
+UIListLayout_9.Parent = ButtonTemplate
+UIListLayout_9.FillDirection = Enum.FillDirection.Horizontal
+UIListLayout_9.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout_9.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout_9.VerticalAlignment = Enum.VerticalAlignment.Center
+UIListLayout_9.Padding = UDim.new(0, 5)
+
+Button_4.Name = "Button"
+Button_4.Parent = ButtonTemplate
+Button_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Button_4.BackgroundTransparency = 1.000
+Button_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Button_4.BorderSizePixel = 0
+Button_4.Size = UDim2.new(0, 40, 0, 15)
+Button_4.Image = "http://www.roblox.com/asset/?id=17727326510"
+Button_4.ScaleType = Enum.ScaleType.Fit
+
+UICorner_14.CornerRadius = UDim.new(1, 0)
+UICorner_14.Parent = Button_4
+
+UIStroke_12.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke_12.Color = Color3.fromRGB(255, 255, 255)
+UIStroke_12.Thickness = 0.700
+UIStroke_12.Transparency = 0.800
+UIStroke_12.Parent = Button_4
+
+-- Scripts:
+
+local function TNYOWD_fake_script() -- ScrollingFrame.LocalScript 
+	local script = Instance.new('LocalScript', ScrollingFrame)
+
+	local Table = require(game:GetService("StarterGui").Table)
+	local TextBox = script.Parent.TextBoxTemplate
+	local Button = script.Parent.ButtonTemplate
+	local Bool = script.Parent.BoolTemplate
+	local BoolWithTextBox = script.Parent.BoolWithTextBoxTemplate
+	local TweenService = game:GetService("TweenService")
+	
+	function NewTextBox(Name, PlaceholderText, Activated)
+		local NewTextBox = TextBox:Clone()
+		NewTextBox.Name = Name
+		NewTextBox.NameOfFunction.Text = Name
+		NewTextBox.Parent = script.Parent
+		NewTextBox.Visible = true
+		NewTextBox.TextBoxParent.TextBox.PlaceholderText = PlaceholderText
+		NewTextBox.Button.MouseButton1Down:Connect(function()
+			pcall(Activated)
+		end)
+	end
+	
+	function NewButton(Name, Activated)
+		local NewButton = Button:Clone()
+		NewButton.Name = Name
+		NewButton.NameOfFunction.Text = Name
+		NewButton.Parent = script.Parent
+		NewButton.Visible = true
+		NewButton.Button.MouseButton1Down:Connect(function()
+			pcall(Activated)
+		end)
+	end
+	
+	function NewBool(Name, Activated, Deactivated)
+		local NewBool = Bool:Clone()
+		NewBool.Name = Name
+		NewBool.NameOfFunction.Text = Name
+		NewBool.Parent = script.Parent
+		NewBool.Visible = true
+	
+		coroutine.wrap(function()
+			while task.wait() do
+				if Table.LocalPlayerFeatures[Name].Active == false then
+					TweenService:Create(NewBool.Button.Circle, TweenInfo.new(Table.GuiSettings.AnimationSpeed, Enum.EasingStyle.Quart), {BackgroundColor3 = Color3.fromRGB(150, 150, 150)}):Play()
+					TweenService:Create(NewBool.Button.Circle, TweenInfo.new(Table.GuiSettings.AnimationSpeed, Enum.EasingStyle.Quart), {Position = UDim2.new(0, 0, 0, 0)}):Play()
+				else
+					TweenService:Create(NewBool.Button.Circle, TweenInfo.new(Table.GuiSettings.AnimationSpeed, Enum.EasingStyle.Quart), {BackgroundColor3 = Color3.fromRGB(255, 255, 255)}):Play()
+					TweenService:Create(NewBool.Button.Circle, TweenInfo.new(Table.GuiSettings.AnimationSpeed, Enum.EasingStyle.Quart), {Position = UDim2.new(0.625, 0, 0, 0)}):Play()
+				end
+			end
+		end)()
+		
+		NewBool.Button.MouseButton1Down:Connect(function()
+			if Table.LocalPlayerFeatures[Name].Active == false then
+				Table.LocalPlayerFeatures[Name].Active = true
+				pcall(Activated) 
+			else
+				Table.LocalPlayerFeatures[Name].Active = false
+				pcall(Deactivated)
+			end
+		end)
+	end
+	
+	function NewBoolWithTextBox(Name, Active, PlaceholderText, Activated, Deactivated)
+		local NewBoolWithTextBox = BoolWithTextBox:Clone()
+		NewBoolWithTextBox.Name = Name
+		NewBoolWithTextBox.NameOfFunction.Text = Name
+		NewBoolWithTextBox.Parent = script.Parent
+		NewBoolWithTextBox.Visible = true
+		NewBoolWithTextBox.TextBoxParent.TextBox.PlaceholderText = PlaceholderText
+	
+		coroutine.wrap(function()
+			while task.wait() do
+				if Table.LocalPlayerFeatures[Name].Active == false then
+					TweenService:Create(NewBoolWithTextBox.Button.Circle, TweenInfo.new(Table.GuiSettings.AnimationSpeed, Enum.EasingStyle.Quart), {BackgroundColor3 = Color3.fromRGB(150, 150, 150)}):Play()
+					TweenService:Create(NewBoolWithTextBox.Button.Circle, TweenInfo.new(Table.GuiSettings.AnimationSpeed, Enum.EasingStyle.Quart), {Position = UDim2.new(0, 0, 0, 0)}):Play()
+				else
+					TweenService:Create(NewBoolWithTextBox.Button.Circle, TweenInfo.new(Table.GuiSettings.AnimationSpeed, Enum.EasingStyle.Quart), {BackgroundColor3 = Color3.fromRGB(255, 255, 255)}):Play()
+					TweenService:Create(NewBoolWithTextBox.Button.Circle, TweenInfo.new(Table.GuiSettings.AnimationSpeed, Enum.EasingStyle.Quart), {Position = UDim2.new(0.625, 0, 0, 0)}):Play()
+				end
+			end
+		end)()
+		
+		NewBoolWithTextBox.Button.MouseButton1Down:Connect(function()
+			if Table.LocalPlayerFeatures[Name].Active == false then
+				Table.LocalPlayerFeatures[Name].Active = true
+				pcall(Activated) 
+			else
+				Table.LocalPlayerFeatures[Name].Active = false
+				pcall(Deactivated)
+			end
+		end)
+	end
+	
+	for i, v in Table.LocalPlayerFeatures do
+		if v.TypeOfFunction == "TextBox" then
+			NewTextBox(i, v.PlaceHolderText, v.ScriptIfActivated)
+		elseif v.TypeOfFunction == "BoolWithTextBox" then
+			NewBoolWithTextBox(i, v.Active, v.PlaceHolderText, v.ScriptIfActivated, v.ScriptIfDeactivated)
+		elseif v.TypeOfFunction == "Bool" then
+			NewBool(i, v.ScriptIfActivated, v.ScriptIfDeactivated)
+		elseif v.TypeOfFunction == "Button" then
+			NewButton(i, v.ScriptIfActivated)
+		end
+	end
+end
+coroutine.wrap(TNYOWD_fake_script)()
