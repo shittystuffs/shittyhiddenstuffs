@@ -267,6 +267,6 @@ coroutine.wrap(function()
 
 	getgenv().Table.GuiStatus.GuiCenterPoint = AbsolutePositionToPosition(Center.AbsolutePosition)
 	print(Center.AbsolutePosition)
-	print(AbsolutePositionToPosition(Center.AbsolutePosition))
+	print(AbsolutePositionToPosition(Center.AbsolutePosition.X, Center.AbsolutePosition.Y))
 	TestCenterGui:Destroy()
 end)()
