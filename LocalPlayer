@@ -621,13 +621,18 @@ function NewBoolWithTextBox(Name, Active, PlaceholderText, Activated, Deactivate
 end
 	
 for i, v in Table.LocalPlayerFeatures do
+	print("checked")
 	if v.TypeOfFunction == "TextBox" then
+		print("created 1")
 		NewTextBox(i, v.PlaceHolderText, v.ScriptIfActivated)
 	elseif v.TypeOfFunction == "BoolWithTextBox" then
+		print("created 2")
 		NewBoolWithTextBox(i, v.Active, v.PlaceHolderText, v.ScriptIfActivated, v.ScriptIfDeactivated)
 	elseif v.TypeOfFunction == "Bool" then
+		print("created 3")
 		NewBool(i, v.ScriptIfActivated, v.ScriptIfDeactivated)
 	elseif v.TypeOfFunction == "Button" then
+		print("created 4")
 		NewButton(i, v.ScriptIfActivated)
 	end
 end
