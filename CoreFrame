@@ -178,7 +178,7 @@ BackFrame.BorderSizePixel = 0
 BackFrame.Draggable = true
 BackFrame.LayoutOrder = 1
 BackFrame.Position = UDim2.new(0.178074419, 0, 0.177274972, 0)
-BackFrame.Size = UDim2.new(0, 495, 0, 245)
+BackFrame.Size = UDim2.new(0, 490, 0, 240)
 BackFrame.Visible = false
 
 UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.new(0, 0, 0)), ColorSequenceKeypoint.new(1.00, Color3.new(StringToColor3(Table.GuiSettings.BackgroundGradientColor)))}
@@ -201,7 +201,7 @@ Wallpaper.Image = "rbxassetid://"..Table.GuiSettings.Wallpaper
 Wallpaper.ImageTransparency = 0.300
 Wallpaper.ScaleType = Enum.ScaleType.Crop
 
-UICorner.CornerRadius = UDim.new(0.0900000036, 0)
+UICorner.CornerRadius = UDim.new(0, 18)
 UICorner.Parent = Wallpaper
 
 Blur.Name = "Blur"
@@ -215,7 +215,7 @@ Blur.Image = "http://www.roblox.com/asset/?id=143854825"
 Blur.ImageColor3 = Color3.fromRGB(100, 100, 100)
 Blur.ScaleType = Enum.ScaleType.Crop
 
-UICorner_2.CornerRadius = UDim.new(0.0900000036, 0)
+UICorner_2.CornerRadius = UDim.new(0, 18)
 UICorner_2.Parent = Blur
 
 MainFrame.Name = "MainFrame"
@@ -1343,7 +1343,7 @@ UIListLayout_23.SortOrder = Enum.SortOrder.LayoutOrder
 UIListLayout_23.VerticalAlignment = Enum.VerticalAlignment.Center
 UIListLayout_23.Padding = UDim.new(0, 7)
 
-UICorner_27.CornerRadius = UDim.new(0.0900000036, 0)
+UICorner_27.CornerRadius = UDim.new(0, 20)
 UICorner_27.Parent = BackFrame
 
 UIScale.Parent = BackFrame
