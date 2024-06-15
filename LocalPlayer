@@ -540,7 +540,7 @@ function NewTextBox(Name, PlaceholderText, Activated)
 	local NewTextBox = TextBoxTemplate:Clone()
 	NewTextBox.Name = Name
 	NewTextBox.NameOfFunction.Text = Name
-	NewTextBox.Parent = script.Parent
+	NewTextBox.Parent = ScrollingFrame
 	NewTextBox.Visible = true
 	NewTextBox.TextBoxParent.TextBox.PlaceholderText = PlaceholderText
 	NewTextBox.Button.MouseButton1Down:Connect(function()
@@ -552,7 +552,7 @@ function NewButton(Name, Activated)
 	local NewButton = ButtonTemplate:Clone()
 	NewButton.Name = Name
 	NewButton.NameOfFunction.Text = Name
-	NewButton.Parent = script.Parent
+	NewButton.Parent = ScrollingFrame
 	NewButton.Visible = true
 	NewButton.Button.MouseButton1Down:Connect(function()
 		pcall(Activated)
@@ -563,7 +563,7 @@ function NewBool(Name, Activated, Deactivated)
 	local NewBool = BoolTemplate:Clone()
 	NewBool.Name = Name
 	NewBool.NameOfFunction.Text = Name
-	NewBool.Parent = script.Parent
+	NewBool.Parent = ScrollingFrame
 	NewBool.Visible = true
 		
 	coroutine.wrap(function()
@@ -593,7 +593,7 @@ function NewBoolWithTextBox(Name, Active, PlaceholderText, Activated, Deactivate
 	local NewBoolWithTextBox = BoolWithTextBoxTemplate:Clone()
 	NewBoolWithTextBox.Name = Name
 	NewBoolWithTextBox.NameOfFunction.Text = Name
-	NewBoolWithTextBox.Parent = script.Parent
+	NewBoolWithTextBox.Parent = ScrollingFrame
 	NewBoolWithTextBox.Visible = true
 	NewBoolWithTextBox.TextBoxParent.TextBox.PlaceholderText = PlaceholderText
 
@@ -621,18 +621,13 @@ function NewBoolWithTextBox(Name, Active, PlaceholderText, Activated, Deactivate
 end
 	
 for i, v in Table.LocalPlayerFeatures do
-	print("checked")
 	if v.TypeOfFunction == "TextBox" then
-		print("created 1")
 		NewTextBox(i, v.PlaceHolderText, v.ScriptIfActivated)
 	elseif v.TypeOfFunction == "BoolWithTextBox" then
-		print("created 2")
 		NewBoolWithTextBox(i, v.Active, v.PlaceHolderText, v.ScriptIfActivated, v.ScriptIfDeactivated)
 	elseif v.TypeOfFunction == "Bool" then
-		print("created 3")
 		NewBool(i, v.ScriptIfActivated, v.ScriptIfDeactivated)
 	elseif v.TypeOfFunction == "Button" then
-		print("created 4")
 		NewButton(i, v.ScriptIfActivated)
 	end
 end
