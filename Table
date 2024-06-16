@@ -250,7 +250,22 @@ getgenv().Table = {
 					TeleportService:TeleportToPlaceInstance(PlaceId, JobId, Players.LocalPlayer)
 				end
 			end,
-		}
+		},
+
+		["Fix Camera"] = {
+			TypeOfFunction = "Button",
+			ScriptIfActivated = function()
+				game:GetService("Workspace").CurrentCamera:remove()
+				wait(0.1)
+				repeat wait() until game:GetService("Players").LocalPlayer.Character ~= nil
+				game:GetService("Workspace").CurrentCamera.CameraSubject = game:GetService("Players").LocalPlayer.Character:FindFirstChildWhichIsA('Humanoid')
+				game:GetService("Workspace").CurrentCamera.CameraType = "Custom"
+				game:GetService("Players").LocalPlayer.CameraMinZoomDistance = 0.5
+				game:GetService("Players").LocalPlayer.CameraMaxZoomDistance = 400
+				game:GetService("Players").LocalPlayer.CameraMode = "Classic"
+				game:GetService("Players").LocalPlayer.Character.Head.Anchored = false
+			end,
+		},
 	}
 }
 
