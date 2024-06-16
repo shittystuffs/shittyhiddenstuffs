@@ -6,10 +6,6 @@ getgenv().Table = {
 		TargetPlugin = nil,
 		GuiVersion = 6.143,
 		ActiveScriptName = nil,
-		GuiCenterPoint = {
-			X = nil,
-			Y = nil,
-		},
 		ClickSoundScript = function()
 			local ClickSound = Instance.new("Sound")
 	
@@ -236,39 +232,4 @@ coroutine.wrap(function()
 			getgenv().Table.GuiStatus.SwitchScriptCooldown = 0
 		end
 	end
-end)()
-
-coroutine.wrap(function()
-	local TestCenterGui = Instance.new("ScreenGui")
-	local Screen = Instance.new("Frame")
-	local UIListLayout = Instance.new("UIListLayout")
-	local Center = Instance.new("Frame")
-	
-	TestCenterGui.Name = "TestCenterGui"
-	TestCenterGui.Parent = game:GetService("CoreGui")
-	TestCenterGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-	
-	Screen.Name = "Screen"
-	Screen.Parent = TestCenterGui
-	Screen.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Screen.BackgroundTransparency = 1.000
-	Screen.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Screen.BorderSizePixel = 0
-	Screen.Size = UDim2.new(1, 0, 1, 0)
-	
-	UIListLayout.Parent = Screen
-	UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
-	UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-	UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Center
-	
-	Center.Name = "Center"
-	Center.Parent = Screen
-	Center.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	Center.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	Center.BorderSizePixel = 0
-	Center.Size = UDim2.new(0, 490, 0, 240)
-
-	getgenv().Table.GuiStatus.GuiCenterPoint.X = Center.AbsolutePosition.X
-	getgenv().Table.GuiStatus.GuiCenterPoint.Y = Center.AbsolutePosition.Y
-	TestCenterGui:Destroy()
 end)()
