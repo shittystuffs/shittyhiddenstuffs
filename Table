@@ -212,22 +212,29 @@ getgenv().Table = {
 		["Noclip"] = {
 			TypeOfFunction = "Bool",
 			Active = false,
+			Noclipping = nil
+			Clip = true
 			ScriptIfActivated = function()
-			local Player = game:GetService("Players").LocalPlayer
-				for _, child in pairs(Player.Character:GetDescendants()) do
-					if child:IsA("BasePart") and child.CanCollide == true then
-						child.CanCollide = false
+				local Player = game:GetService("Players").LocalPlayer
+				getgenv().Table.LocalPlayerFeatures.Noclip.Clip = false
+				wait(0.1)
+				function NoclipLoop()
+					if getgenv().Table.LocalPlayerFeatures.Noclip.Clip == false and Player.Character ~= nil then
+						for _, child in pairs(Player.Character:GetDescendants()) do
+							if child:IsA("BasePart") and child.CanCollide == true then
+								child.CanCollide = false
+							end
+						end
 					end
 				end
+				getgenv().Table.LocalPlayerFeatures.Noclip.Noclipping = game:GetService("RunService").Stepped:Connect(NoclipLoop)
 			end,
 			
 			ScriptIfDeactivated = function()
-			local Player = game:GetService("Players").LocalPlayer
-				for _, child in pairs(Player.Character:GetDescendants()) do
-					if child:IsA("BasePart") and child.CanCollide == true then
-						child.CanCollide = true
-					end
+				if getgenv().Table.LocalPlayerFeatures.Noclip.Noclipping then
+					getgenv().Table.LocalPlayerFeatures.Noclip.Noclipping:Disconnect()
 				end
+				getgenv().Table.LocalPlayerFeatures.Noclip.Clip = true
 			end,
 		},
 		
