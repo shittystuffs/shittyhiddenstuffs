@@ -188,8 +188,7 @@ getgenv().Table = {
 			TypeOfFunction = "TextBox",
 			Value = game:GetService("Players").LocalPlayer.Character.Humanoid.Walkspeed,
 			PlaceHolderText = "Number",
-			ScriptIfActivated = function()
-				local TextBox = game:GetService("CoreGui").VexHubFolder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Pages.LocalPlayer.Functions.ScrollingFrame["Speed Changer"].TextBoxParent.TextBox
+			ScriptIfActivated = function(TextBox)
 				game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = TextBox.Text
 			end,
 		},
