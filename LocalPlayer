@@ -556,13 +556,14 @@ for i, v in LocalPlayer:GetDescendants() do
     end
 end
 
-function NewTextBox(Name, PlaceholderText, Activated)
+function NewTextBox(Name, Text, PlaceholderText, Activated)
 	local NewTextBox = TextBoxTemplate:Clone()
 	NewTextBox.Name = Name
 	NewTextBox.NameOfFunction.Text = Name
 	NewTextBox.Parent = ScrollingFrame
 	NewTextBox.Visible = true
 	NewTextBox.TextBoxParent.TextBox.PlaceholderText = PlaceholderText
+	NewTextBox.TextBoxParent.TextBox.Text = Text
 	NewTextBox.Button.MouseButton1Down:Connect(function()
 		pcall(Activated(NewTextBox.TextBoxParent.TextBox.Text))
 	end)
@@ -642,7 +643,7 @@ end
 	
 for i, v in Table.LocalPlayerFeatures do
 	if v.TypeOfFunction == "TextBox" then
-		NewTextBox(i, v.PlaceHolderText, v.ScriptIfActivated)
+		NewTextBox(i, v.Text, v.PlaceHolderText, v.ScriptIfActivated)
 	elseif v.TypeOfFunction == "BoolWithTextBox" then
 		NewBoolWithTextBox(i, v.Active, v.PlaceHolderText, v.ScriptIfActivated, v.ScriptIfDeactivated)
 	elseif v.TypeOfFunction == "Bool" then
