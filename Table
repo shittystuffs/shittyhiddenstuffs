@@ -214,9 +214,21 @@ getgenv().Table = {
 			Active = false,
 			Running = false,
 			ScriptIfActivated = function()
+			local Player = game:GetService("Players").LocalPlayer
+				for _, child in pairs(Player.Character:GetDescendants()) do
+					if child:IsA("BasePart") and child.CanCollide == true then
+						child.CanCollide = false
+					end
+				end
 			end,
 			
 			ScriptIfDeactivated = function()
+			local Player = game:GetService("Players").LocalPlayer
+				for _, child in pairs(Player.Character:GetDescendants()) do
+					if child:IsA("BasePart") and child.CanCollide == true then
+						child.CanCollide = true
+					end
+				end
 			end,
 		},
 		
