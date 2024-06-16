@@ -209,10 +209,9 @@ getgenv().Table = {
 			end,
 		},
 		
-		["Bool"] = {
+		["Noclip"] = {
 			TypeOfFunction = "Bool",
 			Active = false,
-			Running = false,
 			ScriptIfActivated = function()
 			local Player = game:GetService("Players").LocalPlayer
 				for _, child in pairs(Player.Character:GetDescendants()) do
