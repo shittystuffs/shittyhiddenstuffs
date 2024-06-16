@@ -184,7 +184,7 @@ getgenv().Table = {
 	Plugins = {},
 
 	LocalPlayerFeatures = {
-		["Speed Changer"] = {
+		["WalkSpeed"] = {
 			TypeOfFunction = "TextBox",
 			Text = game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed,
 			PlaceHolderText = "Number",
