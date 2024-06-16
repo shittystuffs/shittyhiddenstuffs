@@ -220,9 +220,17 @@ getgenv().Table = {
 			end,
 		},
 		
-		["Button"] = {
+		["Rejoin"] = {
 			TypeOfFunction = "Button",
 			ScriptIfActivated = function()
+				local Players = game:GetService("Players")
+				if #Players:GetPlayers() <= 1 then
+					Players.LocalPlayer:Kick("\nRejoining...")
+					wait()
+					TeleportService:Teleport(PlaceId, Players.LocalPlayer)
+				else
+					TeleportService:TeleportToPlaceInstance(PlaceId, JobId, Players.LocalPlayer)
+				end
 			end,
 		}
 	}
