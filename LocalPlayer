@@ -564,7 +564,7 @@ function NewTextBox(Name, PlaceholderText, Activated)
 	NewTextBox.Visible = true
 	NewTextBox.TextBoxParent.TextBox.PlaceholderText = PlaceholderText
 	NewTextBox.Button.MouseButton1Down:Connect(function()
-		pcall(Activated)
+		pcall(Activated(NewTextBox.TextBoxParent.TextBox.Text))
 	end)
 end
 	
