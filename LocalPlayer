@@ -610,13 +610,14 @@ function NewBool(Name, Activated, Deactivated)
 	end)
 end
 
-function NewBoolWithTextBox(Name, Active, PlaceholderText, Activated, Deactivated)
+function NewBoolWithTextBox(Name, Active, Text, PlaceholderText, Activated, Deactivated)
 	local NewBoolWithTextBox = BoolWithTextBoxTemplate:Clone()
 	NewBoolWithTextBox.Name = Name
 	NewBoolWithTextBox.NameOfFunction.Text = Name
 	NewBoolWithTextBox.Parent = ScrollingFrame
 	NewBoolWithTextBox.Visible = true
 	NewBoolWithTextBox.TextBoxParent.TextBox.PlaceholderText = PlaceholderText
+	NewBoolWithTextBox.TextBoxParent.TextBox.Text = Text
 
 	coroutine.wrap(function()
 		while task.wait() do
@@ -633,10 +634,10 @@ function NewBoolWithTextBox(Name, Active, PlaceholderText, Activated, Deactivate
 	NewBoolWithTextBox.Button.MouseButton1Down:Connect(function()
 		if Table.LocalPlayerFeatures[Name].Active == false then
 			Table.LocalPlayerFeatures[Name].Active = true
-			pcall(Activated) 
+			pcall(Activated(NewBoolWithTextBox.TextBoxParent.TextBox.Text)) 
 		else
 			Table.LocalPlayerFeatures[Name].Active = false
-			pcall(Deactivated)
+			pcall(Deactivated(NewBoolWithTextBox.TextBoxParent.TextBox.Text))
 		end
 	end)
 end
@@ -645,7 +646,7 @@ for i, v in Table.LocalPlayerFeatures do
 	if v.TypeOfFunction == "TextBox" then
 		NewTextBox(i, v.Text, v.PlaceHolderText, v.ScriptIfActivated)
 	elseif v.TypeOfFunction == "BoolWithTextBox" then
-		NewBoolWithTextBox(i, v.Active, v.PlaceHolderText, v.ScriptIfActivated, v.ScriptIfDeactivated)
+		NewBoolWithTextBox(i, v.Active, v.Text, v.PlaceHolderText, v.ScriptIfActivated, v.ScriptIfDeactivated)
 	elseif v.TypeOfFunction == "Bool" then
 		NewBool(i, v.ScriptIfActivated, v.ScriptIfDeactivated)
 	elseif v.TypeOfFunction == "Button" then
