@@ -189,7 +189,7 @@ getgenv().Table = {
 			Value = game:GetService("Players").LocalPlayer.Character.Humanoid.Walkspeed,
 			PlaceHolderText = "Number",
 			ScriptIfActivated = function(TextBox)
-				game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = TextBox.Text
+				game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = TextBox
 			end,
 		},
 
