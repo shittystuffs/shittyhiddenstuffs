@@ -206,8 +206,6 @@ OpenButton.MouseButton1Down:Connect(function()
 			Table.GuiStatus.IsVisible = false
 		else
 			Table.GuiStatus.OnGoingAnimation = true
-			print(Table.GuiStatus.GuiCenterPoint)
-			TweenService:Create(game:GetService("CoreGui").VexHubFolder.VexHubScreenGui.BackFrame, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Position = UDim2.new(UDim2.new(0, tonumber(getgenv().Table.GuiStatus.GuiCenterPoint.X), 0, tonumber(getgenv().Table.GuiStatus.GuiCenterPoint.Y)))}):Play()
 			AnimationLibrary.AppearBackground()
 			AnimationLibrary.AppearCoreInteractions()
 			wait(Table.GuiSettings.AnimationSpeed)
