@@ -266,7 +266,7 @@ coroutine.wrap(function()
 	Center.Size = UDim2.new(0, 490, 0, 240)
 
 	function AbsolutePositionToPosition(PositionX, PositionY)
-		return PositionX..", 0, "..PositionY..", 0"
+		return PositionX, 0, PositionY, 0
 	end
 
 	getgenv().Table.GuiStatus.GuiCenterPoint = AbsolutePositionToPosition(Center.AbsolutePosition.X, Center.AbsolutePosition.Y)
