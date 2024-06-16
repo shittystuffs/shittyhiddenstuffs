@@ -193,16 +193,19 @@ getgenv().Table = {
 			end,
 		},
 
-		["BoolWithTextBox"] = {
+		["Spam"] = {
 			TypeOfFunction = "BoolWithTextBox",
 			Active = false,
-			Running = false,
-			Value = nil,
-			PlaceHolderText = "Value",
-			ScriptIfActivated = function()
+			Text = "",
+			PlaceHolderText = "Message",
+			ScriptIfActivated = function(TextBox)
+				repeat 
+					wait(0.5)
+					game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(TextBox, "All")
+				until getgenv().Table.LocalPlayerFeatures.Spam.Active == false
 			end,
 
-			ScriptIfDeactivated = function()
+			ScriptIfDeactivated = function(TextBox)
 			end,
 		},
 		
