@@ -224,6 +224,8 @@ getgenv().Table = {
 			TypeOfFunction = "Button",
 			ScriptIfActivated = function()
 				local Players = game:GetService("Players")
+				local PlaceId = game.PlaceId
+				local JobId = game.JobId
 				if #Players:GetPlayers() <= 1 then
 					Players.LocalPlayer:Kick("\nRejoining...")
 					wait()
