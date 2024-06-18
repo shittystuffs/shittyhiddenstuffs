@@ -216,7 +216,11 @@ getgenv().Table = {
 					local PlayerNameReturned = string.lower(Player.Name)
 					local PlayerDisplayNameReturned = string.lower(Player.DisplayName)
 
-					if string.find(PlayerNameReturned, PlayerTarget) or string.find(PlayerDisplayNameReturned, PlayerTarget) and TextBox ~= "" and TextBox ~= " " then
+					if string.find(PlayerNameReturned, PlayerTarget) and TextBox ~= "" and TextBox ~= " " then
+						Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Players[Player.Name].Character.HumanoidRootPart.CFrame
+						Notification:Create("Teleported!", "Teleported to "..Player.Name.."!", 5)
+						Teleported = true
+					elseif string.find(PlayerDisplayNameReturned, PlayerTarget) and TextBox ~= "" and TextBox ~= " " then
 						Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Players[Player.Name].Character.HumanoidRootPart.CFrame
 						Notification:Create("Teleported!", "Teleported to "..Player.Name.."!", 5)
 						Teleported = true
