@@ -213,10 +213,10 @@ getgenv().Table = {
 
 				for _, Player in Players:GetChildren() do
 					local PlayerTarget = string.lower(TextBox)
-					local PlayerReturned = string.lower(Player.Name)
+					local PlayerNameReturned = string.lower(Player.Name)
+					local PlayerDisplayNameReturned = string.lower(Player.DisplayName)
 
-					if string.find(PlayerReturned, PlayerTarget) and TextBox ~= "" and TextBox ~= " " then
-						print("fouund")
+					if string.find(PlayerNameReturned, PlayerTarget) or string.find(PlayerDisplayNameReturned, PlayerTarget) and TextBox ~= "" and TextBox ~= " " then
 						Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Players[Player.Name].Character.HumanoidRootPart.CFrame
 						Notification:Create("Teleported!", "Teleported to "..Player.Name.."!", 5)
 						Teleported = true
@@ -224,7 +224,7 @@ getgenv().Table = {
 				end
 
 				wait()
-				if Teleported == false then
+				if Teleported == false and TextBox ~= "" and TextBox ~= " " then
 					Notification:Create("Player not found!", TextBox.." does not exist in the server!", 5)
 				end
 			end,
