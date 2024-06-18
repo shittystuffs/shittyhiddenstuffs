@@ -1,3 +1,5 @@
+local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/shittystuffs/shittyhiddenstuffs/main/NotificationLibrary"))()
+
 getgenv().Table = {
 	GuiStatus = {
 		IsVisible = false,
@@ -193,6 +195,50 @@ getgenv().Table = {
 			end,
 		},
 
+		["JumpPower"] = {
+			TypeOfFunction = "TextBox",
+			Text = game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower,
+			PlaceHolderText = "Number",
+			ScriptIfActivated = function(TextBox)
+				game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = TextBox
+			end,
+		},
+
+		["Teleport"] = {
+			TypeOfFunction = "TextBox",
+			Text = "",
+			PlaceHolderText = "Player",
+			ScriptIfActivated = function(TextBox)
+				local Players = game:GetService("Players")
+				local Teleported = false
+
+				for _, Player in Players:GetChildren() do
+					local PlayerTarget = string.lower(TextBox)
+					local PlayerReturned = string.lower(Player.Name)
+
+					if string.find(PlayerReturned, PlayerTarget) and not PlayerTarget == "" and not PlayerTarget == " " then
+						Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Players[Player].Character.HumanoidRootPart.CFrame
+						Notification:Create("Teleported!", "Teleported to "..Player.Name.."!", 5)
+						Teleported = true
+					end
+				end
+
+				wait()
+				if Teleported == false then
+					Notification:Create("Player not found!", TextBox.." does not exist in the server!", 5)
+				end
+			end,
+		},
+
+		["Chat"] = {
+			TypeOfFunction = "TextBox",
+			Text = "",
+			PlaceHolderText = "Message",
+			ScriptIfActivated = function(TextBox)
+				game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(TextBox, "All")
+			end,
+		},
+
 		["Spam"] = {
 			TypeOfFunction = "BoolWithTextBox",
 			Active = false,
@@ -249,6 +295,20 @@ getgenv().Table = {
 				else
 					TeleportService:TeleportToPlaceInstance(PlaceId, JobId, Players.LocalPlayer)
 				end
+			end,
+		},
+
+		["Sit"] = {
+			TypeOfFunction = "Button",
+			ScriptIfActivated = function()
+				game:GetService("Players").LocalPlayer.Character.Humanoid.Sit = true
+			end,
+		},
+
+		["Jump"] = {
+			TypeOfFunction = "Button",
+			ScriptIfActivated = function()
+				game:GetService("Players").LocalPlayer.Character.Humanoid.Jump = true
 			end,
 		},
 
