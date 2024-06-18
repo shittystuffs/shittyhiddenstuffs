@@ -215,7 +215,8 @@ getgenv().Table = {
 					local PlayerTarget = string.lower(TextBox)
 					local PlayerReturned = string.lower(Player.Name)
 
-					if string.find(PlayerReturned, PlayerTarget) and not PlayerTarget == "" and not PlayerTarget == " " then
+					if string.find(PlayerReturned, PlayerTarget) and TextBox ~= "" and TextBox ~= " " then
+						print("fouund")
 						Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Players[Player.Name].Character.HumanoidRootPart.CFrame
 						Notification:Create("Teleported!", "Teleported to "..Player.Name.."!", 5)
 						Teleported = true
