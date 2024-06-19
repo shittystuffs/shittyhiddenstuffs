@@ -307,6 +307,7 @@ ScrollingFrame.CanvasSize = UDim2.new(0, 0, 1000, 0)
 ScrollingFrame.ScrollBarThickness = 2
 
 TextBox_2.Parent = ScrollingFrame
+TextBox_2.AutomaticSize = Enum.AutomaticSize.XY
 TextBox_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextBox_2.BackgroundTransparency = 1.000
 TextBox_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
