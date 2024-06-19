@@ -183,6 +183,8 @@ getgenv().Table = {
 
 	Plugins = {},
 
+	SavedScripts = {},
+
 	LocalPlayerFeatures = {
 		["WalkSpeed"] = {
 			TypeOfFunction = "TextBox",
