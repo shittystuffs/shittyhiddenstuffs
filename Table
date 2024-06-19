@@ -258,6 +258,43 @@ getgenv().Table = {
 			ScriptIfDeactivated = function(TextBox)
 			end,
 		},
+
+		["Spectate"] = {
+			TypeOfFunction = "BoolWithTextBox",
+			Active = false,
+			Text = "",
+			PlaceHolderText = "Player",
+			ScriptIfActivated = function(TextBox)
+				local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/shittystuffs/shittyhiddenstuffs/main/NotificationLibrary"))()
+				local Players = game:GetService("Players")
+				local Teleported = false
+
+				for _, Player in Players:GetChildren() do
+					local PlayerTarget = string.lower(TextBox)
+					local PlayerNameReturned = string.lower(Player.Name)
+					local PlayerDisplayNameReturned = string.lower(Player.DisplayName)
+
+					if string.find(PlayerNameReturned, PlayerTarget) and TextBox ~= "" and TextBox ~= " " then
+						game:GetService("Workspace").CurrentCamera.CameraSubject = Players[Player.Name].Character.Humanoid
+						Notification:Create("Spectating!", "Youre spectating "..Player.Name.."!", 5)
+						Teleported = true
+					elseif string.find(PlayerDisplayNameReturned, PlayerTarget) and TextBox ~= "" and TextBox ~= " " then
+						game:GetService("Workspace").CurrentCamera.CameraSubject = Players[Player.Name].Character.Humanoid
+						Notification:Create("Spectating!", "Youre spectating "..Player.Name.."!", 5)
+						Teleported = true
+					end
+				end
+
+				wait()
+				if Teleported == false and TextBox ~= "" and TextBox ~= " " then
+					Notification:Create("Player not found!", TextBox.." does not exist in the server!", 5)
+				end
+			end,
+
+			ScriptIfDeactivated = function(TextBox)
+				game:GetService("Workspace").CurrentCamera.CameraSubject = Players.LocalPlayer.Character.Humanoid
+			end,
+		},
 		
 		["Noclip"] = {
 			TypeOfFunction = "Bool",
@@ -298,6 +335,30 @@ getgenv().Table = {
 					TeleportService:Teleport(PlaceId, Players.LocalPlayer)
 				else
 					TeleportService:TeleportToPlaceInstance(PlaceId, JobId, Players.LocalPlayer)
+				end
+			end,
+		},
+
+		["Anti Idle"] = {
+			TypeOfFunction = "Button",
+			ScriptIfActivated = function()
+				local GC = getconnections or get_signal_cons
+				local Players = game:GetService("Players")
+
+				if GC then
+					for i,v in pairs(GC(Players.LocalPlayer.Idled)) do
+						if v["Disable"] then
+							v["Disable"](v)
+						elseif v["Disconnect"] then
+							v["Disconnect"](v)
+						end
+					end
+				else
+					local VirtualUser = game:GetService("VirtualUser")
+					Players.LocalPlayer.Idled:Connect(function()
+						VirtualUser:CaptureController()
+						VirtualUser:ClickButton2(Vector2.new())
+					end)
 				end
 			end,
 		},
