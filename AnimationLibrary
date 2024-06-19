@@ -281,7 +281,7 @@ Library.AppearTab = function(TabName)
 			TweenService:Create(Tab.Functions.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
 			TweenService:Create(Tab.Functions.ScrollingFrame, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ScrollBarImageTransparency = 0}):Play()
 			for _, Functions in Tab.Functions.ScrollingFrame:GetChildren() do
-				if Functions:IsA("Frame") and Functions.Name ~= "000Border" then
+				if Functions:IsA("Frame") and Functions.Name ~= "000Border" and Functions.Name ~= "ZZZBorder" then
 					TweenService:Create(Functions.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
 					TweenService:Create(Functions.NameOfFunction, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
 					if Functions.Type.Value == "Bool" then
@@ -523,7 +523,7 @@ Library.DisappearTab = function(TabName)
 			TweenService:Create(Tab.Functions.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
 			TweenService:Create(Tab.Functions.ScrollingFrame, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ScrollBarImageTransparency = 1}):Play()
 			for _, Functions in Tab.Functions.ScrollingFrame:GetChildren() do
-				if Functions:IsA("Frame") and Functions.Name ~= "000Border" then
+				if Functions:IsA("Frame") and Functions.Name ~= "000Border" and Functions.Name ~= "ZZZBorder" then
 					TweenService:Create(Functions.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
 					TweenService:Create(Functions.NameOfFunction, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
 					if Functions.Type.Value == "Bool" then
