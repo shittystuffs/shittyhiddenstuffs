@@ -267,6 +267,12 @@ getgenv().Table = {
 			ScriptIfActivated = function(TextBox)
 				local Players = game:GetService("Players")
 
+				for _, Instance in Players.LocalPlayer.Character:GetChildren() do
+					if Instance.Name == "Spinning" then
+						Instance:Destroy()
+					end
+				end
+
 				local Spin = Instance.new("BodyAngularVelocity")
 				Spin.Name = "Spinning"
 				Spin.Parent = Players.LocalPlayer.Character
@@ -277,7 +283,11 @@ getgenv().Table = {
 			ScriptIfDeactivated = function(TextBox)
 				local Players = game:GetService("Players")
 
-				Players.LocalPlayer.Character:FindFirstChild("Spinning"):Destroy()
+				for _, Instance in Players.LocalPlayer.Character:GetChildren() do
+					if Instance.Name == "Spinning" then
+						Instance:Destroy()
+					end
+				end
 			end,
 		},
 
