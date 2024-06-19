@@ -505,7 +505,9 @@ function CreateScript(Name, Script)
 end
 
 Execute.MouseButton1Down:Connect(function()
-	local Success, Error = pcall(TextBox_2.Text)
+	local Success, Error = pcall(function()
+		loadstring(TextBox_2.Text)()
+	end)
 
 	if not Success then
 		Notification:Create("Error", "Something went wrong while executing this script. Go to the console to view the error.", 5)
