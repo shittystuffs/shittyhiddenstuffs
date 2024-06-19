@@ -292,6 +292,7 @@ getgenv().Table = {
 			end,
 
 			ScriptIfDeactivated = function(TextBox)
+				local Players = game:GetService("Players")
 				game:GetService("Workspace").CurrentCamera.CameraSubject = Players.LocalPlayer.Character.Humanoid
 			end,
 		},
