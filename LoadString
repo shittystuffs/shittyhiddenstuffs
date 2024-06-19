@@ -1,0 +1,455 @@
+-- V31nc : GUI to LUA V1
+
+-- Instances:
+
+local LoadString = Instance.new("Frame")
+local UIListLayout = Instance.new("UIListLayout")
+local SectionInfo = Instance.new("Frame")
+local UIStroke = Instance.new("UIStroke")
+local UICorner = Instance.new("UICorner")
+local UIListLayout_2 = Instance.new("UIListLayout")
+local SectionName = Instance.new("TextLabel")
+local ImageLabel = Instance.new("ImageLabel")
+local BottomFrame = Instance.new("Frame")
+local UIStroke_2 = Instance.new("UIStroke")
+local UICorner_2 = Instance.new("UICorner")
+local LeftFrame = Instance.new("Frame")
+local UIListLayout_3 = Instance.new("UIListLayout")
+local BottomFrame_2 = Instance.new("Frame")
+local UIListLayout_4 = Instance.new("UIListLayout")
+local Clear = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+local UIStroke_3 = Instance.new("UIStroke")
+local Execute = Instance.new("TextButton")
+local UICorner_4 = Instance.new("UICorner")
+local UIStroke_4 = Instance.new("UIStroke")
+local Save = Instance.new("ImageButton")
+local UICorner_5 = Instance.new("UICorner")
+local ScriptName = Instance.new("Frame")
+local TextBox = Instance.new("TextBox")
+local UIListLayout_5 = Instance.new("UIListLayout")
+local UIStroke_5 = Instance.new("UIStroke")
+local UICorner_6 = Instance.new("UICorner")
+local Strings = Instance.new("Frame")
+local UICorner_7 = Instance.new("UICorner")
+local UIStroke_6 = Instance.new("UIStroke")
+local ScrollingFrame = Instance.new("ScrollingFrame")
+local TextBox_2 = Instance.new("TextBox")
+local UIListLayout_6 = Instance.new("UIListLayout")
+local SavedScripts = Instance.new("Frame")
+local UICorner_8 = Instance.new("UICorner")
+local UIStroke_7 = Instance.new("UIStroke")
+local UIListLayout_7 = Instance.new("UIListLayout")
+local Label = Instance.new("Frame")
+local UIListLayout_8 = Instance.new("UIListLayout")
+local SectionName_2 = Instance.new("TextLabel")
+local ImageLabel_2 = Instance.new("ImageLabel")
+local Scripts = Instance.new("ScrollingFrame")
+local UIListLayout_9 = Instance.new("UIListLayout")
+local Border = Instance.new("Frame")
+local ScriptsTemplate = Instance.new("TextButton")
+local UIListLayout_10 = Instance.new("UIListLayout")
+local UIStroke_8 = Instance.new("UIStroke")
+local DeleteButton = Instance.new("ImageButton")
+local ScriptName_2 = Instance.new("TextLabel")
+local UICorner_9 = Instance.new("UICorner")
+
+--Properties:
+
+LoadString.Name = "LoadString"
+LoadString.Parent = StarterGui.VexHubFolder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Pages
+LoadString.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+LoadString.BackgroundTransparency = 1.000
+LoadString.BorderColor3 = Color3.fromRGB(0, 0, 0)
+LoadString.BorderSizePixel = 0
+LoadString.Size = UDim2.new(1, 0, 1, 0)
+
+UIListLayout.Parent = LoadString
+UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Center
+UIListLayout.Padding = UDim.new(0, 5)
+
+SectionInfo.Name = "SectionInfo"
+SectionInfo.Parent = LoadString
+SectionInfo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SectionInfo.BackgroundTransparency = 1.000
+SectionInfo.BorderColor3 = Color3.fromRGB(0, 0, 0)
+SectionInfo.BorderSizePixel = 0
+SectionInfo.LayoutOrder = 1
+SectionInfo.Position = UDim2.new(0.222222224, 0, 0.125, 0)
+SectionInfo.Size = UDim2.new(0.949999988, 0, 0, 20)
+
+UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke.Color = Color3.fromRGB(255, 255, 255)
+UIStroke.Thickness = 0.700
+UIStroke.Transparency = 0.800
+UIStroke.Parent = SectionInfo
+
+UICorner.CornerRadius = UDim.new(0.200000003, 0)
+UICorner.Parent = SectionInfo
+
+UIListLayout_2.Parent = SectionInfo
+UIListLayout_2.FillDirection = Enum.FillDirection.Horizontal
+UIListLayout_2.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout_2.VerticalAlignment = Enum.VerticalAlignment.Center
+UIListLayout_2.Padding = UDim.new(0, 5)
+
+SectionName.Name = "SectionName"
+SectionName.Parent = SectionInfo
+SectionName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SectionName.BackgroundTransparency = 1.000
+SectionName.BorderColor3 = Color3.fromRGB(0, 0, 0)
+SectionName.BorderSizePixel = 0
+SectionName.LayoutOrder = 2
+SectionName.Size = UDim2.new(0, 0, 0, 20)
+SectionName.Font = Enum.Font.GothamMedium
+SectionName.Text = "LoadString"
+SectionName.TextColor3 = Color3.fromRGB(255, 255, 255)
+SectionName.TextSize = 13.000
+SectionName.TextWrapped = true
+
+ImageLabel.Parent = SectionInfo
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.BackgroundTransparency = 1.000
+ImageLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ImageLabel.BorderSizePixel = 0
+ImageLabel.LayoutOrder = 1
+ImageLabel.Size = UDim2.new(0, 20, 0, 20)
+ImageLabel.Image = "http://www.roblox.com/asset/?id=17658539661"
+
+BottomFrame.Name = "BottomFrame"
+BottomFrame.Parent = LoadString
+BottomFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+BottomFrame.BackgroundTransparency = 1.000
+BottomFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+BottomFrame.BorderSizePixel = 0
+BottomFrame.LayoutOrder = 2
+BottomFrame.Position = UDim2.new(0.350746363, 0, 0.236842111, 0)
+BottomFrame.Size = UDim2.new(0, 320, 0, 155)
+
+UIStroke_2.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke_2.Color = Color3.fromRGB(255, 255, 255)
+UIStroke_2.Thickness = 0.700
+UIStroke_2.Transparency = 0.800
+UIStroke_2.Parent = BottomFrame
+
+UICorner_2.CornerRadius = UDim.new(0.0500000007, 0)
+UICorner_2.Parent = BottomFrame
+
+LeftFrame.Name = "LeftFrame"
+LeftFrame.Parent = BottomFrame
+LeftFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+LeftFrame.BackgroundTransparency = 1.000
+LeftFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+LeftFrame.BorderSizePixel = 0
+LeftFrame.Size = UDim2.new(0, 170, 0, 145)
+
+UIListLayout_3.Parent = LeftFrame
+UIListLayout_3.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout_3.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout_3.VerticalAlignment = Enum.VerticalAlignment.Center
+UIListLayout_3.Padding = UDim.new(0, 5)
+
+BottomFrame_2.Name = "BottomFrame"
+BottomFrame_2.Parent = LeftFrame
+BottomFrame_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+BottomFrame_2.BackgroundTransparency = 1.000
+BottomFrame_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+BottomFrame_2.BorderSizePixel = 0
+BottomFrame_2.LayoutOrder = 3
+BottomFrame_2.Size = UDim2.new(1, 0, 0, 20)
+
+UIListLayout_4.Parent = BottomFrame_2
+UIListLayout_4.FillDirection = Enum.FillDirection.Horizontal
+UIListLayout_4.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout_4.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout_4.VerticalAlignment = Enum.VerticalAlignment.Center
+UIListLayout_4.Padding = UDim.new(0, 5)
+
+Clear.Name = "Clear"
+Clear.Parent = BottomFrame_2
+Clear.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Clear.BackgroundTransparency = 1.000
+Clear.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Clear.BorderSizePixel = 0
+Clear.LayoutOrder = 2
+Clear.Size = UDim2.new(0, 50, 0, 20)
+Clear.Font = Enum.Font.GothamMedium
+Clear.Text = "Clear"
+Clear.TextColor3 = Color3.fromRGB(255, 255, 255)
+Clear.TextSize = 14.000
+
+UICorner_3.CornerRadius = UDim.new(0.300000012, 0)
+UICorner_3.Parent = Clear
+
+UIStroke_3.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke_3.Color = Color3.fromRGB(255, 255, 255)
+UIStroke_3.Thickness = 0.700
+UIStroke_3.Transparency = 0.800
+UIStroke_3.Parent = Clear
+
+Execute.Name = "Execute"
+Execute.Parent = BottomFrame_2
+Execute.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Execute.BackgroundTransparency = 1.000
+Execute.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Execute.BorderSizePixel = 0
+Execute.LayoutOrder = 3
+Execute.Size = UDim2.new(0, 80, 0, 20)
+Execute.Font = Enum.Font.GothamMedium
+Execute.Text = "Execute"
+Execute.TextColor3 = Color3.fromRGB(255, 255, 255)
+Execute.TextSize = 14.000
+
+UICorner_4.CornerRadius = UDim.new(0.300000012, 0)
+UICorner_4.Parent = Execute
+
+UIStroke_4.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke_4.Color = Color3.fromRGB(255, 255, 255)
+UIStroke_4.Thickness = 0.700
+UIStroke_4.Transparency = 0.800
+UIStroke_4.Parent = Execute
+
+Save.Name = "Save"
+Save.Parent = BottomFrame_2
+Save.BackgroundColor3 = Color3.fromRGB(0, 186, 85)
+Save.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Save.BorderSizePixel = 0
+Save.LayoutOrder = 1
+Save.Size = UDim2.new(0, 30, 0, 20)
+Save.Image = "http://www.roblox.com/asset/?id=17689413277"
+Save.ScaleType = Enum.ScaleType.Fit
+
+UICorner_5.CornerRadius = UDim.new(0.300000012, 0)
+UICorner_5.Parent = Save
+
+ScriptName.Name = "ScriptName"
+ScriptName.Parent = LeftFrame
+ScriptName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScriptName.BackgroundTransparency = 1.000
+ScriptName.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScriptName.BorderSizePixel = 0
+ScriptName.Size = UDim2.new(1, 0, 0, 20)
+
+TextBox.Parent = ScriptName
+TextBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextBox.BackgroundTransparency = 1.000
+TextBox.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextBox.BorderSizePixel = 0
+TextBox.LayoutOrder = 1
+TextBox.Size = UDim2.new(0.949999988, 0, 1, 0)
+TextBox.ClearTextOnFocus = false
+TextBox.Font = Enum.Font.GothamMedium
+TextBox.PlaceholderText = "Script Name Here!"
+TextBox.Text = ""
+TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextBox.TextSize = 12.000
+TextBox.TextWrapped = true
+
+UIListLayout_5.Parent = ScriptName
+UIListLayout_5.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout_5.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout_5.VerticalAlignment = Enum.VerticalAlignment.Center
+
+UIStroke_5.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke_5.Color = Color3.fromRGB(255, 255, 255)
+UIStroke_5.Thickness = 0.700
+UIStroke_5.Transparency = 0.800
+UIStroke_5.Parent = ScriptName
+
+UICorner_6.CornerRadius = UDim.new(0.200000003, 0)
+UICorner_6.Parent = ScriptName
+
+Strings.Name = "Strings"
+Strings.Parent = LeftFrame
+Strings.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Strings.BackgroundTransparency = 1.000
+Strings.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Strings.BorderSizePixel = 0
+Strings.LayoutOrder = 2
+Strings.Size = UDim2.new(1, 0, 0, 95)
+
+UICorner_7.CornerRadius = UDim.new(0.0500000007, 0)
+UICorner_7.Parent = Strings
+
+UIStroke_6.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke_6.Color = Color3.fromRGB(255, 255, 255)
+UIStroke_6.Thickness = 0.700
+UIStroke_6.Transparency = 0.800
+UIStroke_6.Parent = Strings
+
+ScrollingFrame.Parent = Strings
+ScrollingFrame.Active = true
+ScrollingFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScrollingFrame.BackgroundTransparency = 1.000
+ScrollingFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScrollingFrame.BorderSizePixel = 0
+ScrollingFrame.Size = UDim2.new(1, 0, 1, 0)
+ScrollingFrame.CanvasSize = UDim2.new(0, 0, 1000, 0)
+ScrollingFrame.ScrollBarThickness = 2
+
+TextBox_2.Parent = ScrollingFrame
+TextBox_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextBox_2.BackgroundTransparency = 1.000
+TextBox_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextBox_2.BorderSizePixel = 0
+TextBox_2.Position = UDim2.new(0.0250000004, 0, 0.0199999996, 0)
+TextBox_2.Size = UDim2.new(0, 0, 0, 10)
+TextBox_2.ClearTextOnFocus = false
+TextBox_2.Font = Enum.Font.Gotham
+TextBox_2.MultiLine = true
+TextBox_2.PlaceholderText = "Your String Here!"
+TextBox_2.Text = ""
+TextBox_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextBox_2.TextSize = 12.000
+TextBox_2.TextWrapped = true
+TextBox_2.TextXAlignment = Enum.TextXAlignment.Left
+TextBox_2.TextYAlignment = Enum.TextYAlignment.Top
+
+UIListLayout_6.Parent = BottomFrame
+UIListLayout_6.FillDirection = Enum.FillDirection.Horizontal
+UIListLayout_6.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout_6.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout_6.VerticalAlignment = Enum.VerticalAlignment.Center
+UIListLayout_6.Padding = UDim.new(0, 7)
+
+SavedScripts.Name = "SavedScripts"
+SavedScripts.Parent = BottomFrame
+SavedScripts.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SavedScripts.BackgroundTransparency = 1.000
+SavedScripts.BorderColor3 = Color3.fromRGB(0, 0, 0)
+SavedScripts.BorderSizePixel = 0
+SavedScripts.Size = UDim2.new(0, 130, 0, 145)
+
+UICorner_8.CornerRadius = UDim.new(0.0500000007, 0)
+UICorner_8.Parent = SavedScripts
+
+UIStroke_7.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke_7.Color = Color3.fromRGB(255, 255, 255)
+UIStroke_7.Thickness = 0.700
+UIStroke_7.Transparency = 0.800
+UIStroke_7.Parent = SavedScripts
+
+UIListLayout_7.Parent = SavedScripts
+UIListLayout_7.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout_7.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout_7.VerticalAlignment = Enum.VerticalAlignment.Center
+
+Label.Name = "Label"
+Label.Parent = SavedScripts
+Label.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Label.BackgroundTransparency = 1.000
+Label.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Label.BorderSizePixel = 0
+Label.LayoutOrder = 1
+Label.Position = UDim2.new(0.222222224, 0, 0.125, 0)
+Label.Size = UDim2.new(1, 0, 0, 20)
+
+UIListLayout_8.Parent = Label
+UIListLayout_8.FillDirection = Enum.FillDirection.Horizontal
+UIListLayout_8.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout_8.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout_8.VerticalAlignment = Enum.VerticalAlignment.Center
+UIListLayout_8.Padding = UDim.new(0, 5)
+
+SectionName_2.Name = "SectionName"
+SectionName_2.Parent = Label
+SectionName_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SectionName_2.BackgroundTransparency = 1.000
+SectionName_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+SectionName_2.BorderSizePixel = 0
+SectionName_2.LayoutOrder = 2
+SectionName_2.Size = UDim2.new(0, 0, 0, 20)
+SectionName_2.Font = Enum.Font.GothamMedium
+SectionName_2.Text = "Saved Scripts"
+SectionName_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+SectionName_2.TextSize = 12.000
+SectionName_2.TextWrapped = true
+
+ImageLabel_2.Parent = Label
+ImageLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel_2.BackgroundTransparency = 1.000
+ImageLabel_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ImageLabel_2.BorderSizePixel = 0
+ImageLabel_2.LayoutOrder = 1
+ImageLabel_2.Size = UDim2.new(0, 20, 0, 20)
+ImageLabel_2.Image = "http://www.roblox.com/asset/?id=17689681253"
+
+Scripts.Name = "Scripts"
+Scripts.Parent = SavedScripts
+Scripts.Active = true
+Scripts.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Scripts.BackgroundTransparency = 1.000
+Scripts.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Scripts.BorderSizePixel = 0
+Scripts.LayoutOrder = 2
+Scripts.Size = UDim2.new(1, 0, 0, 120)
+Scripts.CanvasSize = UDim2.new(0, 0, 0, 0)
+Scripts.ScrollBarThickness = 2
+
+UIListLayout_9.Parent = Scripts
+UIListLayout_9.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout_9.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout_9.Padding = UDim.new(0, 3)
+
+Border.Name = "Border"
+Border.Parent = Scripts
+Border.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Border.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Border.BorderSizePixel = 0
+Border.LayoutOrder = 1
+
+ScriptsTemplate.Name = "ScriptsTemplate"
+ScriptsTemplate.Parent = Scripts
+ScriptsTemplate.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScriptsTemplate.BackgroundTransparency = 1.000
+ScriptsTemplate.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScriptsTemplate.BorderSizePixel = 0
+ScriptsTemplate.LayoutOrder = 2
+ScriptsTemplate.Size = UDim2.new(0.949999988, 0, 0, 20)
+ScriptsTemplate.Font = Enum.Font.SourceSans
+ScriptsTemplate.Text = ""
+ScriptsTemplate.TextColor3 = Color3.fromRGB(0, 0, 0)
+ScriptsTemplate.TextSize = 14.000
+
+UIListLayout_10.Parent = ScriptsTemplate
+UIListLayout_10.FillDirection = Enum.FillDirection.Horizontal
+UIListLayout_10.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout_10.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout_10.VerticalAlignment = Enum.VerticalAlignment.Center
+
+UIStroke_8.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke_8.Color = Color3.fromRGB(255, 255, 255)
+UIStroke_8.Thickness = 0.700
+UIStroke_8.Transparency = 0.800
+UIStroke_8.Parent = ScriptsTemplate
+
+DeleteButton.Name = "DeleteButton"
+DeleteButton.Parent = ScriptsTemplate
+DeleteButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DeleteButton.BackgroundTransparency = 1.000
+DeleteButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DeleteButton.BorderSizePixel = 0
+DeleteButton.LayoutOrder = 2
+DeleteButton.Size = UDim2.new(0, 20, 0, 20)
+DeleteButton.Image = "http://www.roblox.com/asset/?id=17669297536"
+
+ScriptName_2.Name = "ScriptName"
+ScriptName_2.Parent = ScriptsTemplate
+ScriptName_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScriptName_2.BackgroundTransparency = 1.000
+ScriptName_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ScriptName_2.BorderSizePixel = 0
+ScriptName_2.LayoutOrder = 1
+ScriptName_2.Size = UDim2.new(0, 90, 0, 15)
+ScriptName_2.Font = Enum.Font.GothamMedium
+ScriptName_2.Text = "ScriptName"
+ScriptName_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+ScriptName_2.TextSize = 9.000
+ScriptName_2.TextWrapped = true
+ScriptName_2.TextXAlignment = Enum.TextXAlignment.Left
+
+UICorner_9.CornerRadius = UDim.new(0.300000012, 0)
+UICorner_9.Parent = ScriptsTemplate
