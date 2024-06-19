@@ -259,6 +259,28 @@ getgenv().Table = {
 			end,
 		},
 
+		["Spin"] = {
+			TypeOfFunction = "BoolWithTextBox",
+			Active = false,
+			Text = "",
+			PlaceHolderText = "Number",
+			ScriptIfActivated = function(TextBox)
+				local Players = game:GetService("Players")
+
+				local Spin = Instance.new("BodyAngularVelocity")
+				Spin.Name = "Spinning"
+				Spin.Parent = Players.LocalPlayer.Character
+				Spin.MaxTorque = Vector3.new(0, math.huge, 0)
+				Spin.AngularVelocity = Vector3.new(0, tonumber(TextBox), 0)
+			end,
+
+			ScriptIfDeactivated = function(TextBox)
+				local Players = game:GetService("Players")
+
+				Players.LocalPlayer.Character:FindFirstChild("Spinning"):Destroy()
+			end,
+		},
+
 		["Spectate"] = {
 			TypeOfFunction = "BoolWithTextBox",
 			Active = false,
