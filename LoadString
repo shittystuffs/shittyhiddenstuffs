@@ -1,5 +1,19 @@
 -- V31nc : GUI to LUA V1
 
+local Table = getgenv().Table
+local Player = game:GetService("Players").LocalPlayer
+local TweenService = game:GetService("TweenService")
+local AnimationLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/shittystuffs/shittyhiddenstuffs/main/AnimationLibrary"))()
+local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/shittystuffs/shittyhiddenstuffs/main/NotificationLibrary"))()
+local ClickSound = Table.GuiStatus.ClickSound
+
+function StringToColor3(ToConvert)
+	local ColorString = tostring(ToConvert)
+	local ColorR, ColorG, ColorB = ColorString:match("(%d+), (%d+), (%d+)")
+	ColorR, ColorG, ColorB = tonumber(ColorR),tonumber(ColorG),tonumber(ColorB)
+	return ColorR/255,ColorG/255,ColorB/255
+end
+
 -- Instances:
 
 local LoadString = Instance.new("Frame")
@@ -57,7 +71,7 @@ local UICorner_9 = Instance.new("UICorner")
 --Properties:
 
 LoadString.Name = "LoadString"
-LoadString.Parent = StarterGui.VexHubFolder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Pages
+LoadString.Parent = game:GetService("CoreGui"):WaitForChild("VexHubFolder").VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Pages
 LoadString.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 LoadString.BackgroundTransparency = 1.000
 LoadString.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -81,7 +95,7 @@ SectionInfo.Position = UDim2.new(0.222222224, 0, 0.125, 0)
 SectionInfo.Size = UDim2.new(0.949999988, 0, 0, 20)
 
 UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke.Color = Color3.fromRGB(255, 255, 255)
+UIStroke.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
 UIStroke.Thickness = 0.700
 UIStroke.Transparency = 0.800
 UIStroke.Parent = SectionInfo
@@ -104,7 +118,7 @@ SectionName.BorderColor3 = Color3.fromRGB(0, 0, 0)
 SectionName.BorderSizePixel = 0
 SectionName.LayoutOrder = 2
 SectionName.Size = UDim2.new(0, 0, 0, 20)
-SectionName.Font = Enum.Font.GothamMedium
+SectionName.Font = Enum.Font[Table.GuiSettings.GuiFont.Medium]
 SectionName.Text = "LoadString"
 SectionName.TextColor3 = Color3.fromRGB(255, 255, 255)
 SectionName.TextSize = 13.000
@@ -130,7 +144,7 @@ BottomFrame.Position = UDim2.new(0.350746363, 0, 0.236842111, 0)
 BottomFrame.Size = UDim2.new(0, 320, 0, 155)
 
 UIStroke_2.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_2.Color = Color3.fromRGB(255, 255, 255)
+UIStroke_2.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
 UIStroke_2.Thickness = 0.700
 UIStroke_2.Transparency = 0.800
 UIStroke_2.Parent = BottomFrame
@@ -176,7 +190,7 @@ Clear.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Clear.BorderSizePixel = 0
 Clear.LayoutOrder = 2
 Clear.Size = UDim2.new(0, 50, 0, 20)
-Clear.Font = Enum.Font.GothamMedium
+Clear.Font = Enum.Font[Table.GuiSettings.GuiFont.Medium]
 Clear.Text = "Clear"
 Clear.TextColor3 = Color3.fromRGB(255, 255, 255)
 Clear.TextSize = 14.000
@@ -185,7 +199,7 @@ UICorner_3.CornerRadius = UDim.new(0.300000012, 0)
 UICorner_3.Parent = Clear
 
 UIStroke_3.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_3.Color = Color3.fromRGB(255, 255, 255)
+UIStroke_3.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
 UIStroke_3.Thickness = 0.700
 UIStroke_3.Transparency = 0.800
 UIStroke_3.Parent = Clear
@@ -198,7 +212,7 @@ Execute.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Execute.BorderSizePixel = 0
 Execute.LayoutOrder = 3
 Execute.Size = UDim2.new(0, 80, 0, 20)
-Execute.Font = Enum.Font.GothamMedium
+Execute.Font = Enum.Font[Table.GuiSettings.GuiFont.Medium]
 Execute.Text = "Execute"
 Execute.TextColor3 = Color3.fromRGB(255, 255, 255)
 Execute.TextSize = 14.000
@@ -207,7 +221,7 @@ UICorner_4.CornerRadius = UDim.new(0.300000012, 0)
 UICorner_4.Parent = Execute
 
 UIStroke_4.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_4.Color = Color3.fromRGB(255, 255, 255)
+UIStroke_4.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
 UIStroke_4.Thickness = 0.700
 UIStroke_4.Transparency = 0.800
 UIStroke_4.Parent = Execute
@@ -241,7 +255,7 @@ TextBox.BorderSizePixel = 0
 TextBox.LayoutOrder = 1
 TextBox.Size = UDim2.new(0.949999988, 0, 1, 0)
 TextBox.ClearTextOnFocus = false
-TextBox.Font = Enum.Font.GothamMedium
+TextBox.Font = Enum.Font[Table.GuiSettings.GuiFont.Medium]
 TextBox.PlaceholderText = "Script Name Here!"
 TextBox.Text = ""
 TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -254,7 +268,7 @@ UIListLayout_5.SortOrder = Enum.SortOrder.LayoutOrder
 UIListLayout_5.VerticalAlignment = Enum.VerticalAlignment.Center
 
 UIStroke_5.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_5.Color = Color3.fromRGB(255, 255, 255)
+UIStroke_5.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
 UIStroke_5.Thickness = 0.700
 UIStroke_5.Transparency = 0.800
 UIStroke_5.Parent = ScriptName
@@ -275,7 +289,7 @@ UICorner_7.CornerRadius = UDim.new(0.0500000007, 0)
 UICorner_7.Parent = Strings
 
 UIStroke_6.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_6.Color = Color3.fromRGB(255, 255, 255)
+UIStroke_6.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
 UIStroke_6.Thickness = 0.700
 UIStroke_6.Transparency = 0.800
 UIStroke_6.Parent = Strings
@@ -298,7 +312,7 @@ TextBox_2.BorderSizePixel = 0
 TextBox_2.Position = UDim2.new(0.0250000004, 0, 0.0199999996, 0)
 TextBox_2.Size = UDim2.new(0, 0, 0, 10)
 TextBox_2.ClearTextOnFocus = false
-TextBox_2.Font = Enum.Font.Gotham
+TextBox_2.Font = Enum.Font[Table.GuiSettings.GuiFont.Regular]
 TextBox_2.MultiLine = true
 TextBox_2.PlaceholderText = "Your String Here!"
 TextBox_2.Text = ""
@@ -327,7 +341,7 @@ UICorner_8.CornerRadius = UDim.new(0.0500000007, 0)
 UICorner_8.Parent = SavedScripts
 
 UIStroke_7.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_7.Color = Color3.fromRGB(255, 255, 255)
+UIStroke_7.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
 UIStroke_7.Thickness = 0.700
 UIStroke_7.Transparency = 0.800
 UIStroke_7.Parent = SavedScripts
@@ -362,7 +376,7 @@ SectionName_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 SectionName_2.BorderSizePixel = 0
 SectionName_2.LayoutOrder = 2
 SectionName_2.Size = UDim2.new(0, 0, 0, 20)
-SectionName_2.Font = Enum.Font.GothamMedium
+SectionName_2.Font = Enum.Font[Table.GuiSettings.GuiFont.Medium]
 SectionName_2.Text = "Saved Scripts"
 SectionName_2.TextColor3 = Color3.fromRGB(255, 255, 255)
 SectionName_2.TextSize = 12.000
@@ -421,7 +435,7 @@ UIListLayout_10.SortOrder = Enum.SortOrder.LayoutOrder
 UIListLayout_10.VerticalAlignment = Enum.VerticalAlignment.Center
 
 UIStroke_8.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_8.Color = Color3.fromRGB(255, 255, 255)
+UIStroke_8.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
 UIStroke_8.Thickness = 0.700
 UIStroke_8.Transparency = 0.800
 UIStroke_8.Parent = ScriptsTemplate
@@ -444,7 +458,7 @@ ScriptName_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 ScriptName_2.BorderSizePixel = 0
 ScriptName_2.LayoutOrder = 1
 ScriptName_2.Size = UDim2.new(0, 90, 0, 15)
-ScriptName_2.Font = Enum.Font.GothamMedium
+ScriptName_2.Font = Enum.Font[Table.GuiSettings.GuiFont.Medium]
 ScriptName_2.Text = "ScriptName"
 ScriptName_2.TextColor3 = Color3.fromRGB(255, 255, 255)
 ScriptName_2.TextSize = 9.000
