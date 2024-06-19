@@ -433,6 +433,7 @@ ScriptsTemplate.Font = Enum.Font.SourceSans
 ScriptsTemplate.Text = ""
 ScriptsTemplate.TextColor3 = Color3.fromRGB(0, 0, 0)
 ScriptsTemplate.TextSize = 14.000
+ScriptsTemplate.Visible = false
 
 UIListLayout_10.Parent = ScriptsTemplate
 UIListLayout_10.FillDirection = Enum.FillDirection.Horizontal
