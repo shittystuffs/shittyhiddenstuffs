@@ -467,3 +467,35 @@ ScriptName_2.TextXAlignment = Enum.TextXAlignment.Left
 
 UICorner_9.CornerRadius = UDim.new(0.300000012, 0)
 UICorner_9.Parent = ScriptsTemplate
+
+function CreateScript(Name, Script)
+	local Template = ScriptsTemplate:Clone()
+	  
+	Template.Name = Name
+	Template.Parent = Scripts
+	Template.Visible = true
+	Template.ScriptName.Text = Name
+	Template.MouseButton1Down:Connect(function()
+		TextBox.Text = Name
+		TextBox_2.Text = tostring(Script)
+	end)
+end
+
+Execute.MouseButton1Down:Connect(function()
+	local Success, Error = pcall(TextBox_2.Text)
+
+	if not Success then
+		Notification:Create("Error", "Something went wrong while executing this script. Go to the console to view the error.", 5)
+		error(Error)
+	end
+end)
+
+Clear.MouseButton1Down:Connect(function()
+	TextBox.Text = ""
+	TextBox_2.Text = ""
+end)
+
+-- Loader:
+for _, SavedScript in Table.SavedScripts do
+	CreateScript(SavedScript.Name, SavedScript.Script)
+end
