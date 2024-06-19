@@ -41,6 +41,7 @@ local UIStroke_4 = Instance.new("UIStroke")
 local Circle = Instance.new("Frame")
 local UICorner_5 = Instance.new("UICorner")
 local _000Border = Instance.new("Frame")
+local _000Border_2 = Instance.new("Frame")
 local TextBoxTemplate = Instance.new("Frame")
 local Type_2 = Instance.new("StringValue")
 local UIStroke_5 = Instance.new("UIStroke")
@@ -263,6 +264,13 @@ _000Border.Parent = ScrollingFrame
 _000Border.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 _000Border.BorderColor3 = Color3.fromRGB(0, 0, 0)
 _000Border.BorderSizePixel = 0
+
+_000Border_2.Name = "000Border"
+_000Border_2.Parent = ScrollingFrame
+_000Border_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_000Border_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+_000Border_2.BorderSizePixel = 0
+_000Border_2.LayoutOrder = 100000000
 
 TextBoxTemplate.Name = "TextBoxTemplate"
 TextBoxTemplate.Parent = ScrollingFrame
