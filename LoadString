@@ -523,5 +523,5 @@ end)
 
 -- Loader:
 for _, SavedScript in Table.SavedScripts do
-	CreateScript(SavedScript.Name, SavedScript.Script)
+	CreateScript(SavedScript.ScriptName, SavedScript.Script)
 end
