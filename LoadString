@@ -121,6 +121,7 @@ SectionName.BorderSizePixel = 0
 SectionName.LayoutOrder = 2
 SectionName.Size = UDim2.new(0, 0, 0, 20)
 SectionName.Font = Enum.Font[Table.GuiSettings.GuiFont.Medium]
+SectionName.RichText = true
 SectionName.Text = "LoadString"
 SectionName.TextColor3 = Color3.fromRGB(255, 255, 255)
 SectionName.TextSize = 13.000
