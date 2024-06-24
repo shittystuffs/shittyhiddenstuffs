@@ -303,7 +303,8 @@ ScrollingFrame.BackgroundTransparency = 1.000
 ScrollingFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 ScrollingFrame.BorderSizePixel = 0
 ScrollingFrame.Size = UDim2.new(1, 0, 1, 0)
-ScrollingFrame.CanvasSize = UDim2.new(0, 0, 1000, 0)
+ScrollingFrame.AutomaticCanvasSize = Enum.AutomaticSize.Y
+ScrollingFrame.CanvasSize = UDim2.new(0, 0, 0, 0)
 ScrollingFrame.ScrollBarThickness = 2
 
 TextBox_2.Parent = ScrollingFrame
@@ -318,6 +319,7 @@ TextBox_2.ClearTextOnFocus = false
 TextBox_2.Font = Enum.Font[Table.GuiSettings.GuiFont.Regular]
 TextBox_2.MultiLine = true
 TextBox_2.PlaceholderText = "Your String Here!"
+TextBox_2.RichText = true
 TextBox_2.Text = ""
 TextBox_2.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextBox_2.TextSize = 12.000
@@ -514,6 +516,14 @@ Execute.MouseButton1Down:Connect(function()
 		Notification:Create("Error", "Something went wrong while executing this script. Go to the console to view the error.", 5)
 		error(Error)
 	end
+end)
+
+TextBox_2.Focused:Connect(function()
+	TextBox_2.Size = UDim2.new(0, TextBox_2.AbsoluteSize.X, 0, TextBox_2.AbsoluteSize.Y)
+end)
+
+TextBox_2.FocusLost:Connect(function()
+	TextBox_2.Size = UDim2.new(0, 0, 0, 0)
 end)
 
 Clear.MouseButton1Down:Connect(function()
