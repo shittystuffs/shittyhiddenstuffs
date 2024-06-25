@@ -507,6 +507,7 @@ function CreateScript(Name, Script)
 		TextBox.Text = Name
 		TextBox_2.Text = tostring(Script)
 	end)
+
 	Template.DeleteButton.MouseButton1Down:Connect(function()
 		if isfile("VexHub/SavedScripts/"..Name..".lua") then
 			local Success, Error = pcall(function()
@@ -514,9 +515,16 @@ function CreateScript(Name, Script)
 			end)
 
 			if Success then
-				Notification:Create("Script deleted!", "Script was successfully deleted. Re-execute VexHub to view changes.", 5)
+				Template:Destroy()
+				for TableNumber, _ in Table.SavedScripts do
+					if Table.SavedScripts[TableNumber].ScriptName == Name then
+						table.remove(Table.SavedScripts, TableNumber)
+					end
+				end
+
+				Notification:Create("Script deleted!", "Script was successfully deleted from the folder.", 5)
 			else
-				Notification:Create("Error!", "Something went wrong while deleting this script. Go to the console to view the error.", 5)
+				Notification:Create("Error!", "Something went wrong while deleting this script. Go to VexConsole to view the error.", 5)
 				Message:Error(Error)
 			end
 		else
@@ -549,6 +557,29 @@ end)
 Clear.MouseButton1Down:Connect(function()
 	TextBox.Text = ""
 	TextBox_2.Text = ""
+end)
+
+Save.MouseButton1Down:Connect(function()
+	if TextBox.Text ~= "" or TextBox.Text ~= " " then
+		writefile("VexHub/SavedScripts/"..TextBox.Text..".lua", tostring(TextBox_2.Text))
+
+		local NewScriptTable = {
+			ScriptName = TextBox.Text,
+			Script = tostring(TextBox_2.Text)
+		}
+
+		table.insert(Table.SavedScripts, NewScriptTable)
+
+		CreateScript(TextBox.Text, TextBox_2.Text)
+
+		if isfile("VexHub/SavedScripts/"..TextBox.Text..".lua") then
+			Notification:Create("Script saved!", "Saved script successfully! Script is in your exploits workspace.", 5)
+		else
+			Notification:Create("Script overwritten!", "Overwritten existed script! Script is in your exploits workspace.", 5)
+		end
+	else
+		Notification:Create("Oops!", "Please enter a valid name.", 5)
+	end
 end)
 
 -- Loader:
