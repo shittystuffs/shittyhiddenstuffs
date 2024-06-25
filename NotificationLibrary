@@ -1,6 +1,6 @@
 local Library = {}
 local TweenService = game:GetService("TweenService")
-local Table = getgenv().Table
+local Table = _G.Table
 local AnimationSpeed = Table.GuiSettings.AnimationSpeed
 local AnimationEasingStyle = Table.GuiSettings.EasingStyle
 local TopFrame = game:GetService("CoreGui").VexHubFolder.VexHubScreenGui.TopFrame
