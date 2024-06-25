@@ -1,6 +1,6 @@
 -- V31nc : GUI to LUA V1
 
-local Table = getgenv().Table
+local Table = _G.Table
 local Player = game:GetService("Players").LocalPlayer
 local TweenService = game:GetService("TweenService")
 local ClickSound = Table.GuiStatus.ClickSound
