@@ -547,7 +547,7 @@ Execute.MouseButton1Down:Connect(function()
 end)
 
 TextBox_2.Focused:Connect(function()
-	TextBox_2.Size = UDim2.new(0, TextBox_2.AbsoluteSize.X, 0, TextBox_2.AbsoluteSize.Y)
+	TextBox_2.Size = UDim2.new(0, TextBox_2.AbsoluteSize.X, 0, 100000)
 end)
 
 TextBox_2.FocusLost:Connect(function()
