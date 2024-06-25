@@ -509,7 +509,7 @@ function CreateScript(Name, Script)
 	end)
 	Template.DeleteButton.MouseButton1Down:Connect(function()
 		if isfile("VexHub/SavedScripts/"..Name..".lua") then
-			local Success, Error = function()
+			local Success, Error = pcall(function()
 				delfile("VexHub/SavedScripts/"..Name..".lua")
 			end)
 
