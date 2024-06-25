@@ -442,3 +442,61 @@ for i, v in Plugins:GetDescendants() do
         v.ScrollBarImageTransparency = 1
     end
 end
+
+Install.MouseButton1Down:Connect(function()
+	if TextBox.Text == "" or TextBox.Text == " " then
+		Notification:Create("Oops!", "Please enter a valid table.", 5)
+	else
+		function CheckIfTable(str)
+			local func, loadError = loadstring(str)
+			    
+			if not func then
+				return loadError
+			else
+			
+			local success, result = pcall(func)
+			        
+				if success and type(result) == "table" then
+					return true
+				else
+					return result
+				end
+			end
+		end
+
+		if CheckIfTable(TextBox.Text) == true then
+			local TableContents = loadstring(TextBox.Text)()
+
+			if (TableContents.PluginName) and (TableContents.PluginLogo) and (TableContents.PluginCreator) and (TableContents.Scripts) then
+				if isfile("VexHub/Plugins/"..TableContents.PluginName..".vexp") then
+					writefile("VexHub/Plugins/"..TableContents.PluginName..".vexp", tostring(TextBox.Text))
+					Notification:Create("Plugin overwritten!", "Overwritten existed plugin! plugin is in your exploits workspace.", 5)
+				else
+					writefile("VexHub/Plugins/"..TableContents.PluginName..".vexp", tostring(TextBox.Text))
+
+					table.insert(Table.Plugins, TableContents)
+					Notification:Create("Plugin saved!", "Saved plugin successfully! Plugin is in your exploits workspace.", 5)
+				end
+			else
+				Notification:Create("Missing requirements.", "A missing requirement found in the Table to be a plugin. Go to VexConsole to view the error.")
+				local Requirements = "MISSING METADATA:"
+
+				function CheckForRequirement(Name)
+					if not (TableContents[Name]) then
+						Requirements = Requirements.."\n"..Name
+					end
+				end
+
+				CheckForRequirement("PluginName")
+				CheckForRequirement("PluginLogo")
+				CheckForRequirement("PluginCreator")
+				CheckForRequirement("Scripts")
+				wait()
+				Message:Error(Requirements..'\n\nVisit <font color="rgb(76, 188, 255)">https://github.com/V31nc/2642/wiki/Plugins</font> to learn more about Plugins.')
+			end
+		else
+			Notification:Create("Failed to save!", "Something went wrong while saving this table as plugin. Go to VexConsole to view the error.", 5)
+			Message:Error(CheckIfTable(TextBox.Text))
+		end
+	end
+end)
