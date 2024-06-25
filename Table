@@ -1,4 +1,4 @@
-getgenv().Table = {
+_G.Table = {
 	GuiStatus = {
 		IsVisible = false,
 		OnGoingAnimation = false,
@@ -256,7 +256,7 @@ getgenv().Table = {
 				repeat 
 					wait(0.5)
 					game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(TextBox, "All")
-				until getgenv().Table.LocalPlayerFeatures.Spam.Active == false
+				until _G.Table.LocalPlayerFeatures.Spam.Active == false
 			end,
 
 			ScriptIfDeactivated = function(TextBox)
@@ -433,10 +433,10 @@ getgenv().Table = {
 
 coroutine.wrap(function()
 	while task.wait(0.1) do
-		if getgenv().Table.GuiStatus.SwitchScriptCooldown >= 0.1 then
-			getgenv().Table.GuiStatus.SwitchScriptCooldown += 0.1
-		elseif getgenv().Table.GuiStatus.SwitchScriptCooldown <= 0 then
-			getgenv().Table.GuiStatus.SwitchScriptCooldown = 0
+		if _G.Table.GuiStatus.SwitchScriptCooldown >= 0.1 then
+			_G.Table.GuiStatus.SwitchScriptCooldown += 0.1
+		elseif _G.Table.GuiStatus.SwitchScriptCooldown <= 0 then
+			_G.Table.GuiStatus.SwitchScriptCooldown = 0
 		end
 	end
 end)()
