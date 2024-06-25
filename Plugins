@@ -100,6 +100,7 @@ UIListLayout.Padding = UDim.new(0, 5)
 
 SectionName.Name = "SectionName"
 SectionName.Parent = SectionInfo
+SectionName.AutomaticSize = Enum.AutomaticSize.X
 SectionName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 SectionName.BackgroundTransparency = 1.000
 SectionName.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -107,6 +108,7 @@ SectionName.BorderSizePixel = 0
 SectionName.LayoutOrder = 2
 SectionName.Size = UDim2.new(0, 0, 0, 20)
 SectionName.Font = Enum.Font[Table.GuiSettings.GuiFont.Medium]
+SectionName.RichText = true
 SectionName.Text = "Plugins"
 SectionName.TextColor3 = Color3.fromRGB(255, 255, 255)
 SectionName.TextSize = 13.000
@@ -260,11 +262,13 @@ ImageLabel_2.Image = "http://www.roblox.com/asset/?id=17669692529"
 
 InstallText.Name = "InstallText"
 InstallText.Parent = InstallButton
+InstallText.AutomaticSize = Enum.AutomaticSize.X
 InstallText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 InstallText.BackgroundTransparency = 1.000
 InstallText.BorderColor3 = Color3.fromRGB(0, 0, 0)
 InstallText.BorderSizePixel = 0
 InstallText.LayoutOrder = 2
+InstallText.RichText = true
 InstallText.Size = UDim2.new(0, 0, 0, 20)
 InstallText.Font = Enum.Font[Table.GuiSettings.GuiFont.Medium]
 InstallText.Text = "Install"
@@ -320,11 +324,13 @@ UIListLayout_7.Padding = UDim.new(0, 5)
 
 SectionName_2.Name = "SectionName"
 SectionName_2.Parent = Label
+SectionName_2.AutomaticSize = Enum.AutomaticSize.X
 SectionName_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 SectionName_2.BackgroundTransparency = 1.000
 SectionName_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 SectionName_2.BorderSizePixel = 0
 SectionName_2.LayoutOrder = 2
+SectionName_2.RichText = true
 SectionName_2.Size = UDim2.new(0, 0, 0, 20)
 SectionName_2.Font = Enum.Font[Table.GuiSettings.GuiFont.Medium]
 SectionName_2.Text = "Installed Plugins"
@@ -362,6 +368,7 @@ PluginTemplate.BorderSizePixel = 0
 PluginTemplate.LayoutOrder = 2
 PluginTemplate.Position = UDim2.new(0.0250000004, 0, 0.0416666679, 0)
 PluginTemplate.Size = UDim2.new(0.949999988, 0, 0, 20)
+PluginTemplate.Visible = false
 
 UICorner_6.CornerRadius = UDim.new(0.300000012, 0)
 UICorner_6.Parent = PluginTemplate
