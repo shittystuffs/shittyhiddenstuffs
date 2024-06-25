@@ -563,11 +563,11 @@ Save.MouseButton1Down:Connect(function()
 	if TextBox.Text == "" or TextBox.Text == " " then
 		Notification:Create("Oops!", "Please enter a valid name.", 5)
 	else
-		writefile("VexHub/SavedScripts/"..TextBox.Text..".lua", tostring(TextBox_2.Text))
-
 		if isfile("VexHub/SavedScripts/"..TextBox.Text..".lua") then
+			writefile("VexHub/SavedScripts/"..TextBox.Text..".lua", tostring(TextBox_2.Text))
 			Notification:Create("Script overwritten!", "Overwritten existed script! Script is in your exploits workspace.", 5)
 		else
+			writefile("VexHub/SavedScripts/"..TextBox.Text..".lua", tostring(TextBox_2.Text))
 			local NewScriptTable = {
 				ScriptName = TextBox.Text,
 				Script = tostring(TextBox_2.Text)
