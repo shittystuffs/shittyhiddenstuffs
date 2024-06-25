@@ -443,6 +443,39 @@ for i, v in Plugins:GetDescendants() do
     end
 end
 
+function CreatePlugin(PluginTable)
+	local Template = PluginTemplate:Clone()
+	  
+	Template.Name = PluginTable.PluginName
+	Template.Parent = Plugins_2
+	Template.Visible = true
+	Template.PluginName.Text = PluginTable.PluginName
+
+	Template.DeleteButton.MouseButton1Down:Connect(function()
+		if isfile("VexHub/Plugins/"..PluginTable.PluginName..".vexp") then
+			local Success, Error = pcall(function()
+				delfile("VexHub/Plugins/"..PluginTable.PluginName..".vexp")
+			end)
+
+			if Success then
+				Template:Destroy()
+				for TableNumber, _ in Table.SavedScripts do
+					if TableNumber.PluginName == PluginTable.PluginName then
+						table.remove(Table.Plugins, TableNumber)
+					end
+				end
+
+				Notification:Create("Plugin deleted!", "Plugin was successfully deleted from the folder.", 5)
+			else
+				Notification:Create("Error!", "Something went wrong while deleting this script. Go to VexConsole to view the error.", 5)
+				Message:Error(Error)
+			end
+		else
+			Notification:Create("Oops!", "Plugin no longer exist!", 5)
+		end	
+	end)
+end
+
 Install.MouseButton1Down:Connect(function()
 	if TextBox.Text == "" or TextBox.Text == " " then
 		Notification:Create("Oops!", "Please enter a valid table.", 5)
@@ -500,3 +533,8 @@ Install.MouseButton1Down:Connect(function()
 		end
 	end
 end)
+
+-- Loader:
+for _, Plugins in Table.Plugins do
+	CreatePlugin(Plugins)
+end
