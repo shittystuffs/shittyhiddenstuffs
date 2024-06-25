@@ -185,6 +185,8 @@ getgenv().Table = {
 
 	SavedScripts = {},
 
+	Favorites = {},
+
 	LocalPlayerFeatures = {
 		["WalkSpeed"] = {
 			TypeOfFunction = "TextBox",
