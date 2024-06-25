@@ -5,6 +5,7 @@ local Player = game:GetService("Players").LocalPlayer
 local TweenService = game:GetService("TweenService")
 local AnimationLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/shittystuffs/shittyhiddenstuffs/main/AnimationLibrary"))()
 local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/shittystuffs/shittyhiddenstuffs/main/NotificationLibrary"))()
+local Message = loadstring(game:HttpGet("https://raw.githubusercontent.com/V31nc/On-Discord/Created/VexConsole"))()
 local ClickSound = Table.GuiStatus.ClickSound
 
 function StringToColor3(ToConvert)
@@ -506,6 +507,22 @@ function CreateScript(Name, Script)
 		TextBox.Text = Name
 		TextBox_2.Text = tostring(Script)
 	end)
+	Template.DeleteButton.MouseButton1Down:Connect(function()
+		if isfile("VexHub/SavedScripts/"..Name..".lua") then
+			local Success, Error = function()
+				delfile("VexHub/SavedScripts/"..Name..".lua")
+			end)
+
+			if Success then
+				Notification:Create("Script deleted!", "Script was successfully deleted. Re-execute VexHub to view changes.", 5)
+			else
+				Notification:Create("Error!", "Something went wrong while deleting this script. Go to the console to view the error.", 5)
+				Message:Error(Error)
+			end
+		else
+			Notification:Create("Oops!", "Script no longer exist!", 5)
+		end	
+	end)
 end
 
 Execute.MouseButton1Down:Connect(function()
@@ -513,9 +530,11 @@ Execute.MouseButton1Down:Connect(function()
 		loadstring(TextBox_2.Text)()
 	end)
 
-	if not Success then
-		Notification:Create("Error", "Something went wrong while executing this script. Go to the console to view the error.", 5)
-		error(Error)
+	if Success then
+		Notification:Create("Success!", "Script executed with no errors!", 5)
+	else
+		Notification:Create("Error!", "Something went wrong while executing this script. Go to the console to view the error.", 5)
+		Message:Error(Error)
 	end
 end)
 
