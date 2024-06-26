@@ -614,5 +614,5 @@ end
 
 -- Loader:
 for PluginNumber, _ in Table.Plugins do
-	CreateNewPlugin(PluginNumber)
+	CreateNewPlugin(Table.Plugins[PluginNumber])
 end
