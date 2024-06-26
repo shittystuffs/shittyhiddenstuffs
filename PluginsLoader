@@ -611,3 +611,8 @@ function CreateNewPlugin(PluginTable)
 		end)
   	end
 end
+
+-- Loader:
+for PluginNumber, _ in Table.Plugins do
+	CreateNewPlugin(PluginNumber)
+end
