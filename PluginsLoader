@@ -519,6 +519,7 @@ function CreateNewPlugin(PluginTable)
 	end)
 
 	for ScriptName, _ in PluginTable.Scripts do
+		print(ScriptName.GameId)
 		local ScriptTemplate = Template.BottomFrame.LeftFrame.Scripts.ScrollingFrame.ScriptButtonTemplate:Clone()
 
 		ScriptTemplate.Name = ScriptName
