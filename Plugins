@@ -451,10 +451,6 @@ function CreatePlugin(PluginTable)
 	Template.Visible = true
 	Template.PluginName.Text = PluginTable.PluginName
 
-	if (CreateNewVexPlugin) then
-		CreateNewVexPlugin(PluginTable)
-	end
-
 	Template.DeleteButton.MouseButton1Down:Connect(function()
 		if isfile("VexHub/Plugins/"..PluginTable.PluginName..".vexp") then
 			local Success, Error = pcall(function()
@@ -530,6 +526,10 @@ InstallButton.MouseButton1Down:Connect(function()
 						writefile("VexHub/Plugins/"..TableContents.PluginName..".vexp", TextBox.Text)
 
 						CreatePlugin(TableContents)
+						if (CreateNewVexPlugin) then
+							CreateNewVexPlugin(TableContents)
+						end
+
 						table.insert(Table.Plugins, TableContents)
 						Notification:Create("Plugin saved!", "Saved plugin successfully! Plugin is in your exploits workspace.", 5)
 					end
@@ -557,3 +557,8 @@ InstallButton.MouseButton1Down:Connect(function()
 		end
 	end
 end)
+
+-- Loader:
+for _, Plugins in Table.Plugins do
+	CreatePlugin(Plugins)
+end
