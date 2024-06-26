@@ -444,8 +444,8 @@ end
 
 function CreateNewPlugin(PluginTable)
 	function ReturnIdAsImage(Id)
-		local success, result = pcall(function() 
-			game:GetService("MarketplaceService"):GetProductInfo(tonumber(Id)).AssetTypeId
+		local Success, Error = pcall(function() 
+			if game:GetService("MarketplaceService"):GetProductInfo(tonumber(Id)).AssetTypeId == 0 then end
 		end)
 
 		if success then
