@@ -518,10 +518,10 @@ InstallButton.MouseButton1Down:Connect(function()
 					Notification:Create("Oops!", "Please enter a valid PluginCreator that contains something.", 5)
 				else
 					if isfile("VexHub/Plugins/"..TableContents.PluginName..".vexp") then
-						writefile("VexHub/Plugins/"..TableContents.PluginName..".vexp", JSon:Encode(TableContents))
+						writefile("VexHub/Plugins/"..TableContents.PluginName..".vexp", TextBox.Text)
 						Notification:Create("Plugin overwritten!", "Overwritten existed plugin! plugin is in your exploits workspace.", 5)
 					else
-						writefile("VexHub/Plugins/"..TableContents.PluginName..".vexp", JSon:Encode(TableContents))
+						writefile("VexHub/Plugins/"..TableContents.PluginName..".vexp", TextBox.Text)
 	
 						CreatePlugin(TableContents)
 						table.insert(Table.Plugins, TableContents)
