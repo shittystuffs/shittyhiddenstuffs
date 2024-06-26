@@ -442,6 +442,176 @@ for i, v in PluginsTemplate:GetDescendants() do
     end
 end
 
+getgenv().CreateNewVexPlugin = function(PluginTable)
+	function ReturnIdAsImage(Id)
+		local Success, Error = pcall(function() 
+			if game:GetService("MarketplaceService"):GetProductInfo(tonumber(Id)).AssetTypeId == 0 then end
+		end)
+
+		if Success then
+			if game:GetService("MarketplaceService"):GetProductInfo(tonumber(Id)).AssetTypeId == 13 then
+		       		return "https://www.roblox.com/asset-thumbnail/image?assetId="..Id.."&width=420&height=420&format=png"
+		   	elseif game:GetService("MarketplaceService"):GetProductInfo(tonumber(Id)).AssetTypeId == 1 then
+				return "rbxassetid://"..Id
+			end
+		end
+	end
+
+	local Template = PluginsTemplate:Clone()
+
+	Template.Name = "Plugin_"..PluginTable.PluginName
+	Template.Parent = game:GetService("CoreGui"):WaitForChild("VexHubFolder").VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Pages
+	Template.SectionInfo.ImageLabel.Image = ReturnIdAsImage(tonumber(PluginTable.PluginLogo))
+	Template.SectionInfo.SectionName.Text = PluginTable.PluginName
+	Template.BottomFrame.LeftFrame.Scripts.ScrollingFrame.ScriptButtonTemplate.Image = ReturnIdAsImage(tonumber(PluginTable.PluginLogo))
+
+	Template.BottomFrame.LeftFrame.SearchFrame.SearchButton.MouseButton1Down:Connect(function()
+		pcall(ClickSound)
+		for _, Button in Template.BottomFrame.LeftFrame.Scripts.ScrollingFrame:GetChildren() do
+			if Button:IsA("ImageButton") then
+				local SearchingFor = string.lower(Template.BottomFrame.LeftFrame.SearchFrame.TextBoxParent.TextBox.Text)
+				local ButtonName = string.lower(Button.ScriptName.Text)
+
+				if SearchingFor == "" and Button.Name ~= "ScriptButtonTemplate" then
+					Button.Visible = true
+				else
+					if string.find(ButtonName, SearchingFor) and SearchingFor ~= "" and Button.Name ~= "ScriptButtonTemplate" then
+						Button.Visible = true
+					else
+						Button.Visible = false
+					end
+				end
+			end
+		end
+	end)
+
+	local PluginTabButton = game:GetService("CoreGui"):WaitForChild("VexHubFolder").VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Tabs.ScrollingFrame.Plugins:Clone()
+
+	PluginTabButton.Name = "Plugin_"..PluginTable.PluginName
+	PluginTabButton.Parent = game:GetService("CoreGui"):WaitForChild("VexHubFolder").VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Tabs.ScrollingFrame
+	PluginTabButton.LayoutOrder = 22
+	PluginTabButton.TabName.Text = PluginTable.PluginName
+	PluginTabButton.TabImage.Image = ReturnIdAsImage(PluginTable.PluginLogo)
+	PluginTabButton.MouseButton1Down:Connect(function()
+		if Table.GuiStatus.ActivePage ~= "Plugin_"..PluginTable.PluginName and Table.GuiStatus.OnGoingAnimation == false then
+			Table.GuiStatus.OnGoingAnimation = true
+			AnimationLibrary.DisappearTab(Table.GuiStatus.ActivePage)
+			wait(Table.GuiSettings.AnimationSpeed)
+			ResetStatus(Table.GuiStatus.ActivePage)
+			AnimationLibrary.AppearTab("Plugin_"..PluginTable.PluginName)
+			wait(Table.GuiSettings.AnimationSpeed)
+			Table.GuiStatus.OnGoingAnimation = false
+			Table.GuiStatus.ActivePage = "Plugin_"..PluginTable.PluginName
+		end
+	end)
+
+	Template.BottomFrame.ScriptInfo.BottomFrame.Execute.MouseButton1Down:Connect(function()
+		pcall(ClickSound)
+		pcall(Table.GuiStatus.ActiveScript)
+	end)
+
+	Template.BottomFrame.ScriptInfo.BottomFrame.Play.MouseButton1Down:Connect(function()
+		pcall(ClickSound)
+		pcall(Table.GuiStatus.JoinGameFunction)
+	end)
+
+	for ScriptName, _ in PluginTable.Scripts do
+		local ScriptTable = {
+			Owner = PluginTable.Scripts[ScriptName].Owner,
+			Description = PluginTable.Scripts[ScriptName].Description,
+			GameId = PluginTable.Scripts[ScriptName].GameId,
+			RigType = PluginTable.Scripts[ScriptName].RigType,
+			Script = PluginTable.Scripts[ScriptName].Script,
+		}
+
+		local ScriptTemplate = Template.BottomFrame.LeftFrame.Scripts.ScrollingFrame.ScriptButtonTemplate:Clone()
+
+		ScriptTemplate.Name = ScriptName
+		ScriptTemplate.Parent = Template.BottomFrame.LeftFrame.Scripts.ScrollingFrame
+		ScriptTemplate.Visible = true
+		ScriptTemplate.ScriptName.Text = ScriptName
+
+		function GetGameName(GameId)
+			if GameId == 0 then
+				return "Universal"
+			else
+				return game:GetService("MarketplaceService"):GetProductInfo(GameId).Name
+			end
+		end
+
+		function ReturnRigType(RigType)
+			if RigType == "Any" or Player.Character:FindFirstChildOfClass("Humanoid").RigType == Enum.HumanoidRigType[RigType] then
+				return true
+			else
+				return false
+			end
+		end
+
+		function ReturnIfGameSupported(GameId)
+			if GameId == 0 or game.PlaceId == GameId then
+				return true
+			else
+				return false
+			end
+		end
+
+		ScriptTemplate.MouseButton1Down:Connect(function()
+			Template.BottomFrame.ScriptInfo.ScriptDetails.Text = '<b><font size="14">'..ScriptName..'</font></b>\n<font size="8">By: '..ScriptTable.Owner..'</font>\n\n<b><font size="10">Description:</font></b>\n<font size="8">' ..ScriptTable.Description.. '</font>\n\n<font size="8">RigType: <b>' ..ScriptTable.RigType.. '</b>\nGame: <b>'.. GetGameName(tonumber(ScriptTable.GameId)) ..'</b></font>'
+	
+			Table.GuiStatus.ActiveScript = function()
+				if ReturnIfGameSupported(tonumber(ScriptTable.GameId)) == true then
+					if ReturnRigType(ScriptTable.RigType) == true then
+						Notification:Create("Executed!", "The script was executed. Waiting for respond.", 5)
+						local Responded = false
+						local Success, Error = pcall(ScriptTable.Script)
+	
+						if Success then
+							Notification:Create("No errors!", "This script runned with no errors!", 5)
+							Responded = true
+						else
+							Notification:Create("Error!", Error, 5)
+							Responded = true
+						end
+	
+						wait(7)
+						if Responded == false then
+							Notification:Create("No respond!", "The script did not responded for a long time.", 5)
+						end
+					else
+						Notification:Create("Whoops", "Youre not "..ScriptTable.RigType.."!", 5)
+					end
+				else
+					Notification:Create("Whoops", "Youre not in "..GetGameName(tonumber(ScriptTable.GameId))..". Join the green play button to join the game!", 5)
+				end
+			end
+	
+			Table.GuiStatus.JoinGameFunction = function()
+				if GetGameName(tonumber(ScriptTable.GameId)) == "Universal" then
+					Notification:Create("Whoops", "This script is universal! This script works on any games!", 5)
+				elseif game.PlaceId == tonumber(ScriptTable.GameId) then
+					Notification:Create("Whoops", "Youre already in the game!", 5)
+				elseif game.PlaceId ~= tonumber(ScriptTable.GameId) then
+					Notification:Create("Teleporting...", "Teleporting you to "..GetGameName(tonumber(ScriptTable.GameId)).." in just a second...", 5)
+					local Teleported = false
+	
+					local Success, Error = pcall(function()
+						game:GetService("TeleportService"):Teleport(tonumber(ScriptTable.GameId))
+						wait()
+						Teleported = true
+					end)
+	
+					wait(7)
+					if not Success then
+						Notification:Create("Failed to teleport!", Error, 5)
+					elseif Teleported == false then
+						Notification:Create("TeleportService is slow!", "This might take a while.", 5)
+					end
+				end
+			end
+		end)
+  	end
+end
+
 -- Loader:
 for PluginNumber, _ in Table.Plugins do
 	CreateNewVexPlugin(Table.Plugins[PluginNumber])
