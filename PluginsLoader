@@ -471,14 +471,11 @@ function CreateNewPlugin(PluginTable)
 			if Button:IsA("ImageButton") then
 				local SearchingFor = string.lower(Template.BottomFrame.LeftFrame.SearchFrame.TextBoxParent.TextBox.Text)
 				local ButtonName = string.lower(Button.ScriptName.Text)
-				local ButtonId = Button.ScriptId.Text
 
 				if SearchingFor == "" and Button.Name ~= "ScriptButtonTemplate" then
 					Button.Visible = true
 				else
 					if string.find(ButtonName, SearchingFor) and SearchingFor ~= "" and Button.Name ~= "ScriptButtonTemplate" then
-						Button.Visible = true
-					elseif string.find(tostring(ButtonId), tostring(SearchingFor)) and SearchingFor ~= "" and Button.Name ~= "ScriptButtonTemplate" then
 						Button.Visible = true
 					else
 						Button.Visible = false
