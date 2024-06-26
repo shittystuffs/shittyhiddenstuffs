@@ -459,6 +459,8 @@ function CreatePlugin(PluginTable)
 
 			if Success then
 				Template:Destroy()
+				game:GetService("CoreGui"):WaitForChild("VexHubFolder").VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Pages["Plugin_"..PluginTable.PluginName]:Destroy()
+				game:GetService("CoreGui"):WaitForChild("VexHubFolder").VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Tabs.ScrollingFrame["Plugin_"..PluginTable.PluginName]:Destroy()
 				for TableNumber, _ in Table.Plugins do
 					if Table.Plugins[TableNumber].PluginName == PluginTable.PluginName then
 						table.remove(Table.Plugins, TableNumber)
