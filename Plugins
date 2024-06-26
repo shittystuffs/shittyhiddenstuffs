@@ -507,6 +507,7 @@ InstallButton.MouseButton1Down:Connect(function()
 				else
 					writefile("VexHub/Plugins/"..TableContents.PluginName..".vexp", tostring(TextBox.Text))
 
+					CreatePlugin(TableContents)
 					table.insert(Table.Plugins, TableContents)
 					Notification:Create("Plugin saved!", "Saved plugin successfully! Plugin is in your exploits workspace.", 5)
 				end
