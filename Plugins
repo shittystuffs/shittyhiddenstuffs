@@ -451,7 +451,9 @@ function CreatePlugin(PluginTable)
 	Template.Visible = true
 	Template.PluginName.Text = PluginTable.PluginName
 
-	CreateNewVexPlugin(PluginTable)
+	if (CreateNewVexPlugin) then
+		CreateNewVexPlugin(PluginTable)
+	end
 
 	Template.DeleteButton.MouseButton1Down:Connect(function()
 		if isfile("VexHub/Plugins/"..PluginTable.PluginName..".vexp") then
