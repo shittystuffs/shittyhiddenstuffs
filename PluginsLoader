@@ -518,11 +518,6 @@ function CreateNewPlugin(PluginTable)
 		pcall(Table.GuiStatus.JoinGameFunction)
 	end)
 
-	Template.BottomFrame.ScriptInfo.BottomFrame.Favorite.MouseButton1Down:Connect(function()
-		pcall(ClickSound)
-		pcall(Table.GuiStatus.FavoriteScriptFunction)
-	end)
-
 	for ScriptName, _ in PluginTable.Scripts do
 		local ScriptTemplate = Template.BottomFrame.LeftFrame.Scripts.ScrollingFrame.ScriptButtonTemplate:Clone()
 
