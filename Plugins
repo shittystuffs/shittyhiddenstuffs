@@ -477,6 +477,15 @@ function CreatePlugin(PluginTable)
 end
 
 InstallButton.MouseButton1Down:Connect(function()
+
+	function JSon:Encode(Table)
+		return game:GetService("HttpService"):JSONEncode(Table)
+	end
+
+	function JSon:Decode(Table)
+		return game:GetService("HttpService"):JSONDecode(Table)
+	end
+
 	if TextBox.Text == "" or TextBox.Text == " " then
 		Notification:Create("Oops!", "Please enter a valid table.", 5)
 	else
@@ -502,10 +511,10 @@ InstallButton.MouseButton1Down:Connect(function()
 
 			if (TableContents.PluginName) and (TableContents.PluginLogo) and (TableContents.PluginCreator) and (TableContents.Scripts) then
 				if isfile("VexHub/Plugins/"..TableContents.PluginName..".vexp") then
-					writefile("VexHub/Plugins/"..TableContents.PluginName..".vexp", tostring(TextBox.Text))
+					writefile("VexHub/Plugins/"..TableContents.PluginName..".vexp", JSon:Encode(TextBox.Text))
 					Notification:Create("Plugin overwritten!", "Overwritten existed plugin! plugin is in your exploits workspace.", 5)
 				else
-					writefile("VexHub/Plugins/"..TableContents.PluginName..".vexp", tostring(TextBox.Text))
+					writefile("VexHub/Plugins/"..TableContents.PluginName..".vexp", JSon:Encode(TextBox.Text))
 
 					CreatePlugin(TableContents)
 					table.insert(Table.Plugins, TableContents)
