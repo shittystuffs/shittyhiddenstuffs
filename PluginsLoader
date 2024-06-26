@@ -519,7 +519,14 @@ function CreateNewPlugin(PluginTable)
 	end)
 
 	for ScriptName, _ in PluginTable.Scripts do
-		print(ScriptName.GameId)
+		local ScriptTable = {
+			Owner = PluginTable.Scripts[ScriptName].Owner,
+			Description = PluginTable.Scripts[ScriptName].Description,
+			GameId = PluginTable.Scripts[ScriptName].GameId,
+			RigType = PluginTable.Scripts[ScriptName].RigType,
+			Script = PluginTable.Scripts[ScriptName].Script,
+		}
+
 		local ScriptTemplate = Template.BottomFrame.LeftFrame.Scripts.ScrollingFrame.ScriptButtonTemplate:Clone()
 
 		ScriptTemplate.Name = ScriptName
@@ -552,14 +559,14 @@ function CreateNewPlugin(PluginTable)
 		end
 
 		ScriptTemplate.MouseButton1Down:Connect(function()
-			Template.BottomFrame.ScriptInfo.ScriptDetails.Text = '<b><font size="14">'..ScriptName..'</font></b>\n<font size="8">By: '..ScriptName.Owner..'</font>\n\n<b><font size="10">Description:</font></b>\n<font size="8">' ..ScriptName.Description.. '</font>\n\n<font size="8">RigType: <b>' ..ScriptName.RigType.. '</b>\nGame: <b>'.. GetGameName(tonumber(ScriptName.GameId)) ..'</b></font>'
+			Template.BottomFrame.ScriptInfo.ScriptDetails.Text = '<b><font size="14">'..ScriptName..'</font></b>\n<font size="8">By: '..ScriptTable.Owner..'</font>\n\n<b><font size="10">Description:</font></b>\n<font size="8">' ..ScriptTable.Description.. '</font>\n\n<font size="8">RigType: <b>' ..ScriptTable.RigType.. '</b>\nGame: <b>'.. GetGameName(tonumber(ScriptTable.GameId)) ..'</b></font>'
 	
 			Table.GuiStatus.ActiveScript = function()
-				if ReturnIfGameSupported(tonumber(ScriptName.GameId)) == true then
-					if ReturnRigType(ScriptName.RigType) == true then
+				if ReturnIfGameSupported(tonumber(ScriptTable.GameId)) == true then
+					if ReturnRigType(ScriptTable.RigType) == true then
 						Notification:Create("Executed!", "The script was executed. Waiting for respond.", 5)
 						local Responded = false
-						local Success, Error = pcall(ScriptName.Script)
+						local Success, Error = pcall(ScriptTable.Script)
 	
 						if Success then
 							Notification:Create("No errors!", "This script runned with no errors!", 5)
@@ -574,24 +581,24 @@ function CreateNewPlugin(PluginTable)
 							Notification:Create("No respond!", "The script did not responded for a long time.", 5)
 						end
 					else
-						Notification:Create("Whoops", "Youre not "..ScriptName.RigType.."!", 5)
+						Notification:Create("Whoops", "Youre not "..ScriptTable.RigType.."!", 5)
 					end
 				else
-					Notification:Create("Whoops", "Youre not in "..GetGameName(tonumber(ScriptName.GameId))..". Join the green play button to join the game!", 5)
+					Notification:Create("Whoops", "Youre not in "..GetGameName(tonumber(ScriptTable.GameId))..". Join the green play button to join the game!", 5)
 				end
 			end
 	
 			Table.GuiStatus.JoinGameFunction = function()
-				if GetGameName(tonumber(ScriptName.GameId)) == "Universal" then
+				if GetGameName(tonumber(ScriptTable.GameId)) == "Universal" then
 					Notification:Create("Whoops", "This script is universal! This script works on any games!", 5)
-				elseif game.PlaceId == tonumber(ScriptName.GameId) then
+				elseif game.PlaceId == tonumber(ScriptTable.GameId) then
 					Notification:Create("Whoops", "Youre already in the game!", 5)
-				elseif game.PlaceId ~= tonumber(ScriptName.GameId) then
-					Notification:Create("Teleporting...", "Teleporting you to "..GetGameName(tonumber(ScriptName.GameId)).." in just a second...", 5)
+				elseif game.PlaceId ~= tonumber(ScriptTable.GameId) then
+					Notification:Create("Teleporting...", "Teleporting you to "..GetGameName(tonumber(ScriptTable.GameId)).." in just a second...", 5)
 					local Teleported = false
 	
 					local Success, Error = pcall(function()
-						game:GetService("TeleportService"):Teleport(tonumber(ScriptName.GameId))
+						game:GetService("TeleportService"):Teleport(tonumber(ScriptTable.GameId))
 						wait()
 						Teleported = true
 					end)
