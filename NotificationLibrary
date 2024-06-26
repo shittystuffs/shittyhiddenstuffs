@@ -6,7 +6,7 @@ local AnimationEasingStyle = Table.GuiSettings.EasingStyle
 local TopFrame = game:GetService("CoreGui").VexHubFolder.VexHubScreenGui.TopFrame
 
 function Library:Create(Title, Message, Duration)
-
+	wait(0.01)
 	local function UpdateNotification(Title, Message, Duration)
 	  if (TopFrame:FindFirstChild("Notification")) and (TopFrame:FindFirstChild("Notification").Duration.Value) > 0 then
 	    TweenService:Create(TopFrame:FindFirstChild("Notification").Insides.Message, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
