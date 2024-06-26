@@ -477,15 +477,6 @@ function CreatePlugin(PluginTable)
 end
 
 InstallButton.MouseButton1Down:Connect(function()
-
-	function JSon:Encode(Table)
-		return game:GetService("HttpService"):JSONEncode(Table)
-	end
-
-	function JSon:Decode(Table)
-		return game:GetService("HttpService"):JSONDecode(Table)
-	end
-
 	if TextBox.Text == "" or TextBox.Text == " " then
 		Notification:Create("Oops!", "Please enter a valid table.", 5)
 	else
@@ -510,16 +501,23 @@ InstallButton.MouseButton1Down:Connect(function()
 			local TableContents = loadstring(TextBox.Text)()
 
 			if (TableContents.PluginName) and (TableContents.PluginLogo) and (TableContents.PluginCreator) and (TableContents.Scripts) then
-				print(tostring(TableContents.PluginName))
-				if isfile("VexHub/Plugins/"..TableContents.PluginName..".vexp") then
-					writefile("VexHub/Plugins/"..TableContents.PluginName..".vexp", JSon:Encode(TextBox.Text))
-					Notification:Create("Plugin overwritten!", "Overwritten existed plugin! plugin is in your exploits workspace.", 5)
+				if TableContents.PluginName == "" or TableContents.PluginName == " " then
+					Notification:Create("Oops!", "Please enter a valid PluginName that contains something.", 5)
+				elseif TableContents.PluginLogo == "" or TableContents.PluginLogo == " " then
+					Notification:Create("Oops!", "Please enter a valid PluginLogo that contains something.", 5)
+				elseif TableContents.PluginCreator == "" or TableContents.PluginCreator == " " then
+					Notification:Create("Oops!", "Please enter a valid PluginCreator that contains something.", 5)
 				else
-					writefile("VexHub/Plugins/"..TableContents.PluginName..".vexp", JSon:Encode(TextBox.Text))
-
-					CreatePlugin(TableContents)
-					table.insert(Table.Plugins, TableContents)
-					Notification:Create("Plugin saved!", "Saved plugin successfully! Plugin is in your exploits workspace.", 5)
+					if isfile("VexHub/Plugins/"..TableContents.PluginName..".vexp") then
+						writefile("VexHub/Plugins/"..TableContents.PluginName..".vexp", tostring(TextBox.Text))
+						Notification:Create("Plugin overwritten!", "Overwritten existed plugin! plugin is in your exploits workspace.", 5)
+					else
+						writefile("VexHub/Plugins/"..TableContents.PluginName..".vexp", tostring(TextBox.Text))
+	
+						CreatePlugin(TableContents)
+						table.insert(Table.Plugins, TableContents)
+						Notification:Create("Plugin saved!", "Saved plugin successfully! Plugin is in your exploits workspace.", 5)
+					end
 				end
 			else
 				Notification:Create("Missing requirements.", "A missing metadata found in the Table to be a plugin. Go to VexConsole to view the error.")
