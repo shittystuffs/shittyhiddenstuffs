@@ -1,5 +1,20 @@
 -- V31nc : GUI to LUA V1
 
+local Table = _G.Table
+local Player = game:GetService("Players").LocalPlayer
+local TweenService = game:GetService("TweenService")
+local AnimationLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/shittystuffs/shittyhiddenstuffs/main/AnimationLibrary"))()
+local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/shittystuffs/shittyhiddenstuffs/main/NotificationLibrary"))()
+local Message = loadstring(game:HttpGet("https://raw.githubusercontent.com/V31nc/On-Discord/Created/VexConsole"))()
+local ClickSound = Table.GuiStatus.ClickSound
+
+function StringToColor3(ToConvert)
+	local ColorString = tostring(ToConvert)
+	local ColorR, ColorG, ColorB = ColorString:match("(%d+), (%d+), (%d+)")
+	ColorR, ColorG, ColorB = tonumber(ColorR),tonumber(ColorG),tonumber(ColorB)
+	return ColorR/255,ColorG/255,ColorB/255
+end
+
 -- Instances:
 
 local PluginsTemplate = Instance.new("Frame")
@@ -52,12 +67,13 @@ local UIListLayout_10 = Instance.new("UIListLayout")
 --Properties:
 
 PluginsTemplate.Name = "PluginsTemplate"
-PluginsTemplate.Parent = StarterGui.VexHubFolder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Pages
+PluginsTemplate.Parent = game:GetService("CoreGui"):WaitForChild("VexHubFolder").VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Pages
 PluginsTemplate.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 PluginsTemplate.BackgroundTransparency = 1.000
 PluginsTemplate.BorderColor3 = Color3.fromRGB(0, 0, 0)
 PluginsTemplate.BorderSizePixel = 0
 PluginsTemplate.Size = UDim2.new(1, 0, 1, 0)
+PluginsTemplate.Visible = false
 
 UIListLayout.Parent = PluginsTemplate
 UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
@@ -76,7 +92,7 @@ SectionInfo.Position = UDim2.new(0.222222224, 0, 0.125, 0)
 SectionInfo.Size = UDim2.new(0.949999988, 0, 0, 20)
 
 UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke.Color = Color3.fromRGB(255, 255, 255)
+UIStroke.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
 UIStroke.Thickness = 0.700
 UIStroke.Transparency = 0.800
 UIStroke.Parent = SectionInfo
@@ -99,7 +115,7 @@ SectionName.BorderColor3 = Color3.fromRGB(0, 0, 0)
 SectionName.BorderSizePixel = 0
 SectionName.LayoutOrder = 2
 SectionName.Size = UDim2.new(0, 0, 0, 20)
-SectionName.Font = Enum.Font.GothamMedium
+SectionName.Font = Enum.Font[Table.GuiSettings.GuiFont.Medium]
 SectionName.Text = "Required Accessories"
 SectionName.TextColor3 = Color3.fromRGB(255, 255, 255)
 SectionName.TextSize = 13.000
@@ -134,7 +150,7 @@ ScriptInfo.Position = UDim2.new(0.579334199, 0, 0.0263157897, 0)
 ScriptInfo.Size = UDim2.new(0, 130, 0, 155)
 
 UIStroke_2.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_2.Color = Color3.fromRGB(255, 255, 255)
+UIStroke_2.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
 UIStroke_2.Thickness = 0.700
 UIStroke_2.Transparency = 0.800
 UIStroke_2.Parent = ScriptInfo
@@ -173,13 +189,13 @@ Execute.BorderSizePixel = 0
 Execute.LayoutOrder = 1
 Execute.Position = UDim2.new(0.329166681, 0, 0, 0)
 Execute.Size = UDim2.new(0, 100, 0, 18)
-Execute.Font = Enum.Font.GothamMedium
+Execute.Font = Enum.Font[Table.GuiSettings.GuiFont.Medium]
 Execute.Text = "Execute"
 Execute.TextColor3 = Color3.fromRGB(255, 255, 255)
 Execute.TextSize = 12.000
 
 UIStroke_3.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_3.Color = Color3.fromRGB(255, 255, 255)
+UIStroke_3.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
 UIStroke_3.Thickness = 0.700
 UIStroke_3.Transparency = 0.800
 UIStroke_3.Parent = Execute
@@ -202,7 +218,7 @@ UICorner_4.CornerRadius = UDim.new(0.400000006, 0)
 UICorner_4.Parent = Play
 
 UIStroke_4.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_4.Color = Color3.fromRGB(255, 255, 255)
+UIStroke_4.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
 UIStroke_4.Thickness = 0.700
 UIStroke_4.Transparency = 0.800
 UIStroke_4.Parent = Play
@@ -217,7 +233,7 @@ ScriptDetails.LayoutOrder = 1
 ScriptDetails.Position = UDim2.new(0.0384615399, 0, 0.138888896, 0)
 ScriptDetails.RichText = true
 ScriptDetails.Size = UDim2.new(0, 120, 0, 123)
-ScriptDetails.Font = Enum.Font.Gotham
+ScriptDetails.Font = Enum.Font[Table.GuiSettings.GuiFont.Regular]
 ScriptDetails.Text = "<b><font size=\"14\">ScriptName</font></b>\\n<font size=\"8\">By: CreatorName</font>\\n\\n<b><font size=\"10\">Description:</font></b>\\n<font size=\"8\">ScriptDescription</font>\\n\\n<font size=\"8\">RigType: <b>Any</b>\\nGame: <b>Universal</b></font>"
 ScriptDetails.TextColor3 = Color3.fromRGB(255, 255, 255)
 ScriptDetails.TextSize = 12.000
@@ -276,7 +292,7 @@ TextBox.BorderSizePixel = 0
 TextBox.Position = UDim2.new(0.0333333351, 0, 0, 0)
 TextBox.Size = UDim2.new(0.949999988, 0, 1, 0)
 TextBox.ClearTextOnFocus = false
-TextBox.Font = Enum.Font.Gotham
+TextBox.Font = Enum.Font[Table.GuiSettings.GuiFont.Regular]
 TextBox.PlaceholderText = "Search Scripts"
 TextBox.Text = ""
 TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -292,7 +308,7 @@ UIListLayout_7.VerticalAlignment = Enum.VerticalAlignment.Center
 UIListLayout_7.Padding = UDim.new(0, 5)
 
 UIStroke_5.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_5.Color = Color3.fromRGB(255, 255, 255)
+UIStroke_5.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
 UIStroke_5.Thickness = 0.700
 UIStroke_5.Transparency = 0.800
 UIStroke_5.Parent = TextBoxParent
@@ -310,7 +326,7 @@ SearchButton.Size = UDim2.new(0, 20, 0, 20)
 SearchButton.Image = "http://www.roblox.com/asset/?id=17633536608"
 
 UIStroke_6.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_6.Color = Color3.fromRGB(255, 255, 255)
+UIStroke_6.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
 UIStroke_6.Thickness = 0.700
 UIStroke_6.Transparency = 0.800
 UIStroke_6.Parent = SearchButton
@@ -329,7 +345,7 @@ Scripts.Position = UDim2.new(0, 0, 0.316666663, 0)
 Scripts.Size = UDim2.new(0, 180, 0, 128)
 
 UIStroke_7.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_7.Color = Color3.fromRGB(255, 255, 255)
+UIStroke_7.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
 UIStroke_7.Thickness = 0.700
 UIStroke_7.Transparency = 0.800
 UIStroke_7.Parent = Scripts
@@ -365,7 +381,7 @@ ScriptButtonTemplate.ImageTransparency = 0.800
 ScriptButtonTemplate.ScaleType = Enum.ScaleType.Fit
 
 UIStroke_8.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_8.Color = Color3.fromRGB(255, 255, 255)
+UIStroke_8.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
 UIStroke_8.Thickness = 0.700
 UIStroke_8.Transparency = 0.800
 UIStroke_8.Parent = ScriptButtonTemplate
@@ -379,7 +395,7 @@ ScriptName.BorderSizePixel = 0
 ScriptName.Position = UDim2.new(5.75803369e-07, 0, 0, 0)
 ScriptName.RichText = true
 ScriptName.Size = UDim2.new(0.899999976, 0, 0.949999988, 0)
-ScriptName.Font = Enum.Font.GothamMedium
+ScriptName.Font = Enum.Font[Table.GuiSettings.GuiFont.Medium]
 ScriptName.Text = "Fly Gui"
 ScriptName.TextColor3 = Color3.fromRGB(255, 255, 255)
 ScriptName.TextSize = 10.000
@@ -404,3 +420,54 @@ UIListLayout_10.HorizontalAlignment = Enum.HorizontalAlignment.Center
 UIListLayout_10.SortOrder = Enum.SortOrder.LayoutOrder
 UIListLayout_10.VerticalAlignment = Enum.VerticalAlignment.Center
 UIListLayout_10.Padding = UDim.new(0, 5)
+
+for i, v in PluginsTemplate:GetDescendants() do
+    if v:IsA("ImageLabel") or v:IsA("ImageButton") then
+        v.BackgroundTransparency = 1
+        v.ImageTransparency = 1
+    elseif v:IsA("UIStroke") then
+        v.Transparency = 1
+    elseif v:IsA("TextBox") or v:IsA("TextLabel") or v:IsA("TextButton") then
+        v.TextTransparency = 1
+        v.BackgroundTransparency = 1
+    elseif v:IsA("Frame") then
+        v.BackgroundTransparency = 1
+    elseif v:IsA("ScrollingFrame") then
+        v.BackgroundTransparency = 1
+        v.ScrollBarImageTransparency = 1
+    end
+end
+
+function CreateNewPlugin(PluginTable)
+  local Template = PluginsTemplate:Clone()
+
+  Template.Name = "Plugin_"..PluginTable.PluginName
+  Template.Parent = game:GetService("CoreGui"):WaitForChild("VexHubFolder").VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Pages
+
+	Template.BottomFrame.LeftFrame.SearchFrame.SearchButton.MouseButton1Down:Connect(function()
+		pcall(ClickSound)
+		for _, Button in Template.BottomFrame.LeftFrame.Scripts.ScrollingFrame:GetChildren() do
+			if Button:IsA("ImageButton") then
+				local SearchingFor = string.lower(Template.BottomFrame.LeftFrame.SearchFrame.TextBoxParent.TextBox.Text)
+				local ButtonName = string.lower(Button.ScriptName.Text)
+				local ButtonId = Button.ScriptId.Text
+
+				if SearchingFor == "" and Button.Name ~= "ScriptButtonTemplate" then
+					Button.Visible = true
+				else
+					if string.find(ButtonName, SearchingFor) and SearchingFor ~= "" and Button.Name ~= "ScriptButtonTemplate" then
+						Button.Visible = true
+					elseif string.find(tostring(ButtonId), tostring(SearchingFor)) and SearchingFor ~= "" and Button.Name ~= "ScriptButtonTemplate" then
+						Button.Visible = true
+					else
+						Button.Visible = false
+					end
+				end
+			end
+		end
+	end)
+
+  for ScriptName, _ in PluginTable.Scripts do
+    
+  end
+end
