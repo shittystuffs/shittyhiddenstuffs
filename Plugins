@@ -512,7 +512,7 @@ InstallButton.MouseButton1Down:Connect(function()
 					Notification:Create("Plugin saved!", "Saved plugin successfully! Plugin is in your exploits workspace.", 5)
 				end
 			else
-				Notification:Create("Missing requirements.", "A missing requirement found in the Table to be a plugin. Go to VexConsole to view the error.")
+				Notification:Create("Missing requirements.", "A missing metadata found in the Table to be a plugin. Go to VexConsole to view the error.")
 				local Requirements = "MISSING METADATA:"
 
 				function CheckForRequirement(Name)
