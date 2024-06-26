@@ -460,7 +460,7 @@ function CreatePlugin(PluginTable)
 			if Success then
 				Template:Destroy()
 				for TableNumber, _ in Table.Plugins do
-					if TableNumber.PluginName == PluginTable.PluginName then
+					if Table.Plugins[TableNumber].PluginName == PluginTable.PluginName then
 						table.remove(Table.Plugins, TableNumber)
 					end
 				end
