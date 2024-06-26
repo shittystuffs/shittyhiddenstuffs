@@ -510,6 +510,7 @@ InstallButton.MouseButton1Down:Connect(function()
 			local TableContents = loadstring(TextBox.Text)()
 
 			if (TableContents.PluginName) and (TableContents.PluginLogo) and (TableContents.PluginCreator) and (TableContents.Scripts) then
+				print(tostring(TableContents.PluginName))
 				if isfile("VexHub/Plugins/"..TableContents.PluginName..".vexp") then
 					writefile("VexHub/Plugins/"..TableContents.PluginName..".vexp", JSon:Encode(TextBox.Text))
 					Notification:Create("Plugin overwritten!", "Overwritten existed plugin! plugin is in your exploits workspace.", 5)
