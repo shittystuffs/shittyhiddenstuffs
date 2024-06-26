@@ -448,9 +448,9 @@ function CreateNewPlugin(PluginTable)
 
 		if success then
 			if result == 13 then --checks if image id is decal
-		       		DragImage.Image = "https://www.roblox.com/asset-thumbnail/image?assetId="..WallpaperPath.."&width=420&height=420&format=png"
+		       		return "https://www.roblox.com/asset-thumbnail/image?assetId="..Id.."&width=420&height=420&format=png"
 		   	elseif result == 1 then
-				DragImage.Image = "rbxassetid://".._G.settingsTable.Wallpaper
+				return "rbxassetid://"..Id
 			end
 		end
 	end
