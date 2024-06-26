@@ -445,13 +445,13 @@ end
 function CreateNewPlugin(PluginTable)
 	function ReturnIdAsImage(Id)
 		local success, result = pcall(function() 
-		   return MarketPlaceService:GetProductInfo(tonumber(Id)).AssetTypeId
+			game:GetService("MarketplaceService"):GetProductInfo(tonumber(Id)).AssetTypeId
 		end)
 
 		if success then
-			if result == 13 then --checks if image id is decal
+			if game:GetService("MarketplaceService"):GetProductInfo(tonumber(Id)).AssetTypeId == 13 then
 		       		return "https://www.roblox.com/asset-thumbnail/image?assetId="..Id.."&width=420&height=420&format=png"
-		   	elseif result == 1 then
+		   	elseif game:GetService("MarketplaceService"):GetProductInfo(tonumber(Id)).AssetTypeId == 1 then
 				return "rbxassetid://"..Id
 			end
 		end
