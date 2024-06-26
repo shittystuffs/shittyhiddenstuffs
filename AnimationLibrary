@@ -312,7 +312,7 @@ Library.AppearTab = function(TabName)
 			wait(AnimationSpeed/4)
 			TweenService:Create(Tab.Info, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
 
-		elseif string.find(TabName, "Plugin") then
+		elseif string.find(TabName, "Plugin_") then
 			Tab.Visible = true
 			TweenService:Create(Tab.SectionInfo.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
 			TweenService:Create(Tab.SectionInfo.ImageLabel, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
@@ -557,7 +557,7 @@ Library.DisappearTab = function(TabName)
 			wait(AnimationSpeed)
 			Tab.Visible = false
 
-		elseif string.find(TabName, "Plugin") then
+		elseif string.find(TabName, "Plugin_") then
 			TweenService:Create(Tab.SectionInfo.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
 			TweenService:Create(Tab.SectionInfo.ImageLabel, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
 			TweenService:Create(Tab.SectionInfo.SectionName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
