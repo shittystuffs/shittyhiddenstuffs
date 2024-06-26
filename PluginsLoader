@@ -1,3 +1,5 @@
+print("PluginLoader executed")
+
 -- V31nc : GUI to LUA V1
 
 local Table = _G.Table
