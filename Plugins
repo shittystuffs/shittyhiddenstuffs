@@ -559,18 +559,10 @@ InstallButton.MouseButton1Down:Connect(function()
 					end
 
 					function CheckIfFunction(Function, ScriptName)
-						local success, result = pcall(function()
-							return type(pcall(Function))
-						end)
-					
-						if success then
-							if type(pcall(Function)) == "function" then
-								return true
-							else
-								ScriptMetadataRequirementsList = ScriptMetadataRequirementsList.."\nScripts."..ScriptName..".Script must be a function"
-								ScriptMetadataMeetsRequirements = false
-								return false
-							end
+						local FunctionString = tostring(Function)
+
+						if string.find(FunctionString, "function: 0x") then
+							return true
 						else
 							ScriptMetadataRequirementsList = ScriptMetadataRequirementsList.."\nScripts."..ScriptName..".Script must be a function"
 							ScriptMetadataMeetsRequirements = false
