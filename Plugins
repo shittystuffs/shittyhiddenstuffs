@@ -520,14 +520,51 @@ InstallButton.MouseButton1Down:Connect(function()
 					Notification:Create("Oops!", "Please enter a valid PluginCreator that contains something.", 5)
 				else
 					local ScriptMetadataMissing = 0
-					local Requirements = "Missing Metadata:"
+					local ScriptMetadataMeetsRequirements = true
+					local ScriptMetadataMissingList = "Missing Metadata:"
+					local ScriptMetadataRequirementsList = "" 
+
 					function CheckIfPluginScriptHaveMetadata(Table, ScriptName, ToSearch)
 						if not (Table[ToSearch]) then
 							ScriptMetadataMissing += 1
-							Requirements = Requirements.."Missing "..ToSearch.." in "..ScriptName
+							ScriptMetadataMissingList = ScriptMetadataMissingList.."Missing "..ToSearch.." in "..ScriptName
 							return false
 						else
 							return true
+						end
+					end
+
+					function CheckIfGameExisted(Id, ScriptName)
+						local Success, Error = pcall(function()
+							if (game:GetService("MarketplaceService"):GetProductInfo(tonumber(Id)).AssetTypeId) then end
+						end)
+
+						if Success then
+							if game:GetService("MarketplaceService"):GetProductInfo(tonumber(Id)).AssetTypeId == 9 then
+								return true
+							else
+								ScriptMetadataRequirementsList = ScriptMetadataRequirementsList.."\nScripts."..ScriptName..".GameId must be the game place Id not the GameId of the game"
+								ScriptMetadataMeetsRequirements = false
+								return false
+							end
+						else
+							ScriptMetadataRequirementsList = ScriptMetadataRequirementsList.."\nScripts."..ScriptName..".GameId must be a valid PlaceId"
+							ScriptMetadataMeetsRequirements = false
+							return false
+						end
+					end
+
+					function CheckIfFunction(Function, ScriptName)
+						local success, result = pcall(function()
+							return type(loadstring(Function)()) == "function"
+						end)
+					
+						if Success == true then
+							return true
+						else
+							ScriptMetadataRequirementsList = ScriptMetadataRequirementsList.."\nScripts."..ScriptName..".Script must be a function"
+							ScriptMetadataMeetsRequirements = false
+							return false
 						end
 					end
 
@@ -537,30 +574,41 @@ InstallButton.MouseButton1Down:Connect(function()
 						CheckIfPluginScriptHaveMetadata(TableContents.Scripts[ScriptName], ScriptName, "GameId")
 						CheckIfPluginScriptHaveMetadata(TableContents.Scripts[ScriptName], ScriptName, "RigType")
 						CheckIfPluginScriptHaveMetadata(TableContents.Scripts[ScriptName], ScriptName, "Script")
-					end
+						if (TableContents.Scripts[ScriptName].GameId) then
+							CheckIfGameExisted(TableContents.Scripts[ScriptName].GameId, ScriptName)
+						end
 
-					if ScriptMetadataMissing == 0 then
+						if (TableContents.Scripts[ScriptName].Script) then
+							CheckIfFunction(TableContents.Scripts[ScriptName].Script, ScriptName)
+						end
+					end
+					wait()
+
+					if ScriptMetadataMissing ~= 0 then
+						Notification:Create("Missing script metadata!", "A missing metadata found in the Table to be a plugin. Go to VexConsole to view the missing metadata.", 5)
+						Message:Error(ScriptMetadataMissingList..'\n\nVisit <font color="rgb(76, 188, 255)">https://github.com/V31nc/2642/wiki/Plugins</font> to learn more about Plugins.')
+					elseif ScriptMetadataMeetsRequirements == false then
+						Notification:Create("Metadata does not meet requirements.", "A metadata that does not meet requirements found in the Table to be a plugin. Go to VexConsole to view the metadata requirements.", 5)
+						Message:Error(ScriptMetadataMissingList..'\n\nVisit <font color="rgb(76, 188, 255)">https://github.com/V31nc/2642/wiki/Plugins</font> to learn more about Plugins.')
+					else
 						if isfile("VexHub/Plugins/"..TableContents.PluginName..".vexp") then
 							writefile("VexHub/Plugins/"..TableContents.PluginName..".vexp", TextBox.Text)
 							Notification:Create("Plugin overwritten!", "Overwritten existed plugin! plugin is in your exploits workspace.", 5)
 						else
 							writefile("VexHub/Plugins/"..TableContents.PluginName..".vexp", TextBox.Text)
-	
+		
 							CreatePlugin(TableContents)
 							if (CreateNewVexPlugin) then
 								CreateNewVexPlugin(TableContents)
 							end
-	
+		
 							table.insert(Table.Plugins, TableContents)
 							Notification:Create("Plugin saved!", "Saved plugin successfully! Plugin is in your exploits workspace.", 5)
 						end
-					else
-						Notification:Create("Missing metadata.", "A missing metadata found in the Table to be a plugin. Go to VexConsole to view the missing metadata error.", 5)
-						Message:Error(Requirements..'\n\nVisit <font color="rgb(76, 188, 255)">https://github.com/V31nc/2642/wiki/Plugins</font> to learn more about Plugins.')
 					end
 				end
 			else
-				Notification:Create("Missing metadata.", "A missing metadata found in the Table to be a plugin. Go to VexConsole to view the missing metadata error.", 5)
+				Notification:Create("Missing metadata.", "A missing metadata found in the Table to be a plugin. Go to VexConsole to view the missing metadata.", 5)
 				local Requirements = "MISSING METADATA:"
 
 				function CheckForRequirement(Name)
