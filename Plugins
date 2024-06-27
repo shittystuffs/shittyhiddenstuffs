@@ -519,19 +519,44 @@ InstallButton.MouseButton1Down:Connect(function()
 				elseif TableContents.PluginCreator == "" or TableContents.PluginCreator == " " then
 					Notification:Create("Oops!", "Please enter a valid PluginCreator that contains something.", 5)
 				else
-					if isfile("VexHub/Plugins/"..TableContents.PluginName..".vexp") then
-						writefile("VexHub/Plugins/"..TableContents.PluginName..".vexp", TextBox.Text)
-						Notification:Create("Plugin overwritten!", "Overwritten existed plugin! plugin is in your exploits workspace.", 5)
-					else
-						writefile("VexHub/Plugins/"..TableContents.PluginName..".vexp", TextBox.Text)
-
-						CreatePlugin(TableContents)
-						if (CreateNewVexPlugin) then
-							CreateNewVexPlugin(TableContents)
+					local ScriptMetadataMissing = 0
+					local Requirements = "Missing Metadata:"
+					function CheckIfPluginScriptHaveMetadata(Table, ScriptName, ToSearch)
+						if not (Table[ToSearch]) then
+							ScriptMetadataMissing += 1
+							Requirements = Requirements.."Missing "..ToSearch.." in "..ScriptName
+							return false
+						else
+							return true
 						end
+					end
 
-						table.insert(Table.Plugins, TableContents)
-						Notification:Create("Plugin saved!", "Saved plugin successfully! Plugin is in your exploits workspace.", 5)
+					for ScriptName, _ in TableContents.Scripts do
+						CheckIfPluginScriptHaveMetadata(TableContents.Scripts[ScriptName], ScriptName, "Owner")
+						CheckIfPluginScriptHaveMetadata(TableContents.Scripts[ScriptName], ScriptName, "Description")
+						CheckIfPluginScriptHaveMetadata(TableContents.Scripts[ScriptName], ScriptName, "GameId")
+						CheckIfPluginScriptHaveMetadata(TableContents.Scripts[ScriptName], ScriptName, "RigType")
+						CheckIfPluginScriptHaveMetadata(TableContents.Scripts[ScriptName], ScriptName, "Script")
+					end
+
+					if ScriptMetadataMissing == 0 then
+						if isfile("VexHub/Plugins/"..TableContents.PluginName..".vexp") then
+							writefile("VexHub/Plugins/"..TableContents.PluginName..".vexp", TextBox.Text)
+							Notification:Create("Plugin overwritten!", "Overwritten existed plugin! plugin is in your exploits workspace.", 5)
+						else
+							writefile("VexHub/Plugins/"..TableContents.PluginName..".vexp", TextBox.Text)
+	
+							CreatePlugin(TableContents)
+							if (CreateNewVexPlugin) then
+								CreateNewVexPlugin(TableContents)
+							end
+	
+							table.insert(Table.Plugins, TableContents)
+							Notification:Create("Plugin saved!", "Saved plugin successfully! Plugin is in your exploits workspace.", 5)
+						end
+					else
+						Notification:Create("Missing metadata.", "A missing metadata found in the Table to be a plugin. Go to VexConsole to view the missing metadata error.", 5)
+						Message:Error(Requirements..'\n\nVisit <font color="rgb(76, 188, 255)">https://github.com/V31nc/2642/wiki/Plugins</font> to learn more about Plugins.')
 					end
 				end
 			else
