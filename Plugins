@@ -560,11 +560,11 @@ InstallButton.MouseButton1Down:Connect(function()
 
 					function CheckIfFunction(Function, ScriptName)
 						local success, result = pcall(function()
-							return type(loadstring(Function))
+							return type(pcall(Function))
 						end)
 					
 						if success then
-							if type(loadstring(Function)) == "function" then
+							if type(pcall(Function)) == "function" then
 								return true
 							else
 								ScriptMetadataRequirementsList = ScriptMetadataRequirementsList.."\nScripts."..ScriptName..".Script must be a function"
