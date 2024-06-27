@@ -522,7 +522,7 @@ InstallButton.MouseButton1Down:Connect(function()
 					local ScriptMetadataMissing = 0
 					local ScriptMetadataMeetsRequirements = true
 					local ScriptMetadataMissingList = "Missing Metadata:"
-					local ScriptMetadataRequirementsList = "" 
+					local ScriptMetadataRequirementsList = "Metadata that does not meet requirements:" 
 
 					function CheckIfPluginScriptHaveMetadata(Table, ScriptName, ToSearch)
 						if not (Table[ToSearch]) then
@@ -589,7 +589,7 @@ InstallButton.MouseButton1Down:Connect(function()
 						Message:Error(ScriptMetadataMissingList..'\n\nVisit <font color="rgb(76, 188, 255)">https://github.com/V31nc/2642/wiki/Plugins</font> to learn more about Plugins.')
 					elseif ScriptMetadataMeetsRequirements == false then
 						Notification:Create("Metadata does not meet requirements.", "A metadata that does not meet requirements found in the Table to be a plugin. Go to VexConsole to view the metadata requirements.", 5)
-						Message:Error(ScriptMetadataMissingList..'\n\nVisit <font color="rgb(76, 188, 255)">https://github.com/V31nc/2642/wiki/Plugins</font> to learn more about Plugins.')
+						Message:Error(ScriptMetadataRequirementsList..'\n\nVisit <font color="rgb(76, 188, 255)">https://github.com/V31nc/2642/wiki/Plugins</font> to learn more about Plugins.')
 					else
 						if isfile("VexHub/Plugins/"..TableContents.PluginName..".vexp") then
 							writefile("VexHub/Plugins/"..TableContents.PluginName..".vexp", TextBox.Text)
