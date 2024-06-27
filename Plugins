@@ -563,7 +563,7 @@ InstallButton.MouseButton1Down:Connect(function()
 							return type(loadstring(Function))
 						end)
 					
-						if Success == true then
+						if success then
 							if type(loadstring(Function)) == "function" then
 								return true
 							else
