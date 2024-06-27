@@ -535,32 +535,42 @@ InstallButton.MouseButton1Down:Connect(function()
 					end
 
 					function CheckIfGameExisted(Id, ScriptName)
-						local Success, Error = pcall(function()
-							if (game:GetService("MarketplaceService"):GetProductInfo(tonumber(Id)).AssetTypeId) then end
-						end)
-
-						if Success then
-							if game:GetService("MarketplaceService"):GetProductInfo(tonumber(Id)).AssetTypeId == 9 then
-								return true
+						if tonumber(Id) == 0 then
+							return true
+						else
+							local Success, Error = pcall(function()
+								if (game:GetService("MarketplaceService"):GetProductInfo(tonumber(Id)).AssetTypeId) then end
+							end)
+	
+							if Success then
+								if game:GetService("MarketplaceService"):GetProductInfo(tonumber(Id)).AssetTypeId == 9 then
+									return true
+								else
+									ScriptMetadataRequirementsList = ScriptMetadataRequirementsList.."\nScripts."..ScriptName..".GameId must be the game place Id not the GameId of the game"
+									ScriptMetadataMeetsRequirements = false
+									return false
+								end
 							else
-								ScriptMetadataRequirementsList = ScriptMetadataRequirementsList.."\nScripts."..ScriptName..".GameId must be the game place Id not the GameId of the game"
+								ScriptMetadataRequirementsList = ScriptMetadataRequirementsList.."\nScripts."..ScriptName..".GameId must be a valid PlaceId"
 								ScriptMetadataMeetsRequirements = false
 								return false
 							end
-						else
-							ScriptMetadataRequirementsList = ScriptMetadataRequirementsList.."\nScripts."..ScriptName..".GameId must be a valid PlaceId"
-							ScriptMetadataMeetsRequirements = false
-							return false
 						end
 					end
 
 					function CheckIfFunction(Function, ScriptName)
 						local success, result = pcall(function()
-							return type(loadstring(Function)()) == "function"
+							return type(loadstring(Function))
 						end)
 					
 						if Success == true then
-							return true
+							if type(loadstring(Function)) == "function" then
+								return true
+							else
+								ScriptMetadataRequirementsList = ScriptMetadataRequirementsList.."\nScripts."..ScriptName..".Script must be a function"
+								ScriptMetadataMeetsRequirements = false
+								return false
+							end
 						else
 							ScriptMetadataRequirementsList = ScriptMetadataRequirementsList.."\nScripts."..ScriptName..".Script must be a function"
 							ScriptMetadataMeetsRequirements = false
