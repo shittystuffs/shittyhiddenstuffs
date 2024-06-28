@@ -1,5 +1,3 @@
-print("PluginLoader executed")
-
 -- V31nc : GUI to LUA V1
 
 local Table = _G.Table
@@ -614,5 +612,7 @@ end
 
 -- Loader:
 for PluginNumber, _ in Table.Plugins do
-	CreateNewVexPlugin(Table.Plugins[PluginNumber])
+	coroutine.wrap(function()
+		CreateNewVexPlugin(Table.Plugins[PluginNumber])
+	end)()
 end
