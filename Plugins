@@ -635,5 +635,7 @@ end)
 
 -- Loader:
 for _, Plugins in Table.Plugins do
-	CreatePlugin(Plugins)
+	coroutine.wrap(function()
+		CreatePlugin(Plugins)
+	end)()
 end
