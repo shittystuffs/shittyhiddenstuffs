@@ -495,7 +495,13 @@ getgenv().CreateNewVexPlugin = function(PluginTable)
 			Table.GuiStatus.OnGoingAnimation = true
 			AnimationLibrary.DisappearTab(Table.GuiStatus.ActivePage)
 			wait(Table.GuiSettings.AnimationSpeed)
-			ResetStatus(Table.GuiStatus.ActivePage)
+			Table.GuiStatus.ActiveScript = function()
+			end
+			Table.GuiStatus.FavoriteScriptFunction = function()
+			end
+			Table.GuiStatus.JoinGameFunction = function()
+			end
+			Template.BottomFrame.ScriptInfo.ScriptDetails.Text = '<b><font size="14">ScriptName</font></b>\n<font size="8">By: CreatorName</font>\n\n<b><font size="10">Description:</font></b>\n<font size="8">ScriptDescription</font>\n\n<font size="8">RigType: <b>Any</b>\nGame: <b>Universal</b></font>'
 			AnimationLibrary.AppearTab("Plugin_"..PluginTable.PluginName)
 			wait(Table.GuiSettings.AnimationSpeed)
 			Table.GuiStatus.OnGoingAnimation = false
