@@ -1,4 +1,5 @@
 local Table = {
+  VexHubBypasser = "VHubDeveloperAlt",
 }
 
 return Table
