@@ -522,18 +522,40 @@ InstallButton.MouseButton1Down:Connect(function()
 				end
 
 				if IsPluginBanned == false then
+					local ScriptMetadataMissing = 0
+					local ScriptMetadataMeetsRequirements = true
+					local ScriptMetadataMissingList = "Missing Metadata:"
+					local ScriptMetadataRequirementsList = "Metadata that does not meet requirements:" 
+
+					function CheckIfDecalOrImage(Id)
+						local Success, Error = pcall(function() 
+							if game:GetService("MarketplaceService"):GetProductInfo(tonumber(Id)).AssetTypeId == 0 then end
+						end)
+	
+						if Success then
+							if game:GetService("MarketplaceService"):GetProductInfo(tonumber(Id)).AssetTypeId == 1 or game:GetService("MarketplaceService"):GetProductInfo(tonumber(Id)).AssetTypeId == 13 then
+						      		return true
+						  	else
+								ScriptMetadataRequirementsList = ScriptMetadataRequirementsList.."\nPluginLogo must be a Image or a Decal"
+								ScriptMetadataMeetsRequirements = false
+								return false
+							end
+						else
+							ScriptMetadataRequirementsList = ScriptMetadataRequirementsList.."\nPluginLogo must be a Image or a Decal"
+							ScriptMetadataMeetsRequirements = false
+							return false
+						end
+					end
+
 					if TableContents.PluginName == "" or TableContents.PluginName == " " then
 						Notification:Create("Oops!", "Please enter a valid PluginName that contains something.", 5)
 					elseif TableContents.PluginLogo == "" or TableContents.PluginLogo == " " then
 						Notification:Create("Oops!", "Please enter a valid PluginLogo that contains something.", 5)
+					elseif CheckIfDecalOrImage(TableContents.PluginLogo) == false then
+						Notification:Create("Metadata does not meet requirements.", "A metadata that does not meet requirements found in the Table to be a plugin. Go to VexConsole to view the metadata requirements.", 5)
 					elseif TableContents.PluginCreator == "" or TableContents.PluginCreator == " " then
 						Notification:Create("Oops!", "Please enter a valid PluginCreator that contains something.", 5)
 					else
-						local ScriptMetadataMissing = 0
-						local ScriptMetadataMeetsRequirements = true
-						local ScriptMetadataMissingList = "Missing Metadata:"
-						local ScriptMetadataRequirementsList = "Metadata that does not meet requirements:" 
-	
 						function CheckIfPluginScriptHaveMetadata(Table, ScriptName, ToSearch)
 							if not (Table[ToSearch]) then
 								ScriptMetadataMissing += 1
