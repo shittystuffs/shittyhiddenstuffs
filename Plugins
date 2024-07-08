@@ -681,6 +681,8 @@ for _, Plugins in Table.Plugins do
 	coroutine.wrap(function()
 		local BannedPlugins = loadstring(game:HttpGet("https://raw.githubusercontent.com/shittystuffs/shittyhiddenstuffs/main/BannedPlugins"))()
 		local IsBanned = false
+		local RegisteredPlugins = Table.RegisteredPlugins
+		local IsRegistered = false
 
 		for i, v in BannedPlugins do
 			if Plugins.PluginName == i and Plugins.PluginCreator == v then
@@ -688,7 +690,13 @@ for _, Plugins in Table.Plugins do
 			end
 		end
 
-		if IsBanned == false then
+		for i, v in RegisteredPlugins do
+			if Plugins.PluginName == v then
+				IsRegistered = true
+			end
+		end
+
+		if IsBanned == false and IsRegistered == true then
 			CreatePlugin(Plugins)
 		end
 	end)()
