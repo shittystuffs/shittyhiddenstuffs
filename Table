@@ -183,6 +183,8 @@ _G.Table = {
 
 	Plugins = {},
 
+	RegisteredPlugins = {},
+
 	SavedScripts = {},
 
 	Favorites = {},
