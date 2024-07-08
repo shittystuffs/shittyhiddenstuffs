@@ -71,6 +71,7 @@ Plugins.BackgroundTransparency = 1.000
 Plugins.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Plugins.BorderSizePixel = 0
 Plugins.Size = UDim2.new(1, 0, 1, 0)
+Plugins.Visible = false
 
 SectionInfo.Name = "SectionInfo"
 SectionInfo.Parent = Plugins
