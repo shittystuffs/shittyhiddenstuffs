@@ -480,6 +480,8 @@ function CreatePlugin(PluginTable)
 end
 
 InstallButton.MouseButton1Down:Connect(function()
+	Notification:Create("Installing...", "Installing plugin. Please wait...", 5)
+
 	local JSon = {}
 	function JSon:Encode(Table)
 		return game:GetService("HttpService"):JSONEncode(Table)
