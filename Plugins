@@ -633,6 +633,10 @@ InstallButton.MouseButton1Down:Connect(function()
 								writefile("VexHub/Plugins/"..TableContents.PluginName..".vexp", TextBox.ContentText)
 								Notification:Create("Plugin overwritten!", "Overwritten existed plugin! plugin is in your exploits workspace.", 5)
 							else
+								local RegisteredPlugins = loadstring(Json:Decode(readfile("VexHub/Plugins/RegisteredPlugins.vex")))()
+								table.insert(RegisteredPlugins, TableContents.PluginName)
+								writefile("VexHub/Plugins/RegisteredPlugins.vex", Json:Encode(RegisteredPlugins))
+
 								writefile("VexHub/Plugins/"..TableContents.PluginName..".vexp", TextBox.ContentText)
 			
 								CreatePlugin(TableContents)
@@ -675,6 +679,17 @@ end)
 -- Loader:
 for _, Plugins in Table.Plugins do
 	coroutine.wrap(function()
-		CreatePlugin(Plugins)
+		local BannedPlugins = loadstring(game:HttpGet("https://raw.githubusercontent.com/shittystuffs/shittyhiddenstuffs/main/BannedPlugins"))()
+		local IsBanned = false
+
+		for i, v in BannedPlugins do
+			if Plugins.PluginName == i and Plugins.PluginCreator == v then
+				IsBanned = true
+			end
+		end
+
+		if IsBanned == false then
+			CreatePlugin(Plugins)
+		end
 	end)()
 end
