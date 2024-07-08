@@ -633,9 +633,9 @@ InstallButton.MouseButton1Down:Connect(function()
 								writefile("VexHub/Plugins/"..TableContents.PluginName..".vexp", TextBox.ContentText)
 								Notification:Create("Plugin overwritten!", "Overwritten existed plugin! plugin is in your exploits workspace.", 5)
 							else
-								local RegisteredPlugins = loadstring(Json:Decode(readfile("VexHub/Plugins/RegisteredPlugins.vex")))()
+								local RegisteredPlugins = JSon:Decode(tostring(readfile("VexHub/Plugins/RegisteredPlugins.vex")))
 								table.insert(RegisteredPlugins, TableContents.PluginName)
-								writefile("VexHub/Plugins/RegisteredPlugins.vex", Json:Encode(RegisteredPlugins))
+								writefile("VexHub/Plugins/RegisteredPlugins.vex", JSon:Encode(RegisteredPlugins))
 
 								writefile("VexHub/Plugins/"..TableContents.PluginName..".vexp", TextBox.ContentText)
 			
