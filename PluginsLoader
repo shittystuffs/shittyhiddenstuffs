@@ -617,8 +617,46 @@ getgenv().CreateNewVexPlugin = function(PluginTable)
 end
 
 -- Loader:
-for PluginNumber, _ in Table.Plugins do
+for _, Plugins in Table.Plugins do
 	coroutine.wrap(function()
-		CreateNewVexPlugin(Table.Plugins[PluginNumber])
+		local BannedPlugins = loadstring(game:HttpGet("https://raw.githubusercontent.com/shittystuffs/shittyhiddenstuffs/main/BannedPlugins"))()
+		local IsBanned = false
+
+		for i, v in BannedPlugins do
+			if Plugins.PluginName == i and Plugins.PluginCreator == v then
+				IsBanned = true
+			end
+		end
+
+		if IsBanned == true then
+			Notification:Create("Plugin banned!", 'The plugin "'..Plugins.PluginName..'" was banned from VexHub. Do not reinstall.', 5)
+			for _, FileName in listfiles("VexHub/Plugins") do
+				if string.find(FileName, ".vexp") then
+					local FileTableDecoded = nil
+					local JSon = {}
+					function JSon:Encode(Table)
+						return game:GetService("HttpService"):JSONEncode(Table)
+					end
+				
+					function JSon:Decode(Table)
+						return game:GetService("HttpService"):JSONDecode(Table)
+					end
+	
+					local Success, Error = pcall(function()
+						FileTableDecoded = JSon:Decode(readfile(FileName))
+					end)
+	
+					if Success then
+						if (FileTableDecoded.PluginName) and (FileTableDecoded.PluginCreator) then
+							if FileTableDecoded.PluginName == Plugins.PluginName and FileTableDecoded.PluginCreator == Plugins.PluginCreator then
+								delfile(FileName)
+							end
+						end
+					end
+				end
+			end
+		else
+			CreateNewVexPlugin(Plugins)
+		end
 	end)()
 end
