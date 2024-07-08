@@ -553,6 +553,7 @@ InstallButton.MouseButton1Down:Connect(function()
 						Notification:Create("Oops!", "Please enter a valid PluginLogo that contains something.", 5)
 					elseif CheckIfDecalOrImage(TableContents.PluginLogo) == false then
 						Notification:Create("Metadata does not meet requirements.", "A metadata that does not meet requirements found in the Table to be a plugin. Go to VexConsole to view the metadata requirements.", 5)
+						Message:Error(ScriptMetadataRequirementsList..'\n\nVisit <font color="rgb(76, 188, 255)">https://github.com/V31nc/2642/wiki/Plugins</font> to learn more about Plugins.')
 					elseif TableContents.PluginCreator == "" or TableContents.PluginCreator == " " then
 						Notification:Create("Oops!", "Please enter a valid PluginCreator that contains something.", 5)
 					else
