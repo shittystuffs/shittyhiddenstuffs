@@ -3,7 +3,7 @@
 local Table = _G.Table
 local Player = game:GetService("Players").LocalPlayer
 local TweenService = game:GetService("TweenService")
-local AnimationLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/shittystuffs/shittyhiddenstuffs/main/AnimationLibrary"))()
+local AnimationLibrary = Table.AnimationLibrary
 
 function StringToColor3(ToConvert)
 	local ColorString = tostring(ToConvert)
