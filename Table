@@ -34,7 +34,7 @@ _G.Table = {
 			NoDick = nil,
 			WithDick = nil,
 			WithDickAndPreCum = nil,
-		}
+		},
 		Name = "VexHub",
 		DiscordLink = "dsc.gg/vhub",
 		AreModeratorsAllowedToAnnounce = true,
