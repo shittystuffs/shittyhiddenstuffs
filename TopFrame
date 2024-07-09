@@ -3,7 +3,7 @@
 local Table = _G.Table
 local Player = game:GetService("Players").LocalPlayer
 local TweenService = game:GetService("TweenService")
-local AnimationLibrary = Table.AnimationLibrary
+local AnimationLibrary = nil
 
 function StringToColor3(ToConvert)
   local ColorString = tostring(ToConvert)
@@ -192,6 +192,13 @@ Logo.BorderSizePixel = 0
 Logo.Size = UDim2.new(1, 0, 1, 0)
 Logo.Image = Table.GuiStatus.BuffVexHub.NoDick
 Logo.ImageTransparency = 1
+
+coroutine.wrap(function()
+	repeat
+		wait()
+	until (Table.AnimationLibrary.Loaded)
+	AnimationLibrary = Table.AnimationLibrary
+end)()
 
 OpenButton.MouseButton1Down:Connect(function()
 	if Table.GuiStatus.OnGoingAnimation == false then
