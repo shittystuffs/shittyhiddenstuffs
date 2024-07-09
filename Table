@@ -194,7 +194,7 @@ _G.Table = {
 
 	Favorites = {},
 
-	AnimationLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/shittystuffs/shittyhiddenstuffs/main/AnimationLibrary"))(),
+	AnimationLibrary = {},
 
 	LocalPlayerFeatures = {
 		["WalkSpeed"] = {
