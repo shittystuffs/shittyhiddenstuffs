@@ -190,12 +190,13 @@ Logo.BackgroundTransparency = 1.000
 Logo.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Logo.BorderSizePixel = 0
 Logo.Size = UDim2.new(1, 0, 1, 0)
-Logo.Image = Table.GuiStatus.Logo
+Logo.Image = "rbxassetid://"..Table.GuiStatus.Logo
 Logo.ImageTransparency = 1
 
 OpenButton.MouseButton1Down:Connect(function()
 	if Table.GuiStatus.OnGoingAnimation == false then
 		if Table.GuiStatus.IsVisible == true then
+			Logo.Image = Table.GuiStatus.BuffVexHub.WithDick
 			Table.GuiStatus.OnGoingAnimation = true
 			AnimationLibrary.DisappearCoreInteractions()
 			wait(Table.GuiSettings.AnimationSpeed)
@@ -205,6 +206,7 @@ OpenButton.MouseButton1Down:Connect(function()
 			Table.GuiStatus.OnGoingAnimation = false
 			Table.GuiStatus.IsVisible = false
 		else
+			Logo.Image = Table.GuiStatus.BuffVexHub.NoDick
 			Table.GuiStatus.OnGoingAnimation = true
 			AnimationLibrary.AppearBackground()
 			AnimationLibrary.AppearCoreInteractions()
