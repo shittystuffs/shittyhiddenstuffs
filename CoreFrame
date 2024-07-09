@@ -1352,7 +1352,7 @@ UIScale.Scale = Table.GuiSettings.GuiScale-0.1
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shittystuffs/shittyhiddenstuffs/main/TopFrame"))()
 
 -- Scripts:
-local AnimationLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/shittystuffs/shittyhiddenstuffs/main/AnimationLibrary"))()
+local AnimationLibrary = Table.AnimationLibrary
 
 AnimationLibrary.DisappearBackground()
 AnimationLibrary.DisappearCoreInteractions()
