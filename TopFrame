@@ -190,7 +190,7 @@ Logo.BackgroundTransparency = 1.000
 Logo.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Logo.BorderSizePixel = 0
 Logo.Size = UDim2.new(1, 0, 1, 0)
-Logo.Image = "rbxassetid://"..Table.GuiStatus.Logo
+Logo.Image = Table.GuiStatus.Logo
 Logo.ImageTransparency = 1
 
 OpenButton.MouseButton1Down:Connect(function()
