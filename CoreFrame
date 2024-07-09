@@ -1352,7 +1352,7 @@ UIScale.Scale = Table.GuiSettings.GuiScale-0.1
 loadstring(game:HttpGet("https://raw.githubusercontent.com/shittystuffs/shittyhiddenstuffs/main/TopFrame"))()
 
 -- Scripts:
-local AnimationLibrary = Table.AnimationLibrary
+local AnimationLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/shittystuffs/shittyhiddenstuffs/main/AnimationLibrary"))()
 
 AnimationLibrary.DisappearBackground()
 AnimationLibrary.DisappearCoreInteractions()
@@ -1361,6 +1361,13 @@ coroutine.wrap(function()
 	while task.wait(0.01) do
 		UIGradient.Rotation += 1
 	end
+end)()
+
+coroutine.wrap(function()
+	repeat
+		wait()
+	until (Table.AnimationLibrary.Loaded)
+	AnimationLibrary = Table.AnimationLibrary
 end)()
 
 function ResetStatus(TabName)
