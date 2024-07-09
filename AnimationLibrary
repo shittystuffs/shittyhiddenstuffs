@@ -9,6 +9,8 @@ local AnimationSpeed = Table.GuiSettings.AnimationSpeed
 local AnimationEasingStyle = Table.GuiSettings.EasingStyle
 local UIScaleScale = Table.GuiSettings.GuiScale
 
+Library.Loaded = true
+
 Library.AppearBackground = function()
 	coroutine.wrap(function()
 		Folder.VexHubScreenGui.BackFrame.Visible = true
