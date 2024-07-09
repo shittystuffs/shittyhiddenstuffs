@@ -29,7 +29,7 @@ _G.Table = {
 		SwitchScriptCooldown = 0.5,
 		Owner = "V31nc",
 		Credits = "<b>Credits:</b>\nV31nc - Creator of VexHub\nitspls - Created the logo\nVanilla 3 (Elttob) - Icons\n\nKey Change: 8/8/8",
-		Logo = 14803348752,
+		Logo = "14803348752",
 		Name = "VexHub",
 		DiscordLink = "dsc.gg/vhub",
 		AreModeratorsAllowedToAnnounce = true,
@@ -441,4 +441,13 @@ coroutine.wrap(function()
 			_G.Table.GuiStatus.SwitchScriptCooldown = 0
 		end
 	end
+end)()
+
+coroutine.wrap(function()
+	repeat
+		wait()
+	until isfile("VexHub/BuffVexHubNSFW.png")
+	wait()
+
+	_G.Table.GuiStatus.Logo = getcustomasset("VexHub/BuffVexHubNSFW.png")
 end)()
