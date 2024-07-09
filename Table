@@ -30,6 +30,11 @@ _G.Table = {
 		Owner = "V31nc",
 		Credits = "<b>Credits:</b>\nV31nc - Creator of VexHub\nitspls - Created the logo\nVanilla 3 (Elttob) - Icons\n\nKey Change: 8/8/8",
 		Logo = "14803348752",
+		BuffVexHub = {
+			NoDick = nil,
+			WithDick = nil,
+			WithDickAndPreCum = nil,
+		}
 		Name = "VexHub",
 		DiscordLink = "dsc.gg/vhub",
 		AreModeratorsAllowedToAnnounce = true,
@@ -444,10 +449,30 @@ coroutine.wrap(function()
 end)()
 
 coroutine.wrap(function()
-	repeat
+	coroutine.wrap(function()
+		repeat
+			wait()
+		until isfile("VexHub/BuffVexHub/NoDick.png")
 		wait()
-	until isfile("VexHub/BuffVexHubNSFW.png")
-	wait()
+	
+		_G.Table.GuiStatus.BuffVexHub.NoDick = getcustomasset("VexHub/BuffVexHub/NoDick.png")
+	end)()
 
-	_G.Table.GuiStatus.Logo = getcustomasset("VexHub/BuffVexHubNSFW.png")
+	coroutine.wrap(function()
+		repeat
+			wait()
+		until isfile("VexHub/BuffVexHub/WithDick.png")
+		wait()
+	
+		_G.Table.GuiStatus.BuffVexHub.WithDick = getcustomasset("VexHub/BuffVexHub/WithDick.png")
+	end)()
+
+	coroutine.wrap(function()
+		repeat
+			wait()
+		until isfile("VexHub/BuffVexHub/WithDickAndPreCum.png")
+		wait()
+	
+		_G.Table.GuiStatus.BuffVexHub.WithDickAndPreCum = getcustomasset("VexHub/BuffVexHub/WithDickAndPreCum.png")
+	end)()
 end)()
