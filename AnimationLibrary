@@ -308,7 +308,7 @@ Library.AppearTab = function(TabName)
 			
 		elseif TabName == "Report" then
 			Tab.Visible = true
-			TweenService:Create(Tab.Robot, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
+			TweenService:Create(Tab.BuffVexHub, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
 			wait(AnimationSpeed/2)
 			TweenService:Create(Tab.ReportText, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
 			wait(AnimationSpeed/4)
@@ -551,7 +551,7 @@ Library.DisappearTab = function(TabName)
 			Tab.Visible = false
 
 		elseif TabName == "Report" then
-			TweenService:Create(Tab.Robot, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
+			TweenService:Create(Tab.BuffVexHub, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
 			wait(AnimationSpeed/2)
 			TweenService:Create(Tab.ReportText, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
 			wait(AnimationSpeed/4)
