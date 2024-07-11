@@ -1,0 +1,75 @@
+-- V31nc : GUI to LUA V1
+
+-- Instances:
+
+local Report = Instance.new("Frame")
+local UIListLayout = Instance.new("UIListLayout")
+local BuffVexHub = Instance.new("ImageLabel")
+local ReportText = Instance.new("TextLabel")
+local Info = Instance.new("TextLabel")
+
+--Properties:
+
+Report.Name = "Report"
+Report.Parent = StarterGui.VexHubFolder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Pages
+Report.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Report.BackgroundTransparency = 1.000
+Report.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Report.BorderSizePixel = 0
+Report.Size = UDim2.new(1, 0, 1, 0)
+
+UIListLayout.Parent = Report
+UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Center
+UIListLayout.Padding = UDim.new(0, 5)
+
+BuffVexHub.Name = "BuffVexHub"
+BuffVexHub.Parent = Report
+BuffVexHub.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+BuffVexHub.BackgroundTransparency = 1.000
+BuffVexHub.BorderColor3 = Color3.fromRGB(0, 0, 0)
+BuffVexHub.BorderSizePixel = 0
+BuffVexHub.LayoutOrder = 1
+BuffVexHub.Size = UDim2.new(0, 70, 0, 70)
+BuffVexHub.Image = "http://www.roblox.com/asset/?id=15816373386"
+
+ReportText.Name = "ReportText"
+ReportText.Parent = Report
+ReportText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ReportText.BackgroundTransparency = 1.000
+ReportText.BorderColor3 = Color3.fromRGB(0, 0, 0)
+ReportText.BorderSizePixel = 0
+ReportText.LayoutOrder = 2
+ReportText.Size = UDim2.new(1, 0, 0, 0)
+ReportText.Font = Enum.Font.GothamBold
+ReportText.Text = "Report"
+ReportText.TextColor3 = Color3.fromRGB(255, 255, 255)
+ReportText.TextSize = 20.000
+ReportText.TextWrapped = true
+
+Info.Name = "Info"
+Info.Parent = Report
+Info.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Info.BackgroundTransparency = 1.000
+Info.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Info.BorderSizePixel = 0
+Info.LayoutOrder = 3
+Info.RichText = true
+Info.Size = UDim2.new(0.949999988, 0, 0, 0)
+Info.Font = Enum.Font.Gotham
+Info.Text = "Need help or experiencing bugs or problems? Join our server at dsc.gg/vhub"
+Info.TextColor3 = Color3.fromRGB(255, 255, 255)
+Info.TextSize = 14.000
+Info.TextWrapped = true
+
+-- Scripts:
+
+local function OUVMXIT_fake_script() -- Info.LocalScript 
+	local script = Instance.new('LocalScript', Info)
+
+	local Table = require(game.StarterGui.Table)
+	
+	script.Parent.Text = 'Need any help or want to report a problem with the gui? Join our discord server at <font color="rgb(0,170,255)">'..Table.GuiStatus.DiscordLink..'</font>!'
+end
+coroutine.wrap(OUVMXIT_fake_script)()
