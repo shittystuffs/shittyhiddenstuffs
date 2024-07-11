@@ -464,6 +464,7 @@ UIStroke_7.Parent = Settings_2
 -- Scripts:
 
 function NewTextBoxSetting(SettingName, SettingNameTextSize, TextBoxText, TextBoxPlaceHolderText, Function)
+	local Function = callback or function() end
 	local NewSetting = TextBoxTemplate:Clone()
 
 	NewSetting.Name = SettingName
@@ -481,6 +482,8 @@ function NewTextBoxSetting(SettingName, SettingNameTextSize, TextBoxText, TextBo
 end
 
 function NewButtonsSetting(SettingName, SettingNameTextSize, Button1Text, Button1Function, Button2Text, Button2Function)
+	local Button1Function = callback or function() end
+	local Button2Function = callback or function() end
 	local NewSetting = ButtonsTemplate:Clone()
 
 	NewSetting.Name = SettingName
