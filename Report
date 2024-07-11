@@ -11,7 +11,7 @@ local Info = Instance.new("TextLabel")
 --Properties:
 
 Report.Name = "Report"
-Report.Parent = StarterGui.VexHubFolder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Pages
+Report.Parent = game:GetService("CoreGui"):WaitForChild("VexHubFolder").VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Pages
 Report.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Report.BackgroundTransparency = 1.000
 Report.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -62,14 +62,3 @@ Info.Text = "Need help or experiencing bugs or problems? Join our server at dsc.
 Info.TextColor3 = Color3.fromRGB(255, 255, 255)
 Info.TextSize = 14.000
 Info.TextWrapped = true
-
--- Scripts:
-
-local function OUVMXIT_fake_script() -- Info.LocalScript 
-	local script = Instance.new('LocalScript', Info)
-
-	local Table = require(game.StarterGui.Table)
-	
-	script.Parent.Text = 'Need any help or want to report a problem with the gui? Join our discord server at <font color="rgb(0,170,255)">'..Table.GuiStatus.DiscordLink..'</font>!'
-end
-coroutine.wrap(OUVMXIT_fake_script)()
