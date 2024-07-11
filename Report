@@ -49,6 +49,7 @@ BuffVexHub.Image = Table.GuiStatus.BuffVexHub.WithDickAndPreCum
 
 ReportText.Name = "ReportText"
 ReportText.Parent = Report
+ReportText.AutomaticSize = Enum.AutomaticSize.Y
 ReportText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 ReportText.BackgroundTransparency = 1.000
 ReportText.BorderColor3 = Color3.fromRGB(0, 0, 0)
