@@ -64,6 +64,7 @@ ReportText.TextWrapped = true
 
 Info.Name = "Info"
 Info.Parent = Report
+Info.AutomaticSize = Enum.AutomaticSize.Y
 Info.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Info.BackgroundTransparency = 1.000
 Info.BorderColor3 = Color3.fromRGB(0, 0, 0)
