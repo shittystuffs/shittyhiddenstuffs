@@ -464,7 +464,7 @@ UIStroke_7.Parent = Settings_2
 -- Scripts:
 
 function NewTextBoxSetting(SettingName, SettingNameTextSize, TextBoxText, TextBoxPlaceHolderText, Function)
-	local Function = callback or function() end
+	local Function = Function or function() end
 	local NewSetting = TextBoxTemplate:Clone()
 
 	NewSetting.Name = SettingName
@@ -482,8 +482,9 @@ function NewTextBoxSetting(SettingName, SettingNameTextSize, TextBoxText, TextBo
 end
 
 function NewButtonsSetting(SettingName, SettingNameTextSize, Button1Text, Button1Function, Button2Text, Button2Function)
-	local Button1Function = callback or function() end
-	local Button2Function = callback or function() end
+	local Button1Function = Button1Function or function() end
+	local Button2Function = Button2Function or function() end
+	
 	local NewSetting = ButtonsTemplate:Clone()
 
 	NewSetting.Name = SettingName
@@ -515,57 +516,57 @@ end
 NewLabel("GUI Settings")
 
 NewTextBoxSetting("Wallpaper", 12, "", "Id or .png", function()
-print("Hello")
+	print("Hello")
 end)
 
 NewTextBoxSetting("UIScale", 12, "", "Number", function()
-print("Hello")
+	print("Hello")
 end)
 
 NewTextBoxSetting("Background Gradient Color", 9, "", "RGB Number", function()
-print("Hello")
+	print("Hello")
 end)
 
 NewTextBoxSetting("UIStroke Color", 10, "", "RGB Number", function()
-print("Hello")
+	print("Hello")
 end)
 
 NewTextBoxSetting("Frame Background Color", 7, "", "RGB Number", function()
-print("Hello")
+	print("Hello")
 end)
 
 NewLabel("Fonts Settings")
 
 NewTextBoxSetting("Regular", 12, "", "Font", function()
-print("Hello")
+	print("Hello")
 end)
 
 NewTextBoxSetting("Medium", 12, "", "Font", function()
-print("Hello")
+	print("Hello")
 end)
 
 NewTextBoxSetting("Bold", 12, "", "Font", function()
-print("Hello")
+	print("Hello")
 end)
 
 NewLabel("Animation Settings")
 
 NewTextBoxSetting("Easing Style", 12, "", "EasingStyle", function()
-print("Hello")
+	print("Hello")
 end)
 
 NewTextBoxSetting("Animation Speed", 10, "", "Number", function()
-print("Hello")
+	print("Hello")
 end)
 
 NewLabel("Notification Settings")
 
 NewTextBoxSetting("Volume", 12, "", "Number", function()
-print("Hello")
+	print("Hello")
 end)
 
 NewTextBoxSetting("Sound", 12, "", "Id", function()
-print("Hello")
+	print("Hello")
 end)
 
 NewButtonsSetting({
