@@ -186,26 +186,22 @@ Library.AppearTab = function(TabName)
 			wait(AnimationSpeed/2)
 			TweenService:Create(Tab.BottomFrame.Settings.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
 			TweenService:Create(Tab.BottomFrame.Settings.ScrollingFrame, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ScrollBarImageTransparency = 0}):Play()
-			for _, ParentsSettings in Tab.BottomFrame.Settings.ScrollingFrame:GetChildren() do
-				if ParentsSettings:IsA("Frame") then
-					TweenService:Create(ParentsSettings.Label, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
-					for _, Settings in ParentsSettings:GetChildren() do
-						if Settings:IsA("Frame") then
-							TweenService:Create(Settings.NameOfFunction, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
-							if Settings.Type.Value == "TextBox" then
-								TweenService:Create(Settings.TextBoxParent.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
-								TweenService:Create(Settings.TextBoxParent.TextBox, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
-								TweenService:Create(Settings.ImageButton, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
-								TweenService:Create(Settings.ImageButton.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
-							elseif Settings.Type.Value == "Bool" then
-								for _, Options in Settings:GetChildren() do
-									if Options:IsA("TextButton") then
-										TweenService:Create(Options, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0.8}):Play()
-										TweenService:Create(Options.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
-									end
-								end
-							end
-						end
+			for _, Settings in Tab.BottomFrame.Settings.ScrollingFrame:GetChildren() do
+				if (Settings.Type) and Settings.Name ~= "LabelTemplate" and Settings.Name ~= "ButtonsTemplate" and Settings.Name ~= "TextBoxTemplate" then
+					if Settings.Type.Value == "TextBox" then
+						TweenService:Create(Settings.SettingsName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+						TweenService:Create(Settings.TextBoxParent.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+						TweenService:Create(Settings.TextBoxParent.TextBox, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+						TweenService:Create(Settings.ImageButton, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
+						TweenService:Create(Settings.ImageButton.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+					elseif Settings.Type.Value == "Bool" then
+						TweenService:Create(Settings.SettingsName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+						TweenService:Create(Settings.Button1, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+						TweenService:Create(Settings.Button1.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+						TweenService:Create(Settings.Button2, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+						TweenService:Create(Settings.Button2.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+					elseif Settings.Type.Value == "Label" then
+						TweenService:Create(Settings, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
 					end
 				end
 			end
@@ -305,7 +301,7 @@ Library.AppearTab = function(TabName)
 					end
 				end
 			end
-			
+
 		elseif TabName == "Report" then
 			Tab.Visible = true
 			TweenService:Create(Tab.BuffVexHub, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
@@ -425,26 +421,22 @@ Library.DisappearTab = function(TabName)
 			wait(AnimationSpeed/2)
 			TweenService:Create(Tab.BottomFrame.Settings.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
 			TweenService:Create(Tab.BottomFrame.Settings.ScrollingFrame, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ScrollBarImageTransparency = 1}):Play()
-			for _, ParentsSettings in Tab.BottomFrame.Settings.ScrollingFrame:GetChildren() do
-				if ParentsSettings:IsA("Frame") then
-					TweenService:Create(ParentsSettings.Label, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
-					for _, Settings in ParentsSettings:GetChildren() do
-						if Settings:IsA("Frame") then
-							TweenService:Create(Settings.NameOfFunction, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
-							if Settings.Type.Value == "TextBox" then
-								TweenService:Create(Settings.TextBoxParent.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
-								TweenService:Create(Settings.TextBoxParent.TextBox, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
-								TweenService:Create(Settings.ImageButton, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
-								TweenService:Create(Settings.ImageButton.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
-							elseif Settings.Type.Value == "Bool" then
-								for _, Options in Settings:GetChildren() do
-									if Options:IsA("TextButton") then
-										TweenService:Create(Options, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
-										TweenService:Create(Options.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
-									end
-								end
-							end
-						end
+			for _, Settings in Tab.BottomFrame.Settings.ScrollingFrame:GetChildren() do
+				if (Settings.Type) and Settings.Name ~= "LabelTemplate" and Settings.Name ~= "ButtonsTemplate" and Settings.Name ~= "TextBoxTemplate" then
+					if Settings.Type.Value == "TextBox" then
+						TweenService:Create(Settings.SettingsName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+						TweenService:Create(Settings.TextBoxParent.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+						TweenService:Create(Settings.TextBoxParent.TextBox, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+						TweenService:Create(Settings.ImageButton, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
+						TweenService:Create(Settings.ImageButton.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+					elseif Settings.Type.Value == "Bool" then
+						TweenService:Create(Settings.SettingsName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+						TweenService:Create(Settings.Button1, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+						TweenService:Create(Settings.Button1.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+						TweenService:Create(Settings.Button2, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+						TweenService:Create(Settings.Button2.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+					elseif Settings.Type.Value == "Label" then
+						TweenService:Create(Settings, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
 					end
 				end
 			end
