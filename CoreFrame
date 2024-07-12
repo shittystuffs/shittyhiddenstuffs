@@ -1,10 +1,12 @@
 -- V31nc : GUI to LUA V1
-
+print(1)
 local Table = _G.Table
 
 local Player = game:GetService("Players").LocalPlayer
 local TweenService = game:GetService("TweenService")
 local ClickSound = Table.GuiStatus.ClickSound
+
+print(2)
 
 function StringToColor3(ToConvert)
 	local ColorString = tostring(ToConvert)
