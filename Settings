@@ -301,7 +301,7 @@ ButtonsTemplate.BorderSizePixel = 0
 ButtonsTemplate.Size = UDim2.new(0.899999976, 0, 0, 20)
 
 Type_2.Name = "Type"
-Type_2.Parent = LabelTemplate
+Type_2.Parent = ButtonsTemplate
 Type_2.Value = "Bool"
 
 SettingsName.Name = "SettingsName"
@@ -383,7 +383,7 @@ TextBoxTemplate.BorderSizePixel = 0
 TextBoxTemplate.Size = UDim2.new(0.899999976, 0, 0, 20)
 
 Type_3.Name = "Type"
-Type_3.Parent = LabelTemplate
+Type_3.Parent = TextBoxTemplate
 Type_3.Value = "TextBox"
 
 SettingsName_2.Name = "SettingsName"
