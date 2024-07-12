@@ -58,103 +58,23 @@ local WholeFrame = Instance.new("Frame")
 local Tabs = Instance.new("Frame")
 local ScrollingFrame = Instance.new("ScrollingFrame")
 local UIListLayout_7 = Instance.new("UIListLayout")
-local Home = Instance.new("TextButton")
+local Barrier = Instance.new("Frame")
+local Barrier_2 = Instance.new("Frame")
+local TemplateLabel = Instance.new("TextLabel")
+local TemplateButton = Instance.new("TextButton")
 local UIListLayout_8 = Instance.new("UIListLayout")
 local UIStroke_5 = Instance.new("UIStroke")
 local TabImage = Instance.new("ImageLabel")
 local TabName = Instance.new("TextLabel")
 local UICorner_11 = Instance.new("UICorner")
-local Scripts = Instance.new("TextButton")
 local UIListLayout_9 = Instance.new("UIListLayout")
-local UIStroke_6 = Instance.new("UIStroke")
-local TabImage_2 = Instance.new("ImageLabel")
-local TabName_2 = Instance.new("TextLabel")
 local UICorner_12 = Instance.new("UICorner")
-local RequiredAccessories = Instance.new("TextButton")
-local UIListLayout_10 = Instance.new("UIListLayout")
-local UIStroke_7 = Instance.new("UIStroke")
-local TabImage_3 = Instance.new("ImageLabel")
-local TabName_3 = Instance.new("TextLabel")
-local UICorner_13 = Instance.new("UICorner")
-local GUIS = Instance.new("TextButton")
-local UIListLayout_11 = Instance.new("UIListLayout")
-local UIStroke_8 = Instance.new("UIStroke")
-local TabImage_4 = Instance.new("ImageLabel")
-local TabName_4 = Instance.new("TextLabel")
-local UICorner_14 = Instance.new("UICorner")
-local Animations = Instance.new("TextButton")
-local UIListLayout_12 = Instance.new("UIListLayout")
-local UIStroke_9 = Instance.new("UIStroke")
-local TabImage_5 = Instance.new("ImageLabel")
-local TabName_5 = Instance.new("TextLabel")
-local UICorner_15 = Instance.new("UICorner")
-local Commands = Instance.new("TextButton")
-local UIListLayout_13 = Instance.new("UIListLayout")
-local UIStroke_10 = Instance.new("UIStroke")
-local TabImage_6 = Instance.new("ImageLabel")
-local TabName_6 = Instance.new("TextLabel")
-local UICorner_16 = Instance.new("UICorner")
-local OtherHubs = Instance.new("TextButton")
-local UIListLayout_14 = Instance.new("UIListLayout")
-local UIStroke_11 = Instance.new("UIStroke")
-local TabImage_7 = Instance.new("ImageLabel")
-local TabName_7 = Instance.new("TextLabel")
-local UICorner_17 = Instance.new("UICorner")
-local LimitedScripts = Instance.new("TextButton")
-local UIListLayout_15 = Instance.new("UIListLayout")
-local UIStroke_12 = Instance.new("UIStroke")
-local TabImage_8 = Instance.new("ImageLabel")
-local TabName_8 = Instance.new("TextLabel")
-local UICorner_18 = Instance.new("UICorner")
-local Barrier = Instance.new("Frame")
-local Barrier_2 = Instance.new("Frame")
-local PluginsText = Instance.new("TextLabel")
-local Plugins = Instance.new("TextButton")
-local UIListLayout_16 = Instance.new("UIListLayout")
-local UIStroke_13 = Instance.new("UIStroke")
-local TabImage_9 = Instance.new("ImageLabel")
-local TabName_9 = Instance.new("TextLabel")
-local UICorner_19 = Instance.new("UICorner")
-local Others = Instance.new("TextLabel")
-local Settings = Instance.new("TextButton")
-local UIListLayout_17 = Instance.new("UIListLayout")
-local UIStroke_14 = Instance.new("UIStroke")
-local TabImage_10 = Instance.new("ImageLabel")
-local TabName_10 = Instance.new("TextLabel")
-local UICorner_20 = Instance.new("UICorner")
-local Report = Instance.new("TextButton")
-local UIListLayout_18 = Instance.new("UIListLayout")
-local UIStroke_15 = Instance.new("UIStroke")
-local TabImage_11 = Instance.new("ImageLabel")
-local TabName_11 = Instance.new("TextLabel")
-local UICorner_21 = Instance.new("UICorner")
-local LocalPlayer = Instance.new("TextButton")
-local UIListLayout_19 = Instance.new("UIListLayout")
-local UIStroke_16 = Instance.new("UIStroke")
-local TabImage_12 = Instance.new("ImageLabel")
-local TabName_12 = Instance.new("TextLabel")
-local UICorner_22 = Instance.new("UICorner")
-local PluginsFolder = Instance.new("Folder")
-local Favorites = Instance.new("TextButton")
-local UIListLayout_20 = Instance.new("UIListLayout")
-local UIStroke_17 = Instance.new("UIStroke")
-local TabImage_13 = Instance.new("ImageLabel")
-local TabName_13 = Instance.new("TextLabel")
-local UICorner_23 = Instance.new("UICorner")
-local LoadString = Instance.new("TextButton")
-local UIListLayout_21 = Instance.new("UIListLayout")
-local UIStroke_18 = Instance.new("UIStroke")
-local TabImage_14 = Instance.new("ImageLabel")
-local TabName_14 = Instance.new("TextLabel")
-local UICorner_24 = Instance.new("UICorner")
-local UIListLayout_22 = Instance.new("UIListLayout")
-local UICorner_25 = Instance.new("UICorner")
-local UIStroke_19 = Instance.new("UIStroke")
+local UIStroke_6 = Instance.new("UIStroke")
 local Pages = Instance.new("Frame")
-local UICorner_26 = Instance.new("UICorner")
-local UIStroke_20 = Instance.new("UIStroke")
-local UIListLayout_23 = Instance.new("UIListLayout")
-local UICorner_27 = Instance.new("UICorner")
+local UICorner_13 = Instance.new("UICorner")
+local UIStroke_7 = Instance.new("UIStroke")
+local UIListLayout_10 = Instance.new("UIListLayout")
+local UICorner_14 = Instance.new("UICorner")
 local UIScale = Instance.new("UIScale")
 
 --Properties:
@@ -489,20 +409,49 @@ UIListLayout_7.HorizontalAlignment = Enum.HorizontalAlignment.Center
 UIListLayout_7.SortOrder = Enum.SortOrder.LayoutOrder
 UIListLayout_7.Padding = UDim.new(0, 5)
 
-Home.Name = "Home"
-Home.Parent = ScrollingFrame
-Home.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Home.BackgroundTransparency = 1.000
-Home.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Home.BorderSizePixel = 0
-Home.LayoutOrder = 1
-Home.Size = UDim2.new(0, 120, 0, 20)
-Home.Font = Enum.Font.SourceSans
-Home.Text = ""
-Home.TextColor3 = Color3.fromRGB(0, 0, 0)
-Home.TextSize = 14.000
+Barrier.Name = "Barrier"
+Barrier.Parent = ScrollingFrame
+Barrier.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Barrier.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Barrier.BorderSizePixel = 0
+Barrier.LayoutOrder = 1
 
-UIListLayout_8.Parent = Home
+Barrier_2.Name = "Barrier"
+Barrier_2.Parent = ScrollingFrame
+Barrier_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Barrier_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Barrier_2.BorderSizePixel = 0
+Barrier_2.LayoutOrder = 10000
+
+TemplateLabel.Name = "TemplateLabel"
+TemplateLabel.Parent = ScrollingFrame
+TemplateLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TemplateLabel.BackgroundTransparency = 1.000
+TemplateLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TemplateLabel.BorderSizePixel = 0
+TemplateLabel.LayoutOrder = 2
+TemplateLabel.Size = UDim2.new(0, 120, 0, 8)
+TemplateLabel.Visible = false
+TemplateLabel.Font = Enum.Font[Table.GuiSettings.GuiFont.Regular]
+TemplateLabel.Text = "string"
+TemplateLabel.TextColor3 = Color3.fromRGB(230, 230, 230)
+TemplateLabel.TextWrapped = true
+
+TemplateButton.Name = "TemplateButton"
+TemplateButton.Parent = ScrollingFrame
+TemplateButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TemplateButton.BackgroundTransparency = 1.000
+TemplateButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TemplateButton.BorderSizePixel = 0
+TemplateButton.LayoutOrder = 2
+TemplateButton.Size = UDim2.new(0, 120, 0, 20)
+TemplateButton.Visible = false
+TemplateButton.Font = Enum.Font.SourceSans
+TemplateButton.Text = ""
+TemplateButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+TemplateButton.TextSize = 14.000
+
+UIListLayout_8.Parent = TemplateButton
 UIListLayout_8.FillDirection = Enum.FillDirection.Horizontal
 UIListLayout_8.HorizontalAlignment = Enum.HorizontalAlignment.Center
 UIListLayout_8.SortOrder = Enum.SortOrder.LayoutOrder
@@ -513,19 +462,19 @@ UIStroke_5.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 UIStroke_5.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
 UIStroke_5.Thickness = 0.700
 UIStroke_5.Transparency = 0.800
-UIStroke_5.Parent = Home
+UIStroke_5.Parent = TemplateButton
 
 TabImage.Name = "TabImage"
-TabImage.Parent = Home
+TabImage.Parent = TemplateButton
 TabImage.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TabImage.BackgroundTransparency = 1.000
 TabImage.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TabImage.BorderSizePixel = 0
 TabImage.Size = UDim2.new(0, 20, 0, 20)
-TabImage.Image = "rbxassetid://11592840951"
+TabImage.Image = "http://www.roblox.com/asset/?id=11592935847"
 
 TabName.Name = "TabName"
-TabName.Parent = Home
+TabName.Parent = TemplateButton
 TabName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TabName.BackgroundTransparency = 1.000
 TabName.BorderColor3 = Color3.fromRGB(0, 0, 0)
@@ -534,7 +483,7 @@ TabName.Position = UDim2.new(0.380769223, 0, 0, 0)
 TabName.RichText = true
 TabName.Size = UDim2.new(0, 89, 0, 20)
 TabName.Font = Enum.Font[Table.GuiSettings.GuiFont.Medium]
-TabName.Text = "Home"
+TabName.Text = "string"
 TabName.TextColor3 = Color3.fromRGB(255, 255, 255)
 TabName.TextSize = 11.000
 TabName.TextStrokeTransparency = 0.900
@@ -542,780 +491,23 @@ TabName.TextWrapped = true
 TabName.TextXAlignment = Enum.TextXAlignment.Left
 
 UICorner_11.CornerRadius = UDim.new(0.300000012, 0)
-UICorner_11.Parent = Home
+UICorner_11.Parent = TemplateButton
 
-Scripts.Name = "Scripts"
-Scripts.Parent = ScrollingFrame
-Scripts.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Scripts.BackgroundTransparency = 1.000
-Scripts.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Scripts.BorderSizePixel = 0
-Scripts.LayoutOrder = 3
-Scripts.Size = UDim2.new(0, 120, 0, 20)
-Scripts.Font = Enum.Font.SourceSans
-Scripts.Text = ""
-Scripts.TextColor3 = Color3.fromRGB(0, 0, 0)
-Scripts.TextSize = 14.000
-
-UIListLayout_9.Parent = Scripts
+UIListLayout_9.Parent = Tabs
 UIListLayout_9.FillDirection = Enum.FillDirection.Horizontal
 UIListLayout_9.HorizontalAlignment = Enum.HorizontalAlignment.Center
 UIListLayout_9.SortOrder = Enum.SortOrder.LayoutOrder
 UIListLayout_9.VerticalAlignment = Enum.VerticalAlignment.Center
 UIListLayout_9.Padding = UDim.new(0, 5)
 
+UICorner_12.CornerRadius = UDim.new(0, 8)
+UICorner_12.Parent = Tabs
+
 UIStroke_6.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
 UIStroke_6.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
 UIStroke_6.Thickness = 0.700
 UIStroke_6.Transparency = 0.800
-UIStroke_6.Parent = Scripts
-
-TabImage_2.Name = "TabImage"
-TabImage_2.Parent = Scripts
-TabImage_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TabImage_2.BackgroundTransparency = 1.000
-TabImage_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TabImage_2.BorderSizePixel = 0
-TabImage_2.Size = UDim2.new(0, 20, 0, 20)
-TabImage_2.Image = "rbxassetid://11592851654"
-
-TabName_2.Name = "TabName"
-TabName_2.Parent = Scripts
-TabName_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TabName_2.BackgroundTransparency = 1.000
-TabName_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TabName_2.BorderSizePixel = 0
-TabName_2.Position = UDim2.new(0.380769223, 0, 0, 0)
-TabName_2.RichText = true
-TabName_2.Size = UDim2.new(0, 89, 0, 20)
-TabName_2.Font = Enum.Font[Table.GuiSettings.GuiFont.Medium]
-TabName_2.Text = "Scripts"
-TabName_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-TabName_2.TextSize = 11.000
-TabName_2.TextStrokeTransparency = 0.900
-TabName_2.TextWrapped = true
-TabName_2.TextXAlignment = Enum.TextXAlignment.Left
-
-UICorner_12.CornerRadius = UDim.new(0.300000012, 0)
-UICorner_12.Parent = Scripts
-
-RequiredAccessories.Name = "Required Accessories"
-RequiredAccessories.Parent = ScrollingFrame
-RequiredAccessories.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-RequiredAccessories.BackgroundTransparency = 1.000
-RequiredAccessories.BorderColor3 = Color3.fromRGB(0, 0, 0)
-RequiredAccessories.BorderSizePixel = 0
-RequiredAccessories.LayoutOrder = 4
-RequiredAccessories.Size = UDim2.new(0, 120, 0, 20)
-RequiredAccessories.Font = Enum.Font.SourceSans
-RequiredAccessories.Text = ""
-RequiredAccessories.TextColor3 = Color3.fromRGB(0, 0, 0)
-RequiredAccessories.TextSize = 14.000
-
-UIListLayout_10.Parent = RequiredAccessories
-UIListLayout_10.FillDirection = Enum.FillDirection.Horizontal
-UIListLayout_10.HorizontalAlignment = Enum.HorizontalAlignment.Center
-UIListLayout_10.SortOrder = Enum.SortOrder.LayoutOrder
-UIListLayout_10.VerticalAlignment = Enum.VerticalAlignment.Center
-UIListLayout_10.Padding = UDim.new(0, 5)
-
-UIStroke_7.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_7.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
-UIStroke_7.Thickness = 0.700
-UIStroke_7.Transparency = 0.800
-UIStroke_7.Parent = RequiredAccessories
-
-TabImage_3.Name = "TabImage"
-TabImage_3.Parent = RequiredAccessories
-TabImage_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TabImage_3.BackgroundTransparency = 1.000
-TabImage_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TabImage_3.BorderSizePixel = 0
-TabImage_3.Size = UDim2.new(0, 20, 0, 20)
-TabImage_3.Image = "rbxassetid://11592824883"
-
-TabName_3.Name = "TabName"
-TabName_3.Parent = RequiredAccessories
-TabName_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TabName_3.BackgroundTransparency = 1.000
-TabName_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TabName_3.BorderSizePixel = 0
-TabName_3.Position = UDim2.new(0.380769223, 0, 0, 0)
-TabName_3.RichText = true
-TabName_3.Size = UDim2.new(0, 89, 0, 20)
-TabName_3.Font = Enum.Font[Table.GuiSettings.GuiFont.Medium]
-TabName_3.Text = "Required Accessories"
-TabName_3.TextColor3 = Color3.fromRGB(255, 255, 255)
-TabName_3.TextSize = 10.000
-TabName_3.TextStrokeTransparency = 0.900
-TabName_3.TextWrapped = true
-TabName_3.TextXAlignment = Enum.TextXAlignment.Left
-
-UICorner_13.CornerRadius = UDim.new(0.300000012, 0)
-UICorner_13.Parent = RequiredAccessories
-
-GUIS.Name = "GUIS"
-GUIS.Parent = ScrollingFrame
-GUIS.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-GUIS.BackgroundTransparency = 1.000
-GUIS.BorderColor3 = Color3.fromRGB(0, 0, 0)
-GUIS.BorderSizePixel = 0
-GUIS.LayoutOrder = 5
-GUIS.Size = UDim2.new(0, 120, 0, 20)
-GUIS.Font = Enum.Font.SourceSans
-GUIS.Text = ""
-GUIS.TextColor3 = Color3.fromRGB(0, 0, 0)
-GUIS.TextSize = 14.000
-
-UIListLayout_11.Parent = GUIS
-UIListLayout_11.FillDirection = Enum.FillDirection.Horizontal
-UIListLayout_11.HorizontalAlignment = Enum.HorizontalAlignment.Center
-UIListLayout_11.SortOrder = Enum.SortOrder.LayoutOrder
-UIListLayout_11.VerticalAlignment = Enum.VerticalAlignment.Center
-UIListLayout_11.Padding = UDim.new(0, 5)
-
-UIStroke_8.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_8.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
-UIStroke_8.Thickness = 0.700
-UIStroke_8.Transparency = 0.800
-UIStroke_8.Parent = GUIS
-
-TabImage_4.Name = "TabImage"
-TabImage_4.Parent = GUIS
-TabImage_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TabImage_4.BackgroundTransparency = 1.000
-TabImage_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TabImage_4.BorderSizePixel = 0
-TabImage_4.Size = UDim2.new(0, 20, 0, 20)
-TabImage_4.Image = "rbxassetid://11592848654"
-
-TabName_4.Name = "TabName"
-TabName_4.Parent = GUIS
-TabName_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TabName_4.BackgroundTransparency = 1.000
-TabName_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TabName_4.BorderSizePixel = 0
-TabName_4.Position = UDim2.new(0.380769223, 0, 0, 0)
-TabName_4.RichText = true
-TabName_4.Size = UDim2.new(0, 89, 0, 20)
-TabName_4.Font = Enum.Font[Table.GuiSettings.GuiFont.Medium]
-TabName_4.Text = "GUIS"
-TabName_4.TextColor3 = Color3.fromRGB(255, 255, 255)
-TabName_4.TextSize = 11.000
-TabName_4.TextStrokeTransparency = 0.900
-TabName_4.TextWrapped = true
-TabName_4.TextXAlignment = Enum.TextXAlignment.Left
-
-UICorner_14.CornerRadius = UDim.new(0.300000012, 0)
-UICorner_14.Parent = GUIS
-
-Animations.Name = "Animations"
-Animations.Parent = ScrollingFrame
-Animations.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Animations.BackgroundTransparency = 1.000
-Animations.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Animations.BorderSizePixel = 0
-Animations.LayoutOrder = 6
-Animations.Size = UDim2.new(0, 120, 0, 20)
-Animations.Font = Enum.Font.SourceSans
-Animations.Text = ""
-Animations.TextColor3 = Color3.fromRGB(0, 0, 0)
-Animations.TextSize = 14.000
-
-UIListLayout_12.Parent = Animations
-UIListLayout_12.FillDirection = Enum.FillDirection.Horizontal
-UIListLayout_12.HorizontalAlignment = Enum.HorizontalAlignment.Center
-UIListLayout_12.SortOrder = Enum.SortOrder.LayoutOrder
-UIListLayout_12.VerticalAlignment = Enum.VerticalAlignment.Center
-UIListLayout_12.Padding = UDim.new(0, 5)
-
-UIStroke_9.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_9.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
-UIStroke_9.Thickness = 0.700
-UIStroke_9.Transparency = 0.800
-UIStroke_9.Parent = Animations
-
-TabImage_5.Name = "TabImage"
-TabImage_5.Parent = Animations
-TabImage_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TabImage_5.BackgroundTransparency = 1.000
-TabImage_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TabImage_5.BorderSizePixel = 0
-TabImage_5.Size = UDim2.new(0, 20, 0, 20)
-TabImage_5.Image = "rbxassetid://11592835705"
-
-TabName_5.Name = "TabName"
-TabName_5.Parent = Animations
-TabName_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TabName_5.BackgroundTransparency = 1.000
-TabName_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TabName_5.BorderSizePixel = 0
-TabName_5.Position = UDim2.new(0.380769223, 0, 0, 0)
-TabName_5.RichText = true
-TabName_5.Size = UDim2.new(0, 89, 0, 20)
-TabName_5.Font = Enum.Font[Table.GuiSettings.GuiFont.Medium]
-TabName_5.Text = "Animations"
-TabName_5.TextColor3 = Color3.fromRGB(255, 255, 255)
-TabName_5.TextSize = 11.000
-TabName_5.TextStrokeTransparency = 0.900
-TabName_5.TextWrapped = true
-TabName_5.TextXAlignment = Enum.TextXAlignment.Left
-
-UICorner_15.CornerRadius = UDim.new(0.300000012, 0)
-UICorner_15.Parent = Animations
-
-Commands.Name = "Commands"
-Commands.Parent = ScrollingFrame
-Commands.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Commands.BackgroundTransparency = 1.000
-Commands.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Commands.BorderSizePixel = 0
-Commands.LayoutOrder = 7
-Commands.Size = UDim2.new(0, 120, 0, 20)
-Commands.Font = Enum.Font.SourceSans
-Commands.Text = ""
-Commands.TextColor3 = Color3.fromRGB(0, 0, 0)
-Commands.TextSize = 14.000
-
-UIListLayout_13.Parent = Commands
-UIListLayout_13.FillDirection = Enum.FillDirection.Horizontal
-UIListLayout_13.HorizontalAlignment = Enum.HorizontalAlignment.Center
-UIListLayout_13.SortOrder = Enum.SortOrder.LayoutOrder
-UIListLayout_13.VerticalAlignment = Enum.VerticalAlignment.Center
-UIListLayout_13.Padding = UDim.new(0, 5)
-
-UIStroke_10.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_10.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
-UIStroke_10.Thickness = 0.700
-UIStroke_10.Transparency = 0.800
-UIStroke_10.Parent = Commands
-
-TabImage_6.Name = "TabImage"
-TabImage_6.Parent = Commands
-TabImage_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TabImage_6.BackgroundTransparency = 1.000
-TabImage_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TabImage_6.BorderSizePixel = 0
-TabImage_6.Size = UDim2.new(0, 20, 0, 20)
-TabImage_6.Image = "rbxassetid://11592837927"
-
-TabName_6.Name = "TabName"
-TabName_6.Parent = Commands
-TabName_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TabName_6.BackgroundTransparency = 1.000
-TabName_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TabName_6.BorderSizePixel = 0
-TabName_6.Position = UDim2.new(0.380769223, 0, 0, 0)
-TabName_6.RichText = true
-TabName_6.Size = UDim2.new(0, 89, 0, 20)
-TabName_6.Font = Enum.Font[Table.GuiSettings.GuiFont.Medium]
-TabName_6.Text = "Commands"
-TabName_6.TextColor3 = Color3.fromRGB(255, 255, 255)
-TabName_6.TextSize = 11.000
-TabName_6.TextStrokeTransparency = 0.900
-TabName_6.TextWrapped = true
-TabName_6.TextXAlignment = Enum.TextXAlignment.Left
-
-UICorner_16.CornerRadius = UDim.new(0.300000012, 0)
-UICorner_16.Parent = Commands
-
-OtherHubs.Name = "Other Hubs"
-OtherHubs.Parent = ScrollingFrame
-OtherHubs.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-OtherHubs.BackgroundTransparency = 1.000
-OtherHubs.BorderColor3 = Color3.fromRGB(0, 0, 0)
-OtherHubs.BorderSizePixel = 0
-OtherHubs.LayoutOrder = 8
-OtherHubs.Size = UDim2.new(0, 120, 0, 20)
-OtherHubs.Font = Enum.Font.SourceSans
-OtherHubs.Text = ""
-OtherHubs.TextColor3 = Color3.fromRGB(0, 0, 0)
-OtherHubs.TextSize = 14.000
-
-UIListLayout_14.Parent = OtherHubs
-UIListLayout_14.FillDirection = Enum.FillDirection.Horizontal
-UIListLayout_14.HorizontalAlignment = Enum.HorizontalAlignment.Center
-UIListLayout_14.SortOrder = Enum.SortOrder.LayoutOrder
-UIListLayout_14.VerticalAlignment = Enum.VerticalAlignment.Center
-UIListLayout_14.Padding = UDim.new(0, 5)
-
-UIStroke_11.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_11.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
-UIStroke_11.Thickness = 0.700
-UIStroke_11.Transparency = 0.800
-UIStroke_11.Parent = OtherHubs
-
-TabImage_7.Name = "TabImage"
-TabImage_7.Parent = OtherHubs
-TabImage_7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TabImage_7.BackgroundTransparency = 1.000
-TabImage_7.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TabImage_7.BorderSizePixel = 0
-TabImage_7.Size = UDim2.new(0, 20, 0, 20)
-TabImage_7.Image = "rbxassetid://11592850267"
-
-TabName_7.Name = "TabName"
-TabName_7.Parent = OtherHubs
-TabName_7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TabName_7.BackgroundTransparency = 1.000
-TabName_7.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TabName_7.BorderSizePixel = 0
-TabName_7.Position = UDim2.new(0.380769223, 0, 0, 0)
-TabName_7.RichText = true
-TabName_7.Size = UDim2.new(0, 89, 0, 20)
-TabName_7.Font = Enum.Font[Table.GuiSettings.GuiFont.Medium]
-TabName_7.Text = "Other Hubs"
-TabName_7.TextColor3 = Color3.fromRGB(255, 255, 255)
-TabName_7.TextSize = 11.000
-TabName_7.TextStrokeTransparency = 0.900
-TabName_7.TextWrapped = true
-TabName_7.TextXAlignment = Enum.TextXAlignment.Left
-
-UICorner_17.CornerRadius = UDim.new(0.300000012, 0)
-UICorner_17.Parent = OtherHubs
-
-LimitedScripts.Name = "Limited Scripts"
-LimitedScripts.Parent = ScrollingFrame
-LimitedScripts.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-LimitedScripts.BackgroundTransparency = 1.000
-LimitedScripts.BorderColor3 = Color3.fromRGB(0, 0, 0)
-LimitedScripts.BorderSizePixel = 0
-LimitedScripts.LayoutOrder = 9
-LimitedScripts.Size = UDim2.new(0, 120, 0, 20)
-LimitedScripts.Font = Enum.Font.SourceSans
-LimitedScripts.Text = ""
-LimitedScripts.TextColor3 = Color3.fromRGB(0, 0, 0)
-LimitedScripts.TextSize = 14.000
-
-UIListLayout_15.Parent = LimitedScripts
-UIListLayout_15.FillDirection = Enum.FillDirection.Horizontal
-UIListLayout_15.HorizontalAlignment = Enum.HorizontalAlignment.Center
-UIListLayout_15.SortOrder = Enum.SortOrder.LayoutOrder
-UIListLayout_15.VerticalAlignment = Enum.VerticalAlignment.Center
-UIListLayout_15.Padding = UDim.new(0, 5)
-
-UIStroke_12.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_12.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
-UIStroke_12.Thickness = 0.700
-UIStroke_12.Transparency = 0.800
-UIStroke_12.Parent = LimitedScripts
-
-TabImage_8.Name = "TabImage"
-TabImage_8.Parent = LimitedScripts
-TabImage_8.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TabImage_8.BackgroundTransparency = 1.000
-TabImage_8.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TabImage_8.BorderSizePixel = 0
-TabImage_8.Size = UDim2.new(0, 20, 0, 20)
-TabImage_8.Image = "rbxassetid://17619425419"
-
-TabName_8.Name = "TabName"
-TabName_8.Parent = LimitedScripts
-TabName_8.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TabName_8.BackgroundTransparency = 1.000
-TabName_8.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TabName_8.BorderSizePixel = 0
-TabName_8.Position = UDim2.new(0.380769223, 0, 0, 0)
-TabName_8.RichText = true
-TabName_8.Size = UDim2.new(0, 89, 0, 20)
-TabName_8.Font = Enum.Font[Table.GuiSettings.GuiFont.Medium]
-TabName_8.Text = "Limited Scripts"
-TabName_8.TextColor3 = Color3.fromRGB(255, 255, 255)
-TabName_8.TextSize = 11.000
-TabName_8.TextStrokeTransparency = 0.900
-TabName_8.TextWrapped = true
-TabName_8.TextXAlignment = Enum.TextXAlignment.Left
-
-UICorner_18.CornerRadius = UDim.new(0.300000012, 0)
-UICorner_18.Parent = LimitedScripts
-
-Barrier.Name = "Barrier"
-Barrier.Parent = ScrollingFrame
-Barrier.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Barrier.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Barrier.BorderSizePixel = 0
-
-Barrier_2.Name = "Barrier"
-Barrier_2.Parent = ScrollingFrame
-Barrier_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Barrier_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Barrier_2.BorderSizePixel = 0
-Barrier_2.LayoutOrder = 10000
-
-PluginsText.Name = "PluginsText"
-PluginsText.Parent = ScrollingFrame
-PluginsText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-PluginsText.BackgroundTransparency = 1.000
-PluginsText.BorderColor3 = Color3.fromRGB(0, 0, 0)
-PluginsText.BorderSizePixel = 0
-PluginsText.LayoutOrder = 20
-PluginsText.Size = UDim2.new(0, 120, 0, 8)
-PluginsText.Font = Enum.Font[Table.GuiSettings.GuiFont.Regular]
-PluginsText.Text = "Plugins"
-PluginsText.TextColor3 = Color3.fromRGB(230, 230, 230)
-PluginsText.TextWrapped = true
-
-Plugins.Name = "Plugins"
-Plugins.Parent = ScrollingFrame
-Plugins.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Plugins.BackgroundTransparency = 1.000
-Plugins.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Plugins.BorderSizePixel = 0
-Plugins.LayoutOrder = 21
-Plugins.Size = UDim2.new(0, 120, 0, 20)
-Plugins.Font = Enum.Font.SourceSans
-Plugins.Text = ""
-Plugins.TextColor3 = Color3.fromRGB(0, 0, 0)
-Plugins.TextSize = 14.000
-
-UIListLayout_16.Parent = Plugins
-UIListLayout_16.FillDirection = Enum.FillDirection.Horizontal
-UIListLayout_16.HorizontalAlignment = Enum.HorizontalAlignment.Center
-UIListLayout_16.SortOrder = Enum.SortOrder.LayoutOrder
-UIListLayout_16.VerticalAlignment = Enum.VerticalAlignment.Center
-UIListLayout_16.Padding = UDim.new(0, 5)
-
-UIStroke_13.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_13.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
-UIStroke_13.Thickness = 0.700
-UIStroke_13.Transparency = 0.800
-UIStroke_13.Parent = Plugins
-
-TabImage_9.Name = "TabImage"
-TabImage_9.Parent = Plugins
-TabImage_9.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TabImage_9.BackgroundTransparency = 1.000
-TabImage_9.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TabImage_9.BorderSizePixel = 0
-TabImage_9.Size = UDim2.new(0, 20, 0, 20)
-TabImage_9.Image = "http://www.roblox.com/asset/?id=17645365934"
-
-TabName_9.Name = "TabName"
-TabName_9.Parent = Plugins
-TabName_9.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TabName_9.BackgroundTransparency = 1.000
-TabName_9.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TabName_9.BorderSizePixel = 0
-TabName_9.Position = UDim2.new(0.380769223, 0, 0, 0)
-TabName_9.RichText = true
-TabName_9.Size = UDim2.new(0, 89, 0, 20)
-TabName_9.Font = Enum.Font[Table.GuiSettings.GuiFont.Medium]
-TabName_9.Text = "Plugins"
-TabName_9.TextColor3 = Color3.fromRGB(255, 255, 255)
-TabName_9.TextSize = 11.000
-TabName_9.TextStrokeTransparency = 0.900
-TabName_9.TextWrapped = true
-TabName_9.TextXAlignment = Enum.TextXAlignment.Left
-
-UICorner_19.CornerRadius = UDim.new(0.300000012, 0)
-UICorner_19.Parent = Plugins
-
-Others.Name = "Others"
-Others.Parent = ScrollingFrame
-Others.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Others.BackgroundTransparency = 1.000
-Others.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Others.BorderSizePixel = 0
-Others.LayoutOrder = 1000
-Others.Size = UDim2.new(0, 120, 0, 8)
-Others.Font = Enum.Font[Table.GuiSettings.GuiFont.Regular]
-Others.Text = "Others"
-Others.TextColor3 = Color3.fromRGB(230, 230, 230)
-Others.TextWrapped = true
-
-Settings.Name = "Settings"
-Settings.Parent = ScrollingFrame
-Settings.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Settings.BackgroundTransparency = 1.000
-Settings.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Settings.BorderSizePixel = 0
-Settings.LayoutOrder = 1002
-Settings.Size = UDim2.new(0, 120, 0, 20)
-Settings.Font = Enum.Font.SourceSans
-Settings.Text = ""
-Settings.TextColor3 = Color3.fromRGB(0, 0, 0)
-Settings.TextSize = 14.000
-
-UIListLayout_17.Parent = Settings
-UIListLayout_17.FillDirection = Enum.FillDirection.Horizontal
-UIListLayout_17.HorizontalAlignment = Enum.HorizontalAlignment.Center
-UIListLayout_17.SortOrder = Enum.SortOrder.LayoutOrder
-UIListLayout_17.VerticalAlignment = Enum.VerticalAlignment.Center
-UIListLayout_17.Padding = UDim.new(0, 5)
-
-UIStroke_14.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_14.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
-UIStroke_14.Thickness = 0.700
-UIStroke_14.Transparency = 0.800
-UIStroke_14.Parent = Settings
-
-TabImage_10.Name = "TabImage"
-TabImage_10.Parent = Settings
-TabImage_10.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TabImage_10.BackgroundTransparency = 1.000
-TabImage_10.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TabImage_10.BorderSizePixel = 0
-TabImage_10.Size = UDim2.new(0, 20, 0, 20)
-TabImage_10.Image = "http://www.roblox.com/asset/?id=11592827868"
-
-TabName_10.Name = "TabName"
-TabName_10.Parent = Settings
-TabName_10.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TabName_10.BackgroundTransparency = 1.000
-TabName_10.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TabName_10.BorderSizePixel = 0
-TabName_10.Position = UDim2.new(0.380769223, 0, 0, 0)
-TabName_10.RichText = true
-TabName_10.Size = UDim2.new(0, 89, 0, 20)
-TabName_10.Font = Enum.Font[Table.GuiSettings.GuiFont.Medium]
-TabName_10.Text = "Settings"
-TabName_10.TextColor3 = Color3.fromRGB(255, 255, 255)
-TabName_10.TextSize = 11.000
-TabName_10.TextStrokeTransparency = 0.900
-TabName_10.TextWrapped = true
-TabName_10.TextXAlignment = Enum.TextXAlignment.Left
-
-UICorner_20.CornerRadius = UDim.new(0.300000012, 0)
-UICorner_20.Parent = Settings
-
-Report.Name = "Report"
-Report.Parent = ScrollingFrame
-Report.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Report.BackgroundTransparency = 1.000
-Report.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Report.BorderSizePixel = 0
-Report.LayoutOrder = 1001
-Report.Size = UDim2.new(0, 120, 0, 20)
-Report.Font = Enum.Font.SourceSans
-Report.Text = ""
-Report.TextColor3 = Color3.fromRGB(0, 0, 0)
-Report.TextSize = 14.000
-
-UIListLayout_18.Parent = Report
-UIListLayout_18.FillDirection = Enum.FillDirection.Horizontal
-UIListLayout_18.HorizontalAlignment = Enum.HorizontalAlignment.Center
-UIListLayout_18.SortOrder = Enum.SortOrder.LayoutOrder
-UIListLayout_18.VerticalAlignment = Enum.VerticalAlignment.Center
-UIListLayout_18.Padding = UDim.new(0, 5)
-
-UIStroke_15.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_15.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
-UIStroke_15.Thickness = 0.700
-UIStroke_15.Transparency = 0.800
-UIStroke_15.Parent = Report
-
-TabImage_11.Name = "TabImage"
-TabImage_11.Parent = Report
-TabImage_11.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TabImage_11.BackgroundTransparency = 1.000
-TabImage_11.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TabImage_11.BorderSizePixel = 0
-TabImage_11.Size = UDim2.new(0, 20, 0, 20)
-TabImage_11.Image = "http://www.roblox.com/asset/?id=12904923643"
-
-TabName_11.Name = "TabName"
-TabName_11.Parent = Report
-TabName_11.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TabName_11.BackgroundTransparency = 1.000
-TabName_11.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TabName_11.BorderSizePixel = 0
-TabName_11.Position = UDim2.new(0.380769223, 0, 0, 0)
-TabName_11.RichText = true
-TabName_11.Size = UDim2.new(0, 89, 0, 20)
-TabName_11.Font = Enum.Font[Table.GuiSettings.GuiFont.Medium]
-TabName_11.Text = "Report"
-TabName_11.TextColor3 = Color3.fromRGB(255, 255, 255)
-TabName_11.TextSize = 11.000
-TabName_11.TextStrokeTransparency = 0.900
-TabName_11.TextWrapped = true
-TabName_11.TextXAlignment = Enum.TextXAlignment.Left
-
-UICorner_21.CornerRadius = UDim.new(0.300000012, 0)
-UICorner_21.Parent = Report
-
-LocalPlayer.Name = "LocalPlayer"
-LocalPlayer.Parent = ScrollingFrame
-LocalPlayer.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-LocalPlayer.BackgroundTransparency = 1.000
-LocalPlayer.BorderColor3 = Color3.fromRGB(0, 0, 0)
-LocalPlayer.BorderSizePixel = 0
-LocalPlayer.LayoutOrder = 10
-LocalPlayer.Size = UDim2.new(0, 120, 0, 20)
-LocalPlayer.Font = Enum.Font.SourceSans
-LocalPlayer.Text = ""
-LocalPlayer.TextColor3 = Color3.fromRGB(0, 0, 0)
-LocalPlayer.TextSize = 14.000
-
-UIListLayout_19.Parent = LocalPlayer
-UIListLayout_19.FillDirection = Enum.FillDirection.Horizontal
-UIListLayout_19.HorizontalAlignment = Enum.HorizontalAlignment.Center
-UIListLayout_19.SortOrder = Enum.SortOrder.LayoutOrder
-UIListLayout_19.VerticalAlignment = Enum.VerticalAlignment.Center
-UIListLayout_19.Padding = UDim.new(0, 5)
-
-UIStroke_16.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_16.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
-UIStroke_16.Thickness = 0.700
-UIStroke_16.Transparency = 0.800
-UIStroke_16.Parent = LocalPlayer
-
-TabImage_12.Name = "TabImage"
-TabImage_12.Parent = LocalPlayer
-TabImage_12.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TabImage_12.BackgroundTransparency = 1.000
-TabImage_12.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TabImage_12.BorderSizePixel = 0
-TabImage_12.Size = UDim2.new(0, 20, 0, 20)
-TabImage_12.Image = "http://www.roblox.com/asset/?id=12774311691"
-
-TabName_12.Name = "TabName"
-TabName_12.Parent = LocalPlayer
-TabName_12.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TabName_12.BackgroundTransparency = 1.000
-TabName_12.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TabName_12.BorderSizePixel = 0
-TabName_12.Position = UDim2.new(0.380769223, 0, 0, 0)
-TabName_12.RichText = true
-TabName_12.Size = UDim2.new(0, 89, 0, 20)
-TabName_12.Font = Enum.Font[Table.GuiSettings.GuiFont.Medium]
-TabName_12.Text = "LocalPlayer"
-TabName_12.TextColor3 = Color3.fromRGB(255, 255, 255)
-TabName_12.TextSize = 11.000
-TabName_12.TextStrokeTransparency = 0.900
-TabName_12.TextWrapped = true
-TabName_12.TextXAlignment = Enum.TextXAlignment.Left
-
-UICorner_22.CornerRadius = UDim.new(0.300000012, 0)
-UICorner_22.Parent = LocalPlayer
-
-PluginsFolder.Name = "PluginsFolder"
-PluginsFolder.Parent = ScrollingFrame
-
-Favorites.Name = "Favorites"
-Favorites.Parent = ScrollingFrame
-Favorites.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Favorites.BackgroundTransparency = 1.000
-Favorites.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Favorites.BorderSizePixel = 0
-Favorites.LayoutOrder = 2
-Favorites.Size = UDim2.new(0, 120, 0, 20)
-Favorites.Font = Enum.Font.SourceSans
-Favorites.Text = ""
-Favorites.TextColor3 = Color3.fromRGB(0, 0, 0)
-Favorites.TextSize = 14.000
-
-UIListLayout_20.Parent = Favorites
-UIListLayout_20.FillDirection = Enum.FillDirection.Horizontal
-UIListLayout_20.HorizontalAlignment = Enum.HorizontalAlignment.Center
-UIListLayout_20.SortOrder = Enum.SortOrder.LayoutOrder
-UIListLayout_20.VerticalAlignment = Enum.VerticalAlignment.Center
-UIListLayout_20.Padding = UDim.new(0, 5)
-
-UIStroke_17.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_17.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
-UIStroke_17.Thickness = 0.700
-UIStroke_17.Transparency = 0.800
-UIStroke_17.Parent = Favorites
-
-TabImage_13.Name = "TabImage"
-TabImage_13.Parent = Favorites
-TabImage_13.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TabImage_13.BackgroundTransparency = 1.000
-TabImage_13.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TabImage_13.BorderSizePixel = 0
-TabImage_13.Size = UDim2.new(0, 20, 0, 20)
-TabImage_13.Image = "http://www.roblox.com/asset/?id=17648432144"
-
-TabName_13.Name = "TabName"
-TabName_13.Parent = Favorites
-TabName_13.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TabName_13.BackgroundTransparency = 1.000
-TabName_13.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TabName_13.BorderSizePixel = 0
-TabName_13.Position = UDim2.new(0.380769223, 0, 0, 0)
-TabName_13.RichText = true
-TabName_13.Size = UDim2.new(0, 89, 0, 20)
-TabName_13.Font = Enum.Font[Table.GuiSettings.GuiFont.Medium]
-TabName_13.Text = "Favorites"
-TabName_13.TextColor3 = Color3.fromRGB(255, 255, 255)
-TabName_13.TextSize = 11.000
-TabName_13.TextStrokeTransparency = 0.900
-TabName_13.TextWrapped = true
-TabName_13.TextXAlignment = Enum.TextXAlignment.Left
-
-UICorner_23.CornerRadius = UDim.new(0.300000012, 0)
-UICorner_23.Parent = Favorites
-
-LoadString.Name = "LoadString"
-LoadString.Parent = ScrollingFrame
-LoadString.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-LoadString.BackgroundTransparency = 1.000
-LoadString.BorderColor3 = Color3.fromRGB(0, 0, 0)
-LoadString.BorderSizePixel = 0
-LoadString.LayoutOrder = 11
-LoadString.Size = UDim2.new(0, 120, 0, 20)
-LoadString.Font = Enum.Font.SourceSans
-LoadString.Text = ""
-LoadString.TextColor3 = Color3.fromRGB(0, 0, 0)
-LoadString.TextSize = 14.000
-
-UIListLayout_21.Parent = LoadString
-UIListLayout_21.FillDirection = Enum.FillDirection.Horizontal
-UIListLayout_21.HorizontalAlignment = Enum.HorizontalAlignment.Center
-UIListLayout_21.SortOrder = Enum.SortOrder.LayoutOrder
-UIListLayout_21.VerticalAlignment = Enum.VerticalAlignment.Center
-UIListLayout_21.Padding = UDim.new(0, 5)
-
-UIStroke_18.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_18.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
-UIStroke_18.Thickness = 0.700
-UIStroke_18.Transparency = 0.800
-UIStroke_18.Parent = LoadString
-
-TabImage_14.Name = "TabImage"
-TabImage_14.Parent = LoadString
-TabImage_14.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TabImage_14.BackgroundTransparency = 1.000
-TabImage_14.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TabImage_14.BorderSizePixel = 0
-TabImage_14.Size = UDim2.new(0, 20, 0, 20)
-TabImage_14.Image = "http://www.roblox.com/asset/?id=17658539661"
-
-TabName_14.Name = "TabName"
-TabName_14.Parent = LoadString
-TabName_14.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-TabName_14.BackgroundTransparency = 1.000
-TabName_14.BorderColor3 = Color3.fromRGB(0, 0, 0)
-TabName_14.BorderSizePixel = 0
-TabName_14.Position = UDim2.new(0.380769223, 0, 0, 0)
-TabName_14.RichText = true
-TabName_14.Size = UDim2.new(0, 89, 0, 20)
-TabName_14.Font = Enum.Font[Table.GuiSettings.GuiFont.Medium]
-TabName_14.Text = "LoadString"
-TabName_14.TextColor3 = Color3.fromRGB(255, 255, 255)
-TabName_14.TextSize = 11.000
-TabName_14.TextStrokeTransparency = 0.900
-TabName_14.TextWrapped = true
-TabName_14.TextXAlignment = Enum.TextXAlignment.Left
-
-UICorner_24.CornerRadius = UDim.new(0.300000012, 0)
-UICorner_24.Parent = LoadString
-
-UIListLayout_22.Parent = Tabs
-UIListLayout_22.FillDirection = Enum.FillDirection.Horizontal
-UIListLayout_22.HorizontalAlignment = Enum.HorizontalAlignment.Center
-UIListLayout_22.SortOrder = Enum.SortOrder.LayoutOrder
-UIListLayout_22.VerticalAlignment = Enum.VerticalAlignment.Center
-UIListLayout_22.Padding = UDim.new(0, 5)
-
-UICorner_25.CornerRadius = UDim.new(0, 8)
-UICorner_25.Parent = Tabs
-
-UIStroke_19.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_19.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
-UIStroke_19.Thickness = 0.700
-UIStroke_19.Transparency = 0.800
-UIStroke_19.Parent = Tabs
+UIStroke_6.Parent = Tabs
 
 Pages.Name = "Pages"
 Pages.Parent = WholeFrame
@@ -1323,28 +515,29 @@ Pages.BackgroundColor3 = Color3.new(StringToColor3(Table.GuiSettings.GuiBackgrou
 Pages.BackgroundTransparency = 0.900
 Pages.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Pages.BorderSizePixel = 0
+Pages.ClipsDescendants = true
 Pages.LayoutOrder = 2
 Pages.Position = UDim2.new(0.291666865, 0, -0.00526315812, 0)
 Pages.Size = UDim2.new(0, 335, 0, 190)
 
-UICorner_26.CornerRadius = UDim.new(0, 8)
-UICorner_26.Parent = Pages
+UICorner_13.CornerRadius = UDim.new(0, 8)
+UICorner_13.Parent = Pages
 
-UIStroke_20.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-UIStroke_20.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
-UIStroke_20.Thickness = 0.700
-UIStroke_20.Transparency = 0.800
-UIStroke_20.Parent = Pages
+UIStroke_7.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+UIStroke_7.Color = Color3.new(StringToColor3(Table.GuiSettings.UIStrokeColor))
+UIStroke_7.Thickness = 0.700
+UIStroke_7.Transparency = 0.800
+UIStroke_7.Parent = Pages
 
-UIListLayout_23.Parent = WholeFrame
-UIListLayout_23.FillDirection = Enum.FillDirection.Horizontal
-UIListLayout_23.HorizontalAlignment = Enum.HorizontalAlignment.Center
-UIListLayout_23.SortOrder = Enum.SortOrder.LayoutOrder
-UIListLayout_23.VerticalAlignment = Enum.VerticalAlignment.Center
-UIListLayout_23.Padding = UDim.new(0, 7)
+UIListLayout_10.Parent = WholeFrame
+UIListLayout_10.FillDirection = Enum.FillDirection.Horizontal
+UIListLayout_10.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout_10.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout_10.VerticalAlignment = Enum.VerticalAlignment.Center
+UIListLayout_10.Padding = UDim.new(0, 7)
 
-UICorner_27.CornerRadius = UDim.new(0, 20)
-UICorner_27.Parent = BackFrame
+UICorner_14.CornerRadius = UDim.new(0, 20)
+UICorner_14.Parent = BackFrame
 
 UIScale.Parent = BackFrame
 UIScale.Scale = Table.GuiSettings.GuiScale-0.1
@@ -1382,6 +575,30 @@ function ResetStatus(TabName)
 	end
 end
 
+function NewLabel(Name)
+	local NewLabel = TemplateLabel:Clone()
+
+	NewLabel.Name = Name
+	NewLabel.Parent = ScrollingFrame
+	NewLabel.Text = Name
+end
+
+function NewButton(Name, TextSize, Icon, Function)
+	local Function = Function or function() end
+	local NewButton = TemplateButton:Clone()
+
+	NewButton.Name = Name
+	NewButton.Parent = ScrollingFrame
+	NewButton.Visible = true
+	NewButton.MouseButton1Down:Connect(function()
+		pcall(Function)
+	end)
+
+	NewButton.TabImage.Image = Icon
+	NewButton.TabName.Text = Name
+	NewButton.TabName.TextSize = TextSize
+end
+
 Close.MouseButton1Down:Connect(function()
 	if Table.GuiStatus.OnGoingAnimation == false then
 		Table.GuiStatus.OnGoingAnimation = true
@@ -1405,162 +622,6 @@ Home.MouseButton1Down:Connect(function()
 		wait(Table.GuiSettings.AnimationSpeed)
 		Table.GuiStatus.OnGoingAnimation = false
 		Table.GuiStatus.ActivePage = "Home"
-	end
-end)
-
-Scripts.MouseButton1Down:Connect(function()
-	if Table.GuiStatus.ActivePage ~= "Scripts" and Table.GuiStatus.OnGoingAnimation == false then
-		Table.GuiStatus.OnGoingAnimation = true
-		AnimationLibrary.DisappearTab(Table.GuiStatus.ActivePage)
-		wait(Table.GuiSettings.AnimationSpeed)
-		ResetStatus(Table.GuiStatus.ActivePage)
-		AnimationLibrary.AppearTab("Scripts")
-		wait(Table.GuiSettings.AnimationSpeed)
-		Table.GuiStatus.OnGoingAnimation = false
-		Table.GuiStatus.ActivePage = "Scripts"
-	end
-end)
-
-RequiredAccessories.MouseButton1Down:Connect(function()
-	if Table.GuiStatus.ActivePage ~= "Required Accessories" and Table.GuiStatus.OnGoingAnimation == false then
-		Table.GuiStatus.OnGoingAnimation = true
-		AnimationLibrary.DisappearTab(Table.GuiStatus.ActivePage)
-		wait(Table.GuiSettings.AnimationSpeed)
-		ResetStatus(Table.GuiStatus.ActivePage)
-		AnimationLibrary.AppearTab("Required Accessories")
-		wait(Table.GuiSettings.AnimationSpeed)
-		Table.GuiStatus.OnGoingAnimation = false
-		Table.GuiStatus.ActivePage = "Required Accessories"
-	end
-end)
-
-GUIS.MouseButton1Down:Connect(function()
-	if Table.GuiStatus.ActivePage ~= "GUIS" and Table.GuiStatus.OnGoingAnimation == false then
-		Table.GuiStatus.OnGoingAnimation = true
-		AnimationLibrary.DisappearTab(Table.GuiStatus.ActivePage)
-		wait(Table.GuiSettings.AnimationSpeed)
-		ResetStatus(Table.GuiStatus.ActivePage)
-		AnimationLibrary.AppearTab("GUIS")
-		wait(Table.GuiSettings.AnimationSpeed)
-		Table.GuiStatus.OnGoingAnimation = false
-		Table.GuiStatus.ActivePage = "GUIS"
-	end
-end)
-
-Animations.MouseButton1Down:Connect(function()
-	if Table.GuiStatus.ActivePage ~= "Animations" and Table.GuiStatus.OnGoingAnimation == false then
-		Table.GuiStatus.OnGoingAnimation = true
-		AnimationLibrary.DisappearTab(Table.GuiStatus.ActivePage)
-		wait(Table.GuiSettings.AnimationSpeed)
-		ResetStatus(Table.GuiStatus.ActivePage)
-		AnimationLibrary.AppearTab("Animations")
-		wait(Table.GuiSettings.AnimationSpeed)
-		Table.GuiStatus.OnGoingAnimation = false
-		Table.GuiStatus.ActivePage = "Animations"
-	end
-end)
-
-Commands.MouseButton1Down:Connect(function()
-	if Table.GuiStatus.ActivePage ~= "Commands" and Table.GuiStatus.OnGoingAnimation == false then
-		Table.GuiStatus.OnGoingAnimation = true
-		AnimationLibrary.DisappearTab(Table.GuiStatus.ActivePage)
-		wait(Table.GuiSettings.AnimationSpeed)
-		ResetStatus(Table.GuiStatus.ActivePage)
-		AnimationLibrary.AppearTab("Commands")
-		wait(Table.GuiSettings.AnimationSpeed)
-		Table.GuiStatus.OnGoingAnimation = false
-		Table.GuiStatus.ActivePage = "Commands"
-	end
-end)
-
-OtherHubs.MouseButton1Down:Connect(function()
-	if Table.GuiStatus.ActivePage ~= "Other Hubs" and Table.GuiStatus.OnGoingAnimation == false then
-		Table.GuiStatus.OnGoingAnimation = true
-		AnimationLibrary.DisappearTab(Table.GuiStatus.ActivePage)
-		wait(Table.GuiSettings.AnimationSpeed)
-		ResetStatus(Table.GuiStatus.ActivePage)
-		AnimationLibrary.AppearTab("Other Hubs")
-		wait(Table.GuiSettings.AnimationSpeed)
-		Table.GuiStatus.OnGoingAnimation = false
-		Table.GuiStatus.ActivePage = "Other Hubs"
-	end
-end)
-
-LimitedScripts.MouseButton1Down:Connect(function()
-	if Table.GuiStatus.ActivePage ~= "Limited Scripts" and Table.GuiStatus.OnGoingAnimation == false then
-		Table.GuiStatus.OnGoingAnimation = true
-		AnimationLibrary.DisappearTab(Table.GuiStatus.ActivePage)
-		wait(Table.GuiSettings.AnimationSpeed)
-		ResetStatus(Table.GuiStatus.ActivePage)
-		AnimationLibrary.AppearTab("Limited Scripts")
-		wait(Table.GuiSettings.AnimationSpeed)
-		Table.GuiStatus.OnGoingAnimation = false
-		Table.GuiStatus.ActivePage = "Limited Scripts"
-	end
-end)
-
-LocalPlayer.MouseButton1Down:Connect(function()
-	if Table.GuiStatus.ActivePage ~= "LocalPlayer" and Table.GuiStatus.OnGoingAnimation == false then
-		Table.GuiStatus.OnGoingAnimation = true
-		AnimationLibrary.DisappearTab(Table.GuiStatus.ActivePage)
-		wait(Table.GuiSettings.AnimationSpeed)
-		ResetStatus(Table.GuiStatus.ActivePage)
-		AnimationLibrary.AppearTab("LocalPlayer")
-		wait(Table.GuiSettings.AnimationSpeed)
-		Table.GuiStatus.OnGoingAnimation = false
-		Table.GuiStatus.ActivePage = "LocalPlayer"
-	end
-end)
-
-LoadString.MouseButton1Down:Connect(function()
-	if Table.GuiStatus.ActivePage ~= "LoadString" and Table.GuiStatus.OnGoingAnimation == false then
-		Table.GuiStatus.OnGoingAnimation = true
-		AnimationLibrary.DisappearTab(Table.GuiStatus.ActivePage)
-		wait(Table.GuiSettings.AnimationSpeed)
-		ResetStatus(Table.GuiStatus.ActivePage)
-		AnimationLibrary.AppearTab("LoadString")
-		wait(Table.GuiSettings.AnimationSpeed)
-		Table.GuiStatus.OnGoingAnimation = false
-		Table.GuiStatus.ActivePage = "LoadString"
-	end
-end)
-
-Plugins.MouseButton1Down:Connect(function()
-	if Table.GuiStatus.ActivePage ~= "Plugins" and Table.GuiStatus.OnGoingAnimation == false then
-		Table.GuiStatus.OnGoingAnimation = true
-		AnimationLibrary.DisappearTab(Table.GuiStatus.ActivePage)
-		wait(Table.GuiSettings.AnimationSpeed)
-		ResetStatus(Table.GuiStatus.ActivePage)
-		AnimationLibrary.AppearTab("Plugins")
-		wait(Table.GuiSettings.AnimationSpeed)
-		Table.GuiStatus.OnGoingAnimation = false
-		Table.GuiStatus.ActivePage = "Plugins"
-	end
-end)
-
-Report.MouseButton1Down:Connect(function()
-	if Table.GuiStatus.ActivePage ~= "Report" and Table.GuiStatus.OnGoingAnimation == false then
-		Table.GuiStatus.OnGoingAnimation = true
-		AnimationLibrary.DisappearTab(Table.GuiStatus.ActivePage)
-		wait(Table.GuiSettings.AnimationSpeed)
-		ResetStatus(Table.GuiStatus.ActivePage)
-		AnimationLibrary.AppearTab("Report")
-		wait(Table.GuiSettings.AnimationSpeed)
-		Table.GuiStatus.OnGoingAnimation = false
-		Table.GuiStatus.ActivePage = "Report"
-	end
-end)
-
-Settings.MouseButton1Down:Connect(function()
-	if Table.GuiStatus.ActivePage ~= "Settings" and Table.GuiStatus.OnGoingAnimation == false then
-		Table.GuiStatus.OnGoingAnimation = true
-		AnimationLibrary.DisappearTab(Table.GuiStatus.ActivePage)
-		wait(Table.GuiSettings.AnimationSpeed)
-		ResetStatus(Table.GuiStatus.ActivePage)
-		AnimationLibrary.AppearTab("Settings")
-		wait(Table.GuiSettings.AnimationSpeed)
-		Table.GuiStatus.OnGoingAnimation = false
-		Table.GuiStatus.ActivePage = "Settings"
 	end
 end)
 
