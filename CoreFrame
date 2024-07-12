@@ -1551,6 +1551,19 @@ Report.MouseButton1Down:Connect(function()
 	end
 end)
 
+Settings.MouseButton1Down:Connect(function()
+	if Table.GuiStatus.ActivePage ~= "Settings" and Table.GuiStatus.OnGoingAnimation == false then
+		Table.GuiStatus.OnGoingAnimation = true
+		AnimationLibrary.DisappearTab(Table.GuiStatus.ActivePage)
+		wait(Table.GuiSettings.AnimationSpeed)
+		ResetStatus(Table.GuiStatus.ActivePage)
+		AnimationLibrary.AppearTab("Settings")
+		wait(Table.GuiSettings.AnimationSpeed)
+		Table.GuiStatus.OnGoingAnimation = false
+		Table.GuiStatus.ActivePage = "Settings"
+	end
+end)
+
 for _, Buttons in TopRight:GetChildren() do
 	if Buttons:IsA("ImageButton") then
 		Buttons.MouseEnter:Connect(function()
