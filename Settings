@@ -74,6 +74,7 @@ Settings.BackgroundTransparency = 1.000
 Settings.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Settings.BorderSizePixel = 0
 Settings.Size = UDim2.new(1, 0, 1, 0)
+Settings.Visible = false
 
 UIListLayout.Parent = Settings
 UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
@@ -277,7 +278,6 @@ LabelTemplate.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 LabelTemplate.BackgroundTransparency = 1.000
 LabelTemplate.BorderColor3 = Color3.fromRGB(0, 0, 0)
 LabelTemplate.BorderSizePixel = 0
-LabelTemplate.LayoutOrder = 1
 LabelTemplate.Size = UDim2.new(0.949999988, 0, 0, 18)
 LabelTemplate.Font = Enum.Font[Table.GuiSettings.GuiFont.Bold]
 LabelTemplate.Text = "Animation Settings"
@@ -291,7 +291,6 @@ ButtonsTemplate.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 ButtonsTemplate.BackgroundTransparency = 1.000
 ButtonsTemplate.BorderColor3 = Color3.fromRGB(0, 0, 0)
 ButtonsTemplate.BorderSizePixel = 0
-ButtonsTemplate.LayoutOrder = 3
 ButtonsTemplate.Size = UDim2.new(0.899999976, 0, 0, 20)
 
 SettingsName.Name = "SettingsName"
@@ -370,7 +369,6 @@ TextBoxTemplate.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 TextBoxTemplate.BackgroundTransparency = 1.000
 TextBoxTemplate.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TextBoxTemplate.BorderSizePixel = 0
-TextBoxTemplate.LayoutOrder = 2
 TextBoxTemplate.Size = UDim2.new(0.899999976, 0, 0, 20)
 
 SettingsName_2.Name = "SettingsName"
@@ -462,6 +460,23 @@ UIStroke_7.Transparency = 0.800
 UIStroke_7.Parent = Settings_2
 
 -- Scripts:
+
+for i, v in Settings:GetDescendants() do
+    if v:IsA("ImageLabel") or v:IsA("ImageButton") then
+        v.BackgroundTransparency = 1
+        v.ImageTransparency = 1
+    elseif v:IsA("UIStroke") then
+        v.Transparency = 1
+    elseif v:IsA("TextBox") or v:IsA("TextLabel") or v:IsA("TextButton") then
+        v.TextTransparency = 1
+        v.BackgroundTransparency = 1
+    elseif v:IsA("Frame") then
+        v.BackgroundTransparency = 1
+    elseif v:IsA("ScrollingFrame") then
+        v.BackgroundTransparency = 1
+        v.ScrollBarImageTransparency = 1
+    end
+end
 
 function NewTextBoxSetting(SettingName, SettingNameTextSize, TextBoxText, TextBoxPlaceHolderText, Function)
 	local Function = Function or function() end
