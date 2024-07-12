@@ -187,7 +187,7 @@ Library.AppearTab = function(TabName)
 			TweenService:Create(Tab.BottomFrame.Settings.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
 			TweenService:Create(Tab.BottomFrame.Settings.ScrollingFrame, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ScrollBarImageTransparency = 0}):Play()
 			for _, Settings in Tab.BottomFrame.Settings.ScrollingFrame:GetChildren() do
-				if (Settings.Type) and Settings.Name ~= "LabelTemplate" and Settings.Name ~= "ButtonsTemplate" and Settings.Name ~= "TextBoxTemplate" then
+				if (Settings.Type) == true and Settings.Name ~= "LabelTemplate" and Settings.Name ~= "ButtonsTemplate" and Settings.Name ~= "TextBoxTemplate" then
 					if Settings.Type.Value == "TextBox" then
 						TweenService:Create(Settings.SettingsName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
 						TweenService:Create(Settings.TextBoxParent.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
