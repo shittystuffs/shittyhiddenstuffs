@@ -487,7 +487,7 @@ getgenv().CreateNewVexPlugin = function(PluginTable)
 
 	PluginTabButton.Name = "Plugin_"..PluginTable.PluginName
 	PluginTabButton.Parent = game:GetService("CoreGui"):WaitForChild("VexHubFolder").VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Tabs.ScrollingFrame
-	PluginTabButton.LayoutOrder = 22
+	PluginTabButton.LayoutOrder = 21
 	PluginTabButton.TabName.Text = PluginTable.PluginName
 	PluginTabButton.TabImage.Image = ReturnIdAsImage(PluginTable.PluginLogo)
 	PluginTabButton.MouseButton1Down:Connect(function()
