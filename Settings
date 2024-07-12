@@ -42,7 +42,9 @@ local UIListLayout_7 = Instance.new("UIListLayout")
 local ScrollingFrame_2 = Instance.new("ScrollingFrame")
 local UIListLayout_8 = Instance.new("UIListLayout")
 local LabelTemplate = Instance.new("TextLabel")
+local Type = Instance.new("StringValue")
 local ButtonsTemplate = Instance.new("Frame")
+local Type_2 = Instance.new("StringValue")
 local SettingsName = Instance.new("TextLabel")
 local UIListLayout_9 = Instance.new("UIListLayout")
 local Button1 = Instance.new("TextButton")
@@ -52,6 +54,7 @@ local Button2 = Instance.new("TextButton")
 local UICorner_4 = Instance.new("UICorner")
 local UIStroke_4 = Instance.new("UIStroke")
 local TextBoxTemplate = Instance.new("Frame")
+local Type_3 = Instance.new("StringValue")
 local SettingsName_2 = Instance.new("TextLabel")
 local UIListLayout_10 = Instance.new("UIListLayout")
 local TextBoxParent = Instance.new("Frame")
@@ -285,6 +288,10 @@ LabelTemplate.TextColor3 = Color3.fromRGB(230, 230, 230)
 LabelTemplate.TextSize = 14.000
 LabelTemplate.TextWrapped = true
 
+Type.Name = "Type"
+Type.Parent = LabelTemplate
+Type.Value = "Label"
+
 ButtonsTemplate.Name = "ButtonsTemplate"
 ButtonsTemplate.Parent = ScrollingFrame_2
 ButtonsTemplate.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -292,6 +299,10 @@ ButtonsTemplate.BackgroundTransparency = 1.000
 ButtonsTemplate.BorderColor3 = Color3.fromRGB(0, 0, 0)
 ButtonsTemplate.BorderSizePixel = 0
 ButtonsTemplate.Size = UDim2.new(0.899999976, 0, 0, 20)
+
+Type_2.Name = "Type"
+Type_2.Parent = LabelTemplate
+Type_2.Value = "Bool"
 
 SettingsName.Name = "SettingsName"
 SettingsName.Parent = ButtonsTemplate
@@ -370,6 +381,10 @@ TextBoxTemplate.BackgroundTransparency = 1.000
 TextBoxTemplate.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TextBoxTemplate.BorderSizePixel = 0
 TextBoxTemplate.Size = UDim2.new(0.899999976, 0, 0, 20)
+
+Type_3.Name = "Type"
+Type_3.Parent = LabelTemplate
+Type_3.Value = "TextBox"
 
 SettingsName_2.Name = "SettingsName"
 SettingsName_2.Parent = TextBoxTemplate
