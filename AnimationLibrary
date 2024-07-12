@@ -64,13 +64,15 @@ Library.AppearCoreInteractions = function()
 		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Tabs, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {BackgroundTransparency = 0.9}):Play()
 		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Tabs.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
 		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Tabs.ScrollingFrame, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ScrollBarImageTransparency = 0}):Play()
-		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Tabs.ScrollingFrame.Others, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
-		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Tabs.ScrollingFrame.PluginsText, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
-		for _, Buttons in Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Tabs.ScrollingFrame:GetDescendants() do
-			if Buttons:IsA("TextButton") then
-				TweenService:Create(Buttons.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
-				TweenService:Create(Buttons.TabImage, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
-				TweenService:Create(Buttons.TabName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+		for _, Childrens in Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Tabs.ScrollingFrame:GetDescendants() do
+			if Childrens:FindFirstChild("Type") then
+				if Childrens.Type.Value == "Button" then
+					TweenService:Create(Childrens.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
+					TweenService:Create(Childrens.TabImage, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 0}):Play()
+					TweenService:Create(Childrens.TabName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+				elseif Childrens.Type.Value == "Label" then
+					TweenService:Create(Childrens, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+				end
 			end
 		end
 	end)()
@@ -98,14 +100,16 @@ Library.DisappearCoreInteractions = function()
 		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Tabs, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {BackgroundTransparency = 1}):Play()
 		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Tabs.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
 		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Tabs.ScrollingFrame, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ScrollBarImageTransparency = 1}):Play()
-		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Tabs.ScrollingFrame.Others, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
-		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Tabs.ScrollingFrame.PluginsText, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
-		for _, Buttons in Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Tabs.ScrollingFrame:GetDescendants() do
-			if Buttons:IsA("TextButton") then
-				TweenService:Create(Buttons.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
-				TweenService:Create(Buttons.TabImage, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
-				TweenService:Create(Buttons.TabName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
-			end
+		for _, Childrens in Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Tabs.ScrollingFrame:GetDescendants() do
+		    if Childrens:FindFirstChild("Type") then
+		        if Childrens.Type.Value == "Button" then
+		            TweenService:Create(Childrens.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
+		            TweenService:Create(Childrens.TabImage, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
+		            TweenService:Create(Childrens.TabName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+		        elseif Childrens.Type.Value == "Label" then
+		            TweenService:Create(Childrens, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
+		        end
+		    end
 		end
 	end)()
 end
