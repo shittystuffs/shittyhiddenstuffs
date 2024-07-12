@@ -61,7 +61,9 @@ local UIListLayout_7 = Instance.new("UIListLayout")
 local Barrier = Instance.new("Frame")
 local Barrier_2 = Instance.new("Frame")
 local TemplateLabel = Instance.new("TextLabel")
+local Type = Instance.new("StringValue")
 local TemplateButton = Instance.new("TextButton")
+local Type_2 = Instance.new("StringValue")
 local UIListLayout_8 = Instance.new("UIListLayout")
 local UIStroke_5 = Instance.new("UIStroke")
 local TabImage = Instance.new("ImageLabel")
@@ -437,6 +439,10 @@ TemplateLabel.Text = "string"
 TemplateLabel.TextColor3 = Color3.fromRGB(230, 230, 230)
 TemplateLabel.TextWrapped = true
 
+Type.Name = "Type"
+Type.Parent = TemplateLabel
+Type.Value = "Label"
+
 TemplateButton.Name = "TemplateButton"
 TemplateButton.Parent = ScrollingFrame
 TemplateButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -450,6 +456,10 @@ TemplateButton.Font = Enum.Font.SourceSans
 TemplateButton.Text = ""
 TemplateButton.TextColor3 = Color3.fromRGB(0, 0, 0)
 TemplateButton.TextSize = 14.000
+
+Type_2.Name = "Type"
+Type_2.Parent = TemplateLabel
+Type_2.Value = "Button"
 
 UIListLayout_8.Parent = TemplateButton
 UIListLayout_8.FillDirection = Enum.FillDirection.Horizontal
