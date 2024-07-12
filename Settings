@@ -569,8 +569,7 @@ NewTextBoxSetting("Sound", 12, "", "Id", function()
 	print("Hello")
 end)
 
-NewButtonsSetting({
-	"Notifications", 
+NewButtonsSetting("Notifications", 
 	12, 
 	"Allow", 
 	function()
@@ -580,4 +579,4 @@ NewButtonsSetting({
 	function()
 		print("Hello")
 	end
-})
+)
