@@ -288,6 +288,7 @@ LabelTemplate.Text = "Animation Settings"
 LabelTemplate.TextColor3 = Color3.fromRGB(230, 230, 230)
 LabelTemplate.TextSize = 14.000
 LabelTemplate.TextWrapped = true
+LabelTemplate.Visible = false
 
 Type.Name = "Type"
 Type.Parent = LabelTemplate
@@ -300,6 +301,7 @@ ButtonsTemplate.BackgroundTransparency = 1.000
 ButtonsTemplate.BorderColor3 = Color3.fromRGB(0, 0, 0)
 ButtonsTemplate.BorderSizePixel = 0
 ButtonsTemplate.Size = UDim2.new(0.899999976, 0, 0, 20)
+ButtonsTemplate.Visible = false
 
 Type_2.Name = "Type"
 Type_2.Parent = ButtonsTemplate
@@ -382,6 +384,7 @@ TextBoxTemplate.BackgroundTransparency = 1.000
 TextBoxTemplate.BorderColor3 = Color3.fromRGB(0, 0, 0)
 TextBoxTemplate.BorderSizePixel = 0
 TextBoxTemplate.Size = UDim2.new(0.899999976, 0, 0, 20)
+TextBoxTemplate.Visible = false
 
 Type_3.Name = "Type"
 Type_3.Parent = TextBoxTemplate
