@@ -459,7 +459,7 @@ TemplateButton.TextColor3 = Color3.fromRGB(0, 0, 0)
 TemplateButton.TextSize = 14.000
 
 Type_2.Name = "Type"
-Type_2.Parent = TemplateLabel
+Type_2.Parent = TemplateButton
 Type_2.Value = "Button"
 
 UIListLayout_8.Parent = TemplateButton
