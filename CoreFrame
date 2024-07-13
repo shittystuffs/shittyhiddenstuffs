@@ -598,32 +598,6 @@ end
 
 print(600)
 
-function NewLabel(Name, LayoutOrder)
-	local NewLabel = TemplateLabel:Clone()
-
-	NewLabel.Name = Name
-	NewLabel.Parent = ScrollingFrame
-	NewLabel.LayoutOrder = LayoutOrder
-	NewLabel.Text = Name
-end
-
-function NewButton(Name, TextSize, LayoutOrder Icon, Function)
-	local Function = Function or function() end
-	local NewButton = TemplateButton:Clone()
-
-	NewButton.Name = Name
-	NewButton.Parent = ScrollingFrame
-	NewButton.LayoutOrder = LayoutOrder
-	NewButton.Visible = true
-	NewButton.MouseButton1Down:Connect(function()
-		pcall(Function)
-	end)
-
-	NewButton.TabImage.Image = Icon
-	NewButton.TabName.Text = Name
-	NewButton.TabName.TextSize = TextSize
-end
-
 Close.MouseButton1Down:Connect(function()
 	if Table.GuiStatus.OnGoingAnimation == false then
 		Table.GuiStatus.OnGoingAnimation = true
