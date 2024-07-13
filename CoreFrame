@@ -594,6 +594,7 @@ function NewLabel(Name, LayoutOrder)
 	NewLabel.Parent = ScrollingFrame
 	NewLabel.LayoutOrder = LayoutOrder
 	NewLabel.Text = Name
+	NewLabel.Visible = true
 end
 
 function NewButton(Name, TextSize, LayoutOrder, Icon, Function)
