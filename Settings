@@ -561,12 +561,9 @@ function ModifySettings(SettingPath, Value)
 	local SettingsTable = JSon:Decode(tostring(readfile("VexHub/Settings.vex")))
 
 	SettingsTable[SettingPath] = Value
-	print(1)
 	Table.GuiSettings[SettingPath] = Value
-	print(2)
 
-	writefile("VexHub/Settings.vex", SettingsTable)
-	print(3)
+	writefile("VexHub/Settings.vex", JSon:Encode(SettingsTable))
 end
 
 function CheckIfDecalOrImage(Id)
