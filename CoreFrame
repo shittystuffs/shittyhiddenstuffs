@@ -1,12 +1,9 @@
 -- V31nc : GUI to LUA V1
-print(1)
 local Table = _G.Table
 
 local Player = game:GetService("Players").LocalPlayer
 local TweenService = game:GetService("TweenService")
 local ClickSound = Table.GuiStatus.ClickSound
-
-print(2)
 
 function StringToColor3(ToConvert)
 	local ColorString = tostring(ToConvert)
@@ -101,7 +98,6 @@ BackFrame.BackgroundTransparency = 0.500
 BackFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 BackFrame.BorderSizePixel = 0
 
-print(100)
 BackFrame.Draggable = true
 BackFrame.LayoutOrder = 1
 BackFrame.Position = UDim2.new(0.178074419, 0, 0.177274972, 0)
@@ -201,7 +197,6 @@ ProfilePicture.Image = "https://www.roblox.com/headshot-thumbnail/image?userId="
 
 UICorner_5.CornerRadius = UDim.new(1, 0)
 
-print(200)
 UICorner_5.Parent = ProfilePicture
 
 UIStroke_2.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
@@ -301,8 +296,6 @@ Discord.TileSize = UDim2.new(0.5, 0, 1, 0)
 UICorner_7.CornerRadius = UDim.new(0.5, 0)
 UICorner_7.Parent = Discord
 
-print(300)
-
 TopRight.Name = "TopRight"
 TopRight.Parent = VexHubTopBar
 TopRight.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -401,7 +394,6 @@ Tabs.BorderSizePixel = 0
 Tabs.LayoutOrder = 1
 Tabs.Position = UDim2.new(0.00800000038, 0, -0.00100000005, 0)
 
-print(400)
 Tabs.Size = UDim2.new(0, 130, 0, 190)
 
 ScrollingFrame.Parent = Tabs
@@ -501,7 +493,6 @@ TabName.BorderSizePixel = 0
 TabName.Position = UDim2.new(0.380769223, 0, 0, 0)
 TabName.RichText = true
 
-print(500)
 TabName.Size = UDim2.new(0, 89, 0, 20)
 TabName.Font = Enum.Font[Table.GuiSettings.GuiFont.Medium]
 TabName.Text = "string"
@@ -596,8 +587,6 @@ function ResetStatus(TabName)
 	end
 end
 
-print(600)
-
 function NewLabel(Name, LayoutOrder)
 	local NewLabel = TemplateLabel:Clone()
 
@@ -605,6 +594,23 @@ function NewLabel(Name, LayoutOrder)
 	NewLabel.Parent = ScrollingFrame
 	NewLabel.LayoutOrder = LayoutOrder
 	NewLabel.Text = Name
+end
+
+function NewButton(Name, TextSize, LayoutOrder, Icon, Function)
+	local Function = Function or function() end
+	local NewButton = TemplateButton:Clone()
+
+	NewButton.Name = Name
+	NewButton.Parent = ScrollingFrame
+	NewButton.LayoutOrder = LayoutOrder
+	NewButton.Visible = true
+	NewButton.MouseButton1Down:Connect(function()
+		pcall(Function)
+	end)
+
+	NewButton.TabImage.Image = Icon
+	NewButton.TabName.Text = Name
+	NewButton.TabName.TextSize = TextSize
 end
 
 Close.MouseButton1Down:Connect(function()
@@ -619,3 +625,214 @@ Close.MouseButton1Down:Connect(function()
 		Table.GuiStatus.IsVisible = false
 	end
 end)
+
+NewButton("Home", 11, 10, "rbxassetid://11592840951", function()
+	if Table.GuiStatus.ActivePage ~= "Home" and Table.GuiStatus.OnGoingAnimation == false then
+		Table.GuiStatus.OnGoingAnimation = true
+		AnimationLibrary.DisappearTab(Table.GuiStatus.ActivePage)
+		wait(Table.GuiSettings.AnimationSpeed)
+		ResetStatus(Table.GuiStatus.ActivePage)
+		AnimationLibrary.AppearTab("Home")
+		wait(Table.GuiSettings.AnimationSpeed)
+		Table.GuiStatus.OnGoingAnimation = false
+		Table.GuiStatus.ActivePage = "Home"
+	end
+end)
+
+NewButton("Favorites", 11, 10, "http://www.roblox.com/asset/?id=17648432144", function()
+	if Table.GuiStatus.ActivePage ~= "Favorites" and Table.GuiStatus.OnGoingAnimation == false then
+		Table.GuiStatus.OnGoingAnimation = true
+		AnimationLibrary.DisappearTab(Table.GuiStatus.ActivePage)
+		wait(Table.GuiSettings.AnimationSpeed)
+		ResetStatus(Table.GuiStatus.ActivePage)
+		AnimationLibrary.AppearTab("Favorites")
+		wait(Table.GuiSettings.AnimationSpeed)
+		Table.GuiStatus.OnGoingAnimation = false
+		Table.GuiStatus.ActivePage = "Favorites"
+	end
+end)
+
+NewButton("Scripts", 11, 10, "rbxassetid://11592851654", function()
+	if Table.GuiStatus.ActivePage ~= "Scripts" and Table.GuiStatus.OnGoingAnimation == false then
+		Table.GuiStatus.OnGoingAnimation = true
+		AnimationLibrary.DisappearTab(Table.GuiStatus.ActivePage)
+		wait(Table.GuiSettings.AnimationSpeed)
+		ResetStatus(Table.GuiStatus.ActivePage)
+		AnimationLibrary.AppearTab("Scripts")
+		wait(Table.GuiSettings.AnimationSpeed)
+		Table.GuiStatus.OnGoingAnimation = false
+		Table.GuiStatus.ActivePage = "Scripts"
+	end
+end)
+
+NewButton("Required Accessories", 10, 10, "rbxassetid://11592824883", function()
+	if Table.GuiStatus.ActivePage ~= "Required Accessories" and Table.GuiStatus.OnGoingAnimation == false then
+		Table.GuiStatus.OnGoingAnimation = true
+		AnimationLibrary.DisappearTab(Table.GuiStatus.ActivePage)
+		wait(Table.GuiSettings.AnimationSpeed)
+		ResetStatus(Table.GuiStatus.ActivePage)
+		AnimationLibrary.AppearTab("Required Accessories")
+		wait(Table.GuiSettings.AnimationSpeed)
+		Table.GuiStatus.OnGoingAnimation = false
+		Table.GuiStatus.ActivePage = "Required Accessories"
+	end
+end)
+
+NewButton("GUIS", 11, 10, "rbxassetid://11592848654", function()
+	if Table.GuiStatus.ActivePage ~= "GUIS" and Table.GuiStatus.OnGoingAnimation == false then
+		Table.GuiStatus.OnGoingAnimation = true
+		AnimationLibrary.DisappearTab(Table.GuiStatus.ActivePage)
+		wait(Table.GuiSettings.AnimationSpeed)
+		ResetStatus(Table.GuiStatus.ActivePage)
+		AnimationLibrary.AppearTab("GUIS")
+		wait(Table.GuiSettings.AnimationSpeed)
+		Table.GuiStatus.OnGoingAnimation = false
+		Table.GuiStatus.ActivePage = "GUIS"
+	end
+end)
+
+NewButton("Animations", 11, 10, "rbxassetid://11592835705", function()
+	if Table.GuiStatus.ActivePage ~= "Animations" and Table.GuiStatus.OnGoingAnimation == false then
+		Table.GuiStatus.OnGoingAnimation = true
+		AnimationLibrary.DisappearTab(Table.GuiStatus.ActivePage)
+		wait(Table.GuiSettings.AnimationSpeed)
+		ResetStatus(Table.GuiStatus.ActivePage)
+		AnimationLibrary.AppearTab("Animations")
+		wait(Table.GuiSettings.AnimationSpeed)
+		Table.GuiStatus.OnGoingAnimation = false
+		Table.GuiStatus.ActivePage = "Animations"
+	end
+end)
+
+NewButton("Commands", 11, 10, "rbxassetid://11592837927", function()
+	if Table.GuiStatus.ActivePage ~= "Commands" and Table.GuiStatus.OnGoingAnimation == false then
+		Table.GuiStatus.OnGoingAnimation = true
+		AnimationLibrary.DisappearTab(Table.GuiStatus.ActivePage)
+		wait(Table.GuiSettings.AnimationSpeed)
+		ResetStatus(Table.GuiStatus.ActivePage)
+		AnimationLibrary.AppearTab("Commands")
+		wait(Table.GuiSettings.AnimationSpeed)
+		Table.GuiStatus.OnGoingAnimation = false
+		Table.GuiStatus.ActivePage = "Commands"
+	end
+end)
+
+NewButton("Other Hubs", 11, 10, "rbxassetid://11592850267", function()
+	if Table.GuiStatus.ActivePage ~= "Other Hubs" and Table.GuiStatus.OnGoingAnimation == false then
+		Table.GuiStatus.OnGoingAnimation = true
+		AnimationLibrary.DisappearTab(Table.GuiStatus.ActivePage)
+		wait(Table.GuiSettings.AnimationSpeed)
+		ResetStatus(Table.GuiStatus.ActivePage)
+		AnimationLibrary.AppearTab("Other Hubs")
+		wait(Table.GuiSettings.AnimationSpeed)
+		Table.GuiStatus.OnGoingAnimation = false
+		Table.GuiStatus.ActivePage = "Other Hubs"
+	end
+end)
+
+NewButton("Limited Scripts", 11, 10, "rbxassetid://17619425419", function()
+	if Table.GuiStatus.ActivePage ~= "Limited Scripts" and Table.GuiStatus.OnGoingAnimation == false then
+		Table.GuiStatus.OnGoingAnimation = true
+		AnimationLibrary.DisappearTab(Table.GuiStatus.ActivePage)
+		wait(Table.GuiSettings.AnimationSpeed)
+		ResetStatus(Table.GuiStatus.ActivePage)
+		AnimationLibrary.AppearTab("Limited Scripts")
+		wait(Table.GuiSettings.AnimationSpeed)
+		Table.GuiStatus.OnGoingAnimation = false
+		Table.GuiStatus.ActivePage = "Limited Scripts"
+	end
+end)
+
+NewButton("LocalPlayer", 11, 10, "http://www.roblox.com/asset/?id=12774311691", function()
+	if Table.GuiStatus.ActivePage ~= "LocalPlayer" and Table.GuiStatus.OnGoingAnimation == false then
+		Table.GuiStatus.OnGoingAnimation = true
+		AnimationLibrary.DisappearTab(Table.GuiStatus.ActivePage)
+		wait(Table.GuiSettings.AnimationSpeed)
+		ResetStatus(Table.GuiStatus.ActivePage)
+		AnimationLibrary.AppearTab("LocalPlayer")
+		wait(Table.GuiSettings.AnimationSpeed)
+		Table.GuiStatus.OnGoingAnimation = false
+		Table.GuiStatus.ActivePage = "LocalPlayer"
+	end
+end)
+
+NewButton("LoadString", 11, 10, "http://www.roblox.com/asset/?id=17658539661", function()
+	if Table.GuiStatus.ActivePage ~= "LoadString" and Table.GuiStatus.OnGoingAnimation == false then
+		Table.GuiStatus.OnGoingAnimation = true
+		AnimationLibrary.DisappearTab(Table.GuiStatus.ActivePage)
+		wait(Table.GuiSettings.AnimationSpeed)
+		ResetStatus(Table.GuiStatus.ActivePage)
+		AnimationLibrary.AppearTab("LoadString")
+		wait(Table.GuiSettings.AnimationSpeed)
+		Table.GuiStatus.OnGoingAnimation = false
+		Table.GuiStatus.ActivePage = "LoadString"
+	end
+end)
+
+NewLabel("Plugins", 20)
+
+NewButton("Plugins", 11, 20, "http://www.roblox.com/asset/?id=17645365934", function()
+	if Table.GuiStatus.ActivePage ~= "Plugins" and Table.GuiStatus.OnGoingAnimation == false then
+		Table.GuiStatus.OnGoingAnimation = true
+		AnimationLibrary.DisappearTab(Table.GuiStatus.ActivePage)
+		wait(Table.GuiSettings.AnimationSpeed)
+		ResetStatus(Table.GuiStatus.ActivePage)
+		AnimationLibrary.AppearTab("Plugins")
+		wait(Table.GuiSettings.AnimationSpeed)
+		Table.GuiStatus.OnGoingAnimation = false
+		Table.GuiStatus.ActivePage = "Plugins"
+	end
+end)
+
+NewLabel("Others", 100)
+
+NewButton("Report", 11, 100, "http://www.roblox.com/asset/?id=12904923643", function()
+	if Table.GuiStatus.ActivePage ~= "Report" and Table.GuiStatus.OnGoingAnimation == false then
+		Table.GuiStatus.OnGoingAnimation = true
+		AnimationLibrary.DisappearTab(Table.GuiStatus.ActivePage)
+		wait(Table.GuiSettings.AnimationSpeed)
+		ResetStatus(Table.GuiStatus.ActivePage)
+		AnimationLibrary.AppearTab("Report")
+		wait(Table.GuiSettings.AnimationSpeed)
+		Table.GuiStatus.OnGoingAnimation = false
+		Table.GuiStatus.ActivePage = "Report"
+	end
+end)
+
+NewButton("Settings", 11, 100, "http://www.roblox.com/asset/?id=11592827868", function()
+	if Table.GuiStatus.ActivePage ~= "Settings" and Table.GuiStatus.OnGoingAnimation == false then
+		Table.GuiStatus.OnGoingAnimation = true
+		AnimationLibrary.DisappearTab(Table.GuiStatus.ActivePage)
+		wait(Table.GuiSettings.AnimationSpeed)
+		ResetStatus(Table.GuiStatus.ActivePage)
+		AnimationLibrary.AppearTab("Settings")
+		wait(Table.GuiSettings.AnimationSpeed)
+		Table.GuiStatus.OnGoingAnimation = false
+		Table.GuiStatus.ActivePage = "Settings"
+	end
+end)
+
+for _, Buttons in TopRight:GetChildren() do
+	if Buttons:IsA("ImageButton") then
+		Buttons.MouseEnter:Connect(function()
+		TweenService:Create(Buttons, TweenInfo.new(Table.GuiSettings.AnimationSpeed, Enum.EasingStyle.Quart), {BackgroundTransparency = 0.7}):Play()
+		end)
+	
+		Buttons.MouseLeave:Connect(function()
+		TweenService:Create(Buttons, TweenInfo.new(Table.GuiSettings.AnimationSpeed, Enum.EasingStyle.Quart), {BackgroundTransparency = 1}):Play()
+		end)
+	end
+end
+
+
+for _, Buttons in ScrollingFrame:GetDescendants() do
+	if Buttons:IsA("GuiButton") then
+		Buttons.MouseEnter:Connect(function()
+			TweenService:Create(Buttons, TweenInfo.new(Table.GuiSettings.AnimationSpeed, Enum.EasingStyle.Quart), {BackgroundTransparency = 0.9}):Play()
+		end)
+					
+		Buttons.MouseLeave:Connect(function()
+			TweenService:Create(Buttons, TweenInfo.new(Table.GuiSettings.AnimationSpeed, Enum.EasingStyle.Quart), {BackgroundTransparency = 1}):Play()
+		end)
+	end
+end
