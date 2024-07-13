@@ -606,14 +606,14 @@ NewTextBoxSetting("Wallpaper", 12, "", "Id or .png", function()
 
 	if string.find(Value, ".png") then
 		if isfile(Value) then
-			ModifySettings("Wallpaper", Value)
+			ModifySettings("Wallpaper", tostring(Value))
 			Notification:Create("Settings modified and saved!", "Changed have been saved.", 5)
 		else
 			Notification:Create("File does not exist.", "Did not find "..Value.." in your exploits workspace.", 5)
 		end
 	elseif CheckIfNumber(Value) == true then
 		if CheckIfDecalOrImage(Value) == true then
-			ModifySettings("Wallpaper", Value)
+			ModifySettings("Wallpaper", tostring(Value))
 			Notification:Create("Settings modified and saved!", "Changed have been saved.", 5)
 		else
 			Notification:Create("Id is not a decal or a image Id.", "Did not find "..Value.." in the Roblox Creator Marketplace.", 5)
