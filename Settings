@@ -503,7 +503,6 @@ for i, v in Settings:GetDescendants() do
 end
 
 function NewTextBoxSetting(SettingName, SettingNameTextSize, TextBoxText, TextBoxPlaceHolderText, Function)
-	local Function = Function or function() end
 	local NewSetting = TextBoxTemplate:Clone()
 
 	NewSetting.Name = SettingName
@@ -521,9 +520,6 @@ function NewTextBoxSetting(SettingName, SettingNameTextSize, TextBoxText, TextBo
 end
 
 function NewButtonsSetting(SettingName, SettingNameTextSize, Button1Text, Button1Function, Button2Text, Button2Function)
-	local Button1Function = Button1Function or function() end
-	local Button2Function = Button2Function or function() end
-	
 	local NewSetting = ButtonsTemplate:Clone()
 
 	NewSetting.Name = SettingName
@@ -552,10 +548,74 @@ function NewLabel(Name)
 	NewLabel.Visible = true
 end
 
+local JSon = {}
+function JSon:Encode(Table)
+	return game:GetService("HttpService"):JSONEncode(Table)
+end
+
+function JSon:Decode(Table)
+	return game:GetService("HttpService"):JSONDecode(Table)
+end
+
+function ModifySettings(SettingPath, Value)
+	local File = loadstring(JSon:Decode(readfile("VexHub/Settings.vex")))()
+
+	File[SettingPath] = Value
+	Table[SettingPath] = Value
+end
+
+function CheckIfDecalOrImage(Id)
+	local Success, Error = pcall(function() 
+		if game:GetService("MarketplaceService"):GetProductInfo(tonumber(Id)).AssetTypeId == 0 then end
+	end)
+
+	if Success then
+		if game:GetService("MarketplaceService"):GetProductInfo(tonumber(Id)).AssetTypeId == 1 or game:GetService("MarketplaceService"):GetProductInfo(tonumber(Id)).AssetTypeId == 13 then
+			return true
+		else
+			return false
+		end
+	else
+		return false
+	end
+end
+
+function CheckIfNumber(string)
+	local string = tonumber(string)
+
+	if string then
+		return true
+	else
+		return false
+	end
+end
+
+function GetTextBoxTextContent(SettingName)
+	return ScrollingFrame_2[SettingName].TextBoxParent.TextBox.ContentText
+end
+
 NewLabel("GUI Settings")
 
 NewTextBoxSetting("Wallpaper", 12, "", "Id or .png", function()
-	print("Hello")
+	local Value = GetTextBoxTextContent("Wallpaper")
+
+	if string.find(Value, ".png") then
+		if isfile(Value) then
+			ModifySettings("Wallpaper", Value)
+			Notification:Create("Settings modified and saved!", "Changed have been saved.", 5)
+		else
+			Notification:Create("File does not exist.", "Did not find "..Value.." in your exploits workspace.", 5)
+		end
+	elseif CheckIfNumber(Value) == true then
+		if CheckIfDecalOrImage(Value) == true then
+			ModifySettings("Wallpaper", Value)
+			Notification:Create("Settings modified and saved!", "Changed have been saved.", 5)
+		else
+			Notification:Create("Id is not a decal or a image Id.", "Did not find "..Value.." in the Roblox Creator Marketplace.", 5)
+		end
+	else
+		Notification:Create("Failed to save!", "Please enter a valid Image or Decal Id or the path of the image.", 5)
+	end
 end)
 
 NewTextBoxSetting("UIScale", 12, "", "Number", function()
