@@ -496,7 +496,7 @@ InstallButton.MouseButton1Down:Connect(function()
 		Notification:Create("Oops!", "Please enter a valid table.", 5)
 	else
 		function CheckIfTable(str)
-			local func, loadError = loadstring(str)()
+			local func, loadError = loadstring(str)
 			    
 			if not func then
 				return loadError
