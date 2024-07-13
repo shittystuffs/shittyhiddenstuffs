@@ -561,10 +561,13 @@ function ModifySettings(SettingPath, Value)
 	local File = {}
 	File = loadstring(JSon:Decode(readfile("VexHub/Settings.vex")))()
 
+	print(1)
 	File[SettingPath] = Value
+	print(2)
 	Table[SettingPath] = Value
-
+	print(3)
 	writefile("VexHub/Settings.vex", File)
+	print(4)
 end
 
 function CheckIfDecalOrImage(Id)
@@ -615,7 +618,6 @@ NewTextBoxSetting("Wallpaper", 12, "", "Id or .png", function()
 			print(2)
 			ModifySettings("Wallpaper", Value)
 			Notification:Create("Settings modified and saved!", "Changed have been saved.", 5)
-			print(3)
 		else
 			Notification:Create("Id is not a decal or a image Id.", "Did not find "..Value.." in the Roblox Creator Marketplace.", 5)
 		end
