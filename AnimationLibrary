@@ -102,14 +102,11 @@ Library.DisappearCoreInteractions = function()
 		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Tabs.ScrollingFrame, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ScrollBarImageTransparency = 1}):Play()
 		for _, Childrens in Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Tabs.ScrollingFrame:GetChildren() do
 			if Childrens:FindFirstChild("Type") then
-				print("something1")
 				if Childrens.Type.Value == "Button" then
-					print("something2")
 					TweenService:Create(Childrens.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
 					TweenService:Create(Childrens.TabImage, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ImageTransparency = 1}):Play()
 					TweenService:Create(Childrens.TabName, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
 				elseif Childrens.Type.Value == "Label" then
-					print("something3")
 					TweenService:Create(Childrens, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 1}):Play()
 				end
 			end
