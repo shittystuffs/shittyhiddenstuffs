@@ -598,6 +598,15 @@ end
 
 print(600)
 
+function NewLabel(Name, LayoutOrder)
+	local NewLabel = TemplateLabel:Clone()
+
+	NewLabel.Name = Name
+	NewLabel.Parent = ScrollingFrame
+	NewLabel.LayoutOrder = LayoutOrder
+	NewLabel.Text = Name
+end
+
 Close.MouseButton1Down:Connect(function()
 	if Table.GuiStatus.OnGoingAnimation == false then
 		Table.GuiStatus.OnGoingAnimation = true
