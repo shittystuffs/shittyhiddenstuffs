@@ -483,39 +483,37 @@ getgenv().CreateNewVexPlugin = function(PluginTable)
 		end
 	end)
 
-	local PluginTabButton = nil
-
 	for _, Instance in game:GetService("CoreGui"):WaitForChild("VexHubFolder").VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Tabs.ScrollingFrame do
 		if Instance:FindFirstChild("Type") then
 			if Instance.Type.Value == "Button" and Instance.Name == "Plugins" then
-				PluginTabButton = Instance:Clone()
+				local PluginTabButton = Instance:Clone()
+
+				PluginTabButton.Name = "Plugin_"..PluginTable.PluginName
+				PluginTabButton.Parent = game:GetService("CoreGui"):WaitForChild("VexHubFolder").VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Tabs.ScrollingFrame
+				PluginTabButton.LayoutOrder = 21
+				PluginTabButton.TabName.Text = PluginTable.PluginName
+				PluginTabButton.TabImage.Image = ReturnIdAsImage(PluginTable.PluginLogo)
+				PluginTabButton.MouseButton1Down:Connect(function()
+					if Table.GuiStatus.ActivePage ~= "Plugin_"..PluginTable.PluginName and Table.GuiStatus.OnGoingAnimation == false then
+						Table.GuiStatus.OnGoingAnimation = true
+						AnimationLibrary.DisappearTab(Table.GuiStatus.ActivePage)
+						wait(Table.GuiSettings.AnimationSpeed)
+						Table.GuiStatus.ActiveScript = function()
+						end
+						Table.GuiStatus.FavoriteScriptFunction = function()
+						end
+						Table.GuiStatus.JoinGameFunction = function()
+						end
+						Template.BottomFrame.ScriptInfo.ScriptDetails.Text = '<b><font size="14">ScriptName</font></b>\n<font size="8">By: CreatorName</font>\n\n<b><font size="10">Description:</font></b>\n<font size="8">ScriptDescription</font>\n\n<font size="8">RigType: <b>Any</b>\nGame: <b>Universal</b></font>'
+						AnimationLibrary.AppearTab("Plugin_"..PluginTable.PluginName)
+						wait(Table.GuiSettings.AnimationSpeed)
+						Table.GuiStatus.OnGoingAnimation = false
+						Table.GuiStatus.ActivePage = "Plugin_"..PluginTable.PluginName
+					end
+				end)
 			end
 		end
 	end
-
-	PluginTabButton.Name = "Plugin_"..PluginTable.PluginName
-	PluginTabButton.Parent = game:GetService("CoreGui"):WaitForChild("VexHubFolder").VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Tabs.ScrollingFrame
-	PluginTabButton.LayoutOrder = 21
-	PluginTabButton.TabName.Text = PluginTable.PluginName
-	PluginTabButton.TabImage.Image = ReturnIdAsImage(PluginTable.PluginLogo)
-	PluginTabButton.MouseButton1Down:Connect(function()
-		if Table.GuiStatus.ActivePage ~= "Plugin_"..PluginTable.PluginName and Table.GuiStatus.OnGoingAnimation == false then
-			Table.GuiStatus.OnGoingAnimation = true
-			AnimationLibrary.DisappearTab(Table.GuiStatus.ActivePage)
-			wait(Table.GuiSettings.AnimationSpeed)
-			Table.GuiStatus.ActiveScript = function()
-			end
-			Table.GuiStatus.FavoriteScriptFunction = function()
-			end
-			Table.GuiStatus.JoinGameFunction = function()
-			end
-			Template.BottomFrame.ScriptInfo.ScriptDetails.Text = '<b><font size="14">ScriptName</font></b>\n<font size="8">By: CreatorName</font>\n\n<b><font size="10">Description:</font></b>\n<font size="8">ScriptDescription</font>\n\n<font size="8">RigType: <b>Any</b>\nGame: <b>Universal</b></font>'
-			AnimationLibrary.AppearTab("Plugin_"..PluginTable.PluginName)
-			wait(Table.GuiSettings.AnimationSpeed)
-			Table.GuiStatus.OnGoingAnimation = false
-			Table.GuiStatus.ActivePage = "Plugin_"..PluginTable.PluginName
-		end
-	end)
 
 	Template.BottomFrame.ScriptInfo.BottomFrame.Execute.MouseButton1Down:Connect(function()
 		pcall(ClickSound)
