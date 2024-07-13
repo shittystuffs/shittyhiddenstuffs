@@ -558,10 +558,13 @@ function JSon:Decode(Table)
 end
 
 function ModifySettings(SettingPath, Value)
-	local File = loadstring(JSon:Decode(readfile("VexHub/Settings.vex")))()
+	local File = {}
+	File = loadstring(JSon:Decode(readfile("VexHub/Settings.vex")))()
 
 	File[SettingPath] = Value
 	Table[SettingPath] = Value
+
+	writefile("VexHub/Settings.vex", File)
 end
 
 function CheckIfDecalOrImage(Id)
