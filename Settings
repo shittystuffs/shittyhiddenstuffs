@@ -560,6 +560,10 @@ end
 function ModifySettings(SettingPath, Value)
 	local SettingsTable = JSon:Decode(tostring(readfile("VexHub/Settings.vex")))
 
+	for i, v in SettingsTable do
+		print(i, v)
+	end
+
 	print(SettingsTable[SettingPath])
 	SettingsTable[SettingPath] = Value
 	Table[SettingPath] = Value
