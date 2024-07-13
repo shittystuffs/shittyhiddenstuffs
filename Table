@@ -46,7 +46,7 @@ _G.Table = {
 	},
 
 	GuiSettings = {
-		Wallpaper = 11926598891,
+		Wallpaper = "11926598891",
 		Notifications = true,
 		GuiBackgroundColor = "255, 255, 255",
 		GuiScale = 1,
