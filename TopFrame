@@ -12,6 +12,24 @@ function StringToColor3(ToConvert)
   return ColorR/255,ColorG/255,ColorB/255
 end
 
+function ReturnWallpaperSettingsAsImage(IdOrPath)
+	if string.find(IdOrPath, ".png") then
+		return getcustomasset(IdOrPath)
+	else
+		local Success, Error = pcall(function() 
+			if game:GetService("MarketplaceService"):GetProductInfo(tonumber(Id)).AssetTypeId == 0 then end
+		end)
+	
+		if Success then
+			if game:GetService("MarketplaceService"):GetProductInfo(tonumber(Id)).AssetTypeId == 13 then
+		       		return "https://www.roblox.com/asset-thumbnail/image?assetId="..Id.."&width=420&height=420&format=png"
+		   	elseif game:GetService("MarketplaceService"):GetProductInfo(tonumber(Id)).AssetTypeId == 1 then
+				return "rbxassetid://"..Id
+			end
+		end
+	end
+end
+
 -- Instances:
 
 local TopFrame = Instance.new("Frame")
@@ -56,7 +74,7 @@ NotificationTemplate.BorderSizePixel = 0
 NotificationTemplate.LayoutOrder = 2
 NotificationTemplate.Size = UDim2.new(0, 40, 0, 40)
 NotificationTemplate.Visible = false
-NotificationTemplate.Image = "rbxassetid://"..Table.GuiSettings.Wallpaper
+NotificationTemplate.Image = ReturnWallpaperSettingsAsImage(Table.GuiSettings.Wallpaper)
 NotificationTemplate.ImageTransparency = 1.000
 NotificationTemplate.ScaleType = Enum.ScaleType.Crop
 
