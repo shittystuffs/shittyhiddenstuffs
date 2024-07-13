@@ -115,7 +115,6 @@ BackFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 BackFrame.BackgroundTransparency = 0.500
 BackFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 BackFrame.BorderSizePixel = 0
-
 BackFrame.Draggable = true
 BackFrame.LayoutOrder = 1
 BackFrame.Position = UDim2.new(0.178074419, 0, 0.177274972, 0)
