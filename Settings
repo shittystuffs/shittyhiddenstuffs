@@ -559,15 +559,12 @@ end
 
 function ModifySettings(SettingPath, Value)
 	local File = {}
-	File = loadstring(JSon:Decode(readfile("VexHub/Settings.vex")))()
+	File = JSon:Decode(readfile("VexHub/Settings.vex"))
 
-	print(1)
 	File[SettingPath] = Value
-	print(2)
 	Table[SettingPath] = Value
-	print(3)
+
 	writefile("VexHub/Settings.vex", File)
-	print(4)
 end
 
 function CheckIfDecalOrImage(Id)
@@ -613,9 +610,7 @@ NewTextBoxSetting("Wallpaper", 12, "", "Id or .png", function()
 			Notification:Create("File does not exist.", "Did not find "..Value.." in your exploits workspace.", 5)
 		end
 	elseif CheckIfNumber(Value) == true then
-		print(1)
 		if CheckIfDecalOrImage(Value) == true then
-			print(2)
 			ModifySettings("Wallpaper", Value)
 			Notification:Create("Settings modified and saved!", "Changed have been saved.", 5)
 		else
