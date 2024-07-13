@@ -64,7 +64,7 @@ Library.AppearCoreInteractions = function()
 		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Tabs, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {BackgroundTransparency = 0.9}):Play()
 		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Tabs.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
 		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Tabs.ScrollingFrame, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ScrollBarImageTransparency = 0}):Play()
-		for _, Childrens in Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Tabs.ScrollingFrame:GetDescendants() do
+		for _, Childrens in Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Tabs.ScrollingFrame:GetChildren() do
 			if Childrens:FindFirstChild("Type") then
 				if Childrens.Type.Value == "Button" then
 					TweenService:Create(Childrens.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
@@ -100,7 +100,7 @@ Library.DisappearCoreInteractions = function()
 		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Tabs, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {BackgroundTransparency = 1}):Play()
 		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Tabs.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
 		TweenService:Create(Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Tabs.ScrollingFrame, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {ScrollBarImageTransparency = 1}):Play()
-		for _, Childrens in Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Tabs.ScrollingFrame:GetDescendants() do
+		for _, Childrens in Folder.VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Tabs.ScrollingFrame:GetChildren() do
 			if Childrens:FindFirstChild("Type") then
 				if Childrens.Type.Value == "Button" then
 					TweenService:Create(Childrens.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 1}):Play()
