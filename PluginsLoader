@@ -483,7 +483,15 @@ getgenv().CreateNewVexPlugin = function(PluginTable)
 		end
 	end)
 
-	local PluginTabButton = game:GetService("CoreGui"):WaitForChild("VexHubFolder").VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Tabs.ScrollingFrame.Plugins:Clone()
+	local PluginTabButton = nil
+
+	for _, Instance in game:GetService("CoreGui"):WaitForChild("VexHubFolder").VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Tabs.ScrollingFrame do
+		if Instance:FindFirstChild("Type") then
+			if Instance.Type.Value == "Button" and Instance.Name == "Plugins" then
+				PluginTabButton = Instance:Clone()
+			end
+		end
+	end
 
 	PluginTabButton.Name = "Plugin_"..PluginTable.PluginName
 	PluginTabButton.Parent = game:GetService("CoreGui"):WaitForChild("VexHubFolder").VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Tabs.ScrollingFrame
