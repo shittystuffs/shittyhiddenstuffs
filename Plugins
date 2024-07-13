@@ -480,6 +480,7 @@ function CreatePlugin(PluginTable)
 end
 
 InstallButton.MouseButton1Down:Connect(function()
+	print(1)
 	Notification:Create("Installing...", "Installing plugin. Please wait...", 5)
 
 	local JSon = {}
@@ -512,6 +513,7 @@ InstallButton.MouseButton1Down:Connect(function()
 		end
 
 		if CheckIfTable(TextBox.ContentText) == true then
+			print(2)
 			local TableContents = loadstring(TextBox.ContentText)()
 
 			if (TableContents.PluginName) and (TableContents.PluginLogo) and (TableContents.PluginCreator) and (TableContents.Scripts) then
@@ -670,6 +672,7 @@ InstallButton.MouseButton1Down:Connect(function()
 				Message:Error(Requirements..'\n\nVisit <font color="rgb(76, 188, 255)">https://github.com/V31nc/2642/wiki/Plugins</font> to learn more about Plugins.')
 			end
 		else
+			print(3)
 			Notification:Create("Failed to save!", "Something went wrong while saving this table as plugin. Go to VexConsole to view the error.", 5)
 			Message:Error(CheckIfTable(TextBox.ContentText))
 		end
