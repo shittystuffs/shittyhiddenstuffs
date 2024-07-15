@@ -631,7 +631,7 @@ NewTextBoxSetting("Wallpaper", 12, Table.GuiSettings.Wallpaper, "Id or .png", fu
 		end
 	elseif CheckIfNumber(Value) == true then
 		if CheckIfDecalOrImage(Value) == true then
-			ModifySettings(Wallpaper, Wallpaper, tostring(Value))
+			ModifySettings("Wallpaper", "Wallpaper", tostring(Value))
 			Notification:Create("Settings modified and saved!", "Changed have been saved.", 5)
 			BackFrame.Wallpaper = ReturnWallpaperSettingsAsImage(Value)
 		else
@@ -649,7 +649,7 @@ NewTextBoxSetting("UIScale", 12, Table.GuiSettings.GuiScale, "Number", function(
 		if tonumber(Value) < 0.7 or tonumber(Value) > 1.4 then
 			Notification:Create("Failed to save!", "Please enter a number that is not less than 0.8 or more than 1.3", 5)
 		else
-			ModifySettings(GuiScale, UIScale, tonumber(Value))
+			ModifySettings("GuiScale", "UIScale", tonumber(Value))
 			Notification:Create("Settings modified and saved!", "Changed have been saved.", 5)
 			BackFrame.UIScale.Scale = tonumber(Value)
 		end
