@@ -642,6 +642,22 @@ NewTextBoxSetting("Wallpaper", 12, Table.GuiSettings.Wallpaper, "Id or .png", fu
 	end
 end)
 
+NewTextBoxSetting("UIScale", 12, Table.GuiSettings.UIScale, "Number", function()
+	local Value = GetTextBoxTextContent("UIScale")
+
+	if CheckIfNumber(Value) == true then
+		if tonumber(Value) <= 0.7 or tonumber(Value) => 1.4 then
+			Notification:Create("Failed to save!", "Please enter a number that is not less than 0.8 or more than 1.3", 5)
+		else
+			ModifySettings("UIScale", tonumber(Value))
+			Notification:Create("Settings modified and saved!", "Changed have been saved.", 5)
+			BackFrame.UIScale.Scale = tonumber(Value)
+		end
+	else
+		Notification:Create("Failed to save!", "Please enter a number that is not less than 0.8 or more than 1.3", 5)
+	end
+end)
+
 NewTextBoxSetting("Background Gradient Color", 9, "", "RGB Number", function()
 	print("Hello")
 end)
