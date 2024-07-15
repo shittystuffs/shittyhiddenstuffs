@@ -577,11 +577,11 @@ function JSon:Decode(Table)
 	return game:GetService("HttpService"):JSONDecode(Table)
 end
 
-function ModifySettings(SettingPath, Value)
+function ModifySettings(SettingPath, TablePath, Value)
 	local SettingsTable = JSon:Decode(tostring(readfile("VexHub/Settings.vex")))
 
 	SettingsTable[SettingPath] = Value
-	Table.GuiSettings[SettingPath] = Value
+	Table.GuiSettings[TablePath] = Value
 
 	writefile("VexHub/Settings.vex", JSon:Encode(SettingsTable))
 end
@@ -623,7 +623,7 @@ NewTextBoxSetting("Wallpaper", 12, Table.GuiSettings.Wallpaper, "Id or .png", fu
 
 	if string.find(Value, ".png") then
 		if isfile(Value) then
-			ModifySettings("Wallpaper", tostring(Value))
+			ModifySettings("Wallpaper", "Wallpaper", tostring(Value))
 			Notification:Create("Settings modified and saved!", "Changed have been saved.", 5)
 			BackFrame.Wallpaper = ReturnWallpaperSettingsAsImage(Value)
 		else
@@ -631,7 +631,7 @@ NewTextBoxSetting("Wallpaper", 12, Table.GuiSettings.Wallpaper, "Id or .png", fu
 		end
 	elseif CheckIfNumber(Value) == true then
 		if CheckIfDecalOrImage(Value) == true then
-			ModifySettings("Wallpaper", tostring(Value))
+			ModifySettings("Wallpaper", "Wallpaper", tostring(Value))
 			Notification:Create("Settings modified and saved!", "Changed have been saved.", 5)
 			BackFrame.Wallpaper = ReturnWallpaperSettingsAsImage(Value)
 		else
@@ -642,10 +642,19 @@ NewTextBoxSetting("Wallpaper", 12, Table.GuiSettings.Wallpaper, "Id or .png", fu
 	end
 end)
 
-NewTextBoxSetting("UIScale", 12, tostring(Table.GuiSettings.UIScale), "Number", function()
+NewTextBoxSetting("UIScale", 12, Table.GuiSettings.GuiScale, "Number", function()
 	local Value = GetTextBoxTextContent("UIScale")
 
 	if CheckIfNumber(Value) == true then
+		if tonumber(Value) < 0.7 or tonumber(Value) > 1.4 then
+			Notification:Create("Failed to save!", "Please enter a number that is not less than 0.8 or more than 1.3", 5)
+		else
+			ModifySettings("UIScale", "GuiScale", tosnumber(Value))
+			Notification:Create("Settings modified and saved!", "Changed have been saved.", 5)
+			BackFrame.UIScale.Scale = tonumber(Value)
+		end
+	else
+		Notification:Create("Failed to save!", "Please enter a number that is not less than 0.8 or more than 1.3", 5)
 	end
 end)
 
