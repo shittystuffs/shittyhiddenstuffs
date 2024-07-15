@@ -642,7 +642,7 @@ NewTextBoxSetting("Wallpaper", 12, Table.GuiSettings.Wallpaper, "Id or .png", fu
 	end
 end)
 
-NewTextBoxSetting("UIScale", 12, Table.GuiSettings.UIScale, "Number", function()
+NewTextBoxSetting("UIScale", 12, tostring(Table.GuiSettings.UIScale), "Number", function()
 	local Value = GetTextBoxTextContent("UIScale")
 
 	if CheckIfNumber(Value) == true then
