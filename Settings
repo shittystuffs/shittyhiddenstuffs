@@ -579,9 +579,20 @@ end
 
 function ModifySettings(SettingPath, TablePath, Value)
 	local SettingsTable = JSon:Decode(tostring(readfile("VexHub/Settings.vex")))
+	local SettingPathSplitted = string.split(SettingPath, ".")
+	local TablePathSplitted = string.split(TablePath, ".")
 
-	SettingsTable[SettingPath] = Value
-	Table.GuiSettings[TablePath] = Value
+	if (SettingPathSplitted[2]) then
+		SettingsTable[SettingPathSplitted[1]][SettingPathSplitted[2]] = Value
+	else
+		SettingsTable[SettingPathSplitted[1]] = Value
+	end
+
+	if (TablePathSplitted[2]) then
+		Table.GuiSettings[TablePathSplitted[1]][TablePathSplitted[2]] = Value
+	else
+		Table.GuiSettings[TablePathSplitted[1]] = Value
+	end
 
 	writefile("VexHub/Settings.vex", JSon:Encode(SettingsTable))
 end
@@ -614,6 +625,23 @@ end
 
 function GetTextBoxTextContent(SettingName)
 	return ScrollingFrame_2[SettingName].TextBoxParent.TextBox.ContentText
+end
+
+function StringToRGB(String)
+	local RGB = string.split(String, ",")
+	if (RGB[2]) or (RGB[3]) and not (RGB[4]) then
+		if CheckIfNumber(RGB[1]) or CheckIfNumber(RGB[2]) or CheckIfNumber(RGB[3]) then
+			if tonumber(RGB[1]) < 0 and tonumber(RGB[1]) > 255 and tonumber(RGB[2]) < 0 and tonumber(RGB[2]) > 255 and tonumber(RGB[3]) < 0 and tonumber(RGB[3]) > 255 then
+				return false
+			else
+				return RGB[1]..", "..RGB[2]..", "..RGB[3]
+			end
+		else
+			return false
+		end
+	else
+		return false
+	end
 end
 
 NewLabel("GUI Settings")
@@ -658,8 +686,15 @@ NewTextBoxSetting("UIScale", 12, Table.GuiSettings.GuiScale, "Number", function(
 	end
 end)
 
-NewTextBoxSetting("Background Gradient Color", 9, "", "RGB Number", function()
-	print("Hello")
+NewTextBoxSetting("Background Gradient Color", 9, Table.GuiSettings.BackgroundGradientColor, "RGB Number", function()
+	local Value = GetTextBoxTextContent("Background Gradient Color")
+
+	if StringToRGB(Value) ~= false then
+		ModifySettings("BackgroundGradientColor", "BackgroundGradientColor", tostring(StringToRGB(Value)))
+		Notification:Create("Settings modified and saved!", "Changed have been saved.", 5)
+	else
+		Notification:Create("Failed to save!", "Please enter a valid RGB number", 5)
+	end
 end)
 
 NewTextBoxSetting("UIStroke Color", 10, "", "RGB Number", function()
