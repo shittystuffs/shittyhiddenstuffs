@@ -634,7 +634,7 @@ function StringToRGB(String)
 			if tonumber(RGB[1]) < 0 and tonumber(RGB[1]) > 255 and tonumber(RGB[2]) < 0 and tonumber(RGB[2]) > 255 and tonumber(RGB[3]) < 0 and tonumber(RGB[3]) > 255 then
 				return false
 			else
-				return RGB[1]..", "..RGB[2]..", "..RGB[3]
+				return tonumber(RGB[1])..", "..tonumber(RGB[2])..", "..tonumber(RGB[3])
 			end
 		else
 			return false
