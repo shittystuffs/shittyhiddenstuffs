@@ -697,8 +697,15 @@ NewTextBoxSetting("Background Gradient Color", 9, Table.GuiSettings.BackgroundGr
 	end
 end)
 
-NewTextBoxSetting("UIStroke Color", 10, "", "RGB Number", function()
-	print("Hello")
+NewTextBoxSetting("UIStroke Color", 10, Table.GuiSettings.UIStrokeColor, "RGB Number", function()
+	local Value = GetTextBoxTextContent("UIStroke Color")
+
+	if StringToRGB(Value) ~= false then
+		ModifySettings("UIStrokeColor", "UIStrokeColor", tostring(StringToRGB(Value)))
+		Notification:Create("Settings modified and saved!", "Changed have been saved.", 5)
+	else
+		Notification:Create("Failed to save!", "Please enter a valid RGB number", 5)
+	end
 end)
 
 NewTextBoxSetting("Frame Background Color", 7, "", "RGB Number", function()
