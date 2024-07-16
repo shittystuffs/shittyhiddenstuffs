@@ -631,7 +631,7 @@ function StringToRGB(String)
 	local RGB = string.split(String, ",")
 	if (RGB[2]) or (RGB[3]) and not (RGB[4]) then
 		if CheckIfNumber(RGB[1]) or CheckIfNumber(RGB[2]) or CheckIfNumber(RGB[3]) then
-			if tonumber(RGB[1]) < 0 and tonumber(RGB[1]) > 255 and tonumber(RGB[2]) < 0 and tonumber(RGB[2]) > 255 and tonumber(RGB[3]) < 0 and tonumber(RGB[3]) > 255 then
+			if tonumber(RGB[1]) < 0 or tonumber(RGB[1]) > 255 or tonumber(RGB[2]) < 0 or tonumber(RGB[2]) > 255 or tonumber(RGB[3]) < 0 or tonumber(RGB[3]) > 255 then
 				return false
 			else
 				return tonumber(RGB[1])..", "..tonumber(RGB[2])..", "..tonumber(RGB[3])
