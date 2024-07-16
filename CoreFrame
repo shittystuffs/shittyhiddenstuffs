@@ -132,7 +132,7 @@ UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Center
 
 Wallpaper.Name = "Wallpaper"
 Wallpaper.Parent = BackFrame
-Wallpaper.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Wallpaper.BackgroundColor3 = Color3.fromRGB(StringToColor3(Table.GuiSettings.WallpaperBackgroundColor))
 Wallpaper.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Wallpaper.BorderSizePixel = 0
 Wallpaper.Position = UDim2.new(0.0149999997, 0, 0, 0)
