@@ -8,7 +8,8 @@ local ClickSound = Table.GuiStatus.ClickSound
 function StringToColor3(ToConvert)
 	local ColorString = tostring(ToConvert)
 	local ColorR, ColorG, ColorB = ColorString:match("(%d+), (%d+), (%d+)")
-	return tonumber(ColorR),tonumber(ColorG),tonumber(ColorB)
+	ColorR, ColorG, ColorB = tonumber(ColorR),tonumber(ColorG),tonumber(ColorB)
+	return ColorR/255,ColorG/255,ColorB/255
 end
 
 function ReturnWallpaperSettingsAsImage(IdOrPath)
