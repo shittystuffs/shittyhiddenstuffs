@@ -670,6 +670,17 @@ NewTextBoxSetting("Wallpaper", 12, Table.GuiSettings.Wallpaper, "Id or .png", fu
 	end
 end)
 
+NewTextBoxSetting("Wallpaper Background Color", 9, Table.GuiSettings.WallpaperBackgroundColor, "Number", function()
+	local Value = GetTextBoxTextContent("Wallpaper Background Color")
+
+	if StringToRGB(Value) ~= false then
+		ModifySettings("WallpaperBackgroundColor", "WallpaperBackgroundColor", tostring(StringToRGB(Value)))
+		Notification:Create("Settings modified and saved!", "Changed have been saved.", 5)
+	else
+		Notification:Create("Failed to save!", "Please enter a valid RGB number", 5)
+	end
+end)
+
 NewTextBoxSetting("UIScale", 12, Table.GuiSettings.GuiScale, "Number", function()
 	local Value = GetTextBoxTextContent("UIScale")
 
