@@ -8,7 +8,8 @@ local ClickSound = Table.GuiStatus.ClickSound
 function StringToColor3(ToConvert)
 	local ColorString = tostring(ToConvert)
 	local ColorR, ColorG, ColorB = ColorString:match("(%d+), (%d+), (%d+)")
-	return tonumber(ColorR),tonumber(ColorG),tonumber(ColorB)
+	ColorR, ColorG, ColorB = tonumber(ColorR),tonumber(ColorG),tonumber(ColorB)
+	return ColorR/255,ColorG/255,ColorB/255
 end
 
 function ReturnWallpaperSettingsAsImage(IdOrPath)
@@ -131,7 +132,7 @@ UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Center
 
 Wallpaper.Name = "Wallpaper"
 Wallpaper.Parent = BackFrame
-Wallpaper.BackgroundColor3 = Color3.fromRGB(StringToColor3(Table.GuiSettings.WallpaperBackgroundColor))
+Wallpaper.BackgroundColor3 = Color3.new(StringToColor3(Table.GuiSettings.WallpaperBackgroundColor))
 Wallpaper.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Wallpaper.BorderSizePixel = 0
 Wallpaper.Position = UDim2.new(0.0149999997, 0, 0, 0)
