@@ -713,6 +713,34 @@ function CheckIfFontExist(String)
 	end
 end
 
+function CheckIfEasingStyleExist(String)
+	local IsFounded = false
+	local Styles = {
+		Linear = true,
+		Sine = true,
+		Back = true,
+		Quad = true,
+		Quart = true,
+		Quint = true,
+		Bounce = true,
+		Elastic = true,
+		Exponential = true,
+		Circular = true,
+		Cubic = true,
+	}
+	
+	for i, v in Styles do
+		if string.lower(String) == string.lower(tostring(i)) and IsFounded == false then
+			IsFounded = true
+			return i
+		end
+	end
+	
+	if IsFounded == false then
+		return false
+	end
+end
+
 NewLabel("GUI Settings")
 
 NewTextBoxSetting("Wallpaper", 12, Table.GuiSettings.Wallpaper, "Id or .png", function()
