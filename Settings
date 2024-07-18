@@ -719,8 +719,15 @@ NewTextBoxSetting("UIStroke Color", 10, Table.GuiSettings.UIStrokeColor, "RGB Nu
 	end
 end)
 
-NewTextBoxSetting("Frame Background Color", 7, "", "RGB Number", function()
-	print("Hello")
+NewTextBoxSetting("Frame Background Color", 7, Table.GuiSettings.GuiBackgroundColor, "RGB Number", function()
+	local Value = GetTextBoxTextContent("Frame Background Color")
+
+	if StringToRGB(Value) ~= false then
+		ModifySettings("GuiBackgroundColor", "GuiBackgroundColor", tostring(StringToRGB(Value)))
+		Notification:Create("Settings modified and saved!", "Changed have been saved.", 5)
+	else
+		Notification:Create("Failed to save!", "Please enter a valid RGB number", 5)
+	end
 end)
 
 NewLabel("Fonts Settings")
