@@ -644,6 +644,75 @@ function StringToRGB(String)
 	end
 end
 
+function CheckIfFontExist(String)
+	local IsFounded = false
+	local Fonts = {
+		Legacy = true,
+		Arial = true,
+		ArialBold = true,
+		SourceSans = true,
+		SourceSansBold = true,
+		SourceSansLight = true,
+		SourceSansItalic = true,
+		Bodoni = true,
+		Garamond = true,
+		Cartoon = true,
+		Code = true,
+		Highway = true,
+		SciFi = true,
+		Arcade = true,
+		Fantasy = true,
+		Antique = true,
+		SourceSansSemibold = true,
+		Gotham = true,
+		GothamMedium = true,
+		GothamBold = true,
+		GothamBlack = true,
+		AmaticSC = true,
+		Bangers = true,
+		Creepster = true,
+		DenkOne = true,
+		Fondamento = true,
+		FredokaOne = true,
+		GrenzeGotisch = true,
+		IndieFlower = true,
+		JosefinSans = true,
+		Jura = true,
+		Kalam = true,
+		LuckiestGuy = true,
+		Merriweather = true,
+		Michroma = true,
+		Nunito = true,
+		Oswald = true,
+		PatrickHand = true,
+		PermanentMarker = true,
+		Roboto = true,
+		RobotoCondensed = true,
+		RobotoMono = true,
+		Sarpanch = true,
+		SpecialElite = true,
+		TitilliumWeb = true,
+		Ubuntu = true,
+		BuilderSans = true,
+		BuilderSansMedium = true,
+		BuilderSansBold = true,
+		BuilderSansExtraBold = true,
+		Arimo = true,
+		ArimoBold = true,
+	}
+	
+	for i, v in Fonts do
+		if string.lower(String) == string.lower(tostring(i)) and IsFounded == false then
+			IsFounded = true
+			return i
+		end
+	end
+	
+	if IsFounded == false then
+		return false
+	end
+end
+
 NewLabel("GUI Settings")
 
 NewTextBoxSetting("Wallpaper", 12, Table.GuiSettings.Wallpaper, "Id or .png", function()
@@ -732,16 +801,37 @@ end)
 
 NewLabel("Fonts Settings")
 
-NewTextBoxSetting("Regular", 12, "", "Font", function()
-	print("Hello")
+NewTextBoxSetting("Regular", 12, Table.GuiFont.Regular, "Font", function()
+	local Value = GetTextBoxTextContent("Regular")
+
+	if CheckIfFontExist(Value) ~= false then
+		ModifySettings("GuiFont.Regular", "GuiFont.Regular", tostring(CheckIfFontExist(Value)))
+		Notification:Create("Settings modified and saved!", "Changed have been saved.", 5)
+	else
+		Notification:Create("Failed to save!", "Please enter a valid font from Enum.Font", 5)
+	end
 end)
 
-NewTextBoxSetting("Medium", 12, "", "Font", function()
-	print("Hello")
+NewTextBoxSetting("Medium", 12, Table.GuiFont.Medium, "Font", function()
+	local Value = GetTextBoxTextContent("Medium")
+
+	if CheckIfFontExist(Value) ~= false then
+		ModifySettings("GuiFont.Medium", "GuiFont.Medium", tostring(CheckIfFontExist(Value)))
+		Notification:Create("Settings modified and saved!", "Changed have been saved.", 5)
+	else
+		Notification:Create("Failed to save!", "Please enter a valid font from Enum.Font", 5)
+	end
 end)
 
-NewTextBoxSetting("Bold", 12, "", "Font", function()
-	print("Hello")
+NewTextBoxSetting("Bold", 12, Table.GuiFont.Bold, "Font", function()
+	local Value = GetTextBoxTextContent("Bold")
+
+	if CheckIfFontExist(Value) ~= false then
+		ModifySettings("GuiFont.Bold", "GuiFont.Bold", tostring(CheckIfFontExist(Value)))
+		Notification:Create("Settings modified and saved!", "Changed have been saved.", 5)
+	else
+		Notification:Create("Failed to save!", "Please enter a valid font from Enum.Font", 5)
+	end
 end)
 
 NewLabel("Animation Settings")
