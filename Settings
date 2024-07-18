@@ -864,8 +864,15 @@ end)
 
 NewLabel("Animation Settings")
 
-NewTextBoxSetting("Easing Style", 12, "", "EasingStyle", function()
-	print("Hello")
+NewTextBoxSetting("Easing Style", 12, Table.GuiSettings.EasingStyle, "EasingStyle", function()
+	local Value = GetTextBoxTextContent("Easing Style")
+
+	if CheckIfEasingStyleExist(Value) ~= false then
+		ModifySettings("EasingStyle", "EasingStyle", tostring(CheckIfEasingStyleExist(Value)))
+		Notification:Create("Settings modified and saved!", "Changed have been saved.", 5)
+	else
+		Notification:Create("Failed to save!", "Please enter a valid style from Enum.EasingStyle", 5)
+	end
 end)
 
 NewTextBoxSetting("Animation Speed", 10, "", "Number", function()
