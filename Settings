@@ -801,7 +801,7 @@ end)
 
 NewLabel("Fonts Settings")
 
-NewTextBoxSetting("Regular", 12, Table.GuiFont.Regular, "Font", function()
+NewTextBoxSetting("Regular", 12, Table.GuiSettings.GuiFont.Regular, "Font", function()
 	local Value = GetTextBoxTextContent("Regular")
 
 	if CheckIfFontExist(Value) ~= false then
@@ -812,7 +812,7 @@ NewTextBoxSetting("Regular", 12, Table.GuiFont.Regular, "Font", function()
 	end
 end)
 
-NewTextBoxSetting("Medium", 12, Table.GuiFont.Medium, "Font", function()
+NewTextBoxSetting("Medium", 12, Table.GuiSettings.GuiFont.Medium, "Font", function()
 	local Value = GetTextBoxTextContent("Medium")
 
 	if CheckIfFontExist(Value) ~= false then
@@ -823,7 +823,7 @@ NewTextBoxSetting("Medium", 12, Table.GuiFont.Medium, "Font", function()
 	end
 end)
 
-NewTextBoxSetting("Bold", 12, Table.GuiFont.Bold, "Font", function()
+NewTextBoxSetting("Bold", 12, Table.GuiSettings.GuiFont.Bold, "Font", function()
 	local Value = GetTextBoxTextContent("Bold")
 
 	if CheckIfFontExist(Value) ~= false then
