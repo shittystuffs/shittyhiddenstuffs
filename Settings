@@ -876,7 +876,19 @@ NewTextBoxSetting("Easing Style", 12, Table.GuiSettings.EasingStyle, "EasingStyl
 end)
 
 NewTextBoxSetting("Animation Speed", 10, "", "Number", function()
-	print("Hello")
+	local Value = GetTextBoxTextContent("Animation Speed")
+
+	if CheckIfNumber(Value) == true then
+		if tonumber(Value) < 0.4 or tonumber(Value) > 2 then
+			Notification:Create("Failed to save!", "Please enter a number that is not less than 0.4 or more than 2", 5)
+		else
+			ModifySettings("AnimationSpeed", "AnimationSpeed", tonumber(Value))
+			Notification:Create("Settings modified and saved!", "Changed have been saved.", 5)
+			BackFrame.UIScale.Scale = tonumber(Value)
+		end
+	else
+		Notification:Create("Failed to save!", "Please enter a number that is not less than 0.4 or more than 2", 5)
+	end
 end)
 
 NewLabel("Notification Settings")
