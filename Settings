@@ -884,7 +884,6 @@ NewTextBoxSetting("Animation Speed", 10, Table.GuiSettings.AnimationSpeed, "Numb
 		else
 			ModifySettings("AnimationSpeed", "AnimationSpeed", tonumber(Value))
 			Notification:Create("Settings modified and saved!", "Changed have been saved.", 5)
-			BackFrame.UIScale.Scale = tonumber(Value)
 		end
 	else
 		Notification:Create("Failed to save!", "Please enter a number that is not less than 0.4 or more than 2", 5)
