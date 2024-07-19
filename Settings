@@ -875,7 +875,7 @@ NewTextBoxSetting("Easing Style", 12, Table.GuiSettings.EasingStyle, "EasingStyl
 	end
 end)
 
-NewTextBoxSetting("Animation Speed", 10, "", "Number", function()
+NewTextBoxSetting("Animation Speed", 10, Table.GuiSettings.AnimationSpeed, "Number", function()
 	local Value = GetTextBoxTextContent("Animation Speed")
 
 	if CheckIfNumber(Value) == true then
