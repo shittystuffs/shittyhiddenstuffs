@@ -674,3 +674,4 @@ for Tab, _ in Table.GuiScripts do
 	end
 end
 
+CreateNewTab("Favorites")
