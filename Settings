@@ -942,10 +942,12 @@ NewButtonsSetting("Notifications",
 	12, 
 	"Allow", 
 	function()
-		print("Hello")
+		ModifySettings("Notifications", "Notifications", true)
+		Notification:Create("Settings modified and saved!", "Changed have been saved.", 5)
 	end,
 	"Forbid",
 	function()
-		print("Hello")
+		ModifySettings("Notifications", "Notifications", false)
+		Notification:Create("Settings modified and saved!", "Changed have been saved.", 5)
 	end
 )
