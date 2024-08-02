@@ -892,8 +892,19 @@ end)
 
 NewLabel("Notification Settings")
 
-NewTextBoxSetting("Volume", 12, "", "Number", function()
-	print("Hello")
+NewTextBoxSetting("Volume", 12, Table.GuiSettings.NotificationVolume, "Number", function()
+	local Value = GetTextBoxTextContent("Volume")
+
+	if CheckIfNumber(Value) == true then
+		if tonumber(Value) < 0 or tonumber(Value) > 1 then
+			Notification:Create("Failed to save!", "Please enter a number that is not less than 0 or more than 1", 5)
+		else
+			ModifySettings("NotificationVolume", "NotificationVolume", tonumber(Value))
+			Notification:Create("Settings modified and saved!", "Changed have been saved.", 5)
+		end
+	else
+		Notification:Create("Failed to save!", "Please enter a number that is not less than 0 or more than 1", 5)
+	end
 end)
 
 NewTextBoxSetting("Sound", 12, "", "Id", function()
