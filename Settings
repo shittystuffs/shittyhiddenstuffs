@@ -613,6 +613,22 @@ function CheckIfDecalOrImage(Id)
 	end
 end
 
+function CheckIfAudio(Id)
+	local Success, Error = pcall(function() 
+		if game:GetService("MarketplaceService"):GetProductInfo(tonumber(Id)).AssetTypeId == 0 then end
+	end)
+
+	if Success then
+		if game:GetService("MarketplaceService"):GetProductInfo(tonumber(Id)).AssetTypeId == 3 then
+			return true
+		else
+			return false
+		end
+	else
+		return false
+	end
+end
+
 function CheckIfNumber(string)
 	local string = tonumber(string)
 
@@ -907,8 +923,19 @@ NewTextBoxSetting("Volume", 12, Table.GuiSettings.NotificationVolume, "Number", 
 	end
 end)
 
-NewTextBoxSetting("Sound", 12, "", "Id", function()
-	print("Hello")
+NewTextBoxSetting("Sound", 12, Table.GuiSettings.NotificationSound, "Id", function()
+	local Value = GetTextBoxTextContent("Volume")
+
+	if CheckIfNumber(Value) == true then
+		if CheckIfAudio(Value) == true then
+			ModifySettings("NotificationSound", "NotificationSound", tonumber(Value))
+			Notification:Create("Settings modified and saved!", "Changed have been saved.", 5)
+		else
+			Notification:Create("Id is not a audio Id", "Did not find "..Value.." in the Roblox Creator Marketplace.", 5)
+		end
+	else
+		Notification:Create("Failed to save!", "Please enter a valid audio Id.", 5)
+	end
 end)
 
 NewButtonsSetting("Notifications", 
