@@ -622,12 +622,17 @@ function CreateScript(TabName, ScriptName, ScriptId, ScriptCreator, Script, Scri
 		end
 
 		Table.GuiStatus.FavoriteScriptFunction = function()
-			if Table.GuiScripts[TabName][ScriptName].Favorited == true then
-				Table.GuiScripts[TabName][ScriptName].Favorited = false
-				Notification:Create("Script added to favorites", "Script was favorited and now in the favorites tab!", 5)
+			local Path = nil
+			for PathNumber, Id in Table.Favorites do
+				if Id == ScriptId then
+					Path = PathNumber
+				end
+			end
+
+			if Path == nil then
+				table.insert(Table.Favorites, ScriptId)
 			else
-				Table.GuiScripts[TabName][ScriptName].Favorited = true
-				Notification:Create("Script removed from favorites!", "Script was removed from favorites and no longer in the favorites tab.", 5)
+				table.remove(Table.Favorites, Path)
 			end
 		end
 
