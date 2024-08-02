@@ -631,8 +631,10 @@ function CreateScript(TabName, ScriptName, ScriptId, ScriptCreator, Script, Scri
 
 			if Path == nil then
 				table.insert(Table.Favorites, ScriptId)
+				Notification:Create("Script added to favorites", "Script was favorited and now in the favorites tab!", 5)
 			else
 				table.remove(Table.Favorites, Path)
+				Notification:Create("Script removed from favorites!", "Script was removed from favorites and no longer in the favorites tab.", 5)
 			end
 		end
 
