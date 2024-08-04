@@ -670,7 +670,7 @@ NewButton("Favorites", 11, 10, "http://www.roblox.com/asset/?id=17648432144", fu
 				for ScriptName, ScriptInfo in Table.GuiScripts[TabName] do
 					for _, FavoritedScript in Table.Favorites do
 						if ScriptInfo.ScriptId == FavoritedScript then
-							CreateNewScript("Favorites", ScriptName, ScriptInfo.ScriptId, ScriptInfo.Owner, ScriptInfo.Script, ScriptInfo.Description, ScriptInfo.RigType, ScriptInfo.GameId, ScriptInfo.IsNew, ScriptInfo.IsOP)
+							CreateScript("Favorites", ScriptName, ScriptInfo.ScriptId, ScriptInfo.Owner, ScriptInfo.Script, ScriptInfo.Description, ScriptInfo.RigType, ScriptInfo.GameId, ScriptInfo.IsNew, ScriptInfo.IsOP)
 						end
 					end
 				end
