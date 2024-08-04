@@ -554,7 +554,7 @@ function CreateNewTab(TabName)
 	end
 end
 
-function CreateScript(TabName, ScriptName, ScriptId, ScriptCreator, Script, ScriptDescription, ScriptRigType, IsFavorited, ScriptSupportedIn, IsNew, IsOp)
+getgenv().CreateScript = function(TabName, ScriptName, ScriptId, ScriptCreator, Script, ScriptDescription, ScriptRigType, ScriptSupportedIn, IsNew, IsOp)
 	local TabPath = game:GetService("CoreGui"):WaitForChild("VexHubFolder").VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Pages[TabName]
 	local Template = TabPath.BottomFrame.LeftFrame.Scripts.ScrollingFrame.ScriptButtonTemplate:Clone()
 
@@ -668,7 +668,7 @@ for Tab, _ in Table.GuiScripts do
 	
 	wait()
 	for ScriptName, ScriptInfo in Table.GuiScripts[Tab] do
-		CreateScript(Tab, ScriptName, ScriptInfo.ScriptId, ScriptInfo.Owner, ScriptInfo.Script, ScriptInfo.Description, ScriptInfo.RigType, ScriptInfo.Favorited, ScriptInfo.GameId, ScriptInfo.IsNew, ScriptInfo.IsOP)
+		CreateScript(Tab, ScriptName, ScriptInfo.ScriptId, ScriptInfo.Owner, ScriptInfo.Script, ScriptInfo.Description, ScriptInfo.RigType, ScriptInfo.GameId, ScriptInfo.IsNew, ScriptInfo.IsOP)
 	end
 end
 
