@@ -659,6 +659,24 @@ end)
 
 NewButton("Favorites", 11, 10, "http://www.roblox.com/asset/?id=17648432144", function()
 	if Table.GuiStatus.ActivePage ~= "Favorites" and Table.GuiStatus.OnGoingAnimation == false then
+		coroutine.wrap(function()
+			for _, FavoritedScripts in game:GetService("CoreGui"):WaitForChild("VexHubFolder").VexHubScreenGui.BackFrame.Wallpaper.MainFrame.WholeFrame.Pages.Favorites.BottomFrame.LeftFrame.Scripts.ScrollingFrame:GetChildren() do
+				if FavoritedScripts:IsA("ImageButton") and FavoritedScripts.Name ~= "ScriptButtonTemplate" then
+					FavoritedScripts:Destroy()
+				end
+			end
+
+			for TabName, _ in Table.GuiScripts do
+				for ScriptName, ScriptInfo in Table.GuiScripts[TabName] do
+					for _, FavoritedScript in Table.Favorites do
+						if ScriptInfo.ScriptId == FavoritedScript then
+							CreateNewScript("Favorites", ScriptName, ScriptInfo.ScriptId, ScriptInfo.Owner, ScriptInfo.Script, ScriptInfo.Description, ScriptInfo.RigType, ScriptInfo.GameId, ScriptInfo.IsNew, ScriptInfo.IsOP)
+						end
+					end
+				end
+			end
+		end)()
+
 		Table.GuiStatus.OnGoingAnimation = true
 		AnimationLibrary.DisappearTab(Table.GuiStatus.ActivePage)
 		wait(Table.GuiSettings.AnimationSpeed)
