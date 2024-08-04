@@ -113,6 +113,84 @@ _G.Table = {
 					loadstring(game:HttpGet(('https://pastebin.com/raw/a0jjaAyd'),true))()
 				end,
 			},
+
+			["Spy On People's Private Chat"] = {
+				Owner = "PTR KILLER (Unverified Creator)",
+				Description = "See people's private chat.",
+				GameId = 0,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = false,
+				ScriptId = 1004,
+				Script = function()
+					loadstring(game:HttpGet(('https://raw.githubusercontent.com/Obfuscatetestloluwu/Scripts/main/Spy%20Peoples%20Private%20Chat'),true))()
+				end,
+			},
+
+			["Teleport Tool"] = {
+				Owner = "Unknown",
+				Description = "Tool that makes you teleport like a enderman.",
+				GameId = 0,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = false,
+				ScriptId = 1005,
+				Script = function()
+					loadstring(game:HttpGet(('https://pastebin.com/raw/n7wqcH9D'),true))()
+				end,
+			},
+
+			["Telekinesis Gun"] = {
+				Owner = "Quenty",
+				Description = "Makes unanchored parts fly! Only works on unanchored parts.",
+				GameId = 0,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = false,
+				ScriptId = 1006,
+				Script = function()
+					loadstring(game:HttpGet(('https://pastebin.com/raw/uPc0ir3b'),true))()
+				end,
+			},
+
+			["Balloon Stealer"] = {
+				Owner = "garfield",
+				Description = "Steals the balloon that the person have.",
+				GameId = 189707,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = false,
+				ScriptId = 1007,
+				Script = function()
+					loadstring(game:HttpGet(('https://pastebin.com/raw/BVbG4ei7'),true))()
+				end,
+			},
+
+			["Color Block Auto Play"] = {
+				Owner = "Unknown",
+				Description = "Auto plays the game!",
+				GameId = 5926001758,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = false,
+				ScriptId = 1008,
+				Script = function()
+					loadstring(game:HttpGet(('https://pastebin.com/raw/tKu2vZrb'),true))()
+				end,
+			},
+
+			["Tower Of Hell Invincibility"] = {
+				Owner = "Unknown",
+				Description = "Makes you not get killed when you touch kill parts.",
+				GameId = 1962086868,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = false,
+				ScriptId = 1009,
+				Script = function()
+					loadstring(game:HttpGet(('https://pastebin.com/raw/X8cG57XV'),true))()
+				end,
+			},
 		},
 
 		["Required Accessories"] = {
