@@ -243,6 +243,84 @@ _G.Table = {
 					loadstring(game:HttpGet("https://pastebin.com/raw/GiA32cn6",true))()
 				end,
 			},
+
+			["Get To The Top Auto Farm"] = {
+				Owner = "Unknown",
+				Description = "Gets you to the top.",
+				GameId = 6902912928,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = false,
+				ScriptId = 1014,
+				Script = function()
+					loadstring(game:HttpGet(('https://pastebin.com/raw/75BD30j0'),true))()
+				end,
+			},
+
+			["99% Fail ESP"] = {
+				Owner = "Ezpi",
+				Description = "Marks the safe tiles green.",
+				GameId = 7584496019,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = false,
+				ScriptId = 1015,
+				Script = function()
+					loadstring(game:HttpGet(('https://pastebin.com/raw/r5BjpxR7'),true))()
+				end,
+			},
+
+			["Uctron's Sword"] = {
+				Owner = "Unknown",
+				Description = "A sword that can kill anyone.",
+				GameId = 155615604,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = false,
+				ScriptId = 1016,
+				Script = function()
+					loadstring(game:HttpGet(('https://pastebin.com/raw/UGNecs1d'),true))()
+				end,
+			},
+
+			["Toh But There's Lava Rising Teleport To End"] = {
+				Owner = "V31nc",
+				Description = "Teleports you to the end.",
+				GameId = 6502546031,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = false,
+				ScriptId = 1017,
+				Script = function()
+					loadstring(game:HttpGet(('https://pastebin.com/raw/6UbUN5Mv'),true))()
+				end,
+			},
+
+			["Anti Fling"] = {
+				Owner = "Unknown",
+				Description = "Makes you not get flinged.",
+				GameId = 0,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = false,
+				ScriptId = 1018,
+				Script = function()
+					loadstring(game:HttpGet(('https://pastebin.com/raw/Vk7jQ9Ft'),true))()
+				end,
+			},
+
+			["Walk On Walls"] = {
+				Owner = "Unknown",
+				Description = "Makes you walk on walls.",
+				GameId = 0,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = false,
+				ScriptId = 1019,
+				Script = function()
+					loadstring(game:HttpGet("https://pastebin.com/raw/zXk4Rq2r"))()
+				end,
+			},
 		},
 
 		["Required Accessories"] = {
