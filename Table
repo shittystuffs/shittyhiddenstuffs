@@ -191,6 +191,58 @@ _G.Table = {
 					loadstring(game:HttpGet(('https://pastebin.com/raw/X8cG57XV'),true))()
 				end,
 			},
+
+			["Set Spawn Point"] = {
+				Owner = "Unknown",
+				Description = "Spawn on where you died!",
+				GameId = 0,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = false,
+				ScriptId = 1010,
+				Script = function()
+					loadstring(game:HttpGet("https://raw.githubusercontent.com/testforshiistuff/Scripts/main/Set%20Spawn%20Point"))()
+				end,
+			},
+
+			["Prison Life Aimbot"] = {
+				Owner = "AlexScripterUnfounded",
+				Description = "Just aimbot.",
+				GameId = 155615604,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = false,
+				ScriptId = 1011,
+				Script = function()
+					loadstring(game:HttpGet("https://pastebin.com/raw/6mu9gydS",true))()
+				end,
+			},
+
+			["Graphics Enchancer"] = {
+				Owner = "Unknown",
+				Description = "Enchances your view.",
+				GameId = 0,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = false,
+				IsNew = false,
+				ScriptId = 1012,
+				Script = function()
+					loadstring(game:HttpGet("https://pastebin.com/raw/vmwVkPWa",true))()
+				end,
+			},
+
+			["Infinite Jump"] = {
+				Owner = "Unknown",
+				Description = "It's like one of those HappyMod features.",
+				GameId = 0,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = false,
+				ScriptId = 1013,
+				Script = function()
+					loadstring(game:HttpGet("https://pastebin.com/raw/GiA32cn6",true))()
+				end,
+			},
 		},
 
 		["Required Accessories"] = {
