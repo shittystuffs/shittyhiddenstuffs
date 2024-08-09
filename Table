@@ -321,6 +321,71 @@ _G.Table = {
 					loadstring(game:HttpGet("https://pastebin.com/raw/zXk4Rq2r"))()
 				end,
 			},
+
+			["Carts Speeder"] = {
+				Owner = "Unknown",
+				Description = "Makes all carts speed up. Only works on some cart games.",
+				GameId = 0,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = false,
+				ScriptId = 1020,
+				Script = function()
+					loadstring(game:HttpGet("https://pastebin.com/raw/sWDcnTga"))()
+				end,
+			},
+
+			["Rob A ATM"] = {
+				Owner = "Nona",
+				Description = "Robs a ATM.",
+				GameId = 2788229376,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = false,
+				ScriptId = 1021,
+				Script = function()
+					loadstring(game:HttpGet("https://pastebin.com/raw/h1yHHMs6",true))()
+				end,
+			},
+
+			["Strongest Punch Simulator Auto Farm"] = {
+				Owner = "PyDubs",
+				Description = "Auto farms the game.",
+				GameId = 6875469709,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = false,
+				ScriptId = 1022,
+				Script = function()
+					loadstring(game:HttpGet('https://pastebin.com/raw/9fhssXQd'))()
+				end,
+			},
+
+			["Get Police Role"] = {
+				Owner = "Unknown",
+				Description = "Makes you a police in the game. Execute this in the lobby.",
+				GameId = 3851622790,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = false,
+				ScriptId = 1023,
+				Script = function()
+					loadstring(game:HttpGet("https://raw.githubusercontent.com/testforshiistuff/Scripts/main/Break%20In%20Police", true))()
+				end,
+			},
+
+			["Koss Gust Horn Spammer"] = {
+				Owner = "Unknown",
+				Description = 'Spams alot of tornadoes. Your prefix in HD Admin must be ":"',
+				GameId = 0,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = false,
+				ScriptId = 1024,
+				Script = function()
+					loadstring(game:HttpGet(('https://raw.githubusercontent.com/testforshiistuff/Scripts/main/Koss%20Gust%20Horn%20Spammer'),true))()
+				end,
+			},
 		},
 
 		["Required Accessories"] = {
