@@ -701,19 +701,6 @@ NewButton("Scripts", 11, 10, "rbxassetid://11592851654", function()
 	end
 end)
 
-NewButton("Required Accessories", 10, 10, "rbxassetid://11592824883", function()
-	if Table.GuiStatus.ActivePage ~= "Required Accessories" and Table.GuiStatus.OnGoingAnimation == false then
-		Table.GuiStatus.OnGoingAnimation = true
-		AnimationLibrary.DisappearTab(Table.GuiStatus.ActivePage)
-		wait(Table.GuiSettings.AnimationSpeed)
-		ResetStatus(Table.GuiStatus.ActivePage)
-		AnimationLibrary.AppearTab("Required Accessories")
-		wait(Table.GuiSettings.AnimationSpeed)
-		Table.GuiStatus.OnGoingAnimation = false
-		Table.GuiStatus.ActivePage = "Required Accessories"
-	end
-end)
-
 NewButton("GUIS", 11, 10, "rbxassetid://11592848654", function()
 	if Table.GuiStatus.ActivePage ~= "GUIS" and Table.GuiStatus.OnGoingAnimation == false then
 		Table.GuiStatus.OnGoingAnimation = true
