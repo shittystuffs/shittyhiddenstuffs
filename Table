@@ -386,6 +386,58 @@ _G.Table = {
 					loadstring(game:HttpGet(('https://raw.githubusercontent.com/testforshiistuff/Scripts/main/Koss%20Gust%20Horn%20Spammer'),true))()
 				end,
 			},
+
+			["Brainshop ChatBot"] = {
+				Owner = "MinWasTakenOnGitHub",
+				Description = "Talk like a AI robot.",
+				GameId = 0,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = false,
+				IsNew = false,
+				ScriptId = 1025,
+				Script = function()
+					loadstring(game:HttpGet(('https://raw.githubusercontent.com/testforshiistuff/Scripts/main/ChatBot'),true))()
+				end,
+			},
+
+			["Chat Translator"] = {
+				Owner = "Aim, cli, rang#1234, Riptxde",
+				Description = "Translates what people chatted.",
+				GameId = 0,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = false,
+				ScriptId = 1026,
+				Script = function()
+					loadstring(game:HttpGet(('https://raw.githubusercontent.com/testforshiistuff/Scripts/main/Chat%20Translator'),true))()
+				end,
+			},
+
+			["Game Store Tycoon Infinite Money"] = {
+				Owner = "Unknown",
+				Description = "Makes your money infinite.",
+				GameId = 10963175,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = false,
+				ScriptId = 1027,
+				Script = function()
+					loadstring(game:HttpGet("https://pastebin.com/raw/FV3VrMrP"))()
+				end,
+			},
+
+			["Apocalypse Tycoon Infinite Money"] = {
+				Owner = "Unknown",
+				Description = "Makes your money infinite.",
+				GameId = 12402669933,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = false,
+				ScriptId = 1028,
+				Script = function()
+					loadstring(game:HttpGet("https://pastebin.com/raw/GnFPj7Vv"))()
+				end,
+			},
 		},
 
 		["Required Accessories"] = {
