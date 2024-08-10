@@ -518,22 +518,6 @@ _G.Table = {
 			},
 		},
 
-		["Required Accessories"] = {
-			["NameScriptName"] = {
-				Owner = "V31nc",
-				Description = "Hello World",
-				GameId = 0,
-				RigType = "Any", -- R6, R15, Any
-				IsOP = true,
-				IsNew = true,
-				ScriptId = 0000,
-				Favorited = false,
-				Script = function()
-					print("hello from required accessories sections")
-				end,
-			}
-		},
-
 		["GUIS"] = {
 			["NameScriptName"] = {
 				Owner = "V31nc",
