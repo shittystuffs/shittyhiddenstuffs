@@ -438,6 +438,84 @@ _G.Table = {
 					loadstring(game:HttpGet("https://pastebin.com/raw/GnFPj7Vv"))()
 				end,
 			},
+
+			["Escape The Dungeon Obby Get Gears"] = {
+				Owner = "Unknown",
+				Description = "Get the gears/weapons in the game!",
+				GameId = 2028593804,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = false,
+				ScriptId = 1029,
+				Script = function()
+					loadstring(game:HttpGet("https://pastebin.com/raw/daFXeF7t"))()
+				end,
+			},
+
+			["Heist Tycoon Infinite Money"] = {
+				Owner = "Unknown",
+				Description = "Makes your money infinite.",
+				GameId = 11103424163,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = false,
+				ScriptId = 1030,
+				Script = function()
+					loadstring(game:HttpGet("https://pastebin.com/raw/kdTbYUMa"))()
+				end,
+			},
+
+			["Destruction Simulator Infinite Money"] = {
+				Owner = "Unknown",
+				Description = "Makes your money infinite.",
+				GameId = 2248408710,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = false,
+				ScriptId = 1031,
+				Script = function()
+					loadstring(game:HttpGet("https://pastebin.com/raw/tJvYdTpq"))()
+				end,
+			},
+
+			["Wormface Auto Farm"] = {
+				Owner = "Unknown",
+				Description = "Auto farms the game.",
+				GameId = 5942932659,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = false,
+				ScriptId = 1032,
+				Script = function()
+					loadstring(game:HttpGet("https://raw.githubusercontent.com/testforshiistuff/Scripts/main/Wormface%20Auto%20Farm"))()
+				end,
+			},
+
+			["Flashback"] = {
+				Owner = "Envixity",
+				Description = "Reverse yourself.",
+				GameId = 0,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = false,
+				IsNew = false,
+				ScriptId = 1033,
+				Script = function()
+					loadstring(game:HttpGet("https://pastebin.com/raw/cgWLwdN9", true))()
+				end,
+			},
+
+			["Longest Answer Wins Auto Play"] = {
+				Owner = "Unknown",
+				Description = "Auto plays the game.",
+				GameId = 9992339729,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = false,
+				ScriptId = 1034,
+				Script = function()
+					loadstring(game:HttpGet("https://pastebin.com/raw/x8r8GXUm"))()
+				end,
+			},
 		},
 
 		["Required Accessories"] = {
