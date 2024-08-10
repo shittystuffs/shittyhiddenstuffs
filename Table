@@ -519,19 +519,87 @@ _G.Table = {
 		},
 
 		["GUIS"] = {
-			["NameScriptName"] = {
-				Owner = "V31nc",
-				Description = "Hello World",
+			["Arosia"] = {
+				Owner = "illremember",
+				Description = "A GUI with basic scripts for exploiting.",
 				GameId = 0,
 				RigType = "Any", -- R6, R15, Any
 				IsOP = true,
-				IsNew = true,
-				ScriptId = 0000,
-				Favorited = false,
+				IsNew = false,
+				ScriptId = 2001,
 				Script = function()
-					print("hello from guis section")
+					loadstring(Game:GetObjects("rbxassetid://1255908305")[1].Source)()
 				end,
-			}
+			},
+
+			["Fly Gui"] = {
+				Owner = "me_ozoneYT",
+				Description = "A GUI that can make you fly.",
+				GameId = 0,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = false,
+				ScriptId = 2002,
+				Script = function()
+					if game.PlaceId == 2788229376 then
+						loadstring(game:HttpGet(('https://raw.githubusercontent.com/Obfuscatetestloluwu/Scripts/main/Fly%20Gui%20For%20Da%20Hood'),true))()
+					else
+						loadstring(game:HttpGet(('https://raw.githubusercontent.com/testforshiistuff/Scripts/main/Fly%20gui'),true))()
+					end
+				end,
+			},
+
+			["Yeet Gui"] = {
+				Owner = "Scuba Kermit",
+				Description = "A very old and buggy script that can fling people.",
+				GameId = 0,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = false,
+				IsNew = false,
+				ScriptId = 2003,
+				Script = function()
+					loadstring(game:HttpGet(('https://pastebin.com/raw/LMQgxmhe'),true))()
+				end,
+			},
+
+			["Hypertotal"] = {
+				Owner = "illremember",
+				Description = "Better than Arosia.",
+				GameId = 0,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = false,
+				ScriptId = 2004,
+				Script = function()
+					loadstring(game:HttpGet(('https://pastebin.com/raw/nucL1nkC'),true))()
+				end,
+			},
+
+			["Spectate Gui"] = {
+				Owner = "Unknown",
+				Description = "A GUI that can spectate people.",
+				GameId = 0,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = false,
+				IsNew = false,
+				ScriptId = 2005,
+				Script = function()
+					loadstring(game:HttpGet(('https://pastebin.com/raw/brJacHL9'),true))()
+				end,
+			},
+
+			["Tower Of Hell OnWin"] = {
+				Owner = "Mich",
+				Description = "A GUI for Tower of Hell.",
+				GameId = 1962086868,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = false,
+				ScriptId = 2006,
+				Script = function()
+					loadstring(game:HttpGet(('https://pastebin.com/raw/zphaw4sM'),true))()
+				end,
+			},
 		},
 
 		["Animations"] = {
