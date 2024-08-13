@@ -600,6 +600,58 @@ _G.Table = {
 					loadstring(game:HttpGet(('https://pastebin.com/raw/zphaw4sM'),true))()
 				end,
 			},
+
+			["Edge's Audio Logger"] = {
+				Owner = "Edge's",
+				Description = "Gets all audios in the game.",
+				GameId = 0,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = false,
+				IsNew = false,
+				ScriptId = 2007,
+				Script = function()
+					loadstring(game:HttpGet(('https://pastebin.com/raw/wN9Q3pZm'),true))()
+				end,
+			},
+
+			["Shiftlock"] = {
+				Owner = "Unknown",
+				Description = "Shitlock.",
+				GameId = 0,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = false,
+				IsNew = false,
+				ScriptId = 2008,
+				Script = function()
+					loadstring(game:HttpGet(('https://pastebin.com/raw/E9a7QmCZ'),true))()
+				end,
+			},
+
+			["Yeet Gui V4"] = {
+				Owner = "scuba kermit",
+				Description = "Fling people.",
+				GameId = 0,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = false,
+				ScriptId = 2009,
+				Script = function()
+					loadstring(game:HttpGet(('https://pastebin.com/raw/61VhedB4'),true))()
+				end,
+			},
+
+			["TpGui"] = {
+				Owner = "Unknown",
+				Description = "Teleport to people.",
+				GameId = 0,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = false,
+				ScriptId = 2010,
+				Script = function()
+					loadstring(game:HttpGet("https://gist.githubusercontent.com/DagerFild/b4776075a0d26ef04394133ee6bd2081/raw/0ed51ac94057d2d9a9f00e1b037b9011c76ca54a/tpGUI", true))()
+				end,
+			},
 		},
 
 		["Animations"] = {
