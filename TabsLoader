@@ -589,6 +589,16 @@ getgenv().CreateScript = function(TabName, ScriptName, ScriptId, ScriptCreator, 
 		end
 	end
 
+	local JSon = {}
+
+	function JSon:Encode(Table)
+		return game:GetService("HttpService"):JSONEncode(Table)
+	end
+
+	function JSon:Decode(Table)
+		return game:GetService("HttpService"):JSONDecode(Table)
+	end
+
 	Template.MouseButton1Down:Connect(function()
 		pcall(ClickSound)
 		TabPath.BottomFrame.ScriptInfo.ScriptDetails.Text = '<b><font size="14">' .. ScriptName .. '</font></b>\n<font size="8">By: ' .. ScriptCreator .. '</font>\n\n<b><font size="10">Description:</font></b>\n<font size="8">' .. ScriptDescription .. '</font>\n\n<font size="8">RigType: <b>' .. ScriptRigType .. '</b>\nGame: <b>' .. GetGameName(ScriptSupportedIn) .. '</b></font><font size="8">\nScript Id: <b>' .. ScriptId .. '</b></font>'
@@ -630,9 +640,11 @@ getgenv().CreateScript = function(TabName, ScriptName, ScriptId, ScriptCreator, 
 
 			if Path == nil then
 				table.insert(Table.Favorites, ScriptId)
+				writefile(JSon:Encode("VexHub/Favorites.vex", Table.Favorites))
 				Notification:Create("Script added to favorites", "Script was favorited and now in the favorites tab!", 5)
 			else
 				table.remove(Table.Favorites, Path)
+				writefile(JSon:Encode("VexHub/Favorites.vex", Table.Favorites))
 				Notification:Create("Script removed from favorites!", "Script was removed from favorites and no longer in the favorites tab.", 5)
 			end
 		end
