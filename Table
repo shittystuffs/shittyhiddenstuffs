@@ -652,11 +652,76 @@ _G.Table = {
 					loadstring(game:HttpGet("https://gist.githubusercontent.com/DagerFild/b4776075a0d26ef04394133ee6bd2081/raw/0ed51ac94057d2d9a9f00e1b037b9011c76ca54a/tpGUI", true))()
 				end,
 			},
+
+			["OPFinality"] = {
+				Owner = "illremember",
+				Description = "GUI with simple features.",
+				GameId = 0,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = false,
+				ScriptId = 2011,
+				Script = function()
+					loadstring(game:HttpGet(('https://pastebin.com/raw/U290qDC2'),true))()
+				end,
+			},
+
+			["Vehicle Fly"] = {
+				Owner = "WarriorRoberr",
+				Description = "Make any drivable things fly.",
+				GameId = 0,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = false,
+				ScriptId = 2012,
+				Script = function()
+					loadstring(game:HttpGet("https://pastebin.com/raw/qgEYL5UB"))()
+				end,
+			},
+
+			["Invisible Car Toggle Gui"] = {
+				Owner = "Unknown",
+				Description = "Invisible car.",
+				GameId = 0,
+				RigType = "R6", -- R6, R15, Any
+				IsOP = false,
+				IsNew = false,
+				ScriptId = 2013,
+				Script = function()
+					loadstring(game:HttpGet(('https://pastebin.com/raw/XL50E7g4'),true))()
+				end,
+			},
+
+			["Arceus X Aimbot"] = {
+				Owner = "SPDMTeam",
+				Description = "Aimbot.",
+				GameId = 0,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = false,
+				ScriptId = 2014,
+				Script = function()
+					loadstring(game:HttpGet("https://raw.githubusercontent.com/AZYsGithub/chillz-workshop/main/Arceus%20Aimbot.lua"))()
+				end,
+			},
+
+			["Peterating Underground"] = {
+				Owner = "GhostPlayer",
+				Description = "Makes you noclip underground.",
+				GameId = 0,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = false,
+				IsNew = false,
+				ScriptId = 2015,
+				Script = function()
+					loadstring(game:HttpGet('https://pastebin.com/raw/QKbzxzSj'))()
+				end,
+			},
 		},
 
 		["Animations"] = {
 			["NameScriptName"] = {
-				Owner = "V31nc",
+				Owner = "GhostPlayer",
 				Description = "Hello World",
 				GameId = 0,
 				RigType = "Any", -- R6, R15, Any
