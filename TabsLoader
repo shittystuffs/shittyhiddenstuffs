@@ -393,6 +393,7 @@ UIGridLayout.Parent = ScrollingFrame
 UIGridLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
 UIGridLayout.CellSize = UDim2.new(0, 53, 0, 70)
 UIGridLayout.FillDirectionMaxCells = 3
+UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
 
 ScriptButtonTemplate.Name = "ScriptButtonTemplate"
 ScriptButtonTemplate.Parent = ScrollingFrame
