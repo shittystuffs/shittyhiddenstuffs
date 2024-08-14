@@ -9,3 +9,5 @@ local Players = {
     Heart = true,
   }
 }
+
+return Players
