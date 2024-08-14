@@ -87,8 +87,10 @@ function Library:Create(Title, Message, Duration)
 	    end)()
 	  end
 	end
-	
-	CreateNotification(Title, Message, Duration)
+
+	if Table.GuiSettings.Notification == true then
+		CreateNotification(Title, Message, Duration)
+	end
 end
 
 
