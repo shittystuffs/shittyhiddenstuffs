@@ -863,7 +863,7 @@ _G.Table = {
 				Script = function()
 					loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
 				end,
-			}
+			},
 
 			["Manager Command"] = {
 				Owner = "sirelKilla",
@@ -880,19 +880,6 @@ _G.Table = {
 		},
 
 		["Other Hubs"] = {
-			["NameScriptName"] = {
-				Owner = "V31nc",
-				Description = "Hello World",
-				GameId = 0,
-				RigType = "Any", -- R6, R15, Any
-				IsOP = true,
-				IsNew = true,
-				ScriptId = 0000,
-				Favorited = false,
-				Script = function()
-					print("hello from other hubs section")
-				end,
-			}
 		},
 
 		["Limited Scripts"] = {
