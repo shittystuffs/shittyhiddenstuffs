@@ -717,6 +717,84 @@ _G.Table = {
 					loadstring(game:HttpGet('https://pastebin.com/raw/QKbzxzSj'))()
 				end,
 			},
+
+			["Keyboard Keybinds"] = {
+				Owner = "Kokjindesu",
+				Description = "A GUI that acts like a keyboard.",
+				GameId = 0,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = false,
+				IsNew = false,
+				ScriptId = 2016,
+				Script = function()
+					loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+				end,
+			},
+
+			["Break In Gui"] = {
+				Owner = "Flawm3ng0, Hamsta Gang, doggyshot123, Chrrxs, LeviTheOtaku",
+				Description = "OP stuff for Break In. Only works on the game not in the lobby.",
+				GameId = 4620170611,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = false,
+				ScriptId = 2017,
+				Script = function()
+					loadstring(game:HttpGet("https://pastebin.com/raw/Wg8pEW3Z", true))()
+				end,
+			},
+
+			["Invisible Gui"] = {
+				Owner = "GhostPlayer",
+				Description = "GUI that makes you invisible.",
+				GameId = 0,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = false,
+				ScriptId = 2018,
+				Script = function()
+					loadstring(game:HttpGet('https://pastebin.com/raw/AYtzGEPb'))()
+				end,
+			},
+
+			["LuaC Emulator"] = {
+				Owner = "3dsboy08, Josh",
+				Description = "A script that can execute LuaC scripts!",
+				GameId = 0,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = false,
+				IsNew = false,
+				ScriptId = 2019,
+				Script = function()
+					loadstring(game:GetObjects("rbxassetid://1463753930")[1].Source)()
+				end,
+			},
+
+			["Waypoint Gui"] = {
+				Owner = "koirapallo32#5518",
+				Description = "Waypoint.",
+				GameId = 0,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = false,
+				ScriptId = 2020,
+				Script = function()
+					loadstring(game:HttpGet(('https://raw.githubusercontent.com/testforshiistuff/Scripts/main/Waypoint%20Gui'),true))()
+				end,
+			},
+
+			["Hitbox Gui"] = {
+				Owner = "V31nc",
+				Description = "Hitbox.",
+				GameId = 0,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = false,
+				ScriptId = 2021,
+				Script = function()
+					loadstring(game:HttpGet("https://pastebin.com/raw/W3HhJPmW"))()
+				end,
+			},
 		},
 
 		["Animations"] = {
