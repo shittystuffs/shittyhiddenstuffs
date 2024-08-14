@@ -837,17 +837,17 @@ _G.Table = {
 		},
 
 		["Animations"] = {
-			["NameScriptName"] = {
-				Owner = "GhostPlayer",
-				Description = "Hello World",
+			["Roblox Old Animation"] = {
+				Owner = "Unknown",
+				Description = "A old Roblox animation.",
 				GameId = 0,
 				RigType = "Any", -- R6, R15, Any
-				IsOP = true,
-				IsNew = true,
-				ScriptId = 0000,
+				IsOP = false,
+				IsNew = false,
+				ScriptId = 3001,
 				Favorited = false,
 				Script = function()
-					print("hello from animations section")
+					loadstring(game:HttpGet("https://pastebin.com/raw/pYjkmxUe", true))()
 				end,
 			}
 		},
