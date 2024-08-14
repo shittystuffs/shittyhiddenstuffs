@@ -357,8 +357,10 @@ Plugins_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Plugins_2.BorderSizePixel = 0
 Plugins_2.LayoutOrder = 2
 Plugins_2.Size = UDim2.new(1, 0, 0, 120)
+Plugins_2.AutomaticCanvasSize = Enum.AutomaticSize.Y
 Plugins_2.CanvasSize = UDim2.new(0, 0, 0, 0)
 Plugins_2.ScrollBarThickness = 2
+Plugins_2.ScrollingDirection = Enum.ScrollingDirection.Y
 
 PluginTemplate.Name = "PluginTemplate"
 PluginTemplate.Parent = Plugins_2
