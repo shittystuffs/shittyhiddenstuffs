@@ -795,6 +795,45 @@ _G.Table = {
 					loadstring(game:HttpGet("https://pastebin.com/raw/W3HhJPmW"))()
 				end,
 			},
+
+			["Project Bullshit"] = {
+				Owner = "Racist Dolphin#5199",
+				Description = "A GUI with OP stuff.",
+				GameId = 0,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = false,
+				ScriptId = 2022,
+				Script = function()
+					loadstring(game:HttpGet(('https://pastebin.com/raw/MbQqeRy9'),true))()
+				end,
+			},
+
+			["Dex Explorer"] = {
+				Owner = "Unknown",
+				Description = "Explore the game properties.",
+				GameId = 0,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = false,
+				ScriptId = 2023,
+				Script = function()
+					loadstring(game:HttpGet("https://raw.githubusercontent.com/testforshiistuff/Scripts/main/Dex%20Explorer"))()
+				end,
+			},
+
+			["Strongman Simulator Gui"] = {
+				Owner = "HamstaGang, OREZAKung",
+				Description = "Auto farm the game!",
+				GameId = 6766156863,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = false,
+				ScriptId = 2024,
+				Script = function()
+					loadstring(game:HttpGet("https://pastebin.com/raw/nt5hj2Rp"))()
+				end,
+			},
 		},
 
 		["Animations"] = {
