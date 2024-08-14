@@ -121,7 +121,6 @@ SectionName.RichText = true
 SectionName.Text = "Required Accessories"
 SectionName.TextColor3 = Color3.fromRGB(255, 255, 255)
 SectionName.TextSize = 13.000
-SectionName.TextWrapped = true
 
 ImageLabel.Parent = SectionInfo
 ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
