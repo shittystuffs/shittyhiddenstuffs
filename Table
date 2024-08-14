@@ -63,13 +63,13 @@ _G.Table = {
 		NotificationSound = 3398620867,
 		NotificationVolume = 0.5,
 		PlayerBadges = {
-			Heart = true,
-			Piece = true,
-			ShootingStar = true,
-			Star = true,
-			Trophy = true,
-			Tube = true,
-			Wrench = true
+			Heart = false,
+			Piece = false,
+			ShootingStar = false,
+			Star = false,
+			Trophy = false,
+			Tube = false,
+			Wrench = false,
 		}
 	},
 
