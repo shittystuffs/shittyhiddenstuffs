@@ -565,14 +565,12 @@ getgenv().CreateScript = function(TabName, ScriptName, ScriptId, ScriptCreator, 
 	Template.ScriptId.Text = "Id: "..ScriptId
 
 	if IsNew == true then
-		Template.BackgroundTransparency = 0.9
-		Template.BackgroundColor3 = Color3.fromRGB(255, 102, 102)
+		Template.ScriptName.Text = '<b><font color="rgb(255,102,102)">[NEW]</font></b> '..ScriptName
 		Template.ImageColor3 = Color3.fromRGB(255, 102, 102)
 		Template.UIStroke.Color = Color3.fromRGB(255, 102, 102)
 		Template.Name = "0"..Template.Name
 	elseif IsOp == true then
-		Template.BackgroundTransparency = 0.9
-		Template.BackgroundColor3 = Color3.fromRGB(255, 188, 87)
+		Template.ScriptName.Text = '<b><font color="rgb(255,188,87)">[OP]</font></b> '..ScriptName
 		Template.ImageColor3 = Color3.fromRGB(255, 188, 87)
 		Template.UIStroke.Color = Color3.fromRGB(255, 188, 87)
 	end
