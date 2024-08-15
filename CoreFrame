@@ -606,30 +606,34 @@ function ResetStatus(TabName)
 end
 
 function NewLabel(Name, LayoutOrder)
-	local NewLabel = TemplateLabel:Clone()
-
-	NewLabel.Name = Name
-	NewLabel.Parent = ScrollingFrame
-	NewLabel.LayoutOrder = LayoutOrder
-	NewLabel.Text = Name
-	NewLabel.Visible = true
+	coroutine.wrap(function()
+		local NewLabel = TemplateLabel:Clone()
+	
+		NewLabel.Name = Name
+		NewLabel.Parent = ScrollingFrame
+		NewLabel.LayoutOrder = LayoutOrder
+		NewLabel.Text = Name
+		NewLabel.Visible = true
+	end)()
 end
 
 function NewButton(Name, TextSize, LayoutOrder, Icon, Function)
-	local Function = Function or function() end
-	local NewButton = TemplateButton:Clone()
-
-	NewButton.Name = Name
-	NewButton.Parent = ScrollingFrame
-	NewButton.LayoutOrder = LayoutOrder
-	NewButton.Visible = true
-	NewButton.MouseButton1Down:Connect(function()
-		pcall(Function)
-	end)
-
-	NewButton.TabImage.Image = Icon
-	NewButton.TabName.Text = Name
-	NewButton.TabName.TextSize = TextSize
+	coroutine.wrap(function()
+		local Function = Function or function() end
+		local NewButton = TemplateButton:Clone()
+	
+		NewButton.Name = Name
+		NewButton.Parent = ScrollingFrame
+		NewButton.LayoutOrder = LayoutOrder
+		NewButton.Visible = true
+		NewButton.MouseButton1Down:Connect(function()
+			pcall(Function)
+		end)
+	
+		NewButton.TabImage.Image = Icon
+		NewButton.TabName.Text = Name
+		NewButton.TabName.TextSize = TextSize
+	end)()
 end
 
 Discord.MouseButton1Down:Connect(function()
