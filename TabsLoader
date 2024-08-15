@@ -564,6 +564,13 @@ getgenv().CreateScript = function(TabName, ScriptName, ScriptId, ScriptCreator, 
 	Template.ScriptName.Text = ScriptName
 	Template.ScriptId.Text = "Id: "..ScriptId
 
+	if IsNew == true then
+		Template.BackgroundColor3 = Color3.fromRGB(255, 102, 102)
+		Template.Name = "0"..Template.Name
+	elseif IsOp == true then
+		Template.BackgroundColor3 = Color3.fromRGB(255, 188, 87)
+	end
+
 	function GetGameName(GameId)
 		if GameId == 0 then
 			return "Universal"
