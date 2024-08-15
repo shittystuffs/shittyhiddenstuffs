@@ -874,7 +874,7 @@ _G.Table = {
 				IsNew = false,
 				ScriptId = 4002,
 				Script = function()
-					loadstring(game:HttpGet(('https://raw.githubusercontent.com/V31nc/Scripts/main/Manager%20Stealer'),true))()
+					loadstring(game:HttpGet(('https://raw.githubusercontent.com/V31nc/Scripts/main/Manager%20Command'),true))()
 				end,
 			},
 		},
