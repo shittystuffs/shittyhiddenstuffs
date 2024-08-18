@@ -1,9 +1,3 @@
-function GetPlayerCharacter = function(this)
-	if (game:GetService("Players").LocalPlayer.Character[this]) then
-		return game:GetService("Players").LocalPlayer.Character[this]
-	end
-end
-
 _G.Table = {
 	GuiStatus = {
 		IsVisible = false,
