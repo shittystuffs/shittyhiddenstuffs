@@ -4,6 +4,12 @@ function GetPlayerSpeed()
 	end
 end
 
+function GetPlayerJumpPower()
+	if (game:GetService("Players").LocalPlayer.Character) then
+		return game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower
+	end
+end
+
 _G.Table = {
 	GuiStatus = {
 		IsVisible = false,
@@ -927,7 +933,7 @@ _G.Table = {
 
 		["JumpPower"] = {
 			TypeOfFunction = "TextBox",
-			Text = game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower,
+			Text = GetPlayerJumpPower(),
 			PlaceHolderText = "Number",
 			ScriptIfActivated = function(TextBox)
 				game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = TextBox
