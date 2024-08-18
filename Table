@@ -1,3 +1,9 @@
+local function GetPlayerCharacter()
+	if (game:GetService("Players").LocalPlayer.Character) then
+		return game:GetService("Players").LocalPlayer.Character
+	end
+end
+
 _G.Table = {
 	GuiStatus = {
 		IsVisible = false,
@@ -912,7 +918,7 @@ _G.Table = {
 	LocalPlayerFeatures = {
 		["WalkSpeed"] = {
 			TypeOfFunction = "TextBox",
-			Text = game:GetService("Players").LocalPlayer:FindFirstChild("Character"):FindFirstChild("Humanoid").WalkSpeed,
+			Text = GetPlayerCharacter().WalkSpeed,
 			PlaceHolderText = "Number",
 			ScriptIfActivated = function(TextBox)
 				game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = TextBox
