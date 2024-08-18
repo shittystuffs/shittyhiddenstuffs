@@ -1,12 +1,16 @@
 function GetPlayerSpeed()
 	if (game:GetService("Players").LocalPlayer.Character) then
 		return game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed
+	else
+		return 0
 	end
 end
 
 function GetPlayerJumpPower()
 	if (game:GetService("Players").LocalPlayer.Character) then
 		return game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower
+	else
+		return 0
 	end
 end
 
