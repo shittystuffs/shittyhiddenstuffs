@@ -1,6 +1,6 @@
-local function GetPlayerCharacter()
-	if (game:GetService("Players").LocalPlayer.Character) then
-		return game:GetService("Players").LocalPlayer.Character
+function GetPlayerCharacter = function(this)
+	if (game:GetService("Players").LocalPlayer.Character[this]) then
+		return game:GetService("Players").LocalPlayer.Character[this]
 	end
 end
 
@@ -918,7 +918,7 @@ _G.Table = {
 	LocalPlayerFeatures = {
 		["WalkSpeed"] = {
 			TypeOfFunction = "TextBox",
-			Text = GetPlayerCharacter().WalkSpeed,
+			Text = game:GetService("Players").LocalPlayer.Character.WalkSpeed,
 			PlaceHolderText = "Number",
 			ScriptIfActivated = function(TextBox)
 				game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = TextBox
