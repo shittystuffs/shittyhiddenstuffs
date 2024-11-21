@@ -46,18 +46,13 @@ _G.Table = {
 		Owner = "V31nc",
 		Credits = "<b>Credits:</b>\nV31nc - Creator of VexHub\nitspls - Created the logo\nVanilla 3 (Elttob) - Icons\n\nKey Change: 8/8/8",
 		Logo = "14803348752",
-		BuffVexHub = {
-			NoDick = nil,
-			WithDick = nil,
-			WithDickAndPreCum = nil,
-		},
 		Name = "VexHub",
 		DiscordLink = "dsc.gg/vhub",
 		AreModeratorsAllowedToAnnounce = true,
-		ImportantAnnouncement = "VexHub is not also a Brookhaven script! Its also for any game!",
+		ImportantAnnouncement = "IM BACK!!!!!!!!!!!!!",
 		Updates = {
-			"New Gui",
-			"alot has changed"
+			"Fixed bugs",
+			"Removed getcustomasset request for BuffVexHub"
 		}
 	},
 
@@ -1177,33 +1172,4 @@ coroutine.wrap(function()
 			_G.Table.GuiStatus.SwitchScriptCooldown = 0
 		end
 	end
-end)()
-
-coroutine.wrap(function()
-	coroutine.wrap(function()
-		repeat
-			wait()
-		until isfile("VexHub/BuffVexHub/NoDick.png")
-		wait()
-	
-		_G.Table.GuiStatus.BuffVexHub.NoDick = getcustomasset("VexHub/BuffVexHub/NoDick.png")
-	end)()
-
-	coroutine.wrap(function()
-		repeat
-			wait()
-		until isfile("VexHub/BuffVexHub/WithDick.png")
-		wait()
-	
-		_G.Table.GuiStatus.BuffVexHub.WithDick = getcustomasset("VexHub/BuffVexHub/WithDick.png")
-	end)()
-
-	coroutine.wrap(function()
-		repeat
-			wait()
-		until isfile("VexHub/BuffVexHub/WithDickAndPreCum.png")
-		wait()
-	
-		_G.Table.GuiStatus.BuffVexHub.WithDickAndPreCum = getcustomasset("VexHub/BuffVexHub/WithDickAndPreCum.png")
-	end)()
 end)()
