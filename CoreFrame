@@ -14,7 +14,11 @@ end
 
 function ReturnWallpaperSettingsAsImage(IdOrPath)
 	if string.find(IdOrPath, ".png") then
-		return getcustomasset(IdOrPath)
+		if (getcustomasset) then
+			return getcustomasset(IdOrPath)
+		else
+			return "rbxassetid://11926598891"
+		end
 	else
 		local Success, Error = pcall(function() 
 			if game:GetService("MarketplaceService"):GetProductInfo(tonumber(IdOrPath)).AssetTypeId == 0 then end
