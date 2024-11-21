@@ -45,7 +45,7 @@ BuffVexHub.BorderColor3 = Color3.fromRGB(0, 0, 0)
 BuffVexHub.BorderSizePixel = 0
 BuffVexHub.LayoutOrder = 1
 BuffVexHub.Size = UDim2.new(0, 70, 0, 70)
-BuffVexHub.Image = Table.GuiStatus.BuffVexHub.WithDickAndPreCum
+BuffVexHub.Image = "rbxassetid://72910962397999"
 
 ReportText.Name = "ReportText"
 ReportText.Parent = Report
