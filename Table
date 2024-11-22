@@ -20,7 +20,7 @@ _G.Table = {
 		OnGoingAnimation = false,
 		ActivePage = nil,
 		TargetPlugin = nil,
-		GuiVersion = 6.144,
+		GuiVersion = 6.145,
 		ActiveScriptName = nil,
 		ClickSoundScript = function()
 			local ClickSound = Instance.new("Sound")
@@ -51,8 +51,8 @@ _G.Table = {
 		AreModeratorsAllowedToAnnounce = true,
 		ImportantAnnouncement = "IM BACK!!!!!!!!!!!!!",
 		Updates = {
-			"Fixed bugs",
-			"Removed getcustomasset request for BuffVexHub"
+			"Added R4D (GUIS Tab)",
+			"Added Chosen (Animation Tab)"
 		}
 	},
 
@@ -845,6 +845,19 @@ _G.Table = {
 					loadstring(game:HttpGet("https://pastebin.com/raw/nt5hj2Rp"))()
 				end,
 			},
+
+			["R4D"] = {
+				Owner = "M1zz",
+				Description = "A Brookhaven trolling GUI!",
+				GameId = 4924922222,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = true,
+				ScriptId = 2025,
+				Script = function()
+					loadstring(game:HttpGet('https://raw.githubusercontent.com/M1ZZ001/BrookhavenR4D/main/Brookhaven%20R4D%20Script'))()
+				end,
+			},
 		},
 
 		["Animations"] = {
@@ -859,7 +872,20 @@ _G.Table = {
 				Script = function()
 					loadstring(game:HttpGet("https://pastebin.com/raw/pYjkmxUe", true))()
 				end,
-			}
+			},
+
+			["Chosen"] = {
+				Owner = "Unknown",
+				Description = "A cool animation that makes you float in the air.",
+				GameId = 0,
+				RigType = "R6", -- R6, R15, Any
+				IsOP = false,
+				IsNew = true,
+				ScriptId = 3002,
+				Script = function()
+					loadstring(game:HttpGet("https://raw.githubusercontent.com/shittystuffs/Scripts/main/Chosen", true))()
+				end,
+			},
 		},
 
 		["Commands"] = {
