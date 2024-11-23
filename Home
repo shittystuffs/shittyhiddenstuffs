@@ -215,6 +215,7 @@ UpdateTemplate.BorderSizePixel = 0
 UpdateTemplate.LayoutOrder = 2
 UpdateTemplate.Size = UDim2.new(0, 135, 0, 16)
 UpdateTemplate.Visible = false
+UpdateTemplate.TextWrapped = true
 
 UICorner_3.CornerRadius = UDim.new(0.300000012, 0)
 UICorner_3.Parent = UpdateTemplate
