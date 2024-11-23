@@ -20,7 +20,7 @@ _G.Table = {
 		OnGoingAnimation = false,
 		ActivePage = nil,
 		TargetPlugin = nil,
-		GuiVersion = 6.145,
+		GuiVersion = 6.146,
 		ActiveScriptName = nil,
 		ClickSoundScript = function()
 			local ClickSound = Instance.new("Sound")
@@ -52,7 +52,9 @@ _G.Table = {
 		ImportantAnnouncement = "I am back on developing on VexHub! More scripts coming soon! -OWNER",
 		Updates = {
 			"Added R4D (GUIS Tab)",
-			"Added Chosen (Animation Tab)"
+			"Added Chosen (Animation Tab)",
+			"Added Anti Fall (Scripts Tab)",
+			"Added Nameless Admin",
 		}
 	},
 
@@ -527,6 +529,19 @@ _G.Table = {
 					loadstring(game:HttpGet("https://pastebin.com/raw/x8r8GXUm"))()
 				end,
 			},
+
+			["Anti Fall"] = {
+				Owner = "XtremeScripts",
+				Description = "Makes you teleport in the middle of the part/object where you started to fall.",
+				GameId = 0,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = true,
+				ScriptId = 1035,
+				Script = function()
+					loadstring(game:HttpGet("https://raw.githubusercontent.com/zephyr10101/AntiFall/main/Script"))()
+				end,
+			},
 		},
 
 		["GUIS"] = {
@@ -914,25 +929,25 @@ _G.Table = {
 					loadstring(game:HttpGet(('https://raw.githubusercontent.com/V31nc/Scripts/main/Manager%20Command'),true))()
 				end,
 			},
+
+			["Nameless Admin"] = {
+				Owner = "Unknown",
+				Description = "Its like infinite yeild but more scripts.",
+				GameId = 0,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = true,
+				ScriptId = 4003,
+				Script = function()
+					loadstring(game:HttpGet("https://raw.githubusercontent.com/FilteringEnabled/NamelessAdmin/main/Source"))();
+				end,
+			},
 		},
 
 		["Other Hubs"] = {
 		},
 
 		["Limited Scripts"] = {
-			["NameScriptName"] = {
-				Owner = "V31nc",
-				Description = "Hello World",
-				GameId = 0,
-				RigType = "Any", -- R6, R15, Any
-				IsOP = true,
-				IsNew = true,
-				ScriptId = 0000,
-				Favorited = false,
-				Script = function()
-					print("hello from limited scripts section")
-				end,
-			}
 		},
 	},
 
