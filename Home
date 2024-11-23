@@ -396,7 +396,6 @@ ShootingStar.BorderColor3 = Color3.fromRGB(0, 0, 0)
 ShootingStar.BorderSizePixel = 0
 ShootingStar.LayoutOrder = 1
 ShootingStar.Size = UDim2.new(0, 18, 0, 18)
-ShootingStar.Visible = false
 ShootingStar.Font = Enum.Font.SourceSans
 ShootingStar.Text = "🌠"
 ShootingStar.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -410,7 +409,6 @@ Wrench.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Wrench.BorderSizePixel = 0
 Wrench.LayoutOrder = 2
 Wrench.Size = UDim2.new(0, 18, 0, 18)
-Wrench.Visible = false
 Wrench.Font = Enum.Font.SourceSans
 Wrench.Text = "🔧"
 Wrench.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -424,7 +422,6 @@ Star.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Star.BorderSizePixel = 0
 Star.LayoutOrder = 3
 Star.Size = UDim2.new(0, 18, 0, 18)
-Star.Visible = false
 Star.Font = Enum.Font.SourceSans
 Star.Text = "⭐"
 Star.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -438,7 +435,6 @@ Trophy.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Trophy.BorderSizePixel = 0
 Trophy.LayoutOrder = 4
 Trophy.Size = UDim2.new(0, 18, 0, 18)
-Trophy.Visible = false
 Trophy.Font = Enum.Font.SourceSans
 Trophy.Text = "🏆"
 Trophy.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -452,7 +448,6 @@ Piece.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Piece.BorderSizePixel = 0
 Piece.LayoutOrder = 5
 Piece.Size = UDim2.new(0, 18, 0, 18)
-Piece.Visible = false
 Piece.Font = Enum.Font.SourceSans
 Piece.Text = "🧩"
 Piece.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -466,7 +461,6 @@ Tube.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Tube.BorderSizePixel = 0
 Tube.LayoutOrder = 6
 Tube.Size = UDim2.new(0, 18, 0, 18)
-Tube.Visible = false
 Tube.Font = Enum.Font.SourceSans
 Tube.Text = "🧪"
 Tube.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -480,7 +474,6 @@ Heart.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Heart.BorderSizePixel = 0
 Heart.LayoutOrder = 7
 Heart.Size = UDim2.new(0, 18, 0, 18)
-Heart.Visible = false
 Heart.Font = Enum.Font.SourceSans
 Heart.Text = "💝"
 Heart.TextColor3 = Color3.fromRGB(0, 0, 0)
@@ -529,9 +522,9 @@ end
 for _, Badges in BadgesFrame:GetChildren() do
 	if Badges:IsA("TextLabel") then
 		if Table.GuiSettings.PlayerBadges[Badges.Name] == true then
-			Badges.Visible = true
+			Badges.ImageTransparency = 0
 		else
-			Badges.Visible = false
+			Badges.ImageTransparency = 0.5
 		end
 	end
 end
