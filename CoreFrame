@@ -297,7 +297,7 @@ VexHubText.BorderSizePixel = 0
 VexHubText.LayoutOrder = 2
 VexHubText.Position = UDim2.new(0.138461545, 0, 0, 0)
 VexHubText.RichText = true
-VexHubText.Size = UDim2.new(0, 209, 0, 25)
+VexHubText.Size = UDim2.new(0, 185, 0, 25)
 VexHubText.Font = Enum.Font[Table.GuiSettings.GuiFont.Regular]
 VexHubText.Text = '<b>'..Table.GuiStatus.Name..'</b>\n<font size="8">V'..Table.GuiStatus.GuiVersion..'</font>'
 VexHubText.TextColor3 = Color3.fromRGB(255, 255, 255)
