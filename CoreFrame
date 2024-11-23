@@ -65,6 +65,8 @@ local Logo = Instance.new("ImageLabel")
 local VexHubText = Instance.new("TextLabel")
 local Discord = Instance.new("ImageButton")
 local UICorner_7 = Instance.new("UICorner")
+local Paypal = Instance.new("ImageButton")
+local UICorner_15 = Instance.new("UICorner")
 local TopRight = Instance.new("Frame")
 local UICorner_8 = Instance.new("UICorner")
 local UIStroke_4 = Instance.new("UIStroke")
@@ -316,6 +318,21 @@ Discord.TileSize = UDim2.new(0.5, 0, 1, 0)
 
 UICorner_7.CornerRadius = UDim.new(0.5, 0)
 UICorner_7.Parent = Discord
+
+Paypal.Name = "Paypal"
+Paypal.Parent = VexHubTopBar
+Paypal.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+Paypal.BackgroundTransparency = 1.000
+Paypal.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Paypal.BorderSizePixel = 0
+Paypal.LayoutOrder = 2
+Paypal.Size = UDim2.new(0, 19, 0, 19)
+Paypal.Image = "rbxassetid://15178979114"
+Paypal.ScaleType = Enum.ScaleType.Fit
+Paypal.TileSize = UDim2.new(0.5, 0, 1, 0)
+
+UICorner_15.CornerRadius = UDim.new(0.5, 0)
+UICorner_15.Parent = Paypal
 
 TopRight.Name = "TopRight"
 TopRight.Parent = VexHubTopBar
@@ -642,7 +659,12 @@ end
 
 Discord.MouseButton1Down:Connect(function()
 	setclipboard(Table.GuiStatus.DiscordLink)
-	Notification:Create("Link copied!", "The link for our discord server has been copied to your clipboard!", 5)
+	Notification:Create("Link copied!", "The link for our Discord server has been copied to your clipboard!", 5)
+end)
+
+Paypal.MouseButton1Down:Connect(function()
+	setclipboard("paypal.me/VexHubPaypal")
+	Notification:Create("Link copied!", "The link of our Paypal has been copied to your clipboard!", 5)
 end)
 
 Close.MouseButton1Down:Connect(function()
