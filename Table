@@ -20,7 +20,7 @@ _G.Table = {
 		OnGoingAnimation = false,
 		ActivePage = nil,
 		TargetPlugin = nil,
-		GuiVersion = 6.146,
+		GuiVersion = 6.147,
 		ActiveScriptName = nil,
 		ClickSoundScript = function()
 			local ClickSound = Instance.new("Sound")
@@ -55,6 +55,8 @@ _G.Table = {
 			"Added Chosen (Animation Tab)",
 			"Added Anti Fall (Scripts Tab)",
 			"Added Nameless Admin (Commands Tab)",
+			"Added Escape The Carnival Of Terror Obby Get Gears (Scripts Tab)",
+			"Added Block Eaters Infinite Size (Scripts Tab)",
 		}
 	},
 
@@ -540,6 +542,32 @@ _G.Table = {
 				ScriptId = 1035,
 				Script = function()
 					loadstring(game:HttpGet("https://raw.githubusercontent.com/zephyr10101/AntiFall/main/Script"))()
+				end,
+			},
+
+			["Block Eaters Infinite Size"] = {
+				Owner = "glowxfy",
+				Description = "Makes you big.",
+				GameId = 16178787698,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = true,
+				ScriptId = 1036,
+				Script = function()
+					loadstring(game:HttpGet("https://raw.githubusercontent.com/shittystuffs/Scripts/refs/heads/main/Infinite%20Block%20Size"))()
+				end,
+			},
+
+			["Escape The Carnival Of Terror Obby Get Gears"] = {
+				Owner = "glowxfy",
+				Description = "Gets you weapons and gears.",
+				GameId = 6153766069,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = true,
+				ScriptId = 1037,
+				Script = function()
+					loadstring(game:HttpGet("https://raw.githubusercontent.com/shittystuffs/Scripts/refs/heads/main/Escape%20The%20Carnival%20of%20Terror%20Obby%20Get%20Gears"))()
 				end,
 			},
 		},
