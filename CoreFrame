@@ -327,7 +327,7 @@ Paypal.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Paypal.BorderSizePixel = 0
 Paypal.LayoutOrder = 2
 Paypal.Size = UDim2.new(0, 19, 0, 19)
-Paypal.Image = "rbxassetid://15178979114"
+Paypal.Image = "rbxassetid://99719918250773"
 Paypal.ScaleType = Enum.ScaleType.Fit
 Paypal.TileSize = UDim2.new(0.5, 0, 1, 0)
 
