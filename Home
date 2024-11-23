@@ -519,13 +519,3 @@ for _, Update in Table.GuiStatus.Updates do
 	UpdateTemplate.UpdateText.Text = Update
 	UpdateTemplate.Visible = true
 end
-
-for _, Badges in BadgesFrame:GetChildren() do
-	if Badges:IsA("TextLabel") then
-		if Table.GuiSettings.PlayerBadges[Badges.Name] == true then
-			Badges.TextTransparency = 0
-		else
-			Badges.TextTransparency = 0.5
-		end
-	end
-end
