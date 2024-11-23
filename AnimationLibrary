@@ -145,7 +145,11 @@ Library.AppearTab = function(TabName)
 			TweenService:Create(Tab.Bottom.RightFrame.BadgesFrame.UIStroke, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {Transparency = 0.8}):Play()
 			for _, Badges in Tab.Bottom.RightFrame.BadgesFrame:GetChildren() do
 				if Badges:IsA("TextLabel") then
-					TweenService:Create(Badges, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+					if Table.GuiSettings.PlayerBadges[Badges.Name] == true then
+						TweenService:Create(Badges, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0}):Play()
+					else
+						TweenService:Create(Badges, TweenInfo.new(AnimationSpeed, Enum.EasingStyle[AnimationEasingStyle]), {TextTransparency = 0.5}):Play()
+					end
 				end
 			end
 
