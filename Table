@@ -49,7 +49,7 @@ _G.Table = {
 		Name = "VexHub",
 		DiscordLink = "dsc.gg/vhub",
 		AreModeratorsAllowedToAnnounce = true,
-		ImportantAnnouncement = "I am back on developing on VexHub! More scripts coming soon! -OWNER\n\nPaypal me to help me get motivation!\npaypal.me/VexHubPaypal",
+		ImportantAnnouncement = "VEXHUB IS ALSO NOT A BROOKHAVEN SCRIPT! STOP LISTENING TO THOSE SHOWCASERS! VexHub is universal and for any game.",
 		Updates = {
 			"Added R4D (GUIS Tab)",
 			"Added Chosen (Animation Tab)",
