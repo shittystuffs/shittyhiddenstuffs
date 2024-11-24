@@ -3,7 +3,6 @@ local Table = _G.Table
 
 local Player = game:GetService("Players").LocalPlayer
 local TweenService = game:GetService("TweenService")
-local ClickSound = Table.GuiStatus.ClickSound
 
 function StringToColor3(ToConvert)
 	local ColorString = tostring(ToConvert)
