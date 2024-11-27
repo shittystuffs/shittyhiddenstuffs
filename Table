@@ -49,7 +49,7 @@ _G.Table = {
 		Name = "VexHub",
 		DiscordLink = "dsc.gg/vhub",
 		AreModeratorsAllowedToAnnounce = true,
-		ImportantAnnouncement = "VEXHUB IS ALSO NOT A BROOKHAVEN SCRIPT! STOP LISTENING TO THOSE SHOWCASERS! VexHub is universal and for any game.",
+		ImportantAnnouncement = "URGENT NEED OF SHOWCASERS! Showcase VexHub for 5-10 minutes and post it in Youtube and have a change to get a KEY THAT WILL LAST FOR 1 MONTH instead of 12 hours!",
 		Updates = {
 			"Added R4D (GUIS Tab)",
 			"Added Chosen (Animation Tab)",
