@@ -20,7 +20,7 @@ _G.Table = {
 		OnGoingAnimation = false,
 		ActivePage = nil,
 		TargetPlugin = nil,
-		GuiVersion = 6.147,
+		GuiVersion = 6.148,
 		ActiveScriptName = nil,
 		ClickSoundScript = function()
 			local ClickSound = Instance.new("Sound")
@@ -51,12 +51,8 @@ _G.Table = {
 		AreModeratorsAllowedToAnnounce = true,
 		ImportantAnnouncement = "URGENT NEED OF SHOWCASERS! Showcase VexHub for 5-10 minutes and post it in Youtube and have a change to get a KEY THAT WILL LAST FOR 1 MONTH instead of 12 hours!",
 		Updates = {
-			"Added R4D (GUIS Tab)",
-			"Added Chosen (Animation Tab)",
-			"Added Anti Fall (Scripts Tab)",
-			"Added Nameless Admin (Commands Tab)",
-			"Added Escape The Carnival Of Terror Obby Get Gears (Scripts Tab)",
-			"Added Block Eaters Infinite Size (Scripts Tab)",
+			"Added Chat Bypass (Scripts Tab)",
+			"Added FreeCam (GUIS Tab)",
 		}
 	},
 
@@ -538,7 +534,7 @@ _G.Table = {
 				GameId = 0,
 				RigType = "Any", -- R6, R15, Any
 				IsOP = true,
-				IsNew = true,
+				IsNew = false,
 				ScriptId = 1035,
 				Script = function()
 					loadstring(game:HttpGet("https://raw.githubusercontent.com/zephyr10101/AntiFall/main/Script"))()
@@ -551,7 +547,7 @@ _G.Table = {
 				GameId = 16178787698,
 				RigType = "Any", -- R6, R15, Any
 				IsOP = true,
-				IsNew = true,
+				IsNew = false,
 				ScriptId = 1036,
 				Script = function()
 					loadstring(game:HttpGet("https://raw.githubusercontent.com/shittystuffs/Scripts/refs/heads/main/Infinite%20Block%20Size"))()
@@ -564,10 +560,23 @@ _G.Table = {
 				GameId = 6153766069,
 				RigType = "Any", -- R6, R15, Any
 				IsOP = true,
-				IsNew = true,
+				IsNew = false,
 				ScriptId = 1037,
 				Script = function()
 					loadstring(game:HttpGet("https://raw.githubusercontent.com/shittystuffs/Scripts/refs/heads/main/Escape%20The%20Carnival%20of%20Terror%20Obby%20Get%20Gears"))()
+				end,
+			},
+
+			["Chat Bypass"] = {
+				Owner = "bdokkx",
+				Description = "Say anything!",
+				GameId = 0,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = true,
+				ScriptId = 1038,
+				Script = function()
+					loadstring(game:HttpGet("https://raw.githubusercontent.com/bennettlol/Chat-bypass/refs/heads/main/Chat",true))()
 				end,
 			},
 		},
@@ -895,10 +904,23 @@ _G.Table = {
 				GameId = 4924922222,
 				RigType = "Any", -- R6, R15, Any
 				IsOP = true,
-				IsNew = true,
+				IsNew = false,
 				ScriptId = 2025,
 				Script = function()
 					loadstring(game:HttpGet('https://raw.githubusercontent.com/M1ZZ001/BrookhavenR4D/main/Brookhaven%20R4D%20Script'))()
+				end,
+			},
+
+			["FreeCam"] = {
+				Owner = "ZephyrScripts",
+				Description = "Free your camera.",
+				GameId = 0,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = true,
+				IsNew = true,
+				ScriptId = 2026,
+				Script = function()
+					loadstring(game:HttpGet("https://raw.githubusercontent.com/zephyr10101/CameraSpy/main/Script", true))()
 				end,
 			},
 		},
@@ -923,7 +945,7 @@ _G.Table = {
 				GameId = 0,
 				RigType = "R6", -- R6, R15, Any
 				IsOP = false,
-				IsNew = true,
+				IsNew = false,
 				ScriptId = 3002,
 				Script = function()
 					loadstring(game:HttpGet("https://raw.githubusercontent.com/shittystuffs/Scripts/main/Chosen", true))()
@@ -964,7 +986,7 @@ _G.Table = {
 				GameId = 0,
 				RigType = "Any", -- R6, R15, Any
 				IsOP = true,
-				IsNew = true,
+				IsNew = false,
 				ScriptId = 4003,
 				Script = function()
 					loadstring(game:HttpGet("https://raw.githubusercontent.com/FilteringEnabled/NamelessAdmin/main/Source"))();
