@@ -20,7 +20,7 @@ _G.Table = {
 		OnGoingAnimation = false,
 		ActivePage = nil,
 		TargetPlugin = nil,
-		GuiVersion = 6.148,
+		GuiVersion = 6.149,
 		ActiveScriptName = nil,
 		ClickSoundScript = function()
 			local ClickSound = Instance.new("Sound")
@@ -53,6 +53,8 @@ _G.Table = {
 		Updates = {
 			"Added Chat Bypass (Scripts Tab)",
 			"Added FreeCam (GUIS Tab)",
+			"Added G-Man Fighter (Animations Tab),
+			"Added ESP (Scripts Tab)",
 		}
 	},
 
@@ -579,6 +581,19 @@ _G.Table = {
 					loadstring(game:HttpGet("https://raw.githubusercontent.com/bennettlol/Chat-bypass/refs/heads/main/Chat",true))()
 				end,
 			},
+
+			["ESP"] = {
+				Owner = "Unknown",
+				Description = "Simple ESP.",
+				GameId = 0,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = false,
+				IsNew = true,
+				ScriptId = 1039,
+				Script = function()
+					loadstring(game:HttpGet("https://raw.githubusercontent.com/shittystuffs/Scripts/refs/heads/main/ESP",true))()
+				end,
+			},
 		},
 
 		["GUIS"] = {
@@ -949,6 +964,20 @@ _G.Table = {
 				ScriptId = 3002,
 				Script = function()
 					loadstring(game:HttpGet("https://raw.githubusercontent.com/shittystuffs/Scripts/main/Chosen", true))()
+				end,
+			},
+
+			["G-Man Fighter"] = {
+				Owner = "Im_Patrick",
+				Description = "A animation that makes you look like a fighter.",
+				GameId = 0,
+				RigType = "R6", -- R6, R15, Any
+				IsOP = false,
+				IsNew = true,
+				ScriptId = 3003,
+				Script = function()
+					_G.clientsidedeffect = true
+					loadstring(game:HttpGet("https://raw.githubusercontent.com/randomstring0/Qwerty/refs/heads/main/qwerty18.lua"))()
 				end,
 			},
 		},
