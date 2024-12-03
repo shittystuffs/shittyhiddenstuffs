@@ -49,7 +49,7 @@ _G.Table = {
 		Name = "VexHub",
 		DiscordLink = "dsc.gg/vhub",
 		AreModeratorsAllowedToAnnounce = true,
-		ImportantAnnouncement = "Pls buy 1 month key 🥺\nbit.ly/VexHubPurchaseKey",
+		ImportantAnnouncement = "Don't want to do the key system? Buy a Permanent Key!\nbit.ly/VexHubPurchaseKey",
 		Updates = {
 			"Added Chat Bypass (Scripts Tab)",
 			"Added FreeCam (GUIS Tab)",
