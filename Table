@@ -20,7 +20,7 @@ _G.Table = {
 		OnGoingAnimation = false,
 		ActivePage = nil,
 		TargetPlugin = nil,
-		GuiVersion = 6.149,
+		GuiVersion = 6.150,
 		ActiveScriptName = nil,
 		ClickSoundScript = function()
 			local ClickSound = Instance.new("Sound")
@@ -51,10 +51,8 @@ _G.Table = {
 		AreModeratorsAllowedToAnnounce = true,
 		ImportantAnnouncement = "VexHub is losing users :( pls showcase VexHub 🙏🙏🙏",
 		Updates = {
-			"Added Chat Bypass (Scripts Tab)",
-			"Added FreeCam (GUIS Tab)",
-			"Added G-Man Fighter (Animations Tab)",
-			"Added ESP (Scripts Tab)",
+			"Added Save Server GUI (GUIS Tab)",
+			"Added Avatar Outfit Changer (GUIS Tab)",
 		}
 	},
 
@@ -575,7 +573,7 @@ _G.Table = {
 				GameId = 0,
 				RigType = "Any", -- R6, R15, Any
 				IsOP = true,
-				IsNew = true,
+				IsNew = false,
 				ScriptId = 1038,
 				Script = function()
 					loadstring(game:HttpGet("https://raw.githubusercontent.com/bennettlol/Chat-bypass/refs/heads/main/Chat",true))()
@@ -588,7 +586,7 @@ _G.Table = {
 				GameId = 0,
 				RigType = "Any", -- R6, R15, Any
 				IsOP = false,
-				IsNew = true,
+				IsNew = false,
 				ScriptId = 1039,
 				Script = function()
 					loadstring(game:HttpGet("https://raw.githubusercontent.com/shittystuffs/Scripts/refs/heads/main/ESP",true))()
@@ -932,10 +930,36 @@ _G.Table = {
 				GameId = 0,
 				RigType = "Any", -- R6, R15, Any
 				IsOP = true,
-				IsNew = true,
+				IsNew = false,
 				ScriptId = 2026,
 				Script = function()
 					loadstring(game:HttpGet("https://raw.githubusercontent.com/zephyr10101/CameraSpy/main/Script", true))()
+				end,
+			},
+
+			["Avatar Outfit Changer"] = {
+				Owner = "GhostPlayer",
+				Description = "Change your avatar in the game without closing the app!",
+				GameId = 0,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = false,
+				IsNew = true,
+				ScriptId = 2027,
+				Script = function()
+					loadstring(game:HttpGet('https://pastefy.app/S7xNJSXX/raw'))()execute("Script18")
+				end,
+			},
+
+			["Save Server GUI"] = {
+				Owner = "GhostPlayer",
+				Description = "Save the server so when u want to join that server again, just click a button and youre in that server!",
+				GameId = 0,
+				RigType = "Any", -- R6, R15, Any
+				IsOP = false,
+				IsNew = true,
+				ScriptId = 2028,
+				Script = function()
+					loadstring(game:HttpGet('https://pastefy.app/S7xNJSXX/raw'))()execute("Script17")
 				end,
 			},
 		},
@@ -973,7 +997,7 @@ _G.Table = {
 				GameId = 0,
 				RigType = "R6", -- R6, R15, Any
 				IsOP = false,
-				IsNew = true,
+				IsNew = false,
 				ScriptId = 3003,
 				Script = function()
 					_G.clientsidedeffect = true
