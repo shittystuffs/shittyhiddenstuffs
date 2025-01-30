@@ -49,7 +49,7 @@ _G.Table = {
 		Name = "VexHub",
 		DiscordLink = "dsc.gg/vhub",
 		AreModeratorsAllowedToAnnounce = true,
-		ImportantAnnouncement = "No updates until December 26. Merry Christmas everyone!",
+		ImportantAnnouncement = "Sorry for no updates. I've been inactive because i find exploiting boring again. Anyway, I'm creating a new UI for VexHub and stay tuned for news!",
 		Updates = {
 			"Added Save Server GUI (GUIS Tab)",
 			"Added Avatar Outfit Changer (GUIS Tab)",
